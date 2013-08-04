@@ -1,5 +1,4 @@
 <!-- INCLUDE overall_header.html -->
-<!-- IF U_MCP --><p>[&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ENDIF -->
 <h2><a href="{U_VIEW_FORUM}">{FORUM_NAME}</a></h2>
 
 <!-- IF FORUM_DESC or MODERATORS or U_MCP -->
@@ -34,18 +33,24 @@
 	<!-- INCLUDE forumlist_body.html -->
 <!-- ENDIF -->
 
+<div class="row-fluid small-bottom-margin">
+	<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small"><i class="icon-cogs"></i> {L_MCP} </a><!-- ENDIF -->
+</div>
+
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 	<div class="row-fluid" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 2em;"<!-- ENDIF -->>
 
-        	<div class="span4 btn-group">
+		<div class="span4">
 
-		<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-			<a class="<!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->btn btn-small<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->" href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF --></a>
-		<!-- ENDIF -->
+			<div class="btn-group">
+			<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
+				<a class="<!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->btn btn-small<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->" href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF --></a>
+			<!-- ENDIF -->
 
-		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-small" href="{U_MARK_TOPICS}" accesskey="m">{L_MARK_TOPICS_READ}</a> &bull; <!-- ENDIF -->
-		<!-- ENDIF -->
+			<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
+				<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-small" href="{U_MARK_TOPICS}" accesskey="m">{L_MARK_TOPICS_READ}</a> &bull; <!-- ENDIF -->
+			<!-- ENDIF -->
+			</div>
 		</div>
 
 		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
@@ -108,7 +113,7 @@
 				</dl>
 				<dl>
 					<dt><label for="password">{L_PASSWORD}:</label></dt>
-					<dd><input type="password" tabindex="2" id="password" name="password" size="25" class="inputbox autowidth" /></dd>
+					<dd><input type="password" tabindex="2" id="password" name="paze="25" class="inputbox autowidth" /></dd>
 					<!-- IF S_AUTOLOGIN_ENABLED --><dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="3" /> {L_LOG_ME_IN}</label></dd><!-- ENDIF -->
 					<dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="4" /> {L_HIDE_ME}</label></dd>
 				</dl>
@@ -307,4 +312,4 @@
 <!-- ENDIF -->
 </div>
 
-<!-- INCLUDE overall_footer.html -->
+<!-- INCLUDE overall_foote
