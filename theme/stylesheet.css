@@ -189,6 +189,10 @@ a:active {
   margin-bottom: 40px;
 }
 
+.small-padding {
+  padding: 10px;
+}
+
 .viewforum-pagination, .viewtopic-pagination {
   line-height: 25px;
 }
@@ -208,6 +212,35 @@ a:active {
 .linklist li {
   list-style-type: none;  
   width: auto;  
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  background-clip: padding-box;
+}
+
+.box {
+  background: rgba(0, 0, 0, 0.03);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);  
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+label.strong {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+span.description {
+  font-weight: normal;
+  color:  #888;    
 }
 
 /* topic related stuff */
@@ -279,6 +312,10 @@ a:active {
   width:100%;
 }
 
+.subjectinput {
+  width:50%;
+}
+
 /* Memberlist related stuff */
 
 .memberlist {
@@ -289,6 +326,10 @@ a:active {
   padding: 5px 20px;
   overflow: hidden;
   border-radius: 4px;  
+}
+
+.memberlist table {
+  width: 100%;
 }
 
 .memberlist th {
@@ -310,16 +351,69 @@ a:active {
   text-align: center;
 }
 
+.memberlist .ml-info {
+  width: 25%;
+}
+
 .memberlist .ml-joined {
   width: 15%;
   text-align:left;
 }
 
 .memberlist .ml-active {
+  width: 15%;
   text-align:left;
 }
 
 .ml-pagination {
   margin: 0px;  
   float:right;
+}
+
+/* UCP related stuff */
+
+div.ucp-main {  
+  border-left: 2px solid #ddd;
+  padding-left: 20px;      
+}
+
+dl.details {
+  width:80%;
+  max-width: 700px;
+}
+
+dl.details dt {
+  clear:left;  
+  float:left;
+  width: 20%; 
+}
+
+dl.details dd {
+  float:left;
+  text-align:left;
+  margin-bottom:20px;  
+}
+
+fieldset.ucp-profile-details {
+  padding: 20px;
+}
+
+fieldset.ucp-profile-details dl {
+  margin: 0px;  
+}
+
+.ucp-profile-reg-details dl dt label {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.ucp-profile-reg-details dl dt span {
+  font-weight: normal;
+  color:  #888;    
+}
+
+.ucp-prefs-personal dl dd label, .ucp-prefs-post dl dd label, .ucp-prefs-view dl dd label {
+  float:left;
+  margin-left: 5px;
+  line-height: 20px;
 }

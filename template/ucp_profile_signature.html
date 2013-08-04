@@ -15,36 +15,39 @@
 	</div>
 <!-- ENDIF -->
 
-<div class="panel">
-	
-
 	<p>{L_SIGNATURE_EXPLAIN}</p>
+	
+	<div class="small-bottom-margin box small-padding">
 
-	<!-- DEFINE $SIG_EDIT = 1 -->
-	<!-- INCLUDE posting_editor.html -->
-	<h3>{L_OPTIONS}</h3>
-	<fieldset>
-		<!-- IF S_BBCODE_ALLOWED -->
-			<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
-		<!-- ENDIF -->
-		<!-- IF S_SMILIES_ALLOWED -->
-			<div><label for="disable_smilies"><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label></div>
-		<!-- ENDIF -->
-		<!-- IF S_LINKS_ALLOWED -->
-			<div><label for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label></div>
-		<!-- ENDIF -->
-
-	</fieldset>
+        	<div class="small-bottom-margin">
+		<!-- DEFINE $SIG_EDIT = 1 -->
+		<!-- INCLUDE posting_editor.html -->
+		</div>
+		<ul class="nav nav-tabs">
+			<li class="active strong">{L_OPTIONS} </li>			
+		</ul>
+		<fieldset>
+			<!-- IF S_BBCODE_ALLOWED -->
+				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
+			<!-- ENDIF -->
+			<!-- IF S_SMILIES_ALLOWED -->
+				<div><label for="disable_smilies"><input type="checkbox" name="disable_smilies" id="disable_smilies"{S_SMILIES_CHECKED} /> {L_DISABLE_SMILIES}</label></div>
+			<!-- ENDIF -->
+			<!-- IF S_LINKS_ALLOWED -->
+				<div><label for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label></div>
+			<!-- ENDIF -->
+	
+		</fieldset>
 
 	
-</div>
+	</div>
 
-<fieldset class="submit-buttons">
+<fieldset class="btn-group pull-right">
 	{S_HIDDEN_FIELDS}
-	<input type="reset" name="reset" value="{L_RESET}" class="button2" />&nbsp;
-	<input type="submit" name="preview" value="{L_PREVIEW}" class="button2" />&nbsp;
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="button1" />
 	{S_FORM_TOKEN}
+	<input type="reset" name="reset" value="{L_RESET}" class="btn btn-small" />&nbsp;
+	<input type="submit" name="preview" value="{L_PREVIEW}" class="btn btn-small" />&nbsp;
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />	
 </fieldset>
 </form>
 
