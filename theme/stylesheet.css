@@ -95,7 +95,7 @@ a:active {
 .forumrow-container .forumrow.category .category-title {
   font-weight: 700;
 }
-.forumrow-container .forumrow.category .text-center {
+.forumrow-container .forumrow.category div {
   color: #888;
 }
 .forumrow-container .forumrow + .forumrow {
@@ -155,4 +155,16 @@ a:active {
 }
 .forumrow-container + .forumrow-container {
   margin-top: 15px;
+}
+
+.small-select-wrapper, .small-select-wrapper select {
+  width: 150px;
+}
+
+.no-left-margin {
+  margin-left: 0%;
+}
+
+.viewforum-pagination {
+  line-height: 25px;
 }
