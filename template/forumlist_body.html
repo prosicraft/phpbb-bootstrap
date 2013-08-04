@@ -1,12 +1,11 @@
 
 <!-- BEGIN forumrow -->
 
-<!-- IF (forumrow.S_IS_CAT or forumrow.S_NO_CAT) and forumrow.S_FIRST_ROW -->
-<div class="forumrow-container">
-<!-- ENDIF -->
-
 <!-- IF (forumrow.S_IS_CAT or forumrow.S_NO_CAT) and not forumrow.S_FIRST_ROW -->
 </div>
+<!-- ENDIF -->
+
+<!-- IF forumrow.S_FIRST_ROW -->
 <div class="forumrow-container">
 <!-- ENDIF -->
 
@@ -17,9 +16,9 @@
 				<!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF -->
 			</div>
 
-			<div class="span1 text-center">{L_TOPICS}</div>
-			<div class="span1 text-center">{L_POSTS}</div>
-			<div class="span2 text-center">{L_LAST_POST}</div>
+			<div class="span1 text-center">{L_TOPICS} </div>
+			<div class="span1 text-center">{L_POSTS} </div>
+			<div class="span2 text-center">{L_LAST_POST} </div>
 		</div>
 	</div>
 	<!-- ELSE -->
@@ -28,7 +27,7 @@
 			<div class="span8 forum-title clearfix">
 				<div class="forum-icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});">
 				</div>
-				
+
 				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
 				<a class="feed-icon-forum pull-right" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
 					<i class="icon-rss-sign"></i>
@@ -92,8 +91,8 @@
 
 <!-- BEGINELSE -->
 	<div class="panel">
-		
+
 		<strong>{L_NO_FORUMS}</strong>
-		
+
 	</div>
 <!-- END forumrow -->
