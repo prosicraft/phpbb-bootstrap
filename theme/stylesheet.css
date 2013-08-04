@@ -95,7 +95,7 @@ a:active {
 .forumrow-container .forumrow.category .category-title {
   font-weight: 700;
 }
-.forumrow-container .forumrow.category .text-center {
+.forumrow-container .forumrow.category div {
   color: #888;
 }
 .forumrow-container .forumrow + .forumrow {
@@ -155,4 +155,171 @@ a:active {
 }
 .forumrow-container + .forumrow-container {
   margin-top: 15px;
+}
+
+.small-select-wrapper, .small-select-wrapper select {
+  width: 150px;
+}
+
+.no-left-margin {
+  margin-left: 0%;
+}
+
+.small-left-margin {
+  margin-left: 10px;
+}
+
+.small-right-margin {
+  margin-right: 10px;
+}
+
+.medium-left-margin {
+  margin-left: 20px;
+}
+
+.small-bottom-margin {
+  margin-bottom: 10px;
+}
+
+.medium-bottom-margin {
+  margin-bottom: 20px;
+}
+
+.big-bottom-margin {
+  margin-bottom: 40px;
+}
+
+.viewforum-pagination, .viewtopic-pagination {
+  line-height: 25px;
+}
+
+.viewtopic-pagination {
+  float:right;
+}
+
+.greylabel {
+  color: #777;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.linklist li {
+  list-style-type: none;  
+  width: auto;  
+}
+
+/* topic related stuff */
+
+.topic-container .topic-post {
+  background: rgba(0, 0, 0, 0.03);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 5px 20px;
+  overflow: hidden;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.topic-container .postprofile {
+  width: 25%;
+  max-width: 200px;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  float:left;
+  padding-right: 15px;
+  padding-bottom: 80px;
+}
+
+.topic-container .postprofile dd {
+  font-size: 11px;
+}
+
+.topic-container .postbody {
+  float:left;
+  width: 75%;
+  margin-left: 15px;
+}
+
+.topic-container .postbody h3 {
+  line-height: 20px;
+  margin-bottom: 0px;
+}
+
+.topic-container .postbody p.author {
+  margin-bottom: 20px;
+}
+
+.topic-container .post-buttons {
+
+}
+
+.topic-container .postbody .signature {
+  margin-top: 30px;
+  border-top: 2px solid #ddd;
+  margin-bottom: 10px;
+  color: #777;
+  font-size: 12px;
+}
+
+/* posting related stuff */
+
+.posting-container {
+  background: rgba(0, 0, 0, 0.03);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 5px 20px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.posting-container #message-box .inputbox {
+  width:100%;
+}
+
+/* Memberlist related stuff */
+
+.memberlist {
+  background: rgba(0, 0, 0, 0.03);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 5px 20px;
+  overflow: hidden;
+  border-radius: 4px;  
+}
+
+.memberlist th {
+  line-height: 40px;
+  border-bottom: 1px solid #ccc;  
+}
+
+.memberlist .ml-row {
+  height: 35px;
+}
+
+.memberlist .ml-name {
+  width: 35%;
+  text-align:left;
+}
+
+.memberlist .ml-posts {
+  width: 10%;
+  text-align: center;
+}
+
+.memberlist .ml-joined {
+  width: 15%;
+  text-align:left;
+}
+
+.memberlist .ml-active {
+  text-align:left;
+}
+
+.ml-pagination {
+  margin: 0px;  
+  float:right;
 }
