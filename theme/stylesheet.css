@@ -413,8 +413,14 @@ fieldset.ucp-profile-details dl {
   color:  #888;    
 }
 
-.ucp-prefs-personal dl dd label, .ucp-prefs-post dl dd label, .ucp-prefs-view dl dd label {
-  float:left;
-  margin-left: 5px;
+.ucp-prefs-personal dl dd label,
+.ucp-prefs-post dl dd label,
+.ucp-prefs-view dl dd label {
+  float: left;
+  margin-left: 10px;
   line-height: 20px;
+}
+
+.ucp-prefs-personal dl dd label input {
+  margin-top: 0px;
 }
