@@ -90,7 +90,7 @@
 
 <!-- IF S_NO_READ_ACCESS -->
 
-	<div class="panel">
+	<div class="box">
 
 		<strong>{L_NO_READ_ACCESS}</strong>
 
@@ -100,7 +100,7 @@
 
 		<form action="{S_LOGIN_ACTION}" method="post">
 
-		<div class="panel">
+		<div class="box">
 
 
 			<div class="content">
@@ -142,11 +142,11 @@
 	<!-- ENDIF -->
 
 	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
-		<div class="forumrow-container <!-- IF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) --> announcement<!-- ENDIF -->">
+		<div class="box small-bottom-margin <!-- IF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) --> announcement<!-- ENDIF -->">
 
-		<div class="forumrow category header">
+		<div class="header">
 			<div class="row-fluid">
-				<div class="span8 category-header clearfix">
+				<div class="span8 clearfix">
 					<strong>
 					<!-- IF S_DISPLAY_ACTIVE -->
 						{L_ACTIVE_TOPICS}
@@ -165,31 +165,34 @@
 		</div>
 	<!-- ENDIF -->
 
-		<div class="forumrow froum <!-- IF topicrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF topicrow.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
+		<div class="tablerow <!-- IF topicrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF topicrow.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
 			<div class="row-fluid">
-				<div class="span8 forum-title clearfix "<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
-					<div class="forum-icon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});"></div>
-					<!-- IF topicrow.S_UNREAD_TOPIC -->
-						<a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a>
-					<!-- ENDIF -->
-					<div class="form-title">
-						<h4><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a></h4>
-						<p class="desc">
-							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-								<a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a>
-							<!-- ENDIF -->
-							<!-- IF topicrow.S_TOPIC_REPORTED -->
-								<a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a>
-							<!-- ENDIF -->
-							<!-- IF topicrow.PAGINATION -->
-								<strong class="pagination"><span>{topicrow.PAGINATION}</span></strong>
-							<!-- ENDIF -->
-							<!-- IF topicrow.ATTACH_ICON_IMG -->
-								{topicrow.ATTACH_ICON_IMG}
-							<!-- ENDIF -->
-							<span>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</span>
-						</p>
-						<p class="meta"></p>
+				<div class="span8 clearfix "<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+					<div class="icon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});"></div>
+
+					<div class="title">
+						<!-- IF topicrow.S_UNREAD_TOPIC -->
+							<a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a>
+						<!-- ENDIF -->
+						<div class="form-title">
+							<h4><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a></h4>
+							<p class="desc">
+								<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
+									<a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a>
+								<!-- ENDIF -->
+								<!-- IF topicrow.S_TOPIC_REPORTED -->
+									<a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a>
+								<!-- ENDIF -->
+								<!-- IF topicrow.PAGINATION -->
+									<strong class="pagination"><span>{topicrow.PAGINATION}</span></strong>
+								<!-- ENDIF -->
+								<!-- IF topicrow.ATTACH_ICON_IMG -->
+									{topicrow.ATTACH_ICON_IMG}
+								<!-- ENDIF -->
+								<span>{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</span>
+							</p>
+							<p class="meta"></p>
+						</div>
 					</div>
 				</div>
 				<div class="span1 text-center">

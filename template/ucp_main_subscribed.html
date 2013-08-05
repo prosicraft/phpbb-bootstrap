@@ -3,72 +3,76 @@
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
 <h2>{L_TITLE}</h2>
-<div class="panel">
-	
 
-	<p>{L_WATCHED_EXPLAIN}</p>
+<p class="description">{L_WATCHED_EXPLAIN}</p>
+
+<div class="panel">
 
 <!-- IF .forumrow -->
-	<ul class="topiclist">
-		<li class="header">
-			<dl class="icon">
-				<dt>{L_WATCHED_FORUMS}</dt>
-				<dd class="lastpost">{L_LAST_POST}</dd>
-				<dd class="mark">{L_MARK}</dd>
-			</dl>
-		</li>
-	</ul>
-	<ul class="topiclist cplist">
+	<div class="box small-bottom-margin">
+		<div class="header">
+			<div class="row-fluid">
+				<dt class="span6">{L_WATCHED_FORUMS}</dt>
+				<dd class="span4">{L_LAST_POST}</dd>
+				<dd class="span2">{L_MARK}</dd>
+			</div>
+		</div>
 
 	<!-- BEGIN forumrow -->
-		<li class="forum-row <!-- IF forumrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<dl class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;">
-				<dt><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a><br />{forumrow.FORUM_DESC}</dt>
-				<dd class="lastpost"><!-- IF forumrow.LAST_POST_TIME --><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {forumrow.LAST_POST_AUTHOR_FULL}
+		<div class="tablerow <!-- IF forumrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+			<div class="row-fluid">
+				<div class="span6">
+					<div class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>
+					<dt class="title"><a href="{forumrow.U_VIEWFORUM}" class="forumtitle"><h4>{forumrow.FORUM_NAME}</h4></a><br />{forumrow.FORUM_DESC}</dt>
+				</div>
+
+				<dd class="span4"><!-- IF forumrow.LAST_POST_TIME --><span><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {forumrow.LAST_POST_AUTHOR_FULL}
 					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{forumrow.LAST_POST_TIME}</span>
 					<!-- ELSE -->{L_NO_POSTS}<br />&nbsp;<!-- ENDIF -->
 				</dd>
-				<dd class="mark"><input type="checkbox" name="f[{forumrow.FORUM_ID}]" id="f{forumrow.FORUM_ID}" /></dd>
-			</dl>
-		</li>
+				<dd class="span2"><input type="checkbox" name="f[{forumrow.FORUM_ID}]" id="f{forumrow.FORUM_ID}" /></dd>
+			</div>
+		</div>
 	<!-- END forumrow -->
-	</ul>
+	</div>
 <!-- ELSEIF S_FORUM_NOTIFY -->
 	<p><strong>{L_NO_WATCHED_FORUMS}</strong></p>
 <!-- ENDIF -->
 
 <!-- IF .topicrow -->
-	<div class="forumrow-container">
-		<div class="forumrow category header">
+	<div class="box">
+		<div class="header">
 			<div class="row-fluid">
 				<div class="span6">{L_WATCHED_TOPICS} </div>
 				<div class="span4">{L_LAST_POST} </div>
 				<div class="span2">{L_MARK} </div>
 			</div>
-		</div>	
-				
+		</div>
+
 	<!-- BEGIN topicrow -->
-		<div class="forumrow <!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ELSEIF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<div class="row-fluid">												
-				<div class="span6 forum-title clearfix" <!-- IF topicrow.TOPIC_ICON_IMG --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
-					<div class="forum-icon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>					
-					<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><h4><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE} </a></h4>
-					<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
-					<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF -->
-					<p class="desc">
-						<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
-						<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
-					</p>
-					<p class="meta">
-					</p>
+		<div class="tablerow <!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ELSEIF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+			<div class="row-fluid">
+				<div class="span6 clearfix" <!-- IF topicrow.TOPIC_ICON_IMG --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+					<div class="icon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>
+					<div class="title">
+						<!-- IF topicrow.S_UNREAD_TOPIC --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><h4><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle"><h4>{topicrow.TOPIC_TITLE} </h4></a></h4>
+						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
+						<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF -->
+						<span class="description">
+							<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
+							<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
+						</span>
+						<p class="meta">
+						</p>
+					</div>
 				</div>
 				<div class="span4">
-					<p class="lastpost">
+					<div class="lastpost">
 						<dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
 						<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}
-					</p>
+					</div>
 				</div>
-				<div class="span2"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></div>
+				<div class="span2" style="padding-top:20px;"><input type="checkbox" name="t[{topicrow.TOPIC_ID}]" id="t{topicrow.TOPIC_ID}" /></div>
 			</div>
 		</div>
 	<!-- END topicrow -->
@@ -84,7 +88,7 @@
 	<p><strong>{L_NO_WATCHED_TOPICS} </strong></p>
 <!-- ENDIF -->
 
-	
+
 </div>
 
 <!-- IF .topicrow or .forumrow -->

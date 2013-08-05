@@ -3,15 +3,15 @@
 
 <!-- IF (forumrow.S_IS_CAT or forumrow.S_NO_CAT) and not forumrow.S_FIRST_ROW -->
 </div>
-<div class="forumrow-container">
+<div class="box small-bottom-margin">
 <!-- ENDIF -->
 
 <!-- IF forumrow.S_FIRST_ROW or forumrow.S_FIRST_ROW -->
-<div class="forumrow-container">
+<div class="box small-bottom-margin">
 <!-- ENDIF -->
 
 	<!-- IF forumrow.S_IS_CAT -->
-	<div class="forumrow category header">
+	<div class="header">
 		<div class="row-fluid">
 			<div class="span8 category-title">
 				<!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF -->
@@ -23,29 +23,30 @@
 		</div>
 	</div>
 	<!-- ELSE -->
-	<div class="forumrow forum">
+	<div class="tablerow">
 		<div class="row-fluid">
-			<div class="span8 forum-title clearfix">
-				<div class="forum-icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});">
+			<div class="span8">
+				<div class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});">
 				</div>
+				<div class="title">
+					<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
+					<a class="feed-icon-forum pull-right" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
+						<i class="icon-rss-sign"></i>
+					</a>
+					<!-- ENDIF -->
 
-				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
-				<a class="feed-icon-forum pull-right" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
-					<i class="icon-rss-sign"></i>
-				</a>
-				<!-- ENDIF -->
+					<div class="form-title">
+						<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
 
-				<div class="form-title">
-					<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
-
-					<h4><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a></h4>
-					<p class="desc">{forumrow.FORUM_DESC}</p>
-					<p class="meta">
-						<!-- IF forumrow.MODERATORS -->
-							<strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}
-						<!-- ENDIF -->
-						<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}<!-- ENDIF -->
-					</p>
+						<h4><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a></h4>
+						<div class="description">{forumrow.FORUM_DESC}</div>
+						<div class="meta">
+							<!-- IF forumrow.MODERATORS -->
+								<strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}
+							<!-- ENDIF -->
+							<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}<!-- ENDIF -->
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -68,7 +69,7 @@
 					</div>
 				</div>
 				<div class="span2 text-left">
-					<p class="lastpost">
+					<div class="lastpost">
 						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
 						<!-- IF forumrow.LAST_POST_TIME -->
 						{L_LAST_POST} {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
@@ -79,7 +80,7 @@
 						<!-- ELSE -->
 							{L_NO_POSTS}
 						<!-- ENDIF -->
-					</p>
+					</div>
 				</div>
 			<!-- ENDIF -->
 		</div>
