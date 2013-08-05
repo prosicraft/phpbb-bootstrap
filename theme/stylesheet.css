@@ -334,6 +334,13 @@ label.strong {
   border-radius: 5px;
 }
 
+.quickreply-editor textarea,
+.quickreply-editor input,
+.quickreply-buttons {
+  width: 100%;
+  max-width: 800px;
+}
+
 /* posting related stuff */
 
 .posting-container {
