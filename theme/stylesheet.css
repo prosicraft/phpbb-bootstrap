@@ -48,9 +48,11 @@ a:active {
 #pageheader p.logo-description {
   font-size: 12px;
 }
-#page-body {
-  padding-left: 5px;
-  padding-right: 5px;
+@media all and (max-width:1000px) {
+	#page-body {
+  		padding-left: 5px;
+  		padding-right: 5px;
+	}
 }
 .lastvisit {
   margin: 0;
