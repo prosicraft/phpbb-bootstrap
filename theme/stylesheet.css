@@ -1,6 +1,15 @@
 body {
   font-size: 13px;
+  overflow-x:hidden;
 }
+
+@media all and (max-width: 767px) {
+  body#phpbb {
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+}
+
 a,
 a:hover,
 a:visited,
@@ -14,6 +23,9 @@ a:active {
   background-size: 200px 200px;
   color: #fff;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4);
+}
+#pageheader .headcontainer {
+  clear:both;
 }
 #pageheader #searchbox {
   margin-top: 20px;

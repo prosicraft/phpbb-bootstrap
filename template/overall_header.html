@@ -112,7 +112,7 @@
 
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
 
-	<!-- 
+	<!--
 		start main wrapper
 		@TODO: add options to set the general width of the forum
 	-->
@@ -120,27 +120,25 @@
 		<a id="top" name="top" accesskey="t"></a>
 		<header id="pageheader">
 			<div class="container-fluid">
-				<div class="row-fluid">
-					<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-						<div id="searchbox" class="pull-right span2">
-							<form action="{U_SEARCH}" method="get" id="search" class="form form-search">
-							<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">
-							<p class="text-center">
-								<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
-							</p>
-							{S_SEARCH_HIDDEN_FIELDS}
-							</form>
+				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
+					<div id="searchbox" class="pull-right">
+						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">
+						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">
+						<p class="text-center">
+							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
+						</p>
+						{S_SEARCH_HIDDEN_FIELDS}
+						</form>
 
-							<p class="text-right">
-								<small><a href="#start_here">{L_SKIP} &darr;</a></small>
-							</p>
-						</div>
-					<!-- ENDIF -->
+						<p class="pull-right">
+							<small><a href="#start_here">{L_SKIP} &darr;</a></small>
+						</p>
+					</div>
+				<!-- ENDIF -->
 
 
-					<a href="{U_INDEX}" title="{SITENAME}" id="logo">{SITE_LOGO_IMG}</a>
-					<p class="logo-description">{SITE_DESCRIPTION}</p>
-				</div>
+				<a href="{U_INDEX}" title="{SITENAME}" id="logo">{SITE_LOGO_IMG}</a>
+				<p class="logo-description">{SITE_DESCRIPTION}</p>
 			</div>
 		</header>
 
@@ -158,7 +156,7 @@
 
 				<!-- IF not S_IS_BOT -->
 				<ul class="nav pull-right">
-					
+
 					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
 					<li><a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a></li>
 					<!-- ENDIF -->
@@ -200,7 +198,7 @@
 		<form method="post" action="{S_LOGIN_ACTION}" class="form form-vertical pull-right span3 quicklogin" id="quicklogin-form">
 			<label for="username">{L_USERNAME}:</label>
 			<input type="text" name="username" id="username" size="10" class="input-block-level" title="{L_USERNAME}" />
-			
+
 			<label for="password">{L_PASSWORD}:</label>
 			<input type="password" name="password" id="password" size="10" class="input-block-level" title="{L_PASSWORD}" />
 			<!-- IF S_AUTOLOGIN_ENABLED -->
@@ -210,7 +208,7 @@
 			{S_LOGIN_REDIRECT}
 		</form>
 		<!-- ENDIF -->
-	
+
 
 	<div id="page-header">
 		<div class="navbar">
