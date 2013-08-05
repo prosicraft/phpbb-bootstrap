@@ -48,6 +48,10 @@ a:active {
 #pageheader p.logo-description {
   font-size: 12px;
 }
+#page-body {
+  padding-left: 5px;
+  padding-right: 5px;
+}
 .lastvisit {
   margin: 0;
   color: #888;
@@ -393,6 +397,40 @@ label.strong {
 .quickreply-buttons {
   width: 90%;
   max-width: 800px;
+}
+
+.viewtopic-pagination-left {
+  float:left;
+}
+
+@media all and (max-width:1030px) {
+  .viewtopic-sortby {
+    float:left;
+  }
+  .viewtopic-sortdays {
+    float:left;
+  }
+  .viewtopic-sortby label.medium-left-margin {
+    margin-left: 0px;
+  }
+  .viewtopic-pagination-left {
+    float:right;
+  }
+  .display-options label span.description {
+    display:none;
+  }
+}
+
+@media all and (max-width:850px) {
+  .topic-container .postbody h3.postheader {
+    margin-top: 50px;
+  }
+}
+
+@media all and (max-width:780px) {
+  .not-on-tab {
+    display:none;
+  }
 }
 
 /* posting related stuff */

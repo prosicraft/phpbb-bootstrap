@@ -37,18 +37,18 @@
 
 	<div class="pull-left btn-group small-bottom-margin">
 		<!-- IF U_MCP -->
-			<a href="{U_MCP}" class="btn btn-small"><i class="icon-cogs"></i> {L_MCP} </a>
+			<a href="{U_MCP}" class="btn btn-small"><i class="icon-cogs"></i><span class="not-on-tab"> {L_MCP} </span></a>
 		<!-- ENDIF -->
 
 		<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 			<a href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->" class="btn btn-small <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->reply-icon<!-- ENDIF -->">
-				<i class="icon-comment"></i>&nbsp;<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->
+				<i class="icon-comment"></i>&nbsp;<span class="not-on-tab"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF --></span>
 			</a>
 		<!-- ENDIF -->
 
-		<a class="btn btn-small" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i <!-- IF S_WATCHING_TOPIC -->class="icon-eye-close"<!-- ELSE -->class="icon-eye-open"<!-- ENDIF -->></i> {L_WATCH_TOPIC}</a>
-		<a class="btn btn-small" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i> {L_BOOKMARK_TOPIC}</a>
-		<a class="btn btn-small" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-upload-alt"></i> {L_BUMP_TOPIC}</a>
+		<a class="btn btn-small" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i <!-- IF S_WATCHING_TOPIC -->class="icon-eye-close"<!-- ELSE -->class="icon-eye-open"<!-- ENDIF -->></i><span class="not-on-tab"> {L_WATCH_TOPIC}</a>
+		<a class="btn btn-small" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i><span class="not-on-tab"> {L_BOOKMARK_TOPIC}</span></a>
+		<a class="btn btn-small" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-upload-alt"></i><span class="not-on-tab"> {L_BUMP_TOPIC}</span></a>
 	</div>
 
 	<!-- IF S_DISPLAY_SEARCHBOX -->
@@ -188,7 +188,7 @@
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 
-			<h3 <!-- IF postrow.S_FIRST_ROW -->class="first"<!-- ENDIF -->><!-- IF postrow.POST_ICON_IMG --><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="" /> <!-- ENDIF --><a href="#p{postrow.POST_ID}">{postrow.POST_SUBJECT}</a></h3>
+			<h3 class="postheader <!-- IF postrow.S_FIRST_ROW -->first<!-- ENDIF -->"><!-- IF postrow.POST_ICON_IMG --><img src="{T_ICONS_PATH}{postrow.POST_ICON_IMG}" width="{postrow.POST_ICON_IMG_WIDTH}" height="{postrow.POST_ICON_IMG_HEIGHT}" alt="" /> <!-- ENDIF --><a href="#p{postrow.POST_ID}">{postrow.POST_SUBJECT}</a></h3>
 			<p class="author"><!-- IF S_IS_BOT -->{postrow.MINI_POST_IMG}<!-- ELSE --><a href="{postrow.U_MINI_POST}">{postrow.MINI_POST_IMG}</a><!-- ENDIF -->{L_POST_BY_AUTHOR} <strong>{postrow.POST_AUTHOR_FULL}</strong> &raquo; {postrow.POST_DATE} </p>
 
 			<!-- IF postrow.S_POST_UNAPPROVED or postrow.S_POST_REPORTED -->
@@ -237,7 +237,7 @@
 </div>
 
 	<!-- IF PAGINATION or TOTAL_POSTS -->
-		<div class="pull-left" style="line-height:25px">
+		<div class="viewtopic-pagination-left" style="line-height:25px">
 			{TOTAL_POSTS}
 			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
 		</div>
@@ -250,8 +250,11 @@
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<!-- IF not S_IS_BOT -->
-		<label><span class="description">{L_DISPLAY_POSTS}: </span> {S_SELECT_SORT_DAYS}</label>
-		<label class="medium-left-margin"><span class="description">{L_SORT_BY} </span> {S_SELECT_SORT_KEY}</label> <label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-small" /></label>
+		<label class="viewtopic-sortdays"><span class="description">{L_DISPLAY_POSTS}: </span> {S_SELECT_SORT_DAYS}</label>
+		<label class="viewtopic-sortby">
+			<label class="medium-left-margin"><span class="description">{L_SORT_BY} </span> {S_SELECT_SORT_KEY}</label>
+			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-small" /></label>
+		</label>
 		<!-- ENDIF -->
 	</fieldset>
 	<div class="clearfix"></div>
@@ -272,7 +275,7 @@
 	<!-- IF S_TOPIC_MOD -->
 		<form class="form-inline pull-right" method="post" action="{S_MOD_ACTION}">
 			<fieldset class="quickmod">
-				<label class="greylabel" for="quick-mod-select">{L_QUICK_MOD}:</label> {S_TOPIC_MOD} <input class="form-control btn btn-small" type="submit" value="{L_GO}" class="button2" />
+				<label class="greylabel" for="quick-mod-select"><span class="not-on-tab">{L_QUICK_MOD}:</span></label> {S_TOPIC_MOD} <input class="form-control btn btn-small" type="submit" value="{L_GO}" class="button2" />
 				{S_FORM_TOKEN}
 			</fieldset>
 		</form>
