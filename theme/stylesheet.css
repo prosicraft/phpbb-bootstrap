@@ -161,37 +161,38 @@ a:active {
   width: 150px;
 }
 
-.no-left-margin {
-  margin-left: 0%;
-}
+/* left margin */
+.no-left-margin { margin-left: 0px; }
+.small-left-margin { margin-left: 10px; }
+.medium-left-margin { margin-left: 20px; }
+.big-left-margin { margin-left: 40px; }
 
-.small-left-margin {
-  margin-left: 10px;
-}
+/* bottom margin */
+.no-bottom-margin { margin-bottom: 0px; }
+.small-bottom-margin { margin-bottom: 10px; }
+.medium-bottom-margin { margin-bottom: 20px; }
+.big-bottom-margin { margin-bottom: 40px; }
 
-.small-right-margin {
-  margin-right: 10px;
-}
+/* right margin */
+.no-right-margin { margin-right: 0px; }
+.small-right-margin { margin-right: 10px; }
+.medium-right-margin { margin-right: 20px; }
+.big-right-margin { margin-right: 40px; }
 
-.medium-left-margin {
-  margin-left: 20px;
-}
+/* top margin */
+.no-top-margin { margin-top: 0px; }
+.small-top-margin { margin-top: 10px; }
+.medium-top-margin { margin-top: 20px; }
+.big-top-margin { margin-top: 40px; }
 
-.small-bottom-margin {
-  margin-bottom: 10px;
-}
+/* padding */
+.no-padding { padding: 0px; }
+.small-padding { padding: 10px; }
+.medium-padding { padding: 20px; }
+.big-padding { padding: 40px; }
 
-.medium-bottom-margin {
-  margin-bottom: 20px;
-}
 
-.big-bottom-margin {
-  margin-bottom: 40px;
-}
-
-.small-padding {
-  padding: 10px;
-}
+/* VIEWFORUM RELATED STUFF */
 
 .viewforum-pagination, .viewtopic-pagination {
   line-height: 25px;
