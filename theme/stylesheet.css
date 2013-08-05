@@ -308,6 +308,32 @@ label.strong {
   font-size: 12px;
 }
 
+.profile-icons a {
+ margin-left: 5px;
+ padding: 5px;
+ font-size: 10px;
+ background: #f2f2f2;
+}
+
+.profile-icons a:hover{
+  text-decoration: none;
+  background: #e7e7e7;
+  transition: background 200ms;
+}
+
+.profile-icons {
+  margin-left: 0px;
+}
+
+.postuser {
+  margin-top: 5px;
+}
+
+.poster-avatar img {
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
 /* posting related stuff */
 
 .posting-container {
