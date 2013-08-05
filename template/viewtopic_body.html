@@ -35,7 +35,7 @@
 
 	<div class="clearfix"></div>
 
-	<div class="pull-left btn-group">
+	<div class="pull-left btn-group small-bottom-margin">
 		<!-- IF U_MCP -->
 			<a href="{U_MCP}" class="btn btn-small"><i class="icon-cogs"></i> {L_MCP} </a>
 		<!-- ENDIF -->
@@ -45,6 +45,10 @@
 				<i class="icon-comment"></i>&nbsp;<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->
 			</a>
 		<!-- ENDIF -->
+
+		<a class="btn btn-small" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i <!-- IF S_WATCHING_TOPIC -->class="icon-eye-close"<!-- ELSE -->class="icon-eye-open"<!-- ENDIF -->></i> {L_WATCH_TOPIC}</a>
+		<a class="btn btn-small" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i> {L_BOOKMARK_TOPIC}</a>
+		<a class="btn btn-small" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-upload-alt"></i> {L_BUMP_TOPIC}</a>
 	</div>
 
 	<!-- IF S_DISPLAY_SEARCHBOX -->
