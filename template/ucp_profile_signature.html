@@ -6,17 +6,17 @@
 
 <!-- IF SIGNATURE_PREVIEW != '' -->
 	<div class="panel">
-		
+
 		<h3>{L_SIGNATURE_PREVIEW}</h3>
 		<div class="postbody">
 			<div class="signature" style="border-top:none; margin-top: 0; ">{SIGNATURE_PREVIEW}</div>
 		</div>
-		
+
 	</div>
 <!-- ENDIF -->
 
 	<p>{L_SIGNATURE_EXPLAIN}</p>
-	
+
 	<div class="small-bottom-margin box small-padding">
 
         	<div class="small-bottom-margin">
@@ -24,7 +24,7 @@
 		<!-- INCLUDE posting_editor.html -->
 		</div>
 		<ul class="nav nav-tabs">
-			<li class="active strong">{L_OPTIONS} </li>			
+			<li class="active strong">{L_OPTIONS} </li>
 		</ul>
 		<fieldset>
 			<!-- IF S_BBCODE_ALLOWED -->
@@ -36,18 +36,20 @@
 			<!-- IF S_LINKS_ALLOWED -->
 				<div><label for="disable_magic_url"><input type="checkbox" name="disable_magic_url" id="disable_magic_url"{S_MAGIC_URL_CHECKED} /> {L_DISABLE_MAGIC_URL}</label></div>
 			<!-- ENDIF -->
-	
+
 		</fieldset>
 
-	
+
 	</div>
 
+<fieldset>
+	{S_FORM_TOKEN}
+</fieldset>
 <fieldset class="btn-group pull-right">
 	{S_HIDDEN_FIELDS}
-	{S_FORM_TOKEN}
 	<input type="reset" name="reset" value="{L_RESET}" class="btn btn-small" />&nbsp;
 	<input type="submit" name="preview" value="{L_PREVIEW}" class="btn btn-small" />&nbsp;
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />	
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
 </fieldset>
 </form>
 

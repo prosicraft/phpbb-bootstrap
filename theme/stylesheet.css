@@ -421,6 +421,8 @@ fieldset.ucp-profile-details dl {
   line-height: 20px;
 }
 
-.ucp-prefs-personal dl dd label input {
+.ucp-prefs-personal dl dd label input,
+.ucp-prefs-post dl dd label input,
+.ucp-prefs-view dl dd label input {
   margin-top: 0px;
 }

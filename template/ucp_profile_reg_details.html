@@ -4,7 +4,7 @@
 
 <h2>{L_TITLE}</h2>
 <div class="box small-padding small-bottom-margin ucp-profile-reg-details">
-	
+
 
 	<!-- IF S_FORCE_PASSWORD -->
 		<p>{L_FORCE_PASSWORD_EXPLAIN}</p>
@@ -27,8 +27,8 @@
 		</dl>
 	<!-- ENDIF -->
 </div>
-<div class="box small-padding ucp-profile-reg-details small-bottom-margin">	
-	
+<div class="box small-padding ucp-profile-reg-details small-bottom-margin">
+
 	<!-- IF S_CHANGE_PASSWORD -->
 		<dl class="row-fluid">
 			<dt class="span5"><label for="new_password">{L_NEW_PASSWORD}:</label><span>{L_CHANGE_PASSWORD_EXPLAIN}</span></dt>
@@ -48,14 +48,16 @@
 	</dl>
 	</fieldset>
 
-	
+
 </div>
 
-<fieldset class="btn-group pull-right">	
-	{S_HIDDEN_FIELDS}
+<fieldset>
 	{S_FORM_TOKEN}
-	<input type="reset" value="{L_RESET}" name="reset" class="btn btn-small" />&nbsp;	
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />	
+</fieldset>
+<fieldset class="btn-group pull-right">
+	{S_HIDDEN_FIELDS}
+	<input type="reset" value="{L_RESET}" name="reset" class="btn btn-small" />&nbsp;
+	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
 </fieldset>
 </form>
 
