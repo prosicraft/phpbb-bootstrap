@@ -7,8 +7,8 @@
 <!-- IF PROMPT -->
 	<h2>{L_EXPORT_AS_CSV}</h2>
 	<form id="viewfolder" method="post" action="{S_PM_ACTION}">
-	<div class="panel">
-		
+	<div class="box">
+
 		<h3>{L_OPTIONS}</h3>
 		<fieldset>
 			<dl>
@@ -20,12 +20,12 @@
 				<dd><input class="inputbox" type="text" id="enclosure" name="enclosure" value="&#034;" /></dd>
 			</dl>
 		</fieldset>
-		
+
 	</div>
 	<fieldset class="submit-buttons">
 		<input type="hidden" name="export_option" value="CSV" />
-		<input class="button1" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
-		<input class="button2" type="reset" value="Reset" name="reset" />&nbsp;
+		<input class="btn btn-small" type="submit" name="submit_export" value="{L_EXPORT_FOLDER}" />&nbsp;
+		<input class="btn btn-small" type="reset" value="Reset" name="reset" />&nbsp;
 		{S_FORM_TOKEN}
 	</fieldset>
 	</form>
@@ -45,42 +45,40 @@
 	<!-- ENDIF -->
 
 	<!-- IF .messagerow -->
-		<ul class="topiclist">
-			<li class="header">
-				<dl>
-					<dt>{L_MESSAGE}</dt>
-					<dd class="mark">{L_MARK}</dd>
-				</dl>
-			</li>
-		</ul>
-		<ul class="topiclist cplist pmlist">
+	<div class="box small-padding small-bottom-margin">
+		<div class="header">
+			<div class="row-fluid">
+				<div class="span10">{L_MESSAGE} </div>
+				<div class="span2">{L_MARK} </div>
+			</div>
+		</div>
 
 		<!-- BEGIN messagerow -->
-			<li class="row<!-- IF messagerow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF messagerow.PM_CLASS --> {messagerow.PM_CLASS}<!-- ENDIF -->">
-				<dl class="icon" style="background-image: url({messagerow.FOLDER_IMG_SRC}); background-repeat: no-repeat;">
-					<dt<!-- IF messagerow.PM_ICON_URL and S_PM_ICONS --> style="background-image: url({messagerow.PM_ICON_URL}); background-repeat: no-repeat;"<!-- ENDIF -->>
+		<div class="tablerow <!-- IF messagerow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF messagerow.PM_CLASS --> {messagerow.PM_CLASS}<!-- ENDIF -->">
+			<div class="row-fluid">
+				<div class="icon span1" style="background-image: url({messagerow.FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>
+				<div class="span5"<!-- IF messagerow.PM_ICON_URL and S_PM_ICONS --> style="background-image: url({messagerow.PM_ICON_URL}); background-repeat: no-repeat;"<!-- ENDIF -->>
 
-						<!-- IF messagerow.S_PM_DELETED -->
-							<a href="{messagerow.U_REMOVE_PM}" class="topictitle">{L_DELETE_MESSAGE}</a><br />
-							<span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span>
-						<!-- ELSE -->
-							<a href="{messagerow.U_VIEW_PM}" class="topictitle">{messagerow.SUBJECT}</a>
-						<!-- ENDIF -->
-						<!-- IF messagerow.S_AUTHOR_DELETED -->
-							<br /><em class="small">{L_PM_FROM_REMOVED_AUTHOR}</em>
-						<!-- ENDIF -->
+					<!-- IF messagerow.S_PM_DELETED -->
+						<a href="{messagerow.U_REMOVE_PM}" class="topictitle">{L_DELETE_MESSAGE}</a><br />
+						<span class="error">{L_MESSAGE_REMOVED_FROM_OUTBOX}</span>
+					<!-- ELSE -->
+						<a href="{messagerow.U_VIEW_PM}" class="topictitle">{messagerow.SUBJECT}</a>
+					<!-- ENDIF -->
+					<!-- IF messagerow.S_AUTHOR_DELETED -->
+						<br /><em class="small">{L_PM_FROM_REMOVED_AUTHOR}</em>
+					<!-- ENDIF -->
 
-						<!-- IF messagerow.S_PM_REPORTED --><a href="{messagerow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --> {messagerow.ATTACH_ICON_IMG}<br />
-						<!-- IF S_SHOW_RECIPIENTS -->{L_MESSAGE_TO} {messagerow.RECIPIENTS}<!-- ELSE -->{L_MESSAGE_BY_AUTHOR} {messagerow.MESSAGE_AUTHOR_FULL} &raquo; {messagerow.SENT_TIME}<!-- ENDIF -->
-					</dt>
-					<!-- IF S_SHOW_RECIPIENTS --><dd class="info"><span>{L_SENT_AT}: {messagerow.SENT_TIME}</span></dd><!-- ENDIF -->
-					<!-- IF S_UNREAD --><dd class="info"><!-- IF messagerow.FOLDER --><a href="{messagerow.U_FOLDER}">{messagerow.FOLDER}</a><!-- ELSE -->{L_UNKNOWN_FOLDER}<!-- ENDIF --></dd><!-- ENDIF -->
-					<dd class="mark"><input type="checkbox" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></dd>
-				</dl>
-			</li>
+					<!-- IF messagerow.S_PM_REPORTED --><a href="{messagerow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF --> {messagerow.ATTACH_ICON_IMG}<br />
+					<!-- IF S_SHOW_RECIPIENTS -->{L_MESSAGE_TO} {messagerow.RECIPIENTS}<!-- ELSE -->{L_MESSAGE_BY_AUTHOR} {messagerow.MESSAGE_AUTHOR_FULL} &raquo; {messagerow.SENT_TIME}<!-- ENDIF -->
+				</div>
+				<!-- IF S_SHOW_RECIPIENTS --><div class="span4"><span>{L_SENT_AT}: {messagerow.SENT_TIME}</span></div><!-- ENDIF -->
+				<!-- IF S_UNREAD --><div class="span4"><!-- IF messagerow.FOLDER --><a href="{messagerow.U_FOLDER}">{messagerow.FOLDER}</a><!-- ELSE -->{L_UNKNOWN_FOLDER}<!-- ENDIF --></div><!-- ENDIF -->
+				<div class="span2"><input type="checkbox" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></div>
+			</div>
+		</div>
 		<!-- END messagerow -->
-
-		</ul>
+	</div>
 	<!-- ELSE -->
 		<p><strong>
 			<!-- IF S_COMPOSE_PM_VIEW and S_NO_AUTH_SEND_MESSAGE -->
@@ -92,10 +90,27 @@
 	<!-- ENDIF -->
 
 	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-	<fieldset class="display-actions">
-		<div class="left-box"><label for="export_option">{L_EXPORT_FOLDER}: <select name="export_option" id="export_option"><option value="CSV">{L_EXPORT_AS_CSV}</option><option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option><option value="XML">{L_EXPORT_AS_XML}</option></select></label> <input class="button2" type="submit" name="submit_export" value="{L_GO}" /><br /></div>
-		<select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select> <input class="button2" type="submit" name="submit_mark" value="{L_GO}" />
-		<div><a href="#" onclick="marklist('viewfolder', 'marked_msg', true); return false;">{L_MARK_ALL}</a> &bull; <a href="#" onclick="marklist('viewfolder', 'marked_msg', false); return false;">{L_UNMARK_ALL}</a></div>
+	<fieldset>
+		<div class="row-fluid small-bottom-margin">
+			<div class="span8 form-inline">
+				<label class="greylabel pull-left" for="export_option">{L_EXPORT_FOLDER}:
+					<select name="export_option" id="export_option">
+						<option value="CSV">{L_EXPORT_AS_CSV}</option>
+						<option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option>
+						<option value="XML">{L_EXPORT_AS_XML}</option>
+					</select>
+					<input class="btn btn-small" type="submit" name="submit_export" value="{L_GO}" /><br />
+				</label>
+			</div>
+			<div class="span4 pull-right form-inline">
+				<select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select>
+				<input class="btn btn-small" type="submit" name="submit_mark" value="{L_GO}" />
+			</div>
+		</div>
+		<div class="btn-group pull-right">
+			<a class="btn btn-small" href="#" onclick="marklist('viewfolder', 'marked_msg', true); return false;">{L_MARK_ALL}</a>
+			<a class="btn btn-small" href="#" onclick="marklist('viewfolder', 'marked_msg', false); return false;">{L_UNMARK_ALL}</a>
+		</div>
 	</fieldset>
 
 	<hr />
@@ -110,16 +125,16 @@
 	</ul>
 	<!-- ENDIF -->
 
-		
+
 	</div>
 
 	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
-	<fieldset class="display-options">
+	<fieldset class="form-inline">
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
-		<label>{L_DISPLAY}: {S_SELECT_SORT_DAYS}</label>
-		<label>{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
-		<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="button2" /></label>
+		<label class="greylabel">{L_DISPLAY}: {S_SELECT_SORT_DAYS}</label>
+		<label class="greylabel small-left-margin">{L_SORT_BY} {S_SELECT_SORT_KEY}</label>
+		<label class="greylabel">{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-small" /></label>
 		<input type="hidden" name="cur_folder_id" value="{CUR_FOLDER_ID}" />
 	</fieldset>
 	<!-- ENDIF -->
