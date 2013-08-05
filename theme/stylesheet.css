@@ -75,6 +75,47 @@ a:active {
 .quicklogin .checkbox {
   font-size: 12px;
 }
+
+/* overall related stuff */
+
+ul.overall-footer-nav-right li div.responsivenavitem {
+  color: #777;
+  padding: 10px 15px 10px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  line-height: 14px;
+}
+
+@media all and (max-width:770px) {
+	ul.overall-footer-nav-right li {
+	  clear:left;
+	}
+
+	ul.overall-footer-nav li {
+	  clear:left;
+	}
+
+	ul.overall-footer-nav li .responsivenavitem,
+	ul.overall-footer-nav-right li .responsivenavitem {
+	  padding: 2px;
+	  line-height: 20px;
+	}
+
+	ul.overall-footer-nav-right li div.responsivenavitem {
+	  padding: 2px;
+	  margin-top: 2px;
+	  line-height: 20px;
+	  color: #777;
+	}
+
+	ul.overall-footer-nav li a.firstitem,
+	ul.overall-footer-nav-right li a.firstitem {
+	  padding-top: 10px;
+	}
+}
+
+/* index related stuff */
+
 .forumrow-container {
   background: rgba(0, 0, 0, 0.03);
   background-clip: padding-box;
@@ -338,7 +379,7 @@ label.strong {
 .quickreply-editor textarea,
 .quickreply-editor input,
 .quickreply-buttons {
-  width: 100%;
+  width: 90%;
   max-width: 800px;
 }
 
