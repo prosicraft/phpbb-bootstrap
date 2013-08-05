@@ -15,13 +15,13 @@
 				<label class="strong">{L_TO}: </label>
 			</div>
 			<!-- IF .to_recipient -->
-				<dl class="pull-left small-left-margin small-bottom-margin">										
+				<dl class="pull-left small-left-margin small-bottom-margin">
 					<div class="">
-						<!-- BEGIN to_recipient -->							
+						<!-- BEGIN to_recipient -->
 							<!-- IF to_recipient.IS_GROUP --><a href="{to_recipient.U_VIEW}"><strong>{to_recipient.NAME}</strong></a>&nbsp;<!-- ELSE -->{to_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
 							<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="x" class="btn btn-small" />&nbsp;<!-- ENDIF -->
 						<!-- END to_recipient -->
-					</div>																				
+					</div>
 				</dl>
 			<!-- ENDIF -->
 			<!-- IF .bcc_recipient -->
@@ -38,14 +38,14 @@
 			<!-- ENDIF -->
 			<!-- IF not S_EDIT_POST -->
 			<dl class="pull-left small-left-margin small-bottom-margin">
-				<div class="pull-left"><input type="text" id="username_list" <!-- IF .to_recipient -->value="{to_recipient.NAME}"<!-- ENDIF --> name="username_list" class="inputbox" cols="50" rows="2" tabindex="1" /></div>
+				<div class="pull-left"><input type="text" id="username_list" name="username_list" class="inputbox" cols="50" rows="2" tabindex="1" /></div>
 				<div class="btn-group pull-left small-left-margin">
-					<a class="btn btn-small" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>				
+					<a class="btn btn-small" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
 					<input type="submit" name="add_to" value="{L_ADD}" class="btn btn-small" tabindex="1" />
 					<input type="submit" name="add_bcc" value="{L_ADD_BCC}" class="btn btn-small" tabindex="1" />
-				</div>				
+				</div>
 			</dl>
-			
+
 			<div class="clearfix"></div>
 			<!-- ENDIF -->
 		<!-- ELSE -->
@@ -104,7 +104,7 @@
 			<input type="text" name="subject" id="subject" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="inputbox subjectinput" />
 		</dd>
 	</div>
-	
+
 	<!-- IF S_SHOW_TOPIC_ICONS or S_SHOW_PM_ICONS -->
 	<dl>
 		<dt><label class="strong" for="icon">{L_ICON}:</label></dt>
@@ -177,7 +177,7 @@
 
 	<!-- IF not S_SHOW_DRAFTS -->
 
-	</div>
+	<!--</div>-->
 	<!-- ENDIF -->
 
 	<!-- IF S_HAS_ATTACHMENTS -->
@@ -237,9 +237,13 @@
 	<!-- ENDIF -->
 
 	<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
-	<div class="panel bg3" id="options-panel">
+	<!-- IF S_PRIVMSGS -->
+	<ul class="nav nav-tabs medium-top-margin" id="options-panel">
+		<li class="active strong">{L_OPTIONS}</li>
+	</ul>
+	<!-- ENDIF -->
 
-
+	<div class="">
 		<fieldset class="fields1">
 			<!-- IF S_BBCODE_ALLOWED -->
 				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
@@ -289,6 +293,7 @@
 			</dl>
 			<!-- ENDIF -->
 		</fieldset>
-		<!-- ENDIF -->
+	</div>
+	<!-- ENDIF -->
 
 <!-- ENDIF -->

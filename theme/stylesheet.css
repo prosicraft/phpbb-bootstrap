@@ -211,8 +211,8 @@ a:active {
 }
 
 .linklist li {
-  list-style-type: none;  
-  width: auto;  
+  list-style-type: none;
+  width: auto;
 }
 
 .icon {
@@ -229,9 +229,20 @@ a:active {
   background: rgba(0, 0, 0, 0.03);
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);  
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   overflow: hidden;
   border-radius: 4px;
+}
+
+.box .tablerow {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.box .header {
+  font-weight: bold;
+  color: #777;
 }
 
 label.strong {
@@ -239,9 +250,9 @@ label.strong {
   margin-bottom: 0px;
 }
 
-span.description {
+.description {
   font-weight: normal;
-  color:  #888;    
+  color:  #888;
 }
 
 /* topic related stuff */
@@ -319,7 +330,7 @@ span.description {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
   padding: 5px 20px;
   overflow: hidden;
-  border-radius: 4px;  
+  border-radius: 4px;
 }
 
 .memberlist table {
@@ -328,7 +339,7 @@ span.description {
 
 .memberlist th {
   line-height: 40px;
-  border-bottom: 1px solid #ccc;  
+  border-bottom: 1px solid #ccc;
 }
 
 .memberlist .ml-row {
@@ -360,15 +371,15 @@ span.description {
 }
 
 .ml-pagination {
-  margin: 0px;  
+  margin: 0px;
   float:right;
 }
 
 /* UCP related stuff */
 
-div.ucp-main {  
+div.ucp-main {
   border-left: 2px solid #ddd;
-  padding-left: 20px;      
+  padding-left: 20px;
 }
 
 dl.details {
@@ -377,15 +388,15 @@ dl.details {
 }
 
 dl.details dt {
-  clear:left;  
+  clear:left;
   float:left;
-  width: 20%; 
+  width: 20%;
 }
 
 dl.details dd {
   float:left;
   text-align:left;
-  margin-bottom:20px;  
+  margin-bottom:20px;
 }
 
 fieldset.ucp-profile-details {
@@ -393,7 +404,7 @@ fieldset.ucp-profile-details {
 }
 
 fieldset.ucp-profile-details dl {
-  margin: 0px;  
+  margin: 0px;
 }
 
 .ucp-profile-reg-details dl dt label {
@@ -403,12 +414,13 @@ fieldset.ucp-profile-details dl {
 
 .ucp-profile-reg-details dl dt span {
   font-weight: normal;
-  color:  #888;    
+  color:  #888;
 }
 
 .ucp-prefs-personal dl dd label,
 .ucp-prefs-post dl dd label,
-.ucp-prefs-view dl dd label {
+.ucp-prefs-view dl dd label,
+.ucp-groups-manage dl dd label {
   float: left;
   margin-left: 10px;
   line-height: 20px;
@@ -416,6 +428,8 @@ fieldset.ucp-profile-details dl {
 
 .ucp-prefs-personal dl dd label input,
 .ucp-prefs-post dl dd label input,
-.ucp-prefs-view dl dd label input {
+.ucp-prefs-view dl dd label input,
+.ucp-groups-manage dl dd label input,
+.ucp-groups-membership div.tablerow input {
   margin-top: 0px;
 }

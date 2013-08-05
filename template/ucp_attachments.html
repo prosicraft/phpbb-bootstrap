@@ -4,32 +4,31 @@
 
 <h2>{L_TITLE}</h2>
 
-<div class="panel">
-	
-	
-	<p>{L_ATTACHMENTS_EXPLAIN}</p>
+<p class="description">{L_ATTACHMENTS_EXPLAIN}</p>
+
+<div class="medium-bottom-margin">
 
 	<!-- IF .attachrow -->
-		<ul class="linklist">
-			<li class="rightside pagination">
-				<!-- IF TOTAL_ATTACHMENTS -->{TOTAL_ATTACHMENTS} {L_TITLE}<!-- ENDIF -->
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
-			</li>
-		</ul>
-		
-		<div class="forumrow-container">
-				
-			<div class="forumrow header category">								
+		<div class="pull-left small-bottom-margin" style="line-height:25px">
+			<!-- IF TOTAL_ATTACHMENTS -->{TOTAL_ATTACHMENTS} {L_TITLE}<!-- ENDIF -->
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
+		</div>
+
+		<div class="clearfix"></div>
+
+		<div class="box small-padding small-bottom-margin">
+
+			<div class="header">
 				<div class="row-fluid">
 					<div class="span6"><a href="{U_SORT_FILENAME}">{L_FILENAME} </a></div>
 					<div class="span2 text-center"><a href="{U_SORT_DOWNLOADS}">{L_DOWNLOADS} </a></div>
 					<div class="span2"><span><a href="{U_SORT_POST_TIME}">{L_POST_TIME} </a></span></div>
 					<div class="span2">{L_MARK} </div>
 				</div>
-			</div>													
-	
+			</div>
+
 			<!-- BEGIN attachrow -->
-			<div class="forumrow <!-- IF attachrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+			<div class="tablerow <!-- IF attachrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
 				<div class="row-fluid">
 					<div class="span6"><a href="{attachrow.U_VIEW_ATTACHMENT}" class="topictitle">{attachrow.FILENAME}</a> ({attachrow.SIZE})<br />
 						<!-- IF attachrow.S_IN_MESSAGE -->{L_PM}: <!-- ELSE -->{L_TOPIC}: <!-- ENDIF --><a href="{attachrow.U_VIEW_TOPIC}">{attachrow.TOPIC_TITLE}</a></div>
@@ -38,36 +37,34 @@
 					<div class="span2"><input type="checkbox" name="attachment[{attachrow.ATTACH_ID}]" value="1" /></div>
 				</div>
 			</div>
-			<!-- END attachrow -->			
-			
+			<!-- END attachrow -->
+
 		</div>
 
 		<fieldset class="form-inline pull-right">
 			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 			<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
-			<label class="pull-left" for="sk">{L_SORT_BY}: <select name="sk" id="sk">{S_SORT_OPTIONS} </select></label> 
-			<label class="pull-left"><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
-			<input class="small-left-margin btn btn-small" type="submit" name="sort" value="{L_SORT}" />
+			<label for="sk">{L_SORT_BY}: <select name="sk" id="sk">{S_SORT_OPTIONS} </select></label>
+			<label><select name="sd" id="sd">{S_ORDER_SELECT}</select></label>
+			<input class="btn btn-small" type="submit" name="sort" value="{L_SORT}" />
 			{S_FORM_TOKEN}
 		</fieldset>
-		
-		
-		<ul class="linklist">
-			<li class="rightside pagination">
-				<!-- IF TOTAL_ATTACHMENTS -->{TOTAL_ATTACHMENTS} {L_TITLE}<!-- ENDIF -->
-				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
-			</li>
-		</ul>
+
+
+		<div class="pull-left" style="line-height:25px">
+			<!-- IF TOTAL_ATTACHMENTS -->{TOTAL_ATTACHMENTS} {L_TITLE}<!-- ENDIF -->
+			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
+		</div>
 	<!-- ELSE -->
 		<p><strong>{L_UCP_NO_ATTACHMENTS}</strong></p>
 	<!-- ENDIF -->
 
-	
+
 </div>
-	
+
 <!-- IF S_ATTACHMENT_ROWS -->
-	<fieldset class="display-actions btn-group pull-right">	
-		<input class="btn btn-small strong" type="submit" name="delete" value="{L_DELETE_MARKED}" />		
+	<fieldset class="display-actions btn-group pull-right">
+		<input class="btn btn-small strong" type="submit" name="delete" value="{L_DELETE_MARKED}" />
 		<a class="btn btn-small" href="#" onclick="marklist('ucp', 'attachment', true); return false;">{L_MARK_ALL} </a>
 		<a class="btn btn-small" href="#" onclick="marklist('ucp', 'attachment', false); return false;">{L_UNMARK_ALL} </a>
 		{S_FORM_TOKEN}
