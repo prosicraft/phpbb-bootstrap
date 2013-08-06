@@ -14,22 +14,24 @@
 		</div>
 	</div>
 
-	<div class="btn-toolbar pull-right">
+	<div class="btn-toolbar responsive-toolbar pull-right">
 		<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
-		<div class="btn-group">
+		<div class="btn-group responsive-left-group">
 			<!-- IF S_DISPLAY_SEARCH -->
-				<a class="btn btn-small" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
-				<!-- IF S_LOAD_UNREADS --><a class="btn btn-small" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- ENDIF -->
-				<a class="btn btn-small" href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
-				<!-- IF S_USER_LOGGED_IN --><a class="btn btn-small" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><!-- ENDIF -->
+				<div class="<!-- IF S_LOAD_UNREADS -->responsive-linegroup<!-- ELSE -->responsive-linemerge<!-- ENDIF -->">
+					<a class="btn btn-small btn-first" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
+					<!-- IF S_LOAD_UNREADS --><a class="btn btn-small" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- ENDIF -->
+				</div>
+				<div class="<!-- IF S_USER_LOGGED_IN -->responsive-linegroup<!-- ELSE -->responsive-linemerge<!-- ENDIF -->">
+					<a class="btn btn-small btn-last" href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
+					<!-- IF S_USER_LOGGED_IN --><a class="btn btn-small" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><!-- ENDIF -->
+				</div>
 			<!-- ENDIF -->
 		</div>
 		<!-- ENDIF -->
 
 		<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-		<div class="btn-group">
-			<a class="btn btn-small" href="{U_MARK_FORUMS}" accesskey="m"><i class="icon-ok"></i> {L_MARK_FORUMS_READ}</a>
-		</div>
+		<a class="btn btn-small responsive-mark-forums-read" href="{U_MARK_FORUMS}" accesskey="m"><i class="icon-ok"></i>{L_MARK_FORUMS_READ}</a>
 		<!-- ENDIF -->
 	</div>
 </div>
