@@ -143,7 +143,7 @@
 		</header>
 
 		<!-- Main Navigation -->
-		<div class="navbar navbar-static-top navbar-inverse">
+		<div class="navbar navbar-static-top navbar-inverse pagenavbar">
 			<div class="navbar-inner">
 				<ul class="nav">
 					<li><a href="{U_INDEX}" accesskey="h"><i class="icon-home"></i> {L_INDEX}</a></li>
@@ -195,18 +195,20 @@
 		<!-- end main nav -->
 
 		<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-		<form method="post" action="{S_LOGIN_ACTION}" class="form form-vertical pull-right span3 quicklogin" id="quicklogin-form">
-			<label for="username">{L_USERNAME}:</label>
-			<input type="text" name="username" id="username" size="10" class="input-block-level" title="{L_USERNAME}" />
+		<div class="form form-vertical pull-right span3 quicklogin" id="quicklogin-form">
+			<form method="post" action="{S_LOGIN_ACTION}">
+				<label for="username">{L_USERNAME}:</label>
+				<input type="text" name="username" id="username" size="10" class="input-block-level" title="{L_USERNAME}" />
 
-			<label for="password">{L_PASSWORD}:</label>
-			<input type="password" name="password" id="password" size="10" class="input-block-level" title="{L_PASSWORD}" />
-			<!-- IF S_AUTOLOGIN_ENABLED -->
-			<label for="autologin" class="checkbox"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>
-			<!-- ENDIF -->
-			<button type="submit" name="login" class="btn btn-block btn-primary"><i class="icon-lock"></i> {L_LOGIN}</button>
-			{S_LOGIN_REDIRECT}
-		</form>
+				<label for="password">{L_PASSWORD}:</label>
+				<input type="password" name="password" id="password" size="10" class="input-block-level" title="{L_PASSWORD}" />
+				<!-- IF S_AUTOLOGIN_ENABLED -->
+				<label for="autologin" class="checkbox"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>
+				<!-- ENDIF -->
+				{S_LOGIN_REDIRECT}
+				<button type="submit" name="login" class="btn btn-block btn-primary"><i class="icon-lock"></i> {L_LOGIN}</input>
+			</form>
+		</div>
 		<!-- ENDIF -->
 
 

@@ -7,11 +7,12 @@ $(document).ready(function() {
 		var $link  = $(this).parent();
 
 		if ($qform) {
-			if ($qform.hasClass("in")) {
-				$qform.removeClass("in");
+			if ($qform.is(":visible")) {
+				$qform.hide();
 				$link.removeClass("active");
 			} else {
-				$qform.addClass("in");
+
+				$qform.show();
 				$link.addClass("active");
 			}
 		}
@@ -19,7 +20,7 @@ $(document).ready(function() {
 
 	$("body").on("click", function(e) {
 		$("#login-trigger").parent().removeClass("active");
-		$("#quicklogin-form").removeClass("in");
+		$("#quicklogin-form").hide();
 	});
 
 	$("#quicklogin-form").click(function(e) {
