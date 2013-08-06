@@ -110,7 +110,7 @@
 
 </head>
 
-<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}">
+<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" ontouchstart="">
 
 	<!--
 		start main wrapper
@@ -145,17 +145,18 @@
 		<!-- Main Navigation -->
 		<div class="navbar navbar-static-top navbar-inverse pagenavbar">
 			<div class="navbar-inner">
-				<ul class="nav">
-					<li><a href="{U_INDEX}" accesskey="h"><i class="icon-home"></i> {L_INDEX}</a></li>
+				<div class="responsive-nav-trigger<!-- IF not S_USER_LOGGED_IN --> not-on-handheld<!-- ENDIF -->" tabindex="0"><i class="icon-reorder"></i></div>
+				<ul class="nav responsive-nav<!-- IF not S_USER_LOGGED_IN --> not-on-handheld<!-- ENDIF -->">
+					<li><a href="{U_INDEX}" accesskey="h"><i class="icon-home"></i> {L_INDEX}</a>											</li>
 
 					<!-- IF not S_IS_BOT -->
-					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}">{L_MEMBERLIST}</a></li><!-- ENDIF -->
-					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a></li>
+					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-group"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
+					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-info"></i> {L_FAQ}</a></li>
 					<!-- ENDIF -->
 				</ul>
 
 				<!-- IF not S_IS_BOT -->
-				<ul class="nav pull-right">
+				<ul class="nav pull-right" id="responsive-nav">
 
 					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
 					<li><a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a></li>
@@ -168,13 +169,13 @@
 						<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
 						<!-- ENDIF -->
 						<!-- IF S_DISPLAY_PM -->
-						<li><a href="{U_PRIVATEMSGS}"><i class="icon-envelope-alt"></i> {PRIVATE_MESSAGE_INFO}</a></li>
+						<li><a href="{U_PRIVATEMSGS}" class="responsive-navitem-privmsgs"><i class="icon-envelope-alt"></i> {PRIVATE_MESSAGE_INFO}</a></li>
 						<!-- ENDIF -->
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<div class="responsive-dropdown-trigger dropdown-toggle" tabindex="0">
 								<i class="icon-user"></i> {CURRENT_USERNAME} <i class="icon-caret-down"></i>
-							</a>
-							<ul class="dropdown-menu">
+							</div>
+							<ul class="dropdown-menu responsive-dropdown-menu">
 								<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-cog"></i> {L_PROFILE}</a></li>
 								<!-- IF S_DISPLAY_SEARCH -->
 								<li><a href="{U_SEARCH_SELF}"><i class="icon-comment"></i> {L_SEARCH_SELF}</a></li>

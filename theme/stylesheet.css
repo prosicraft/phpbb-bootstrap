@@ -163,8 +163,9 @@ label.strong {
     display: block;
   }
   .not-on-tab,
+  .not-on-handheld,
   .box .not-on-tab {
-    display: none;
+    display: none !important;
   }
   .box .tablerow .force-left-on-tab {
     float: left;
@@ -202,8 +203,9 @@ label.strong {
     display: block;
   }
   .not-on-smartphone,
+  .not-on-handheld,
   .box .not-on-smartphone {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -285,6 +287,21 @@ a:active {
     padding-right: 0px;
     width: 100%;
   }
+}
+.responsive-nav-trigger {
+  display: none;
+}
+.responsive-dropdown-trigger {
+  color: #999;
+  padding: 10px 5px 10px 5px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+.responsive-dropdown-trigger:hover {
+  color: #fff;
+}
+.responsive-dropdown-trigger:focus + .responsive-dropdown-menu {
+  display: block;
 }
 @media all and (max-width: 768px) {
   #wrap .quicklogin {
@@ -718,6 +735,11 @@ fieldset.ucp-profile-details dl {
   .box .tablerow .responsive-title {
     min-width: 300px;
   }
+  .responsive-navitem-privmsgs {
+    width: 12px;
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
 }
 
 @media all and (max-width:520px) {
@@ -751,5 +773,57 @@ fieldset.ucp-profile-details dl {
   .box .tablerow .responsive-title {
     width: 100%;
     min-width: 100px;
+  }
+}
+
+@media all and (max-width:470px) {
+  /* switch to drop-down navmenu */
+  .responsive-nav {
+    width: 50%;
+    height: 45px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  }
+
+  #wrap .responsive-nav > li {
+    clear: left;
+    display: block;
+    float: none;
+  }
+
+  #wrap .responsive-nav > li a {
+    float: left;
+    width: 90%;
+    border: 1px solid transparent;
+    margin-right: 0px;
+    margin-left: 5px;
+    padding-right: 0px;
+  }
+
+  #wrap .responsive-nav > li a:hover {
+    background: rgba(0,0,0, 0.3);
+    border-radius: 4px;
+  }
+
+  .responsive-nav-trigger i {
+    color: #999;
+    font-size: 21px;
+  }
+  .responsive-nav-trigger {
+    display: block;
+    float: left;
+    position: relative;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+  .responsive-nav-trigger:hover > i {
+    color: #e3e3e3;
+  }
+  .responsive-nav-trigger:focus {
+    outline: 0px;
+  }
+  .responsive-nav-trigger:focus + .responsive-nav {
+    height: 125px;
   }
 }
