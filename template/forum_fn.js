@@ -139,7 +139,7 @@ function subPanels(p)
 				e.style.display = 'block';
 				if (t)
 				{
-					t.className = 'activetab';
+					t.className = 'active';
 				}
 			}
 			else
