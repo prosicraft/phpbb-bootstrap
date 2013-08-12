@@ -78,6 +78,8 @@
 							<!-- IF not S_IS_BOT -->
 								<a href="{forumrow.U_LAST_POST}"><i class="icon-caret-right"></i></a>
 							<!-- ENDIF -->
+							{forumrow.LAST_POST}
+							<!-- IF forumrow.LAST_POST_LINK --><i>{forumrow.LAST_POST_LINK}</i><br /><!-- ENDIF -->
 							<br /><small><i class="icon-time"></i> {forumrow.LAST_POST_TIME}</small>
 						<!-- ELSE -->
 							{L_NO_POSTS}
