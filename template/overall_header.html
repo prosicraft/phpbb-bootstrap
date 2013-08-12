@@ -121,18 +121,17 @@
 		<header id="pageheader">
 			<div class="container-fluid">
 				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-					<div id="searchbox" class="pull-right">
-						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">
-						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">
-						<p class="text-center">
-							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
-						</p>
-						{S_SEARCH_HIDDEN_FIELDS}
-						</form>
-
+					<div id="searchbox">
 						<p class="pull-right">
 							<small><a href="#start_here">{L_SKIP} &darr;</a></small>
 						</p>
+						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">						
+						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">						
+						<p class="responsive-inline not-on-tab">
+							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
+						</p>
+						{S_SEARCH_HIDDEN_FIELDS}
+						</form>					
 					</div>
 				<!-- ENDIF -->
 

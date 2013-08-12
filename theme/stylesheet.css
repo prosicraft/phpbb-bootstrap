@@ -251,7 +251,29 @@ a:active {
   clear:both;
 }
 #pageheader #searchbox {
-  margin-top: 20px;
+  float: right;    
+}
+#pageheader #searchbox p {
+  float: right;
+}
+#pageheader #searchbox #search  {
+  clear: both;
+  margin-top: 180px;
+  margin-bottom: 0px;
+}
+#pageheader #searchbox #search .responsive-inline {
+  margin-left: 5px;
+  display: inline-block;
+  float: none;
+}
+@media all and (max-width:440px) {
+  #pageheader #searchbox {
+    float: left;
+    width: 100%;          
+  }
+  #pageheader #searchbox #search input {
+    width: 90%;        
+  }
 }
 #pageheader #searchbox .search-query {
   opacity: 0.8;
