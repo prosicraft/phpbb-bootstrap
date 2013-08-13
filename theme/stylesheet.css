@@ -151,6 +151,11 @@ label.strong {
 .row-fluid .span11-keepsize { min-width: 550px; width: 91.48936170212765%; }
 .row-fluid .span12-keepsize { width: 100%; }
 
+/* Small-Button-Icons */
+.btn-small i {
+  font-size: 13px;  
+}
+
 /* displaying */
 .only-on-handheld { display: none; }
 .only-on-tab { display: none; }
