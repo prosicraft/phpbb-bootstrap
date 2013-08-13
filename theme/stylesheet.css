@@ -471,6 +471,12 @@ ul.overall-footer-nav-right li div.responsivenavitem {
   float:right;
 }
 
+.viewforum-pagination-top {
+  list-style-type: none;
+  margin: 10px 0px;
+  padding: 0px;
+}
+
 .greylabel {
   color: #777;
 }
