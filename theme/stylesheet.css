@@ -667,8 +667,40 @@ ul.overall-footer-nav-right li div.responsivenavitem {
   }
 }
 
+@media all and (max-width:768px) {
+  .topic-container .postprofile {
+    float: none;
+    width: 100%;
+    border: 0px;
+    margin-top: 15px;
+    min-height: 120px;
+    border-bottom: 1px dotted #ccc;
+  }
+  .topic-container .postprofile .poster-description,
+  .topic-container .postprofile .avatar {
+    float: left;
+  }
+  .topic-container .postprofile .poster-description {
+    margin-left: 20px;
+  }
+  .topic-container .postprofile .poster-description .post-buttons {
+    float: right;
+    position: relative;
+  }
+  .topic-container .postprofile .avatar img {
+    max-width: 80px;
+  }
+  .topic-container .postbody {
+    float: none;
+    padding-left: 0px;
+  }
+  .topic-container .postbody h3.postheader {
+    margin-top: 10px;
+  }
+}
+
 /******************************************************************************/
-/* posting related stuff */
+/* posting editor related stuff */
 
 .posting-container {
 }
