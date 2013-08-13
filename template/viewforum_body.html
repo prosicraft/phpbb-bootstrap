@@ -245,34 +245,24 @@
 		<fieldset class="display-options">
 			<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="pull-left {S_CONTENT_FLOW_BEGIN}"><i class="icon-caret-left"></i>&nbsp;{L_PREVIOUS} </a><!-- ENDIF -->
 			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="pull-right {S_CONTENT_FLOW_END}">{L_NEXT}&nbsp;<i class="icon-caret-right"></i></a><!-- ENDIF -->
-	<!-- IF not S_IS_BOT -->
-		<div class="row-fluid">
-			<div class="span4">
-				<span class="pull-right">
-					{L_DISPLAY_TOPICS}:
-				</span>
-			</div>
-			<div class="span1 small-select-wrapper">
+		<!-- IF not S_IS_BOT -->
+			<div class="pull-left form-inline v-centered">
+				<div class="pull-left small-select-wrapper">
+					<div class="pull-left form-inline-text description small-right-margin not-on-tab">{L_DISPLAY_TOPICS}:</div>
 					{S_SELECT_SORT_DAYS}
-			</div>
-			<div class="span6 no-left-margin small-select-wrapper">
-				<div class="row-fluid">
-					<span class="span3 text-right">
-						{L_SORT_BY}
-					</span>
-					<div class="span3">
-						{S_SELECT_SORT_KEY}
+				</div>
+				<div class="pull-left small-left-margin">
+					<div class="pull-left form-inline-text description not-on-handheld">
+						{L_SORT_BY}:
 					</div>
-					<div class="span3">
+					<div class="pull-left small-select-wrapper small-left-margin">
+						{S_SELECT_SORT_KEY}
 						{S_SELECT_SORT_DIR}
 					</div>
-					<div class="span3">
-						<input class="btn btn-medium" type="submit" name="sort" value="{L_GO}" class="button2" />
-					</div>
+					<input class="btn btn-medium pull-left" type="submit" name="sort" value="{L_GO}" class="button2" />
 				</div>
 			</div>
-		</div>
-	<!-- ENDIF -->
+		<!-- ENDIF -->
 		</fieldset>
 	</form>
 	<hr />
