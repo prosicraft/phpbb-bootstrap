@@ -153,7 +153,14 @@ label.strong {
 
 /* Small-Button-Icons */
 .btn-small i {
-  font-size: 13px;  
+  font-size: 13px;
+}
+
+/* pre-formatted containers */
+p.error,
+div.error {
+  color: #f36622;
+  font-weight: bold;
 }
 
 /* displaying */
@@ -256,7 +263,7 @@ a:active {
   clear:both;
 }
 #pageheader #searchbox {
-  float: right;    
+  float: right;
 }
 #pageheader #searchbox p {
   float: right;
@@ -274,10 +281,10 @@ a:active {
 @media all and (max-width:440px) {
   #pageheader #searchbox {
     float: left;
-    width: 100%;          
+    width: 100%;
   }
   #pageheader #searchbox #search input {
-    width: 90%;        
+    width: 90%;
   }
 }
 #pageheader #searchbox .search-query {
