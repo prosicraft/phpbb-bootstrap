@@ -334,8 +334,20 @@ a:active {
 .responsive-dropdown-trigger:hover {
   color: #fff;
 }
-.responsive-dropdown-trigger:focus + .responsive-dropdown-menu {
+.responsive-dropdown-menu {
+  transition: height 50ms, padding 50ms, border 50ms;
+  transition-delay: 150ms;
   display: block;
+  height: 0px;
+  overflow: hidden;
+  padding: 0px;
+  border: 0px;
+}
+.responsive-dropdown-trigger:focus + .responsive-dropdown-menu {
+  padding: 5px;
+  height: 150px;
+  border: 1px solid #ccc;
+  padding: 5px 0;
 }
 @media all and (max-width: 768px) {
   #wrap .quicklogin {
@@ -817,6 +829,8 @@ fieldset.ucp-profile-details dl {
     height: 45px;
     overflow-y: hidden;
     overflow-x: hidden;
+    transition: height 50ms;
+    transition-delay: 100ms;
   }
 
   #wrap .responsive-nav > li {
@@ -859,5 +873,12 @@ fieldset.ucp-profile-details dl {
   }
   .responsive-nav-trigger:focus + .responsive-nav {
     height: 125px;
+  }
+}
+
+/* Nice looking navi transitions */
+@media (min-width:1025px) {
+  .pagenavbar .nav > li > a {
+    transition: color 200ms;
   }
 }
