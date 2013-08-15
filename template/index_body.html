@@ -1,6 +1,6 @@
 <!-- INCLUDE overall_header.html -->
 
-<div class="row-fluid">
+<div class="row-fluid index-toolbar">
 	<div class="clearfix">
 		<ul class="inline pull-right lastvisit">
 			<li><small><i class="icon-time"></i> <!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></small></li>
@@ -8,30 +8,29 @@
 		</ul>
 	</div>
 
-	<div class="btn-toolbar pull-left">
+	<div class="btn-toolbar pull-left not-on-smartphone">
 		<div class="btn-group">
 			<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small"><i class="icon-cogs"></i> {L_MCP}</a><!-- ENDIF -->
 		</div>
 	</div>
 
-	<div class="btn-toolbar responsive-toolbar pull-right">
+	<div class="btn-toolbar main-toolbar">
 		<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
-		<div class="btn-group responsive-left-group">
+		<div class="btn-group">
+			<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small only-on-smartphone"><i class="icon-cogs"></i>&nbsp;</a><!-- ENDIF -->
 			<!-- IF S_DISPLAY_SEARCH -->
-				<div class="<!-- IF S_LOAD_UNREADS -->responsive-linegroup<!-- ELSE -->responsive-linemerge<!-- ENDIF -->">
-					<a class="btn btn-small btn-first" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
-					<!-- IF S_LOAD_UNREADS --><a class="btn btn-small" href="{U_SEARCH_UNREAD}">{L_SEARCH_UNREAD}</a><!-- ENDIF -->
-				</div>
-				<div class="<!-- IF S_USER_LOGGED_IN -->responsive-linegroup<!-- ELSE -->responsive-linemerge<!-- ENDIF -->">
-					<a class="btn btn-small btn-last" href="{U_SEARCH_ACTIVE_TOPICS}">{L_SEARCH_ACTIVE_TOPICS}</a>
-					<!-- IF S_USER_LOGGED_IN --><a class="btn btn-small" href="{U_SEARCH_NEW}">{L_SEARCH_NEW}</a><!-- ENDIF -->
-				</div>
+				<a class="btn btn-small not-on-smartphone" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
+			<!-- ENDIF -->
+			<!-- IF S_DISPLAY_SEARCH -->
+				<!-- IF S_LOAD_UNREADS --><a class="btn btn-small" href="{U_SEARCH_UNREAD}"><i class="icon-bell-alt"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_UNREAD}</span></a><!-- ENDIF -->
+				<a class="btn btn-small btn-last" href="{U_SEARCH_ACTIVE_TOPICS}"><i class="icon-fire"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_ACTIVE_TOPICS}</span></a>
+				<!-- IF S_USER_LOGGED_IN --><a class="btn btn-small" href="{U_SEARCH_NEW}"><i class="icon-certificate"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_NEW}</span></a><!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
 		<!-- ENDIF -->
 
 		<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-		<a class="btn btn-small responsive-mark-forums-read" href="{U_MARK_FORUMS}" accesskey="m"><i class="icon-ok"></i>{L_MARK_FORUMS_READ}</a>
+		<a class="btn btn-small responsive-mark-forums-read not-on-smartphone" href="{U_MARK_FORUMS}" accesskey="m"><i class="icon-ok"></i>{L_MARK_FORUMS_READ}</a>
 		<!-- ENDIF -->
 	</div>
 </div>

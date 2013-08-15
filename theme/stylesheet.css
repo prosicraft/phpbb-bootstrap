@@ -261,7 +261,7 @@ div.error {
   .box h2 {
     font-size: 20px;
   }
-  .box div.btn-group {
+  #wrap div.btn-group {
     clear: both;
     width: 100%;
     border-top: 1px solid #ccc;
@@ -270,13 +270,13 @@ div.error {
     text-align: center;
     background-color: #efefef;
   }
-  .box div.btn-group .btn:first-child {
+  #wrap div.btn-group .btn:first-child {
     margin-left: 1px;
   }
-  .box div.btn-group .btn:last-child {
+  #wrap div.btn-group .btn:last-child {
     margin-left: -1px;
   }
-  .box div.btn-group .btn {
+  #wrap div.btn-group .btn {
     border: 0;
     border-radius: 0px;
     background: transparent;
@@ -290,10 +290,10 @@ div.error {
     margin-bottom: 3px;
     max-height: 10px;
   }
-  .box div.btn-group .btn i {
+  #wrap div.btn-group .btn i {
     font-size: 18px;
   }
-  .box div.btn-group .btn:hover {
+  #wrap div.btn-group .btn:hover {
     background-color: #fff;
   }
 }
@@ -536,6 +536,32 @@ ul.overall-footer-nav-right li div.responsivenavitem {
 /*.small-select-wrapper, .small-select-wrapper select {
   width: 150px;
 } */
+
+
+/******************************************************************************/
+/* INDEX RELATED STUFF */
+
+.main-toolbar {
+  float: right;
+}
+
+@media all and (max-width:486px) {
+  .main-toolbar {
+    float: none;
+  }
+  #wrap .main-toolbar .btn-group > .btn {
+    min-width: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-height: 30px;
+  }
+  #wrap .main-toolbar .only-on-smartphone {
+    display: inline-block;
+  }
+  #wrap .main-toolbar .btn.only-on-smartphone:hover {
+    background-color: #fca;
+  }
+}
 
 /******************************************************************************/
 /* VIEWFORUM RELATED STUFF */
