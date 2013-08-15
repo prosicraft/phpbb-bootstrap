@@ -17,6 +17,10 @@
   font-size: 15px;
 }
 
+.box h2 {
+  font-size: 30px;
+}
+
 .box .tablerow {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -158,7 +162,7 @@ label.strong {
 
 /* Small-Button-Icons */
 .btn-small i {
-  font-size: 13px;
+  font-size: 14px;
 }
 
 /* pre-formatted containers */
@@ -175,14 +179,30 @@ div.error {
   line-height: 28px;
   margin-top: 0px;
 }
+.inline-block {
+  display: inline-block;
+}
 
 /* displaying */
 .only-on-handheld { display: none; }
 .only-on-tab { display: none; }
+.only-on-large-tab { display: none; }
 .only-on-smartphone { display: none; }
 
-/* tablet */
-@media all and (max-width:780px) {
+
+/* large tablet / landscape */
+@media all and (max-width:1024px)
+{
+  .only-on-large-tab {
+    display: block;
+  }
+  .not-on-large-tab {
+    display: none;
+  }
+}
+
+/* small tablet / portrait  */
+@media all and (max-width:840px) {
   .only-on-handheld,
   .only-on-tab {
     display: block;
@@ -219,6 +239,9 @@ div.error {
     margin-left: 0px;
     margin-top: 5px;
   }
+  .box h2 {
+    font-size: 25px;
+  }
 }
 
 /* smartphone */
@@ -234,6 +257,44 @@ div.error {
   }
   .small-select-wrapper select {
     max-width: 120px;
+  }
+  .box h2 {
+    font-size: 20px;
+  }
+  .box div.btn-group {
+    clear: both;
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0px;
+    text-align: center;
+    background-color: #efefef;
+  }
+  .box div.btn-group .btn:first-child {
+    margin-left: 1px;
+  }
+  .box div.btn-group .btn:last-child {
+    margin-left: -1px;
+  }
+  .box div.btn-group .btn {
+    border: 0;
+    border-radius: 0px;
+    background: transparent;
+    box-shadow: none;
+    border-left: 1px solid #d3d3d3;
+    border-right: 1px solid #d3d3d3;
+    min-width: 20px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    max-height: 10px;
+  }
+  .box div.btn-group .btn i {
+    font-size: 18px;
+  }
+  .box div.btn-group .btn:hover {
+    background-color: #fff;
   }
 }
 
@@ -767,6 +828,127 @@ ul.overall-footer-nav-right li div.responsivenavitem {
   margin: 0px;
   float:right;
 }
+
+.memberlist-view-details div.detailrow div,
+.memberlist-view-stats div.detailrow div {
+  float: left;
+  margin-bottom: 10px;
+}
+
+.memberlist-view-details div.detailrow > div:first-child {
+  font-weight: bold;
+  min-width: 120px;
+}
+
+.memberlist-view-stats div.detailrow > div:first-child {
+  font-weight: bold;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.memberlist-view-details div.detailrow,
+.memberlist-view-stats div.detailrow {
+  clear: left;
+}
+
+.memberlist-view-responsiveavatar-image,
+.memberlist-view-responsiveavatar-image img {
+  display: none;
+}
+
+.memberlist-view-nonresponsiveavatar {
+  border-right: 2px solid #e5e5e5;
+  padding-right: 20px;
+  min-height: 120px;
+}
+
+.memberlist-view-nonresponsiveavatar img {
+  border: transparent;
+  border-radius: 4px;
+}
+
+.memberlist-view-responsiveavatar {
+  min-height: 30px;
+  margin-bottom: 10px;
+}
+
+@media all and (max-width:840px) {
+  .memberlist-view-changegroup select {
+     max-width: 150px;
+  }
+  .memberlist-view-responsiveavatar {
+    min-height: 100px;
+    width: 100%;
+    position: relative;
+  }
+  .memberlist-view-nonresponsiveavatar {
+    display: none;
+  }
+  .memberlist-view-responsiveavatar-image {
+    position: absolute;
+    display: block;
+    width: inherit;
+    overflow: hidden;
+    min-height: 100px;
+    max-height: 100px;
+    border: 1px solid #aaa;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    background: #dadada;
+  }
+  .memberlist-view-responsiveavatar div.btn-group {
+    position: absolute;
+    z-index: 10;
+    top: 5px;
+    right: 5px;
+  }
+  .memberlist-view-responsiveavatar-image + div.btn-group a {
+    background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+    background-color: #f3f3f3;
+  }
+  .memberlist-view-responsiveavatar-image img {
+    width: 100%;
+    position: relative;
+    top: -150px;
+    opacity: 0.8;
+    display: block;
+  }
+  .memberlist-view-details,
+  .memberlist-view-stats {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+  .memberlist-view-details div.detailrow,
+  .memberlist-view-stats div.detailrow {
+    border-top: 1px solid #ddd;
+    width: 100%;
+    padding-top: 7px;
+  }
+  .memberlist-view-details div.detailrow:first-child,
+  .memberlist-view-stats div.detailrow:first-child {
+    border-top: 0px;
+  }
+  .memberlist-view-details div.detailrow div:first-child,
+  .memberlist-view-stats div.detailrow div:first-child {
+    margin-left: 10px;
+  }
+}
+
+@media all and (max-width:486px)
+{
+  .memberlist-view-responsiveavatar {
+    height: 150px;
+  }
+  .memberlist-view-responsiveavatar > div.btn-group {
+    position: relative;
+    right: 0px;
+  }
+  .memberlist-view-responsiveavatar-image {
+    top: 50px;
+  }
+}
+
 
 /******************************************************************************/
 /* UCP related stuff */

@@ -1,113 +1,120 @@
 <!-- INCLUDE overall_header.html -->
 
+<div class="box small-padding small-bottom-margin">
 <h2>{PAGE_TITLE}</h2>
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile">
 <div class="panel bg1<!-- IF S_ONLINE --> online<!-- ENDIF -->">
-	
-
-	<!-- IF AVATAR_IMG -->
-		<dl class="left-box">
-			<dt>{AVATAR_IMG}</dt>
-			<!-- IF RANK_TITLE --><dd style="text-align: center;">{RANK_TITLE}</dd><!-- ENDIF -->
-			<!-- IF RANK_IMG --><dd style="text-align: center;">{RANK_IMG}</dd><!-- ENDIF -->
-		</dl>
-	<!-- ENDIF -->
-
-	<dl class="left-box details" style="width: 80%;">
-		<dt>{L_USERNAME}:</dt>
-		<dd>
-			<!-- IF USER_COLOR --><span style="color: {USER_COLOR}; font-weight: bold;"><!-- ELSE --><span><!-- ENDIF -->{USERNAME}</span>
-			<!-- IF U_USER_ADMIN --> [ <a href="{U_USER_ADMIN}">{L_USER_ADMIN}</a> ]<!-- ENDIF -->
-			<!-- IF U_USER_BAN --> [ <a href="{U_USER_BAN}">{L_USER_BAN}</a> ]<!-- ENDIF -->
-			<!-- IF U_SWITCH_PERMISSIONS --> [ <a href="{U_SWITCH_PERMISSIONS}">{L_USE_PERMISSIONS}</a> ]<!-- ENDIF -->
-		</dd>
-		<!-- IF not AVATAR_IMG -->
-			<!-- IF RANK_TITLE --><dt>{L_RANK}:</dt> <dd>{RANK_TITLE}</dd><!-- ENDIF -->
-			<!-- IF RANK_IMG --><dt><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}:<!-- ENDIF --></dt> <dd>{RANK_IMG}</dd><!-- ENDIF -->
-		<!-- ENDIF -->
-		<!-- IF S_USER_INACTIVE --><dt>{L_USER_IS_INACTIVE}:</dt> <dd>{USER_INACTIVE_REASON}</dd><!-- ENDIF -->
-		<!-- IF LOCATION --><dt>{L_LOCATION}:</dt> <dd>{LOCATION}</dd><!-- ENDIF -->
-		<!-- IF AGE !== '' --><dt>{L_AGE}:</dt> <dd>{AGE}</dd><!-- ENDIF -->
-		<!-- IF OCCUPATION --><dt>{L_OCCUPATION}:</dt> <dd>{OCCUPATION}</dd><!-- ENDIF -->
-		<!-- IF INTERESTS --><dt>{L_INTERESTS}:</dt> <dd>{INTERESTS}</dd><!-- ENDIF -->
-		<!-- IF S_GROUP_OPTIONS --><dt>{L_USERGROUPS}:</dt> <dd><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_GO}" class="button2" /></dd><!-- ENDIF -->
-		<!-- BEGIN custom_fields --><dt>{custom_fields.PROFILE_FIELD_NAME}:</dt> <dd>{custom_fields.PROFILE_FIELD_VALUE}</dd><!-- END custom_fields -->
+	<div class="memberlist-view-responsiveavatar">
+		<div class="btn-group pull-right">
+		<!-- IF U_USER_ADMIN --><a class="btn btn-small" href="{U_USER_ADMIN}"><i class="icon-cog"></i>&nbsp;<span class="not-on-tab">{L_USER_ADMIN}</span></a><!-- ENDIF -->
+		<!-- IF U_USER_BAN --><a class="btn btn-small" href="{U_USER_BAN}"><i class="icon-ban-circle"></i>&nbsp;<span class="not-on-tab">{L_USER_BAN}</span></a><!-- ENDIF -->
+		<!-- IF U_SWITCH_PERMISSIONS --><a class="btn btn-small" href="{U_SWITCH_PERMISSIONS}"><i class="icon-terminal"></i>&nbsp;<span class="not-on-smartphone">{L_USE_PERMISSIONS}</span></a><!-- ENDIF -->
 		<!-- IF S_USER_LOGGED_IN and S_ZEBRA -->
 			<!-- IF U_REMOVE_FRIEND -->
-				<dt>&nbsp;</dt> <dd><a href="{U_REMOVE_FRIEND}"><strong>{L_REMOVE_FRIEND}</strong></a></dd>
+				<a class="btn btn-small" href="{U_REMOVE_FRIEND}"><strong>{L_REMOVE_FRIEND}</strong></a>
 			<!-- ELSEIF U_REMOVE_FOE -->
-				<dt>&nbsp;</dt> <dd><a href="{U_REMOVE_FOE}"><strong>{L_REMOVE_FOE}</strong></a></dd>
+				<a class="btn btn-small" href="{U_REMOVE_FOE}"><strong>{L_REMOVE_FOE}</strong></a>
 			<!-- ELSE -->
 				<!-- IF U_ADD_FRIEND -->
-					<dt>&nbsp;</dt> <dd><a href="{U_ADD_FRIEND}"><strong>{L_ADD_FRIEND}</strong></a></dd>
+					<a class="btn btn-small" href="{U_ADD_FRIEND}"><i class="icon-plus-sign-alt"></i>&nbsp;<strong class="not-on-tab">{L_ADD_FRIEND}</strong></a>
 				<!-- ENDIF -->
 				<!-- IF U_ADD_FOE -->
-					<dt>&nbsp;</dt> <dd><a href="{U_ADD_FOE}"><strong>{L_ADD_FOE}</strong></a></dd>
+					<a class="btn btn-small" href="{U_ADD_FOE}"><i class="icon-eye-close"></i>&nbsp;<strong class="not-on-large-tab">{L_ADD_FOE}</strong></a>
 				<!-- ENDIF -->
 			<!-- ENDIF -->
 		<!-- ENDIF -->
-	</dl>
+		</div>
+		<div class="memberlist-view-responsiveavatar-image">
+			{AVATAR_IMG}
+		</div>
+	</div>
 
-	
+	<!-- IF AVATAR_IMG -->
+		<div class="pull-left memberlist-view-nonresponsiveavatar">
+			{AVATAR_IMG}
+			<!-- IF RANK_TITLE --><div style="text-align: center;">{RANK_TITLE}</div><!-- ENDIF -->
+			<!-- IF RANK_IMG --><div style="text-align: center;">{RANK_IMG}</div><!-- ENDIF -->
+		</div>
+	<!-- ENDIF -->
+
+	<div class="pull-left small-left-margin memberlist-view-details">
+		<div class="detailrow">
+			<div class="strong">{L_USERNAME}:</div><div><!-- IF USER_COLOR --><span style="color: {USER_COLOR}; font-weight: bold;"><!-- ELSE --><span><!-- ENDIF -->{USERNAME}</span></div>
+		</div>
+		<!-- IF not AVATAR_IMG -->
+			<!-- IF RANK_TITLE --><div class="detailrow"><div>{L_RANK}: </div><div>{RANK_TITLE} </div></div><!-- ENDIF -->
+			<!-- IF RANK_IMG --><div class="detailrow"><div><!-- IF RANK_TITLE -->&nbsp;<!-- ELSE -->{L_RANK}:<!-- ENDIF --></div><div>{RANK_IMG}</div></div><!-- ENDIF -->
+		<!-- ENDIF -->
+		<!-- IF S_USER_INACTIVE --><div class="detailrow"><div>{L_USER_IS_INACTIVE}:</div> <div>{USER_INACTIVE_REASON}</div></div><!-- ENDIF -->
+		<!-- IF LOCATION --><div class="detailrow"><div>{L_LOCATION}:</div> <div>{LOCATION}</div></div><!-- ENDIF -->
+		<!-- IF AGE !== '' --><div class="detailrow"><div>{L_AGE}:</div> <div>{AGE}</div></div><!-- ENDIF -->
+		<!-- IF OCCUPATION --><div class="detailrow"><div>{L_OCCUPATION}:</div> <div>{OCCUPATION}</div></div><!-- ENDIF -->
+		<!-- IF INTERESTS --><div class="detailrow"><div>{L_INTERESTS}:</div> <div>{INTERESTS}</div></div><!-- ENDIF -->
+		<!-- IF S_GROUP_OPTIONS --><div class="detailrow"><div>{L_USERGROUPS}:</div> <div class="form-inline memberlist-view-changegroup"><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_CHANGE}" class="btn btn-medium" /></div></div><!-- ENDIF -->
+		<!-- BEGIN custom_fields --><div class="detailrow"><div>{custom_fields.PROFILE_FIELD_NAME}:</div> <div>{custom_fields.PROFILE_FIELD_VALUE}</div></div><!-- END custom_fields -->
+	</div>
+
+
+</div>
 </div>
 
-<div class="panel bg2">
-	
+<div class="box small-padding">
+
 	<div class="column1">
 
-		<h3>{L_CONTACT_USER} {USERNAME}</h3>
+		<h2>{L_CONTACT_USER} {USERNAME}</h2>
 
-		<dl class="details">
-		<!-- IF U_EMAIL --><dt>{L_EMAIL_ADDRESS}:</dt> <dd><a href="{U_EMAIL}">{L_SEND_EMAIL_USER} {USERNAME}</a></dd><!-- ENDIF -->
-		<!-- IF U_WWW --><dt>{L_WEBSITE}:</dt> <dd><a href="{U_WWW}" title="{L_VISIT_WEBSITE}: {U_WWW}">{U_WWW}</a></dd><!-- ENDIF -->
-		<!-- IF U_PM --><dt>{L_PM}:</dt> <dd><a href="{U_PM}">{L_SEND_PRIVATE_MESSAGE}</a></dd><!-- ENDIF -->
-		<!-- IF U_MSN or USER_MSN --><dt>{L_MSNM}:</dt> <dd><!-- IF U_MSN --><a href="{U_MSN}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_MSNM_MESSAGE}</a><!-- ELSE -->{USER_MSN}<!-- ENDIF --></dd><!-- ENDIF -->
-		<!-- IF U_YIM or USER_YIM --><dt>{L_YIM}:</dt> <dd><!-- IF U_YIM --><a href="{U_YIM}" onclick="popup(this.href, 780, 550); return false;">{L_SEND_YIM_MESSAGE}</a><!-- ELSE -->{USER_YIM}<!-- ENDIF --></dd><!-- ENDIF -->
-		<!-- IF U_AIM or USER_AIM --><dt>{L_AIM}:</dt> <dd><!-- IF U_AIM --><a href="{U_AIM}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_AIM_MESSAGE}</a><!-- ELSE -->{USER_AIM}<!-- ENDIF --></dd><!-- ENDIF -->
-		<!-- IF U_ICQ or USER_ICQ --><dt>{L_ICQ}:</dt> <dd><!-- IF U_ICQ --><a href="{U_ICQ}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_ICQ_MESSAGE}</a><!-- ELSE -->{USER_ICQ}<!-- ENDIF --></dd><!-- ENDIF -->
-		<!-- IF U_JABBER and S_JABBER_ENABLED --><dt>{L_JABBER}:</dt> <dd><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_JABBER_MESSAGE}</a></dd><!-- ELSEIF USER_JABBER --><dt>{L_JABBER}:</dt> <dd>{USER_JABBER}</dd><!-- ENDIF -->
+		<div class="memberlist-view-stats">
+		<!-- IF U_EMAIL --><div class="detailrow"><div>{L_EMAIL_ADDRESS}:</div> <div><a href="{U_EMAIL}">{L_SEND_EMAIL_USER} {USERNAME}</a></div></div><!-- ENDIF -->
+		<!-- IF U_WWW --><div class="detailrow"><div>{L_WEBSITE}:</div> <div><a href="{U_WWW}" title="{L_VISIT_WEBSITE}: {U_WWW}">{U_WWW}</a></div></div><!-- ENDIF -->
+		<!-- IF U_PM --><div class="detailrow"><div>{L_PM}:</div> <div><a href="{U_PM}">{L_SEND_PRIVATE_MESSAGE}</a></div></div><!-- ENDIF -->
+		<!-- IF U_MSN or USER_MSN --><div class="detailrow"><div>{L_MSNM}:</div> <div><!-- IF U_MSN --><a href="{U_MSN}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_MSNM_MESSAGE}</a><!-- ELSE -->{USER_MSN}<!-- ENDIF --></div></div><!-- ENDIF -->
+		<!-- IF U_YIM or USER_YIM --><div class="detailrow"><div>{L_YIM}:</div> <div><!-- IF U_YIM --><a href="{U_YIM}" onclick="popup(this.href, 780, 550); return false;">{L_SEND_YIM_MESSAGE}</a><!-- ELSE -->{USER_YIM}<!-- ENDIF --></div></div><!-- ENDIF -->
+		<!-- IF U_AIM or USER_AIM --><div class="detailrow"><div>{L_AIM}:</div> <div><!-- IF U_AIM --><a href="{U_AIM}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_AIM_MESSAGE}</a><!-- ELSE -->{USER_AIM}<!-- ENDIF --></div></div><!-- ENDIF -->
+		<!-- IF U_ICQ or USER_ICQ --><div class="detailrow"><div>{L_ICQ}:</div> <div><!-- IF U_ICQ --><a href="{U_ICQ}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_ICQ_MESSAGE}</a><!-- ELSE -->{USER_ICQ}<!-- ENDIF --></div></div><!-- ENDIF -->
+		<!-- IF U_JABBER and S_JABBER_ENABLED --><div class="detailrow"><div>{L_JABBER}:</div> <div><a href="{U_JABBER}" onclick="popup(this.href, 550, 320); return false;">{L_SEND_JABBER_MESSAGE}</a></div></div><!-- ELSEIF USER_JABBER --><div class="detailrow"><div>{L_JABBER}:</dt> <div>{USER_JABBER}</div></div><!-- ENDIF -->
 		<!-- IF S_PROFILE_FIELD1 -->
 			<!-- NOTE: Use a construct like this to include admin defined profile fields. Replace FIELD1 with the name of your field. -->
-			<dt>{PROFILE_FIELD1_NAME}:</dt> <dd>{PROFILE_FIELD1_VALUE}</dd>
+			<div class="detailrow"><div>{PROFILE_FIELD1_NAME}:</div> <div>{PROFILE_FIELD1_VALUE}</div></div>
 		<!-- ENDIF -->
-		</dl>
+		</div>
 	</div>
+
+	<div class="clearfix"></div>
 
 	<div class="column2">
-		<h3>{L_USER_FORUM}</h3>
-		<dl class="details">
-			<dt>{L_JOINED}:</dt> <dd>{JOINED}</dd>
-			<dt>{L_VISITED}:</dt> <dd>{VISITED}</dd>
+		<h2>{L_USER_FORUM}</h2>
+		<div class="memberlist-view-stats">
+			<div class="detailrow"><div>{L_JOINED}:</div> <div>{JOINED}</div></div>
+			<div class="detailrow"><div>{L_VISITED}:</div> <div>{VISITED}</div></div>
 			<!-- IF S_WARNINGS -->
-			<dt>{L_WARNINGS}: </dt>
-			<dd><strong>{WARNINGS}</strong><!-- IF U_NOTES or U_WARN --> [ <!-- IF U_NOTES --><a href="{U_NOTES}">{L_VIEW_NOTES}</a><!-- ENDIF --> <!-- IF U_WARN --><!-- IF U_NOTES --> | <!-- ENDIF --><a href="{U_WARN}">{L_WARN_USER}</a><!-- ENDIF --> ]<!-- ENDIF --></dd>
+			<div class="detailrow"><div>{L_WARNINGS}: </div>
+			<div><strong class="pull-left">{WARNINGS}</strong>
+			<!-- IF U_NOTES or U_WARN --><div class="btn-group pull-left small-left-margin"><!-- IF U_NOTES --><a class="btn btn-small" href="{U_NOTES}"><i class="icon-info"></i>&nbsp;<span class="not-on-tab">{L_VIEW_NOTES}</span></a><!-- ENDIF --><!-- IF U_WARN --><a class="btn btn-small" href="{U_WARN}"><i class="icon-warning-sign"></i>&nbsp;<span class="not-on-tab">{L_WARN_USER}</span></a><!-- ENDIF --></div><!-- ENDIF --></div></div>
 			<!-- ENDIF -->
-			<dt>{L_TOTAL_POSTS}:</dt>
-				<dd>{POSTS} <!-- IF S_DISPLAY_SEARCH -->| <strong><a href="{U_SEARCH_USER}">{L_SEARCH_USER_POSTS}</a></strong><!-- ENDIF -->
+			<div class="detailrow"><div>{L_TOTAL_POSTS}:</div>
+				<div>{POSTS} <!-- IF S_DISPLAY_SEARCH -->| <strong><a href="{U_SEARCH_USER}">{L_SEARCH_USER_POSTS}</a></strong><!-- ENDIF -->
 					<!-- IF POSTS_PCT --><br />({POSTS_PCT} / {POSTS_DAY})<!-- ENDIF -->
 					<!-- IF POSTS_IN_QUEUE and U_MCP_QUEUE --><br />(<a href="{U_MCP_QUEUE}">{L_POSTS_IN_QUEUE}</a>)<!-- ELSEIF POSTS_IN_QUEUE --><br />({L_POSTS_IN_QUEUE})<!-- ENDIF -->
-				</dd>
+				</div>
+			</div>
 			<!-- IF S_SHOW_ACTIVITY and POSTS -->
-				<dt>{L_ACTIVE_IN_FORUM}:</dt> <dd><!-- IF ACTIVE_FORUM != '' --><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})<!-- ELSE --> - <!-- ENDIF --></dd>
-				<dt>{L_ACTIVE_IN_TOPIC}:</dt> <dd><!-- IF ACTIVE_TOPIC != '' --><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})<!-- ELSE --> - <!-- ENDIF --></dd>
+				<div class="detailrow"><div>{L_ACTIVE_IN_FORUM}:</div> <div><!-- IF ACTIVE_FORUM != '' --><strong><a href="{U_ACTIVE_FORUM}">{ACTIVE_FORUM}</a></strong><br />({ACTIVE_FORUM_POSTS} / {ACTIVE_FORUM_PCT})<!-- ELSE --> - <!-- ENDIF --></div></div>
+				<div class="detailrow"><div>{L_ACTIVE_IN_TOPIC}:</div> <div><!-- IF ACTIVE_TOPIC != '' --><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT})<!-- ELSE --> - <!-- ENDIF --></div></div>
 			<!-- ENDIF -->
-		</dl>
+		</div>
 	</div>
-	
-</div>
 
 <!-- IF SIGNATURE -->
-<div class="panel bg1">
-	
-
-		<h3>{L_SIGNATURE}</h3>
-
+	<div class="clearfix"></div>
+	<div>
+		<h2>{L_SIGNATURE}</h2>
 		<div class="postbody"><div class="signature" style="border-top:none; margin-top: 0;">{SIGNATURE}</div></div>
-
-	
-</div>
+	</div>
 <!-- ENDIF -->
+
+</div>
 
 </form>
 
