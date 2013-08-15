@@ -333,8 +333,15 @@ a:active {
   padding: 20px;
   background: #555555 url('./img/head.jpg') repeat 0 0;
   background-size: 100%;
+  background-position: center;
   color: #fff;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4);
+}
+@media all and (max-width:850px)
+{
+  #pageheader {
+  	background-size: 850px;
+  }
 }
 #pageheader .headcontainer {
   clear:both;
