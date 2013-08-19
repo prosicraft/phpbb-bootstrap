@@ -1,0 +1,59 @@
+/******************************************************************************/
+/* UCP related stuff */
+
+div.ucp-main {
+  border-left: 2px solid #ddd;
+  padding-left: 20px;
+}
+
+dl.details {
+  width:80%;
+  max-width: 700px;
+}
+
+dl.details dt {
+  clear:left;
+  float:left;
+  width: 20%;
+}
+
+dl.details dd {
+  float:left;
+  text-align:left;
+  margin-bottom:20px;
+}
+
+fieldset.ucp-profile-details {
+  padding: 20px;
+}
+
+fieldset.ucp-profile-details dl {
+  margin: 0px;
+}
+
+.ucp-profile-reg-details dl dt label {
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.ucp-profile-reg-details dl dt span {
+  font-weight: normal;
+  color:  #888;
+}
+
+.ucp-prefs-personal dl dd label,
+.ucp-prefs-post dl dd label,
+.ucp-prefs-view dl dd label,
+.ucp-groups-manage dl dd label {
+  float: left;
+  margin-left: 10px;
+  line-height: 20px;
+}
+
+.ucp-prefs-personal dl dd label input,
+.ucp-prefs-post dl dd label input,
+.ucp-prefs-view dl dd label input,
+.ucp-groups-manage dl dd label input,
+.ucp-groups-membership div.tablerow input {
+  margin-top: 0px;
+}

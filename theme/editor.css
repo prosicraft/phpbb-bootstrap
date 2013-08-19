@@ -1,0 +1,13 @@
+/******************************************************************************/
+/* posting editor related stuff */
+
+.posting-container {
+}
+
+.posting-container #message-box .inputbox {
+  width:100%;
+}
+
+.subjectinput {
+  width:50%;
+}

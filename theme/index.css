@@ -1,0 +1,24 @@
+/******************************************************************************/
+/* INDEX RELATED STUFF */
+
+.main-toolbar {
+  float: right;
+}
+
+@media all and (max-width:486px) {
+  .main-toolbar {
+    float: none;
+  }
+  #wrap .main-toolbar .btn-group > .btn {
+    min-width: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-height: 30px;
+  }
+  #wrap .main-toolbar .only-on-smartphone {
+    display: inline-block;
+  }
+  #wrap .main-toolbar .btn.only-on-smartphone:hover {
+    background-color: #fca;
+  }
+}

@@ -1,0 +1,128 @@
+/******************************************************************************/
+/* overall related stuff */
+
+ul.overall-footer-nav-right li div.responsivenavitem {
+  color: #777;
+  padding: 10px 15px 10px;
+  margin-bottom: 2px;
+  margin-top: 2px;
+  line-height: 14px;
+}
+
+.pagefooter div {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+/* Nice looking navi transitions */
+@media (min-width:1025px) {
+  .pagenavbar .nav > li > a {
+    transition: color 200ms;
+  }
+}
+
+@media all and (max-width:1000px)
+{
+	.pagefooter div {
+		padding-left: 5px;
+		padding-right: 5px;
+		margin-bottom: 20px;
+		width: 100%;
+		text-align: center;
+		float: none;
+	}
+}
+
+@media all and (max-width:770px) {
+	ul.overall-footer-nav-right li {
+	  clear:left;
+	}
+
+	ul.overall-footer-nav li {
+	  clear:left;
+	}
+
+	ul.overall-footer-nav li .responsivenavitem,
+	ul.overall-footer-nav-right li .responsivenavitem {
+	  padding: 2px;
+	  line-height: 20px;
+	}
+
+	ul.overall-footer-nav-right li div.responsivenavitem {
+	  padding: 2px;
+	  margin-top: 2px;
+	  line-height: 20px;
+	  color: #777;
+	}
+
+	ul.overall-footer-nav li a.firstitem,
+	ul.overall-footer-nav-right li a.firstitem {
+	  padding-top: 10px;
+	}
+}
+
+@media all and (max-width:600px) {
+  .responsive-navitem-privmsgs {
+    width: 12px;
+    overflow-x: hidden;
+    white-space: nowrap;
+  }
+}
+
+@media all and (max-width:470px) {
+  /* switch to drop-down navmenu */
+  .responsive-nav {
+    width: 50%;
+    height: 45px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: height 50ms;
+    transition-delay: 100ms;
+  }
+
+  #wrap .responsive-nav > li {
+    clear: left;
+    display: block;
+    float: none;
+  }
+
+  #wrap .responsive-nav > li a {
+    float: left;
+    width: 90%;
+    border: 1px solid transparent;
+    margin-right: 0px;
+    margin-left: 5px;
+    padding-right: 0px;
+  }
+
+  #wrap .responsive-nav > li a:hover {
+    background: rgba(0,0,0, 0.3);
+    border-radius: 4px;
+  }
+
+  .responsive-nav-trigger i {
+    color: #999;
+    font-size: 21px;
+  }
+  .responsive-nav-trigger {
+    display: block;
+    float: left;
+    position: relative;
+    padding: 10px 5px 10px 5px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+  .responsive-nav-trigger:hover > i {
+    color: #e3e3e3;
+  }
+  .responsive-nav-trigger:focus {
+    outline: 0px;
+  }
+  .responsive-nav-trigger:focus + .responsive-nav {
+    height: 125px;
+  }
+}
+
+/*.small-select-wrapper, .small-select-wrapper select {
+  width: 150px;
+} */
