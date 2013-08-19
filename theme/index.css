@@ -5,6 +5,33 @@
   float: right;
 }
 
+.box .tablerow .row-fluid .span-lastpost,
+.box .header .row-fluid .span-lastpost {
+  width: auto;
+}
+
+.box .header .row-fluid .span-lastpost {
+  margin-left: 30px;
+}
+
+
+@media all and (max-width:840px) {
+  .box .tablerow .row-fluid .span-lastpost {
+    width: 100%;
+    margin-left: 0px;
+    color: #888;
+  }
+  .box .tablerow .row-fluid .span-lastpost i.icon-caret-right {
+    font-size: 16px;
+  }
+  .box .tablerow .row-fluid .span-lastpost > div.lastpost {
+    margin-top: 0px;
+  }
+  .box .tablerow .row-fluid .span-lastpost br {
+    display: none;
+  }
+}
+
 @media all and (max-width:486px) {
   .main-toolbar {
     float: none;

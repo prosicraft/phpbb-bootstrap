@@ -245,6 +245,10 @@ div.error {
   .box .tablerow .responsive-lastpost {
     margin-left: 50px;
   }
+  .box .tablerow .responsive-lastpost-time {
+    width: auto;
+    display: inline-block;
+  }
   .box .tablerow .responsive-title {
     width: 74.46808510638297%;
   }
