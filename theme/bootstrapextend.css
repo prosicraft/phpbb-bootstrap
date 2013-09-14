@@ -111,6 +111,10 @@ label.strong {
   color:  #666;
 }
 
+.box input.checkbox {
+  margin-top: 0px;
+}
+
 /* left margin */
 .no-left-margin { margin-left: 0px; }
 .small-left-margin { margin-left: 10px; }

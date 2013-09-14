@@ -7,8 +7,8 @@
 </script>
 
 <form action="{S_LOGIN_ACTION}" method="post" id="login">
-<div class="panel">
-	
+<div class="box small-bottom-margin medium-padding">
+
 
 	<div class="content">
 		<h2><!-- IF LOGIN_EXPLAIN -->{LOGIN_EXPLAIN}<!-- ELSE -->{L_LOGIN}<!-- ENDIF --></h2>
@@ -33,35 +33,35 @@
 		<!-- ENDIF -->
 		<!-- IF S_DISPLAY_FULL_LOGIN -->
 		<dl>
-			<!-- IF S_AUTOLOGIN_ENABLED --><dd><label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</label></dd><!-- ENDIF -->
-			<dd><label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</label></dd>
+			<!-- IF S_AUTOLOGIN_ENABLED --><dd class="form-inline"><input class="checkbox" type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</dd><!-- ENDIF -->
+			<dd class="form-inline"><input class="checkbox" type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</dd>
 		</dl>
 		<!-- ENDIF -->
 
 		{S_LOGIN_REDIRECT}
 		<dl>
 			<dt>&nbsp;</dt>
-			<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="button1" /></dd>
+			<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="strong btn btn-small" /></dd>
 		</dl>
 		</fieldset>
 	</div>
-	
+
 </div>
 
 
 <!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
-	<div class="panel">
-		
+	<div class="box">
+
 
 		<div class="content">
 			<h3>{L_REGISTER}</h3>
 			<p>{L_LOGIN_INFO}</p>
 			<p><strong><a href="{U_TERMS_USE}">{L_TERMS_USE}</a> | <a href="{U_PRIVACY}">{L_PRIVACY}</a></strong></p>
 			<hr class="dashed" />
-			<p><a href="{U_REGISTER}" class="button2">{L_REGISTER}</a></p>
+			<p><a href="{U_REGISTER}" class="btn btn-small">{L_REGISTER}</a></p>
 		</div>
 
-		
+
 	</div>
 <!-- ENDIF -->
 
