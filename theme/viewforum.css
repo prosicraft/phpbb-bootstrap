@@ -59,6 +59,61 @@
   margin-left: -1px;
 }
 
+#page-body .topic-lastpost-head {
+  margin-left: 25px;
+}
+
+#page-body .topic-lastpost {
+  position: relative;
+  float: left;
+  margin-left: 25px;
+}
+
+#page-body .topic-lastpost .link {
+  position: relative;
+  top: 2px;
+  padding-left: 10px;
+  font-size: 18px;
+}
+
+#page-body .topic-title-head,
+#page-body .topic-title {
+  width: 60%;
+  float: left;
+}
+
+#page-body .topic-title {
+  height: 62px;
+}
+
+#page-body .topic-replies,
+#page-body .topic-replies-head {
+  min-height: 30px;
+  max-width: 100px;
+  width: 10%;
+  float: left;
+  position: relative;
+}
+
+#page-body .topic-replies {
+  padding-top: 3px;
+  height: 59px;
+}
+
+#page-body .topic-views,
+#page-body .topic-views-head {
+  max-width: 100px;
+  width: 10%;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+}
+
+#page-body .topic-views {
+  padding-top: 3px;
+  height: 59px;
+}
+
 @media all and (max-width: 1280px) {
   .display-options .v-centered {
     float: none;
@@ -69,8 +124,49 @@
   }
 }
 
-@media all and (max-width:786px) {
+@media all and (max-width: 1180px) {
+  #page-body .topic-lastpost-head {
+    display: none;
+  }
+  #page-body .topic-lastpost {
+    clear: left;
+    float: none;
+    width: 100%;
+  }
+  #page-body .topic-title,
+  #page-body .topic-title-head {
+    width: 75%;
+  }
+}
+
+@media all and (max-width:900px) {
+  #page-body .topic-replies, #page-body .topic-replies-head {
+    margin-left: 0px;
+    min-width: 70px;
+  }
+}
+
+@media all and (max-width:840px) {
   #page-body .responsive-mark-forums-read {
     float: right;
+  }
+
+  #page-body .topic-lastpost {
+    clear: left;
+    position: relative;
+    display: block;
+  }
+
+  #page-body .topic-title,
+  #page-body .topic-title-head {
+    width: auto;
+  }
+
+  #page-body .topic-replies,
+  #page-body .topic-replies-head {
+    width: 100px;
+    position: relative;
+    float: right;
+    margin-right: 20px;
   }
 }
