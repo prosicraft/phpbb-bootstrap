@@ -128,14 +128,14 @@
 		<div class="postprofile" id="profile{postrow.POST_ID}">
 			<!-- IF not S_IS_BOT -->
 			<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
-					<ul class="post-buttons btn-group pull-right only-on-tab">
+					<div class="post-buttons btn-group only-on-tab">
 						<!-- IF postrow.U_EDIT --><a class="btn btn-small" href="{postrow.U_EDIT}" title="{L_EDIT_POST}"><i class="icon-edit"></i></a><!-- ENDIF -->
 						<!-- IF postrow.U_DELETE --><a class="btn btn-small" href="{postrow.U_DELETE}" title="{L_DELETE_POST}"><i class="icon-trash"></i></a><!-- ENDIF -->
 						<!-- IF postrow.U_REPORT --><a class="btn btn-small" href="{postrow.U_REPORT}" title="{L_REPORT_POST}"><i class="icon-warning-sign"></i></a><!-- ENDIF -->
 						<!-- IF postrow.U_WARN --><a class="btn btn-small" href="{postrow.U_WARN}" title="{L_WARN_USER}"><i class="icon-ban-circle"></i></a><!-- ENDIF -->
 						<!-- IF postrow.U_INFO --><a class="btn btn-small" href="{postrow.U_INFO}" title="{L_INFORMATION}"><i class="icon-info-sign"></i></a><!-- ENDIF -->
-						<!-- IF postrow.U_QUOTE --><a class="btn btn-small" href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}"><span>{L_REPLY_WITH_QUOTE} </span></a><!-- ENDIF -->
-					</ul>
+						<!-- IF postrow.U_QUOTE --><a class="not-on-handheld btn btn-small" href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}"><span>{L_REPLY_WITH_QUOTE} </span></a><!-- ENDIF -->
+					</div>
 				<!-- ENDIF -->
 			<!-- ENDIF -->
 			<div class="avatar">

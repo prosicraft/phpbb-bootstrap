@@ -2,10 +2,10 @@
 /* topic related stuff */
 
 .topic-container .topic-post {
-  background: rgba(0, 0, 0, 0.03);
+  background: rgba(0, 0, 0, 0.08);
   background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
   padding: 5px 20px;
   border-radius: 4px;
   margin-bottom: 15px;
@@ -41,7 +41,8 @@
 }
 
 .topic-container .post-buttons {
-
+  position: relative;
+  right: 20px;
 }
 
 .topic-container .postbody .signature {
@@ -105,6 +106,9 @@
   .display-options label span.description {
     display:none;
   }
+  .topic-container .post-buttons {
+    position: absolute;
+  }
 }
 
 @media all and (max-width:850px) {
@@ -129,10 +133,6 @@
   .topic-container .postprofile .poster-description {
     margin-left: 20px;
   }
-  .topic-container .postprofile .poster-description .post-buttons {
-    float: right;
-    position: relative;
-  }
   .topic-container .postprofile .avatar img {
     max-width: 80px;
   }
@@ -142,5 +142,30 @@
   }
   .topic-container .postbody h3.postheader {
     margin-top: 10px;
+  }
+  .topic-container .post-quote {
+    display: none;
+  }
+}
+
+@media all and (max-width:500px)
+{
+  #wrap .topic-container div.post-buttons {
+    height: 25px;
+    max-width: 160px;
+  }
+  #wrap .topic-container div.post-buttons .btn {
+    height: 25px;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+  }
+  #wrap .topic-container div.post-buttons .btn i {
+    position: relative;
+    top: -4px;
+    font-size: 12px;
+    margin-top: 0px;
+    vertical-align: top;
   }
 }
