@@ -86,8 +86,9 @@
   max-width: 800px;
 }
 
-.viewtopic-pagination-left {
-  float:left;
+.viewtopic-pagination-bottom {
+  display: block;
+  text-align: center;
 }
 
 @media all and (max-width:1030px) {
