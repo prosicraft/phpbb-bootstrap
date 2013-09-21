@@ -1,6 +1,13 @@
 /******************************************************************************/
 /* OUR OWN FRAMEWORK BEGINS */
 
+#wrap h2 {
+  border-bottom: 1px solid #bbb;
+  padding-left: 15px;
+  line-height: 50px;
+  margin-bottom: 30px;
+}
+
 .box {
   padding: 10px;
   background: rgba(0, 0, 0, 0.09);
