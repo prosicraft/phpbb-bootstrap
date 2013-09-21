@@ -13,6 +13,7 @@
   list-style-type: none;
   margin: 10px 0px;
   padding: 0px;
+  text-align: center;
 }
 
 .greylabel {
@@ -74,6 +75,10 @@
   top: 2px;
   padding-left: 10px;
   font-size: 18px;
+}
+
+#page-body .topic-lastpost .delimiter {
+  display: none;
 }
 
 #page-body .topic-title-head,
@@ -147,6 +152,7 @@
 }
 
 @media all and (max-width:840px) {
+
   #page-body .responsive-mark-forums-read {
     float: right;
   }
@@ -155,6 +161,20 @@
     clear: left;
     position: relative;
     display: block;
+  }
+
+  #page-body .topic-lastpost .lastpost {
+    font-size: 12px;
+    color: #777;
+    margin-left: 30px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    position: relative;
+    top: -5px;
+  }
+
+  #page-body .topic-lastpost .delimiter {
+    display: inline-block;
   }
 
   #page-body .topic-title,
@@ -168,5 +188,31 @@
     position: relative;
     float: right;
     margin-right: 20px;
+  }
+  #page-body .viewforum-pagination-top {
+    position: relative;
+    margin-right: 10px;
+    float: right;
+    text-align: right;
+  }
+  #page-body .viewforum-searchbox {
+    display: none;
+  }
+}
+
+@media all and (max-width:600px) {
+  #page-body .topic-replies,
+  #page-body .topic-replies-head {
+    display: none;
+  }
+
+  #page-body .topic-title .form-title h4 {
+    font-size: 18px;
+  }
+}
+
+@media all and (max-width:500px) {
+  #page-body .topic-title .form-title h4 {
+    font-size: 16px;
   }
 }

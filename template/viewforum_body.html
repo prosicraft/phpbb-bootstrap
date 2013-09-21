@@ -55,7 +55,7 @@
 		</div>
 
 		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-		<div class="span4 text-center">
+		<div class="span4 viewforum-pagination-top">
 			<!-- IF TOTAL_TOPICS -->{TOTAL_TOPICS}<!-- ENDIF -->
 			<!-- IF PAGE_NUMBER -->
 				<!-- IF PAGINATION -->
@@ -75,7 +75,7 @@
 		<!-- ENDIF -->
 
 	<!-- IF S_DISPLAY_SEARCHBOX -->
-		<div class="span4">
+		<div class="span4 viewforum-searchbox">
 			<form method="get" id="form-inline" class="form-inline pull-right" action="{S_SEARCHBOX_ACTION}">
 			<fieldset>
 				<input class="form-control input-medium" type="text" name="keywords" id="search_keywords" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
@@ -208,21 +208,16 @@
 					<p class="lastpost">
 						<dfn>{L_LAST_POST} </dfn>
 						{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
-					<!-- IF not S_IS_BOT -->
-						<a href="{topicrow.U_LAST_POST}">
-							<i class="not-on-tab icon-caret-right"></i>
-						</a>
-					<!-- ENDIF -->
 						<br class="not-on-tab" />
-						<span class="only-on-tab" style="display:inline-block;">|</span>
+						<span class="delimiter">|</span>
 						<small>
 							<i class="icon-time"></i>
 							{topicrow.LAST_POST_TIME}
-					<!-- IF not S_IS_BOT -->
-						<a href="{topicrow.U_LAST_POST}">
-							<i class="only-on-tab icon-caret-right link"></i>
-						</a>
-					<!-- ENDIF -->
+						<!-- IF not S_IS_BOT -->
+							<a href="{topicrow.U_LAST_POST}">
+								<i class="only-on-tab icon-caret-right link"></i>
+							</a>
+						<!-- ENDIF -->
 						</small>
 					</p>
 				</div>
