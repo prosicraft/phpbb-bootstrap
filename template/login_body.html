@@ -11,7 +11,11 @@
 
 
 	<div class="content">
-		<h2><!-- IF LOGIN_EXPLAIN -->{LOGIN_EXPLAIN}<!-- ELSE -->{L_LOGIN}<!-- ENDIF --></h2>
+		<h2>{L_LOGIN}</h2>
+
+		<!-- IF LOGIN_EXPLAIN -->
+		<p class="description">{LOGIN_EXPLAIN} </p>
+		<!-- ENDIF -->
 
 		<fieldset <!-- IF not S_CONFIRM_CODE -->class="fields1"<!-- ELSE -->class="fields2"<!-- ENDIF -->>
 		<!-- IF LOGIN_ERROR --><div class="error">{LOGIN_ERROR}</div><!-- ENDIF -->
@@ -40,7 +44,6 @@
 
 		{S_LOGIN_REDIRECT}
 		<dl>
-			<dt>&nbsp;</dt>
 			<dd>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="strong btn btn-small" /></dd>
 		</dl>
 		</fieldset>
