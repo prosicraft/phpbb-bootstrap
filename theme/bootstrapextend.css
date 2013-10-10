@@ -282,6 +282,9 @@ div.error {
 }
 
 @media all and (max-width:600px) {
+  .not-on-600 {
+    display: none;
+  }
   .box .tablerow .ministat {
     font-size: 13px;
     width: 40px;
