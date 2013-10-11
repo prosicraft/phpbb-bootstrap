@@ -9,9 +9,9 @@
 <!-- ENDIF -->
 
 <!-- IF S_RECAPTCHA_AVAILABLE -->
-	<dl>
-	<dt><label>{L_CONFIRM_CODE}</label>:<br /><span>{L_RECAPTCHA_EXPLAIN}</span></dt>
-	<dd>
+	<div class="row-fluid">
+	<div class="span4"><label class="strong">{L_CONFIRM_CODE}:</label><p class="description">{L_RECAPTCHA_EXPLAIN}</p></div>
+	<div class="span8">
 		<script type="text/javascript">
 		// <![CDATA[
 		var RecaptchaOptions = {
@@ -37,8 +37,8 @@
 		</div>
 		</noscript>
 
-	</dd>
-	</dl>
+	</div>
+	</div>
 <!-- ELSE -->
 {L_RECAPTCHA_NOT_AVAILABLE}
 <!-- ENDIF -->

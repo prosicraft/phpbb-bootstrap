@@ -157,9 +157,14 @@
 				<!-- IF not S_IS_BOT -->
 				<ul class="nav pull-right" id="responsive-nav">
 
-					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
+                                	<!-- IF S_CONTACT_ENABLED -->
+					<li><a href="{U_CONTACT}"><i class="icon-envelope-alt"></i> {L_CONTACT_BOARD_ADMIN_SHORT}</a></li>
+					<!-- ENDIF -->
+					
+					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->					
 					<li><a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a></li>
 					<!-- ENDIF -->
+					
 					<!-- IF not S_USER_LOGGED_IN -->
 					<li><a id="login-trigger" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-lock"></i> {L_LOGIN} <i class="icon-caret-down"></i></a></li>
 					<!-- ENDIF -->

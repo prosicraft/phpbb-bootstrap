@@ -1,0 +1,151 @@
+<!-- INCLUDE overall_header.html -->
+<div class="clear"></div>
+<script type="text/javascript">
+// <![CDATA[
+var form_name = 'postform';
+var text_name = 'message';
+// ]]>
+</script>
+<script type="text/javascript" src="{T_TEMPLATE_PATH}/editor.js"></script>
+
+<!-- IF S_DISPLAY_PREVIEW -->
+<div id="preview">
+	<div class="box">
+		<div class="inner"><span class="corners-top"><span></span></span>
+
+		<div class="postbody">
+			<h3>{L_PREVIEW}: {PREVIEW_SUBJECT}</h3>
+			
+			<div class="content">{PREVIEW_MESSAGE}</div>
+			<!-- IF .attachment -->
+			<dl class="attachbox">
+				<dt>{L_ATTACHMENTS}</dt>
+				<!-- BEGIN attachment -->
+				<dd>{attachment.DISPLAY_ATTACHMENT}</dd>
+				<!-- END attachment -->
+			</dl>
+			<!-- ENDIF -->			
+		</div>
+
+		<span class="corners-bottom"><span></span></span></div>
+	</div>
+</div>
+<hr />
+<!-- ENDIF -->
+<form method="post" id="postform" name="postform" action="{S_CONTACT_ACTION}"{S_FORM_ENCTYPE}>
+<div id="contact">
+	
+	<div class="box small-bottom-margin">
+	<div class="inner"><span class="corners-top"><span></span></span>
+	
+		<h2>{L_CONTACT_BOARD_ADMIN}</h2>
+		
+		<fieldset class="fields2">
+		<!-- IF S_ERROR -->
+		<p class="error">{S_ERROR}</p>
+		<!-- ENDIF -->
+		
+		<!-- IF not S_USER_LOGGED_IN -->
+		<div class="row-fluid">
+			<div class="span4"><label class="strong" for="username">{L_CONTACT_YOUR_NAME}:</label><p class="description">{L_CONTACT_YOUR_NAME_EXPLAIN}</p></div>
+			<div class="span8">
+				<input type="text" class="inputbox autowidth" name="username" id="username" value="{USERNAME}" size="30" tabindex="1" />
+			</div>
+		</div>
+		<div class="row-fluid tablerow">
+			<div class="span4"><label class="strong" for="email">{L_CONTACT_YOUR_EMAIL}:</label><p class="description">{L_CONTACT_YOUR_EMAIL_EXPLAIN}</p></div>
+			<div class="span8"><input type="text" class="inputbox autowidth" name="email" id="email" value="{EMAIL}" size="30" tabindex="2" /></div>
+		</div>
+		<div class="row-fluid tablerow">
+			<div class="span4"><label class="strong" for="email_confirm">{L_CONTACT_YOUR_EMAIL_CONFIRM}:</label><p class="description">{L_CONTACT_YOUR_EMAIL_CONFIRM_EXPLAIN}</p></div>
+			<div class="span8"><input type="text" class="inputbox autowidth" name="email_confirm" id="email_confirm" value="{EMAIL_CONFIRM}" size="30" tabindex="3" /></div>
+		</div>
+		<hr />
+		<!-- ENDIF -->		
+		<!-- IF CONTACT_REASONS -->
+		<div class="row-fluid tablerow">
+			<div class="span4"><label class="strong" for="contact_reason">{L_CONTACT_REASON}:</label></div>
+			<div class="span8"><select name="contact_reason" id="contact_reason" tabindex="4">{CONTACT_REASONS}</select></div>
+		</div>
+		<!-- ENDIF -->
+		<div class="row-fluid tablerow">
+			<div class="span4"><label class="strong" for="contact_subject">{L_SUBJECT}:</label></div>
+			<div class="span8"><input type="text" size="45" maxlength="64" class="inputbox" name="contact_subject" id="contact_subject" value="{CONTACT_SUBJECT}" tabindex="5" /></div>
+		</div>	
+		<!-- IF S_BBCODE_ALLOWED -->
+		<div>
+			<dt>&nbsp;</dt>
+			<dd><div><!-- INCLUDE posting_buttons.html --></div></dd>
+		</div>
+		<!-- ENDIF -->
+		<!-- IF S_SMILIES_ALLOWED -->
+		<div>
+			<dt>&nbsp;</dt>		
+			<dd><div><!-- BEGIN smiley --> <a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}" height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a> <!-- END smiley --><!-- IF S_SHOW_SMILEY_LINK --><a href="{U_MORE_SMILIES}" onclick="window.open('{U_MORE_SMILIES}', '_phpbbsmilies', 'HEIGHT=350,resizable=yes,scrollbars=yes,WIDTH=300'); return false;">{L_MORE_SMILIES}</a><!-- ENDIF --></div></dd>
+		</div>
+		<!-- ENDIF -->
+		<div class="row-fluid">
+			<div class="span4"><label class="strong" for="message">{L_MESSAGE_BODY}:</label>
+				<p class="description">{L_CONTACT_MSG_BODY_EXPLAIN}</p>			
+			</div>
+			<div class="span8"><textarea name="message" id="message" class="inputbox" tabindex="6" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" style="width:98%;height:160px;">{CONTACT_MESSAGE}</textarea></div>
+		</div>
+		
+		<div class="row small-bottom-margin">
+			<div class="pull-right description">{BBCODE_STATUS}, {URL_STATUS}, {SMILIES_STATUS}</div>
+		</div>
+				
+		<!-- IF CAPTCHA_TEMPLATE -->
+		<div class="tablerow">
+			<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
+			<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+		</div>
+		<!-- ENDIF -->		
+				
+		</fieldset>
+		
+		</div>
+	
+	</div>
+
+</div>
+	<!-- IF S_HAS_ATTACHMENTS -->
+		<div class="panel bg2">
+			<div class="inner"><span class="corners-top"><span></span></span>
+			<h3>{L_POSTED_ATTACHMENTS}</h3>
+
+			<fieldset class="fields2">
+
+			<!-- BEGIN attach_row -->
+			<dl>
+				<dt><label for="comment_list_{attach_row.ASSOC_INDEX}">{L_FILE_COMMENT}:</label></dt>
+				<dd><textarea name="comment_list[{attach_row.ASSOC_INDEX}]" id="comment_list_{attach_row.ASSOC_INDEX}" rows="1" cols="35" class="inputbox">{attach_row.FILE_COMMENT}</textarea></dd>
+				<dd><a href="{attach_row.U_VIEW_ATTACHMENT}" class="{S_CONTENT_FLOW_END}">{attach_row.FILENAME}</a></dd>
+				<dd style="margin-top: 5px;">
+					<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="button2" />
+				</dd>				
+			</dl>
+			{attach_row.S_HIDDEN}
+				<!-- IF not attach_row.S_LAST_ROW --><hr class="dashed" /><!-- ENDIF -->
+			<!-- END attach_row -->
+
+			</fieldset>
+
+			<span class="corners-bottom"><span></span></span></div>
+		</div>
+	<!-- ENDIF -->
+<!-- IF S_ATTACH_BOX --><!-- INCLUDE posting_attach_body.html --><!-- ENDIF -->	
+
+<div class="row">	
+	<fieldset class="submit-buttons pull-right">
+		{S_HIDDEN_FIELDS}
+		<input type="submit" name="submit" id="submit" value="{L_SUBMIT}" class="btn btn-small strong" tabindex="9" />&nbsp;
+		<!-- IF not S_EMAIL --><input type="submit" name="preview" id="preview" value="{L_PREVIEW}" class="btn btn-small" tabindex="10" /><!-- ENDIF -->			
+		{S_FORM_TOKEN}
+	</fieldset>
+</div>
+
+	
+</form>
+
+<!-- INCLUDE overall_footer.html -->
