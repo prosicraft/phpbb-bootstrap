@@ -135,6 +135,12 @@ label.strong {
   margin-top: 0px;
 }
 
+/* btn toolbars */
+#wrap div.btn-group a.firsttbitem {
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
 /* left margin */
 .no-left-margin { margin-left: 0px; }
 .small-left-margin { margin-left: 10px; }
