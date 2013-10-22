@@ -35,27 +35,25 @@
 <!-- ENDIF -->
 
 <div class="row-fluid small-bottom-margin">
-	<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small"><i class="icon-cogs"></i> {L_MCP} </a><!-- ENDIF -->
+	<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small not-on-smartphone"><i class="icon-cogs"></i> {L_MCP} </a><!-- ENDIF -->
 </div>
 
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-	<div class="row-fluid" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 2em;"<!-- ENDIF -->>
+	<div class="overboxctrl" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 2em;"<!-- ENDIF -->>
 
-		<div class="span4">
-
-			<div class="btn-group">
+			<div class="btn-group main-toolbar toolbar">
+			<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small only-on-smartphone"><i class="icon-cogs"></i>&nbsp;</a><!-- ENDIF -->
 			<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-				<a class="<!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->btn btn-small<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->" href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED --><i class="icon-lock"></i>&nbsp;{L_FORUM_LOCKED}<!-- ELSE --><i class="icon-plus-sign"></i>&nbsp;<strong>{L_POST_TOPIC} </strong><!-- ENDIF --></a>
+				<a class="firsttbitem <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->btn btn-small<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->" href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED --><i class="icon-lock"></i>&nbsp;{L_FORUM_LOCKED}<!-- ELSE --><i class="icon-plus-sign"></i>&nbsp;<strong>{L_POST_TOPIC} </strong><!-- ENDIF --></a>
 			<!-- ENDIF -->
 
 			<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-				<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-small" href="{U_MARK_TOPICS}" accesskey="m">{L_MARK_TOPICS_READ}</a> &bull; <!-- ENDIF -->
+				<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-small not-on-smartphone" href="{U_MARK_TOPICS}" accesskey="m">{L_MARK_TOPICS_READ}</a> &bull; <!-- ENDIF -->
 			<!-- ENDIF -->
 			</div>
-		</div>
 
 		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-		<div class="span4 viewforum-pagination-top">
+		<div class="pagination">
 			<!-- IF TOTAL_TOPICS -->{TOTAL_TOPICS}<!-- ENDIF -->
 			<!-- IF PAGE_NUMBER -->
 				<!-- IF PAGINATION -->
@@ -75,7 +73,7 @@
 		<!-- ENDIF -->
 
 	<!-- IF S_DISPLAY_SEARCHBOX -->
-		<div class="span4 viewforum-searchbox">
+		<div class="searchbox">
 			<form method="get" id="form-inline" class="form-inline pull-right" action="{S_SEARCHBOX_ACTION}">
 			<fieldset>
 				<input class="form-control input-medium" type="text" name="keywords" id="search_keywords" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
@@ -208,7 +206,7 @@
 					<p class="lastpost">
 						<dfn>{L_LAST_POST} </dfn>
 						{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
-						<br class="not-on-tab" />
+						<br />
 						<span class="delimiter">|</span>
 						<small>
 							<i class="icon-time"></i>

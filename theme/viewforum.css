@@ -1,21 +1,6 @@
 /******************************************************************************/
 /* VIEWFORUM RELATED STUFF */
 
-.viewforum-pagination, .viewtopic-pagination {
-  line-height: 25px;
-}
-
-.viewtopic-pagination {
-  float:right;
-}
-
-.viewforum-pagination-top {
-  list-style-type: none;
-  margin: 10px 0px;
-  padding: 0px;
-  text-align: center;
-}
-
 .greylabel {
   color: #777;
 }
@@ -130,33 +115,22 @@
 }
 
 @media all and (max-width: 1180px) {
-  #page-body .topic-lastpost-head {
-    display: none;
+  #page-body .topic-title,
+  #page-body .topic-title-head {
+    width: 55%;
   }
-  #page-body .topic-lastpost {
-    clear: left;
-    float: none;
-    width: 100%;
-  }
+}
+
+@media all and (max-width:960px) {
   #page-body .topic-title,
   #page-body .topic-title-head {
     width: 75%;
   }
-}
-
-@media all and (max-width:900px) {
-  #page-body .topic-replies, #page-body .topic-replies-head {
-    margin-left: 0px;
-    min-width: 70px;
+  
+  #page-body .topic-lastpost-head {
+    display: none;  
   }
-}
-
-@media all and (max-width:840px) {
-
-  #page-body .responsive-mark-forums-read {
-    float: right;
-  }
-
+  
   #page-body .topic-lastpost {
     clear: left;
     position: relative;
@@ -176,12 +150,28 @@
   #page-body .topic-lastpost .delimiter {
     display: inline-block;
   }
+  
+  #page-body .topic-replies, #page-body .topic-replies-head {
+    margin-left: 0px;
+    min-width: 70px;
+  }
+  
+  #page-body .topic-lastpost p.lastpost > br {
+    display: none;
+  }    
+}
+
+@media all and (max-width:840px) {  
 
   #page-body .topic-title,
   #page-body .topic-title-head {
     width: auto;
   }
-
+  
+  #page-body .topic-title {
+    height: 40px;
+  }
+  
   #page-body .topic-replies,
   #page-body .topic-replies-head {
     width: 100px;
@@ -189,6 +179,10 @@
     float: right;
     margin-right: 20px;
   }
+
+  #page-body .responsive-mark-forums-read {
+    float: right;
+  }   
   #page-body .viewforum-pagination-top {
     position: relative;
     margin-right: 10px;
@@ -198,21 +192,40 @@
   #page-body .viewforum-searchbox {
     display: none;
   }
+  
+  #page-body .topic-title .description {
+    display: none;  
+  }
 }
 
 @media all and (max-width:600px) {
+  #page-body .topic-title {
+    width: 100%;  
+  }
+
   #page-body .topic-replies,
   #page-body .topic-replies-head {
     display: none;
   }
 
+  #page-body .topic-title .form-title a.topictitle {
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    white-space: nowrap;
+  }
+
   #page-body .topic-title .form-title h4 {
-    font-size: 18px;
+    font-size: 16px;
+    width: 100%;
+    min-width: 200px;
+    display: block;
   }
 }
 
 @media all and (max-width:500px) {
   #page-body .topic-title .form-title h4 {
-    font-size: 16px;
+    font-size: 14px;
   }
 }

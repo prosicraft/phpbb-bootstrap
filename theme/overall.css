@@ -14,6 +14,41 @@ ul.overall-footer-nav-right li div.responsivenavitem {
   padding-left: 20px;
 }
 
+/* CONTROLS ABOVE THE BOX */
+#wrap div.overboxctrl {
+  margin: 10px 0px;
+  display: block;
+  position: relative;
+  height: 60px;    
+}
+
+#wrap div.overboxctrl .searchbox,
+#wrap div.overboxctrl .toolbar,
+#wrap div.overboxctrl .pagination {
+  display: inline-block;
+  float: none;
+  position: absolute;
+}
+
+#wrap div.overboxctrl .searchbox {
+  right: 0px;  
+}
+
+#wrap div.overboxctrl .searchbox input.input-medium {
+  height: 16px;
+}
+
+#wrap div.overboxctrl .toolbar {
+  left: 0px;
+}
+
+#wrap div.overboxctrl .pagination {
+  left: 45%;
+  margin: 3px 0px;        
+}
+/**/
+
+
 /* Nice looking navi transitions */
 @media (min-width:1025px) {
   .pagenavbar .nav > li > a {
@@ -33,7 +68,15 @@ ul.overall-footer-nav-right li div.responsivenavitem {
 	}
 }
 
-@media all and (max-width:770px) {
+@media all and (max-width:840px) {
+        #wrap div.overboxctrl .searchbox {
+          display: none;
+	}
+	#wrap div.overboxctrl .pagination {
+	  left:auto;	  
+	  right: 0px;
+	}	
+	
 	ul.overall-footer-nav-right li {
 	  clear:left;
 	}
@@ -62,6 +105,15 @@ ul.overall-footer-nav-right li div.responsivenavitem {
 }
 
 @media all and (max-width:600px) {
+  /* pull pagination below main toolbar */
+  #wrap div.overboxctrl .pagination {
+    top: 50px;
+  }
+  
+  #wrap div.overboxctrl {
+    height: 70px;
+  }
+
   .responsive-navitem-privmsgs {
     width: 12px;
     overflow-x: hidden;
@@ -70,6 +122,7 @@ ul.overall-footer-nav-right li div.responsivenavitem {
 }
 
 @media all and (max-width:470px) {
+  
   /* switch to drop-down navmenu */
   .responsive-nav {
     width: 50%;
