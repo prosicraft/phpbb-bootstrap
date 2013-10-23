@@ -2,6 +2,8 @@
 /* overall related stuff */
 #page-body {
   padding-top: 30px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 /********************************************************************/
@@ -223,6 +225,11 @@
 }
 
 @media all and (max-width:470px) {
+
+   #wrap #page-body {
+     padding-left: 0px;
+     padding-right: 0px;   
+   }
   
   /* switch to drop-down navmenu */
   .responsive-nav {
@@ -266,6 +273,7 @@
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
+  
   .responsive-nav-trigger:hover > i {
     color: #e3e3e3;
   }
