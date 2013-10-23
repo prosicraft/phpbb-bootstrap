@@ -480,6 +480,11 @@ div.error {
 }
 
 .table-head .table-replies-head,
+.table-head .table-views-head {
+  text-align: center;
+}
+
+.table-head .table-replies-head,
 .table-head .table-views-head,
 .table-row .table-replies,
 .table-row .table-views {
