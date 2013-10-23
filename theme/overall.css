@@ -295,7 +295,8 @@
     margin-left: 0px;      
   }
   
-  #wrap .static-nav .icon-signin {
+  #wrap .static-nav .icon-signin,
+  #wrap .static-nav .icon-signout {
     font-size: 18px;  
   }  
 }
