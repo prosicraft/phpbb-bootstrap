@@ -57,7 +57,8 @@
 			<!-- IF TOTAL_TOPICS -->{TOTAL_TOPICS}<!-- ENDIF -->
 			<!-- IF PAGE_NUMBER -->
 				<!-- IF PAGINATION -->
-				<ul class="viewforum-pagination-top">
+				&bull;
+				<ul class="pagination-viewforum-top">
 					<li>
 						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
 						&bull;
@@ -76,7 +77,7 @@
 		<div class="overboxright">
 			<form method="get" class="form-inline" action="{S_SEARCHBOX_ACTION}">
 			<fieldset>
-				<input class="form-control input-medium" type="text" name="keywords" id="search_keywords" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
+				<input class="form-control input-small" type="text" name="keywords" id="search_keywords" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
 				<input class="form-control btn btn-small" type="submit" value="{L_SEARCH}" />
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 			</fieldset>

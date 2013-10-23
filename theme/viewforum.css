@@ -14,6 +14,12 @@
   width: auto;
 }
 
+.pagination-viewforum-top {
+  display: inline-block;
+  list-style: none;
+  padding-left: 0px;
+}
+
 /*
 
 .responsive-linegroup {
