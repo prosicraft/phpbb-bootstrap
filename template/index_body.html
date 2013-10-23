@@ -18,7 +18,9 @@
 			<!-- ENDIF -->
 			<!-- IF S_DISPLAY_SEARCH -->
 				<!-- IF S_LOAD_UNREADS --><a class="btn btn-small" href="{U_SEARCH_UNREAD}"><i class="icon-bell-alt"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_UNREAD}</span></a><!-- ENDIF -->
-				<a class="btn btn-small btn-last" href="{U_SEARCH_ACTIVE_TOPICS}"><i class="icon-fire"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_ACTIVE_TOPICS}</span></a>
+				<a class="btn btn-small btn-last" href="{U_SEARCH_ACTIVE_TOPICS}">
+					<i class="icon-fire"></i>&nbsp;<span<!-- IF S_USER_LOGGED_IN --> class="not-on-smartphone"<!-- ENDIF -->>{L_SEARCH_ACTIVE_TOPICS} </span>
+				</a>
 				<!-- IF S_USER_LOGGED_IN --><a class="btn btn-small" href="{U_SEARCH_NEW}"><i class="icon-certificate"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_NEW}</span></a><!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>

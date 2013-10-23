@@ -133,7 +133,8 @@ label.strong {
 #wrap .btn {
   background-color: rgb(221, 221, 221);
   border: 1px solid #bbb;
-  font-size: 12px;  
+  font-size: 12px;
+  width: auto;  
 }
 #wrap .btn:hover {
   background-color: #eee;
@@ -163,6 +164,18 @@ label.strong {
 /* Small-Button-Icons */
 .btn-small i {
   font-size: 14px;
+}
+
+/* Fix Input fields in bootstrap3 */
+#wrap input.input-medium {  
+  max-height: 30px;
+  height: 28px;
+  width: auto;
+}
+
+/* Fix form-inline in bootstrap3 */
+#wrap .form-inline .form-control {
+  display: inline-block;
 }
 
 /* pre-formatted containers */
@@ -443,7 +456,7 @@ div.error {
   padding: 0px;
   font-size: 11px;
   display: inline-block;
-  white-space: pre-wrap; 
+  white-space: normal; 
 }
 
 .table-title .table-titlemeta {

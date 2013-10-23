@@ -112,7 +112,7 @@
   margin: 10px 0px;
   display: block;
   position: relative;
-  height: 70px;    
+  height: auto;  
 }
 
 #wrap div.overboxctrl .overboxright,
@@ -120,15 +120,11 @@
 #wrap div.overboxctrl .overboxcenter {
   display: inline-block;
   float: none;
-  position: absolute;
+  position: relative;
 }
 
 #wrap div.overboxctrl .overboxright {
   right: 0px;  
-}
-
-#wrap div.overboxctrl .overboxright input.input-medium {
-  height: 16px;
 }
 
 #wrap div.overboxctrl .overboxleft {
@@ -212,10 +208,6 @@
   #wrap div.overboxctrl .pagination {
     top: 50px;
   }
-  
-  #wrap div.overboxctrl {
-    height: 70px;
-  }
 
   .responsive-navitem-privmsgs {
     width: 12px;
@@ -224,7 +216,7 @@
   }
 }
 
-@media all and (max-width:470px) {
+@media all and (max-width:486px) {
 
    #wrap #page-body {
      padding-left: 0px;
@@ -283,8 +275,17 @@
   .responsive-nav-trigger:focus + .responsive-nav {
     height: 125px;
   }
-  #wrap .overboxleft {
+  #wrap .overboxctrl div.overboxleft {
     width: 100%;  
+    display: block;
+    position: relative;
+  }
+  #wrap .overboxctrl div.overboxcenter {
+    width: 100%;
+    position: relative;
+    display: block;
+    text-align: right;
+    margin-top: 20px;      
   }
   
   #wrap .static-nav .icon-signin {
