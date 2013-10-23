@@ -27,8 +27,13 @@
 }
 
 .topic-container .postbody {
+  padding-top: 5px;
   padding-left: 10px;
   overflow: auto;
+}
+
+.topic-container .postbody .postheader {
+  margin-top: 8px;
 }
 
 .topic-container .postbody h3 {
@@ -42,7 +47,7 @@
 
 .topic-container .post-buttons {
   position: relative;
-  right: 20px;
+  right: 0px;
 }
 
 .topic-container .postbody .signature {
@@ -86,6 +91,13 @@
   max-width: 800px;
 }
 
+.pagination-viewtopic {
+  display: block;
+  text-align: right;
+  margin-top: 30px;
+  margin-bottom: 15px;    
+}
+
 .viewtopic-pagination-bottom {
   display: block;
   text-align: center;
@@ -101,20 +113,18 @@
   .viewtopic-sortby label.medium-left-margin {
     margin-left: 0px;
   }
-  .viewtopic-pagination-left {
-    float:right;
-  }
   .display-options label span.description {
     display:none;
   }
-  .topic-container .post-buttons {
-    position: absolute;
-  }
+  
+  #wrap .overboxctrl div.searchbox-viewtopic {
+    display: none;  
+  }  
 }
 
-@media all and (max-width:850px) {
+@media all and (max-width:1000px) {
   .topic-container .postbody h3.postheader {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 }
 
@@ -131,11 +141,22 @@
   .topic-container .postprofile .avatar {
     float: left;
   }
+  .topic-container .postprofile .poster-avater {
+    height: auto;
+    max-height: 100%;  
+    display: block;
+  }
   .topic-container .postprofile .poster-description {
     margin-left: 20px;
   }
+  .topic-container .postprofile .avatar {
+    max-height: 100%;
+    overflow: hidden;
+    display: block;  
+  }
   .topic-container .postprofile .avatar img {
     max-width: 80px;
+    max-height: 110px;
   }
   .topic-container .postbody {
     float: none;
@@ -144,29 +165,55 @@
   .topic-container .postbody h3.postheader {
     margin-top: 10px;
   }
+  .topic-container .topic-post {
+    position: relative;  
+  }
+  .topic-container .postbody .post-buttons {
+    position: absolute;
+    top: 18px;
+    right: 18px;  
+  }
   .topic-container .post-quote {
     display: none;
   }
 }
 
-@media all and (max-width:500px)
+@media all and (max-width:650px)
 {
-  #wrap .topic-container div.post-buttons {
-    height: 25px;
-    max-width: 160px;
+  #wrap .topic-container .post-buttons {
+    height: 25px;    
   }
-  #wrap .topic-container div.post-buttons .btn {
+  #wrap .topic-container .post-buttons .btn {    
     height: 25px;
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-top: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 7px;
     padding-bottom: 5px;
   }
-  #wrap .topic-container div.post-buttons .btn i {
+  #wrap .topic-container .post-buttons .btn i {
     position: relative;
     top: -4px;
     font-size: 12px;
     margin-top: 0px;
     vertical-align: top;
+  }
+}
+
+@media all and (max-width:520px)
+{
+  #wrap .topic-container .postbody .post-buttons {    
+    position: relative;
+    float: right;
+    padding-left: 18px;
+    width: 100%;                     
+  }
+
+  #wrap .topic-container .postbody .post-buttons .btn {    
+    float: center;
+    width: 10%;                        
+  }
+  
+  #wrap .topic-container .postbody .postheader {
+    margin-top: 60px;  
   }
 }

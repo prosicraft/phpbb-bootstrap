@@ -1,7 +1,7 @@
 /******************************************************************************/
 
 /* DEBUG */
-
+/*
 #wrap div,
 #wrap span {
   border-left: 1px solid #0f0 !important;
@@ -9,6 +9,7 @@
   border-top: 1px dotted #00f !important;
   border-bottom: 1px dashed #f00 !important;  
 }
+*/
 
 
 /******************************************************************************/
@@ -155,8 +156,7 @@ label.strong {
 #wrap a.btn {
   color: #333;
 }
-#wrap .btn-small {
-  max-height: 30px;
+#wrap .btn-small {  
   padding-top: 4px;
   height: 28px;  
 }
@@ -167,7 +167,7 @@ label.strong {
 }
 
 /* Fix Input fields in bootstrap3 */
-#wrap input.input-medium {  
+#wrap input.input-small {  
   max-height: 30px;
   height: 28px;
   width: auto;
@@ -319,6 +319,11 @@ div.error {
     width: 100%;
     min-width: 100px;
   }
+  
+  #wrap div.btn-group a.firsttbitem {
+    border-radius: 0px;
+    margin-left: -5px;
+  }
 
   #wrap div.btn-group {
     clear: both;
@@ -349,8 +354,8 @@ div.error {
     margin-top: 3px;
     margin-bottom: 3px;
     height: 30px;
-    float: center;    
-    display: inline-block;       
+    float: center;   
+    display: inline-block;           
   }
   #wrap div.btn-group .btn i {
     font-size: 18px;

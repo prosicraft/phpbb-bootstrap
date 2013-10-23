@@ -108,31 +108,37 @@
 
 /********************************************************************/
 /* CONTROLS ABOVE THE BOX */
-#wrap div.overboxctrl {
-  margin: 10px 0px;
+#wrap div.overboxctrl {  
   display: block;
   position: relative;
-  height: auto;  
+  height: auto;
+  margin-bottom: 20px;  
 }
 
 #wrap div.overboxctrl .overboxright,
 #wrap div.overboxctrl .overboxleft,
 #wrap div.overboxctrl .overboxcenter {
-  display: inline-block;
-  float: none;
   position: relative;
+  display: inline-block;  
+  width: auto;
+  height: auto;
 }
 
 #wrap div.overboxctrl .overboxright {
-  right: 0px;  
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
-
 #wrap div.overboxctrl .overboxleft {
-  left: 0px;
+  height: auto;  
 }
-#wrap div.overboxctrl .overboxcenter {
-  left: 45%;
-  margin: 3px 0px;        
+#wrap div.overboxctrl .overboxcenter {    
+  position: absolute;
+  left: 50%;
+  margin-left: -15%;
+  width: 30%;  
+  top: 15%;
+  text-align: center;        
 }
 /**/
 
@@ -206,7 +212,7 @@
 @media all and (max-width:600px) {
   /* pull pagination below main toolbar */
   #wrap div.overboxctrl .pagination {
-    top: 50px;
+    top: 50px;    
   }
 
   .responsive-navitem-privmsgs {
@@ -285,7 +291,8 @@
     position: relative;
     display: block;
     text-align: right;
-    margin-top: 20px;      
+    margin-top: 20px;
+    margin-left: 0px;      
   }
   
   #wrap .static-nav .icon-signin {
