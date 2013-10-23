@@ -277,6 +277,10 @@
   }
   #wrap .overboxleft {
     width: 100%;  
+  }
+  
+  #wrap .static-nav .icon-signin {
+    font-size: 18px;  
   }  
 }
 

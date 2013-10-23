@@ -113,8 +113,7 @@
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" ontouchstart="">
 
 	<!--
-		start main wrapper
-		@TODO: add options to set the general width of the forum
+		start main wrapper		
 	-->
 	<div id="wrap">
 		<a id="top" name="top" accesskey="t"></a>
@@ -146,7 +145,7 @@
 		<div class="navbar navbar-default" role="navigation">
 			<!-- IF not S_USER_LOGGED_IN -->
 			<a id="login-trigger" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
-				<div class="static-nav"><i class="icon-lock"></i> {L_LOGIN} <i class="icon-caret-down"></i></div>
+				<div class="static-nav"><i class="icon-signin"></i> <span class="not-on-smartphone">{L_LOGIN} <i class="icon-caret-down"></i></span></div>
 			</a>
 			<!-- ELSE -->			 
 			<a href="{U_LOGOUT}">
