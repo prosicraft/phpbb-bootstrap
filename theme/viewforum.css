@@ -35,6 +35,7 @@
 
 /*---------------------------------------------------------*/
 /* Title */
+/*
 #page-body .table-title-head,
 #page-body .table-title {
   width: 60%;
@@ -46,6 +47,7 @@
 
 /*---------------------------------------------------------*/
 /* Last Post */
+/*
 #page-body .table-lastpost {
   position: relative;
   float: left;
@@ -66,6 +68,7 @@
 
 /*---------------------------------------------------------*/
 /* Replies */
+/*
 #page-body .table-replies,
 #page-body .table-replies-head {
   min-height: 30px;
@@ -81,6 +84,7 @@
 
 /*---------------------------------------------------------*/
 /* Views */
+/*
 #page-body .table-views,
 #page-body .table-views-head {
   max-width: 100px;
@@ -139,43 +143,7 @@
   margin-top: 2px;
   font-weight: bold;
 }
-
-#page-body .table-row .ministat {
-  margin: 5px 0;
-  background: #222;
-  color: #fff;
-  border-radius: 4px;
-  padding: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1;
-  text-shadow: none;
-  width: 100%;
-}
-
-#page-body .table-row .ministat dfn {
-  display: block;
-  font-size: 11px;
-  font-weight: normal;
-  text-transform: uppercase;
-  margin-top: 4px;
-  font-style: normal;
-}
-
-#page-body .table-row a.feed-icon {
-  text-decoration: none;
-  color: #f89406;
-  font-size: 20px;
-  padding-top: 5px;
-}
-
-#page-body .table-row .lastpost {
-  margin-top: 10px;
-}
-
-#page-body .table-row .sent {
-  margin-top: 20px;
-}
+*/
 
 
 

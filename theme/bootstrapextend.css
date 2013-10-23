@@ -1,4 +1,20 @@
 /******************************************************************************/
+
+/* DEBUG */
+
+#wrap div,
+#wrap span {
+  border-left: 1px solid #0f0 !important;
+  border-right: 1px solid #f0f !important;
+  border-top: 1px dotted #00f !important;
+  border-bottom: 1px dashed #f00 !important;  
+}
+
+
+/******************************************************************************/
+
+
+/******************************************************************************/
 /* OUR OWN FRAMEWORK BEGINS */
 
 #wrap h2 {
@@ -335,12 +351,25 @@ div.error {
 /*********************************************************************/
 /* TABLE SECTION BEGINS */
 
+.table-wrap,
+.table-wrap *,
+.table-head,
+.table-head *,
+.table-row,
+.table-row * {
+  box-sizing: border-box;
+}
+
+.table-wrap {
+  position: relative;
+  width: 100%;    
+}
+
 .table-head {
   width: 100%;
   height: auto;  
   position: relative;
   display: block;
-  border-bottom: 1px solid #f00;
 }
 
 .table-row {
@@ -350,7 +379,7 @@ div.error {
   display: block;   
 }
 
-.table-row + .table-row {
+.table-row {
   border-top: 1px solid #aaa;
 }
 
@@ -366,16 +395,17 @@ div.error {
   display: inline-block;
   position: relative;    
   overflow: hidden;
-  white-space: nowrap;  
-  border-left: 1px solid #0f0;
-  border-right: 1px solid #f0f;
-  margin-left: -1px;
+  white-space: nowrap;      
   vertical-align: middle;  
   padding: 5px;    
 }
 
-.table-row * {
-  min-height: 50px;
+.table-row .table-lastpost {
+  overflow: visible;
+}
+
+.table-row > * {
+  min-height: 30px;
 }
 
 .table-title-head,
@@ -383,33 +413,128 @@ div.error {
   width: 60%;
 }
 
-.table-title {
-  font-weight: bold;
-  font-size: 18px;
-  color: #77a;  
+.table-title .table-titleicon {
+  display: inline-block;  
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0px;
+  background-repeat: no-repeat;
+  vertical-align: top;  
 }
 
-.table-replies-head,
-.table-views-head,
-.table-replies,
-.table-views {
+.table-title .table-titletext {
+  display: inline-block;  
+  width: 90%;
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-top: 3px;      
+}
+
+.table-title .table-titletext h4 {
+  margin-top: 0px;
+  margin-bottom: 5px;
+  min-height: 20px;
+}
+
+.table-title .table-titledesc {
+  padding: 0px;
+  font-size: 11px;
+  display: inline-block;
+  white-space: pre-wrap; 
+}
+
+.table-title .table-titlemeta {
+  display: inline-block;
+  padding: 0px;
+}
+
+.table-title .table-rssicon {  
+  min-height: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.table-title .table-rssicon:hover {
+  text-decoration: none;
+}
+
+.table-head .table-replies-head,
+.table-head .table-views-head,
+.table-row .table-replies,
+.table-row .table-views {
   width: 10%;
   max-width: 100px;
-  min-width: 80px;    
+  min-width: 80px;
+  vertical-align: top;      
 }
 
-.table-lastpost-head,
-.table-lastpost {
+.table-row .table-replies .ministat,
+.table-row .table-views .ministat {
+  text-align: center;
+  margin: 5px 0;
+  background: #222;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: none;
+  width: 100%;
+  min-height: 20px;
+  height: auto;
+}
+
+.table-row .ministat dfn {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-style: normal;
+  min-height: 10px;
+}
+
+.table-head .table-lastpost-head,
+.table-row .table-lastpost {
   width: 18%;
+  vertical-align: top;
 }
 
-@media all and (max-width: 800px)
+.table-row .table-lastpost {
+  margin-top: 10px;
+  min-height: 50px;     
+}
+
+.table-row .table-lastpost .lastpost-smartlink {
+  display: none;
+}
+
+.table-row .table-lastpost .lastpost-time,
+.table-row .table-lastpost .lastpost-info {
+  font-size: 12px;
+}
+
+@media all and (max-width: 1000px)
 {
   .table-head .table-views-head,
   .table-row .table-views {
     display: none !important;  
   }
   
+  .table-head .table-lastpost-head,
+  .table-row .table-lastpost {
+    width: 28%;
+    overflow: visible;
+    white-space: nowrap;  
+  }
+}
+
+@media all and (max-width: 800px)
+{  
   .table-head .table-title-head,
   .table-row .table-title {
     width: 75%;           
@@ -431,11 +556,39 @@ div.error {
   .table-row .table-lastpost {
     display: block;
     width: 75%;
-    position: relative;    
-    border-top: 1px dotted #444;
-    border-bottom: 1px dotted #444;
+    position: relative;        
     height: auto;
-    min-height: 5px;    
+    min-height: 5px;
+    margin-left: 45px;
+    margin-top: 0px;
+    padding-top: 0px;
+    
+    border-top: 1px dashed #ccc;        
+  }   
+  
+  .table-row .table-lastpost .lastpost-info,
+  .table-row .table-lastpost .lastpost-time {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 10px;
+    padding-top: 2px;      
+  }  
+  
+  .table-row .table-lastpost .lastpost-delimiter {
+    display: none;
+  }  
+  
+  .table-row .table-lastpost .lastpost-desklink {
+    display: none;
+  }
+  
+  .table-row .table-lastpost .lastpost-smartlink {
+    font-size: 20px;
+    line-height: 20px;
+    min-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
   }
   
   .table-row .table-title {
@@ -443,21 +596,37 @@ div.error {
     height: auto;
   }
   
-  .table-row {
-    margin-bottom: 10px;  
-  }
+  .table-row * {
+    min-height: 20px;
+  }  
 }
 
-@media all and (max-width:380px)
+@media all and (max-width:510px)
 {
   .table-head .table-replies-head,
   .table-row .table-replies {
     display: none;  
   }
   
-  .table-head .table-title-head,
-  .table-row .table-title,
   .table-row .table-lastpost {
-    width: 100%;  
+    min-width: 80%;
+    width: 80%;  
+  }
+  
+  .table-head .table-title-head,
+  .table-row .table-title {
+    width: 90%;  
+  }
+  
+  .table-row .table-title h4 {
+    font-size: 17px;
+    font-weight: bold;
+  }
+}
+
+@media all and (max-width:360px)
+{
+  .table-row .table-lastpost .lastpost-time {
+    display: none;  
   }
 }
