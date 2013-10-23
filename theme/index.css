@@ -1,10 +1,6 @@
 /******************************************************************************/
 /* INDEX RELATED STUFF */
 
-.main-toolbar {
-  float: right;
-}
-
 .box .tablerow .row-fluid .span-lastpost,
 .box .header .row-fluid .span-lastpost {
   width: auto;
@@ -14,6 +10,42 @@
   margin-left: 30px;
 }
 
+#wrap .lastvisitcontainer {
+  position: relative;
+  clear: both;
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding-right: 20px;
+}
+
+#wrap ul.lastvisit {
+  list-style: none;
+  margin-top: 0px;   
+}
+
+#wrap ul.lastvisit li {
+  float: left;
+}
+
+#wrap ul.lastvisit li:first-child + li {
+  margin-left: 10px;
+}
+
+/** OVERBOX BUTTONS **/
+#wrap div.overboxctrl .overboxleft .btn-moderation {  
+}
+
+@media all and (max-width:980px) {
+  /** OVERBOX TOOLBOX **/ 
+  #wrap div.overboxctrl .overboxleft .btn-moderation .text {
+    display: none;
+  }
+  
+  #wrap div.overboxctrl .overboxleft .btn-markforums {
+    display: none;  
+  }
+}
 
 @media all and (max-width:840px) {
   .box .tablerow .row-fluid .span-lastpost {
@@ -32,6 +64,20 @@
   }
 }
 
+@media all and (max-width:640px) {
+  #wrap .overboxctrl .overboxleft .btn-unanswered {
+    display:none;  
+  }
+  #wrap .overboxctrl .overboxleft .btn-moderation {
+    margin-right: -2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;      
+  }
+  #wrap .overboxctrl .overboxleft .btn-moderation + .btn-group {
+    margin-left: -2px;  
+  }  
+}
+
 @media all and (max-width:486px) {
   .main-toolbar {
     float: none;
@@ -42,10 +88,18 @@
     padding-bottom: 10px;
     max-height: 30px;
   }
-  #wrap .main-toolbar .only-on-smartphone {
-    display: inline-block;
+  #wrap div.overbx-index .overboxleft .btn-moderation {
+    margin-bottom: 20px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
   }
-  #wrap .main-toolbar .btn.only-on-smartphone:hover {
-    background-color: #fca;
+  #wrap div.overbx-index .overboxleft .btn-moderation .text {
+    display: inline-block;  
   }
+  #wrap div.overbx-index {    
+    max-height: 200px;
+    height: 140px;    
+    display: block;
+    position: relative;      
+  }  
 }

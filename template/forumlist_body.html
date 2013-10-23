@@ -11,87 +11,81 @@
 <!-- ENDIF -->
 
 	<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW or forumrow.S_NO_CAT -->
-	<div class="header">
-		<div class="row-fluid">
-			<div class="span7 category-title">
-				<!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF -->
-			</div>
-
-			<div class="span1 text-center not-on-tab">{L_TOPICS} </div>
-			<div class="span1 text-center not-on-tab">{L_POSTS} </div>
-			<div class="span-lastpost text-center not-on-tab">{L_LAST_POST} </div>
+	<div class="table-head">		
+		<div class="table-title-head">
+			<!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF -->
 		</div>
+
+		<div class="table-replies-head">{L_TOPICS} </div>
+		<div class="table-views-head">{L_POSTS} </div>
+		<div class="table-lastpost-head">{L_LAST_POST} </div>		
 	</div>
 	<!-- ELSE -->
-	<div class="tablerow">
-		<div class="row-fluid">
-			<div class="span7-keepsize force-left-on-tab responsive-title">
-				<div class="icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});">
-				</div>
-				<div class="title">
-					<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
-					<a class="feed-icon-forum pull-right" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
-						<i class="icon-rss-sign"></i>
-					</a>
-					<!-- ENDIF -->
-
-					<div class="form-title">
-						<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE}</span><!-- ENDIF -->
-
-						<h4><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME}</a></h4>
-						<div class="description">{forumrow.FORUM_DESC}</div>
-						<div class="meta">
-							<!-- IF forumrow.MODERATORS -->
-								<strong>{forumrow.L_MODERATOR_STR}:</strong> {forumrow.MODERATORS}
-							<!-- ENDIF -->
-							<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><strong>{forumrow.L_SUBFORUM_STR}</strong> {forumrow.SUBFORUMS}<!-- ENDIF -->
-						</div>
+	<div class="table-row">
+		<div class="table-title">			
+			<div class="table-icon" style="background-image: url({forumrow.FORUM_FOLDER_IMG_SRC});"></div>
+			<div class="title-titletext">
+				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
+				<a class="feed-icon-forum pull-right" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
+					<i class="icon-rss-sign"></i>
+				</a>
+				<!-- ENDIF -->
+                        
+				<div class="form-title">
+					<!-- IF forumrow.FORUM_IMAGE --><span class="forum-image">{forumrow.FORUM_IMAGE} </span><!-- ENDIF -->
+                        						<h4><a href="{forumrow.U_VIEWFORUM}" class="forumtitle">{forumrow.FORUM_NAME} </a></h4>
+					<div class="description">{forumrow.FORUM_DESC} </div>
+					<div class="meta">
+						<!-- IF forumrow.MODERATORS -->
+							<strong>{forumrow.L_MODERATOR_STR} :</strong> {forumrow.MODERATORS}
+						<!-- ENDIF -->
+						<!-- IF forumrow.SUBFORUMS and forumrow.S_LIST_SUBFORUMS --><strong>{forumrow.L_SUBFORUM_STR} </strong> {forumrow.SUBFORUMS} <!-- ENDIF -->
 					</div>
 				</div>
 			</div>
+		</div>			
 
-			<!-- IF forumrow.CLICKS -->
-				<div class="span2-keepsize force-left-on-tab text-center responsive-ministat">
-					<div class="ministat">
-						{forumrow.CLICKS}
-						<dfn>{L_REDIRECTS}</dfn>
-					</div>
-				</div>
-			<!-- ELSEIF not forumrow.S_IS_LINK -->
-				<div class="span1-keepsize force-left-on-tab not-on-smartphone text-center responsive-ministat">
-					<div class="ministat">
-						<span>{forumrow.TOPICS} <dfn>{L_TOPICS}</dfn></span>
-					</div>
-				</div>
-				<div class="span1-keepsize force-left-on-tab not-on-smartphone text-center responsive-ministat">
-					<div class="ministat">
-						<span>{forumrow.POSTS} <dfn>{L_POSTS}</dfn></span>
-					</div>
-				</div>
-				<div class="only-on-handheld clearfix"></div>
-				<div class="span-lastpost text-left">
-					<div class="lastpost">
-						<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
-						<div class="responsive-lastpost">
-						<!-- IF forumrow.LAST_POST_TIME -->
-							{L_LAST_POST} {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
-							<span class="only-on-tab responsive-lastpost-time">| <i class="icon-time"></i> {forumrow.LAST_POST_TIME}</span>
-							<!-- IF not S_IS_BOT -->
-								<a href="{forumrow.U_LAST_POST}"><i class="icon-caret-right"></i></a>
-							<!-- ENDIF -->
-							{forumrow.LAST_POST}
-							<!-- IF forumrow.LAST_POST_LINK --><i>{forumrow.LAST_POST_LINK}</i><br /><!-- ENDIF -->
-							<br /><small class="not-on-handheld"><i class="icon-time"></i> {forumrow.LAST_POST_TIME}</small>
-						<!-- ELSE -->
-							{L_NO_POSTS}
-						<!-- ENDIF -->
-						</div>
-					</div>
-				</div>
-			<!-- ENDIF -->
+		<!-- IF forumrow.CLICKS -->
+		<div class="force-left-on-tab text-center responsive-ministat">
+			<div class="ministat">
+				{forumrow.CLICKS}
+				<dfn>{L_REDIRECTS} </dfn>
+			</div>
 		</div>
+		<!-- ELSEIF not forumrow.S_IS_LINK -->
+		<div class="table-replies">
+			<div class="ministat">
+				<span>{forumrow.TOPICS} <dfn>{L_TOPICS} </dfn></span>
+			</div>
+		</div>
+		<div class="table-views">
+			<div class="ministat">
+				<span>{forumrow.POSTS} <dfn>{L_POSTS} </dfn></span>
+			</div>
+		</div>		
+		<div class="table-lastpost">
+			<div class="lastpost">
+				<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG}</a><!-- ENDIF -->
+				<div class="responsive-lastpost">
+				<!-- IF forumrow.LAST_POST_TIME -->
+					{L_LAST_POST} {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL}
+					<span class="only-on-tab responsive-lastpost-time">| <i class="icon-time"></i> {forumrow.LAST_POST_TIME}</span>
+					<!-- IF not S_IS_BOT -->
+						<a href="{forumrow.U_LAST_POST}"><i class="icon-caret-right"></i></a>
+					<!-- ENDIF -->
+					{forumrow.LAST_POST}
+					<!-- IF forumrow.LAST_POST_LINK --><i>{forumrow.LAST_POST_LINK}</i><br /><!-- ENDIF -->
+					<br /><small class="not-on-handheld"><i class="icon-time"></i> {forumrow.LAST_POST_TIME}</small>
+				<!-- ELSE -->
+					{L_NO_POSTS}
+				<!-- ENDIF -->
+				</div>
+			</div>
+		</div>
+		<!-- ENDIF -->
 	</div>
-	<!-- ENDIF -->
+</div>
+<!-- ENDIF -->
 
 <!-- IF forumrow.S_LAST_ROW -->
 </div>

@@ -1,63 +1,146 @@
 /******************************************************************************/
 /* overall related stuff */
-
-ul.overall-footer-nav-right li div.responsivenavitem {
-  color: #777;
-  padding: 10px 15px 10px;
-  margin-bottom: 2px;
-  margin-top: 2px;
-  line-height: 14px;
+#page-body {
+  padding-top: 30px;
 }
+
+/********************************************************************/
+/* MAIN NAVIGATION */
+#wrap div.navigation {  
+  display: block;  
+  background: transparent;  
+}
+
+#wrap div.navbar-default {
+  margin: 0px;
+  background-color: #111;
+  border-color: #080808;
+  border-right: 0px;
+  border-left: 0px;
+  border-radius: 0px;    
+}
+
+#wrap .navbar button.navbar-toggle {
+  float: none;  
+  right: 5px;
+  position: absolute;
+  border-color: #222;  
+}
+
+#wrap .navbar .navbar-collapse {
+  border-color: #000;  
+}
+
+#wrap .navbar button.navbar-toggle {
+  outline: none;
+}
+
+#wrap .navbar button.navbar-toggle:hover,
+#wrap .navbar button.navbar-toggle:focus {
+  background-color: #222;
+}
+
+#wrap nav.navbar .navbar-collapse > ul.nav li a {
+  padding: 10px;
+}
+
+#wrap div.navbar .navbar-header .navbar-brand {
+  color: #ddd;
+}
+
+#wrap nav.navbar-collapse ul.nav li a {
+  color: #cecece;
+}
+
+#wrap nav.navbar-collapse ul.nav li:hover {
+  background-color: #333;
+}
+
+#wrap nav.navbar-collapse ul.nav li a:hover {
+  color: #ffffff;
+}
+
+#wrap .navigation .navbar-header {
+  position: relative;
+  vertical-align: top;    
+}
+
+#wrap .static-nav {
+  position: absolute;
+  right: 0px;
+  width: 18%;
+  max-width: 180px;
+  height: 50px;
+  display: block;
+  border-left: 1px dashed #000;
+  text-align: center;
+  padding-top: 15px;  
+  color: #ddd;
+  text-decoration: none;
+}
+
+#wrap .static-nav:hover {
+  background-color: #181515;
+}
+
+#wrap .dropdown-account {
+  background-color: #333;
+}
+
+/********************************************************************/
 
 .pagefooter div {
   padding-right: 20px;
   padding-left: 20px;
 }
 
+/********************************************************************/
+/* QUICK LOGIN BOX */
+#wrap .quicklogin a.registerlink {
+  margin: 10px;  
+  position: relative;
+  top: 10px;
+  float: right;
+  font-size: 15px;  
+}
+
+/********************************************************************/
 /* CONTROLS ABOVE THE BOX */
 #wrap div.overboxctrl {
   margin: 10px 0px;
   display: block;
   position: relative;
-  height: 60px;    
+  height: 70px;    
 }
 
-#wrap div.overboxctrl .searchbox,
-#wrap div.overboxctrl .toolbar,
-#wrap div.overboxctrl .pagination {
+#wrap div.overboxctrl .overboxright,
+#wrap div.overboxctrl .overboxleft,
+#wrap div.overboxctrl .overboxcenter {
   display: inline-block;
   float: none;
   position: absolute;
 }
 
-#wrap div.overboxctrl .searchbox {
+#wrap div.overboxctrl .overboxright {
   right: 0px;  
 }
 
-#wrap div.overboxctrl .searchbox input.input-medium {
+#wrap div.overboxctrl .overboxright input.input-medium {
   height: 16px;
 }
 
-#wrap div.overboxctrl .toolbar {
+#wrap div.overboxctrl .overboxleft {
   left: 0px;
 }
-
-#wrap div.overboxctrl .pagination {
+#wrap div.overboxctrl .overboxcenter {
   left: 45%;
   margin: 3px 0px;        
 }
 /**/
 
 
-/* Nice looking navi transitions */
-@media (min-width:1025px) {
-  .pagenavbar .nav > li > a {
-    transition: color 200ms;
-  }
-}
-
-@media all and (max-width:1000px)
-{
+@media all and (max-width:1000px){
+	/** PAGE FOOTER **/
 	.pagefooter div {
 		padding-left: 5px;
 		padding-right: 5px;
@@ -68,11 +151,25 @@ ul.overall-footer-nav-right li div.responsivenavitem {
 	}
 }
 
+@media all and (max-width:920px) {
+	#wrap div.navigation ul.navbar-nav .pmicon {
+	  display: inline-block;
+	  vertical-align: top;
+	  margin-top: 3px;
+	}
+	#wrap div.navigation ul.navbar-nav .pmdesc {
+	  width: 11px;	  
+	  overflow: hidden;
+	  white-space: nowrap;
+	  display: inline-block;	    	
+	}
+}
+
 @media all and (max-width:840px) {
-        #wrap div.overboxctrl .searchbox {
+        #wrap div.overboxctrl .overboxright {
           display: none;
 	}
-	#wrap div.overboxctrl .pagination {
+	#wrap div.overboxctrl .overboxcenter {
 	  left:auto;	  
 	  right: 0px;
 	}	
@@ -101,6 +198,10 @@ ul.overall-footer-nav-right li div.responsivenavitem {
 	ul.overall-footer-nav li a.firstitem,
 	ul.overall-footer-nav-right li a.firstitem {
 	  padding-top: 10px;
+	}
+	
+	#wrap .navigation .navbar-header {
+  	  width: 82%;    
 	}
 }
 
@@ -174,6 +275,9 @@ ul.overall-footer-nav-right li div.responsivenavitem {
   .responsive-nav-trigger:focus + .responsive-nav {
     height: 125px;
   }
+  #wrap .overboxleft {
+    width: 100%;  
+  }  
 }
 
 /*.small-select-wrapper, .small-select-wrapper select {

@@ -23,6 +23,7 @@ a:active {
   background-position: center;
   color: #fff;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4);
+  min-height: 200px;
 }
 #pageheader .headcontainer {
   clear:both;

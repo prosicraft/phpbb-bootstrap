@@ -142,44 +142,59 @@
 		</header>
 
 		<!-- Main Navigation -->
-		<div class="navbar navbar-static-top navbar-inverse pagenavbar">
-			<div class="navbar-inner">
-				<div class="responsive-nav-trigger<!-- IF not S_USER_LOGGED_IN --> not-on-handheld<!-- ENDIF -->" tabindex="0"><i class="icon-reorder"></i></div>
-				<ul class="nav responsive-nav<!-- IF not S_USER_LOGGED_IN --> not-on-handheld<!-- ENDIF -->">
-					<li><a href="{U_INDEX}" accesskey="h"><i class="icon-home"></i> {L_INDEX}</a>											</li>
+		<div class="navigation">
+		<div class="navbar navbar-default" role="navigation">
+			<!-- IF not S_USER_LOGGED_IN -->
+			<a id="login-trigger" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
+				<div class="static-nav"><i class="icon-lock"></i> {L_LOGIN} <i class="icon-caret-down"></i></div>
+			</a>
+			<!-- ELSE -->			 
+			<a href="{U_LOGOUT}">
+				<div class="static-nav"><i class="icon-signout"></i> {L_LOGOUT}</div>
+			</a>			
+			<!-- ENDIF -->
+			
+			<div class="navbar-header">				
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">				
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>					
+				</button>
+				<a class="navbar-brand" href="{U_INDEX}" accesskey="h"><i class="icon-home only-on-handheld"></i> {SITENAME}</a>
+			</div>																							
 
+				<nav class="collapse navbar-collapse navbar-ex1-collapse">
+					
+					<ul class="nav navbar-nav">						
 					<!-- IF not S_IS_BOT -->
-					<!-- IF S_DISPLAY_MEMBERLIST --><li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-group"></i> {L_MEMBERLIST}</a></li><!-- ENDIF -->
-					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-info"></i> {L_FAQ}</a></li>
-					<!-- ENDIF -->
-				</ul>
-
-				<!-- IF not S_IS_BOT -->
-				<ul class="nav pull-right" id="responsive-nav">
+						<!-- IF S_DISPLAY_MEMBERLIST -->
+						<li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-group"></i> {L_MEMBERLIST}</a></li>
+						<!-- ENDIF -->
+						
+						<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-info"></i> {L_FAQ}</a></li>
+					<!-- ENDIF -->																		
 
                                 	<!-- IF S_CONTACT_ENABLED -->
 					<li><a href="{U_CONTACT}"><i class="icon-envelope-alt"></i> {L_CONTACT_BOARD_ADMIN_SHORT}</a></li>
 					<!-- ENDIF -->
 					
 					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->					
-					<li><a href="{U_REGISTER}"><i class="icon-pencil"></i> {L_REGISTER}</a></li>
-					<!-- ENDIF -->
-					
-					<!-- IF not S_USER_LOGGED_IN -->
-					<li><a id="login-trigger" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x"><i class="icon-lock"></i> {L_LOGIN} <i class="icon-caret-down"></i></a></li>
-					<!-- ENDIF -->
+					<li></li>
+					<!-- ENDIF -->									
+						
 					<!-- IF S_USER_LOGGED_IN -->
 						<!-- IF U_RESTORE_PERMISSIONS -->
 						<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
 						<!-- ENDIF -->
+														
 						<!-- IF S_DISPLAY_PM -->
-						<li><a href="{U_PRIVATEMSGS}" class="responsive-navitem-privmsgs"><i class="icon-envelope-alt"></i> {PRIVATE_MESSAGE_INFO}</a></li>
+						<li><a href="{U_PRIVATEMSGS}" class="responsive-navitem-privmsgs"><i class="icon-envelope-alt pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>
 						<!-- ENDIF -->
+							
 						<li class="dropdown">
-							<div class="responsive-dropdown-trigger dropdown-toggle" tabindex="0">
-								<i class="icon-user"></i> {CURRENT_USERNAME} <i class="icon-caret-down"></i>
-							</div>
-							<ul class="dropdown-menu responsive-dropdown-menu">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {CURRENT_USERNAME} <i class="icon-caret-down"></i></a>
+							<ul class="dropdown-menu dropdown-account">
 								<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-cog"></i> {L_PROFILE}</a></li>
 								<!-- IF S_DISPLAY_SEARCH -->
 								<li><a href="{U_SEARCH_SELF}"><i class="icon-comment"></i> {L_SEARCH_SELF}</a></li>
@@ -193,9 +208,9 @@
 							</ul>
 						</li>
 					<!-- ENDIF -->
-				</ul>
-				<!-- ENDIF -->
-			</div>
+					</ul>									
+				</nav>								
+		</div>
 		</div>
 		<!-- end main nav -->
 
@@ -211,13 +226,14 @@
 				<label for="autologin" class="checkbox"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>
 				<!-- ENDIF -->
 				{S_LOGIN_REDIRECT}
-				<button type="submit" name="login" class="btn btn-block btn-primary"><i class="icon-lock"></i> {L_LOGIN}</input>
+				<button type="submit" name="login" class="btn btn-block btn-primary"><i class="icon-lock"></i> {L_LOGIN}</button>
+				<a class="registerlink" href="{U_REGISTER}"><i class="icon-edit-sign"></i> {L_REGISTER}</a>
 			</form>
 		</div>
 		<!-- ENDIF -->
 
 
-	<div id="page-header">
+	<div id="page-header" style="display:none;">
 		<div class="navbar">
 			<ul class="linklist navlinks">
 				<!-- IF U_EMAIL_TOPIC --><li class="rightside" style="display:none;"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
@@ -230,7 +246,7 @@
 	</div>
 
 	<a name="start_here"></a>
-	<div id="page-body" class="container-fluid">
+	<div id="page-body">
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
 		<div class="alert alert-info"><strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}</div>
 		<!-- ENDIF -->

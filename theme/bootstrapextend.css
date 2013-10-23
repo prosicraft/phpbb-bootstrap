@@ -39,86 +39,9 @@
   font-size: 28px;
 }
 
-.box .tablerow {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-  display: block;
-  min-height: 50px;
-}
 
-.box .tablerow .icon,
-.box .phantomrow .icon {
-  width: 40px;
-  height: 40px;
-  float: left;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  background-clip: padding-box;
-  position: relative;
-  top: 10px;
-  left: 0;
-}
 
-.box .phantomrow .icon {
-  top: 3px;
-}
 
-.box .tablerow .title,
-.box .phantomrow .title {
-  padding-top: 2px;
-  margin-left: 50px;
-}
-
-.box .tablerow .title h4,
-.box .phantomrow .title h4 {
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
-
-.box .phantomrow .title h4 {
-  margin-top: 2px;
-}
-
-.box .tablerow .ministat {
-  margin: 5px 0;
-  background: #222;
-  color: #fff;
-  border-radius: 4px;
-  padding: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  line-height: 1;
-  text-shadow: none;
-  width: 100%;
-}
-
-.box .tablerow .ministat dfn {
-  display: block;
-  font-size: 11px;
-  font-weight: normal;
-  text-transform: uppercase;
-  margin-top: 4px;
-  font-style: normal;
-}
-
-.box .tablerow a.feed-icon {
-  text-decoration: none;
-  color: #f89406;
-  font-size: 20px;
-  padding-top: 5px;
-}
-
-.box .tablerow .lastpost {
-  margin-top: 10px;
-}
-
-.box .tablerow .sent {
-  margin-top: 20px;
-}
 
 label.strong {
   font-weight: bold;
@@ -190,6 +113,37 @@ label.strong {
 .row-fluid .span11-keepsize { min-width: 550px; width: 91.48936170212765%; }
 .row-fluid .span12-keepsize { width: 100%; }
 
+/* buttons don't work with a tag in bootstrap 3 anymore */
+#wrap .btn {
+  background-color: rgb(221, 221, 221);
+  border: 1px solid #bbb;
+  font-size: 12px;  
+}
+#wrap .btn:hover {
+  background-color: #eee;
+  color: #666;
+}
+#wrap .btn-group .btn:first-child {
+  border-right: 1px solid #bbb;
+}
+#wrap .btn-group .btn:first-child + .btn {
+  border-left: 1px solid #bbb;
+}
+#wrap .btn-group + .btn {
+  margin-left: 10px;
+}
+#wrap .btn + .btn-group {
+  margin-left: 10px;
+}
+#wrap a.btn {
+  color: #333;
+}
+#wrap .btn-small {
+  max-height: 30px;
+  padding-top: 4px;
+  height: 28px;  
+}
+
 /* Small-Button-Icons */
 .btn-small i {
   font-size: 14px;
@@ -228,7 +182,7 @@ div.error {
   }
   .not-on-large-tab {
     display: none;
-  }
+  }  
 }
 
 /* small tablet / portrait  */
@@ -345,6 +299,7 @@ div.error {
     padding: 0px;
     text-align: center;
     background-color: #efefef;
+    min-height: 40px;
   }
   #wrap div.btn-group .btn:first-child {
     margin-left: 1px;
@@ -364,12 +319,145 @@ div.error {
     padding-bottom: 15px;
     margin-top: 3px;
     margin-bottom: 3px;
-    max-height: 10px;
+    height: 30px;
+    float: center;    
+    display: inline-block;       
   }
   #wrap div.btn-group .btn i {
     font-size: 18px;
   }
   #wrap div.btn-group .btn:hover {
     background-color: #fff;
+  }
+}
+
+
+/*********************************************************************/
+/* TABLE SECTION BEGINS */
+
+.table-head {
+  width: 100%;
+  height: auto;  
+  position: relative;
+  display: block;
+  border-bottom: 1px solid #f00;
+}
+
+.table-row {
+  width: 100%;
+  height: auto;
+  position: relative;
+  display: block;   
+}
+
+.table-row + .table-row {
+  border-top: 1px solid #aaa;
+}
+
+.table-head * {
+  color: #666;
+  font-size: 15px;
+  font-weight: bold;
+  min-height: 35px;          
+}
+
+.table-head div,
+.table-row div {
+  display: inline-block;
+  position: relative;    
+  overflow: hidden;
+  white-space: nowrap;  
+  border-left: 1px solid #0f0;
+  border-right: 1px solid #f0f;
+  margin-left: -1px;
+  vertical-align: middle;  
+  padding: 5px;    
+}
+
+.table-row * {
+  min-height: 50px;
+}
+
+.table-title-head,
+.table-title {
+  width: 60%;
+}
+
+.table-title {
+  font-weight: bold;
+  font-size: 18px;
+  color: #77a;  
+}
+
+.table-replies-head,
+.table-views-head,
+.table-replies,
+.table-views {
+  width: 10%;
+  max-width: 100px;
+  min-width: 80px;    
+}
+
+.table-lastpost-head,
+.table-lastpost {
+  width: 18%;
+}
+
+@media all and (max-width: 800px)
+{
+  .table-head .table-views-head,
+  .table-row .table-views {
+    display: none !important;  
+  }
+  
+  .table-head .table-title-head,
+  .table-row .table-title {
+    width: 75%;           
+  }  
+  
+  .table-head .table-replies-head,
+  .table-row .table-replies {        
+    top: 0px;
+    display: block;
+    float: right;
+    position: relative;
+    margin-right: 10px;    
+  }
+  
+  .table-head .table-lastpost-head {
+    display: none !important;  
+  }  
+  
+  .table-row .table-lastpost {
+    display: block;
+    width: 75%;
+    position: relative;    
+    border-top: 1px dotted #444;
+    border-bottom: 1px dotted #444;
+    height: auto;
+    min-height: 5px;    
+  }
+  
+  .table-row .table-title {
+    min-height: 15px;    
+    height: auto;
+  }
+  
+  .table-row {
+    margin-bottom: 10px;  
+  }
+}
+
+@media all and (max-width:380px)
+{
+  .table-head .table-replies-head,
+  .table-row .table-replies {
+    display: none;  
+  }
+  
+  .table-head .table-title-head,
+  .table-row .table-title,
+  .table-row .table-lastpost {
+    width: 100%;  
   }
 }

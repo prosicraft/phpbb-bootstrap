@@ -41,7 +41,7 @@
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 	<div class="overboxctrl" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 2em;"<!-- ENDIF -->>
 
-			<div class="btn-group main-toolbar toolbar">
+			<div class="btn-group main-toolbar overboxleft">
 			<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small only-on-smartphone"><i class="icon-cogs"></i>&nbsp;</a><!-- ENDIF -->
 			<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
 				<a class="firsttbitem <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->btn btn-small<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->" href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED --><i class="icon-lock"></i>&nbsp;{L_FORUM_LOCKED}<!-- ELSE --><i class="icon-plus-sign"></i>&nbsp;<strong>{L_POST_TOPIC} </strong><!-- ENDIF --></a>
@@ -53,7 +53,7 @@
 			</div>
 
 		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
-		<div class="pagination">
+		<div class="overboxcenter">
 			<!-- IF TOTAL_TOPICS -->{TOTAL_TOPICS}<!-- ENDIF -->
 			<!-- IF PAGE_NUMBER -->
 				<!-- IF PAGINATION -->
@@ -73,7 +73,7 @@
 		<!-- ENDIF -->
 
 	<!-- IF S_DISPLAY_SEARCHBOX -->
-		<div class="searchbox">
+		<div class="overboxright">
 			<form method="get" id="form-inline" class="form-inline pull-right" action="{S_SEARCHBOX_ACTION}">
 			<fieldset>
 				<input class="form-control input-medium" type="text" name="keywords" id="search_keywords" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
@@ -158,81 +158,77 @@
 
 				<div class="text-center topic-replies-head">{L_REPLIES} </div>
 				<div class="not-on-handheld text-center topic-views-head">{L_VIEWS} </div>
-				<div class="topic-lastpost-head pull-left"><span>{L_LAST_POST}</span></div>
+				<div class="topic-lastpost-head pull-left"><span>{L_LAST_POST} </span></div>
 				<div class="clearfix"></div>
 		</div>
 	<!-- ENDIF -->
 
-		<div class="tablerow <!-- IF topicrow.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF --><!-- IF topicrow.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
-				<div class="topic-title clearfix "<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
-					<div class="icon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});"></div>
-
-					<div class="title">
-						<!-- IF topicrow.S_UNREAD_TOPIC -->
-							<a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a>
+		<div class="tablerow<!-- IF topicrow.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
+			<div class="topic-title "<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
+				
+				<div class="table-titleicon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});"></div>
+				<div class="table-titletext">
+					<!-- IF topicrow.S_UNREAD_TOPIC -->
+					<a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a>
+					<!-- ENDIF -->					
+					<h4><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE} </a></h4>
+					<p class="description">
+						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
+							<a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG} </a>
 						<!-- ENDIF -->
-						<div class="form-title">
-							<h4><a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a></h4>
-							<p class="description">
-								<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
-									<a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a>
-								<!-- ENDIF -->
-								<!-- IF topicrow.S_TOPIC_REPORTED -->
-									<a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a>
-								<!-- ENDIF -->
-								<!-- IF topicrow.PAGINATION -->
-									<strong class="pagination"><span>{topicrow.PAGINATION}</span></strong>
-								<!-- ENDIF -->
-								<!-- IF topicrow.ATTACH_ICON_IMG -->
-									{topicrow.ATTACH_ICON_IMG}
-								<!-- ENDIF -->
-								<span class="author">{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</span>
-							</p>
-							<p class="meta"></p>
-						</div>
-					</div>
-				</div>
-				<div class="text-center topic-replies">
-					<div class="ministat">
-						<span>{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></span>
-					</div>
-				</div>
-				<div class="not-on-handheld text-center topic-views">
-					<div class="ministat">
-						<span>{topicrow.VIEWS} <dfn>{L_VIEWS}</dfn></span>
-					</div>
-				</div>
-				<div class="topic-lastpost text-left">
-					<p class="lastpost">
-						<dfn>{L_LAST_POST} </dfn>
-						{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
-						<br />
-						<span class="delimiter">|</span>
-						<small>
-							<i class="icon-time"></i>
-							{topicrow.LAST_POST_TIME}
-						<!-- IF not S_IS_BOT -->
-							<a href="{topicrow.U_LAST_POST}">
-								<i class="only-on-tab icon-caret-right link"></i>
-							</a>
+						<!-- IF topicrow.S_TOPIC_REPORTED -->
+							<a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG} </a>
 						<!-- ENDIF -->
-						</small>
-					</p>
+						<!-- IF topicrow.PAGINATION -->
+							<strong class="pagination"><span>{topicrow.PAGINATION} </span></strong>
+						<!-- ENDIF -->
+						<!-- IF topicrow.ATTACH_ICON_IMG -->
+							{topicrow.ATTACH_ICON_IMG}
+						<!-- ENDIF -->
+						<span class="author">{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME} </span>
+					</p>											
 				</div>
+				
+			</div>
+			<div class="topic-replies">
+				<div class="ministat">
+					<span>{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></span>
+				</div>
+			</div>			
+			<div class="not-on-handheld topic-views">
+				<div class="ministat">
+					<span>{topicrow.VIEWS} <dfn>{L_VIEWS}</dfn></span>
+				</div>
+			</div>
+			<div class="topic-lastpost text-left">
+				<p class="lastpost">
+					<dfn>{L_LAST_POST} </dfn>
+					{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+					<br />
+					<span class="delimiter">|</span>
+					<small>
+						<i class="icon-time"></i>
+						{topicrow.LAST_POST_TIME}
+					<!-- IF not S_IS_BOT -->
+						<a href="{topicrow.U_LAST_POST}">
+							<i class="only-on-tab icon-caret-right link"></i>
+						</a>
+					<!-- ENDIF -->
+					</small>
+				</p>
+			</div>
 
-				<div class="clearfix"></div>
+			<div class="clearfix"></div>		
+
 		</div>
-
-	<!-- IF topicrow.S_LAST_ROW -->
-
-	</div>
-	<!-- ENDIF -->
+	
+	</div>		
 
 <!-- BEGINELSE -->
 	<!-- IF S_IS_POSTABLE -->
-	<div class="panel">
+	<div class="box">
 
-		<strong>{L_NO_TOPICS}</strong>
+		<strong>{L_NO_TOPICS} </strong>
 
 	</div>
 	<!-- ENDIF -->
