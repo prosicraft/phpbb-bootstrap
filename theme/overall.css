@@ -234,6 +234,11 @@
      padding-left: 0px;
      padding-right: 0px;   
    }
+   
+   #wrap div.navbar .navbar-header .navbar-brand {
+     font-size: 15px;
+     font-weight: bold;           
+   }
   
   /* switch to drop-down navmenu */
   .responsive-nav {
