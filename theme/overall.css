@@ -166,6 +166,19 @@
   background-color: #333;
 }
 
+#wrap .btn-primary {
+  background-color: #66f;
+  width: 100%;
+  border-color: #33e;
+}
+#wrap .btn-primary:hover {
+  background-color: #33e;
+  color: #eee;
+}
+#wrap .chk-autologin {
+  font-size: 11px;
+}
+
 /********************************************************************/
 
 .pagefooter div {

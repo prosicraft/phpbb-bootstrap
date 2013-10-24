@@ -148,7 +148,7 @@
 				<div class="static-nav"><i class="icon-signin"></i> <span class="not-on-smartphone">{L_LOGIN} <i class="icon-caret-down"></i></span></div>
 			</a>
 			<!-- ELSE -->			 
-			<a href="{U_LOGOUT}">
+			<a href="{U_LOGIN_LOGOUT}">
 				<div class="static-nav"><i class="icon-signout"></i> <span class="not-on-smartphone">{L_LOGOUT} </span></div>
 			</a>			
 			<!-- ENDIF -->
@@ -222,7 +222,7 @@
 				<label for="password">{L_PASSWORD}:</label>
 				<input type="password" name="password" id="password" size="10" class="input-block-level" title="{L_PASSWORD}" />
 				<!-- IF S_AUTOLOGIN_ENABLED -->
-				<label for="autologin" class="checkbox"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>
+				<label for="autologin" class="checkbox chk-autologin"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>
 				<!-- ENDIF -->
 				{S_LOGIN_REDIRECT}
 				<button type="submit" name="login" class="btn btn-block btn-primary"><i class="icon-lock"></i> {L_LOGIN}</button>
