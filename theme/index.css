@@ -98,8 +98,9 @@
   }
   #wrap div.overbx-index {    
     max-height: 200px;
-    height: 140px;    
+    height: 50px;    
     display: block;
-    position: relative;      
+    position: relative;
+    top: -20px;      
   }  
 }

@@ -1,6 +1,6 @@
 <!-- INCLUDE overall_header.html -->
 
-<div class="overboxctrl overbx-index">	
+<div class="overboxctrl overbx-index<!-- IF not S_USER_LOGGED_IN --> overbx-notloggedin<!-- ENDIF -->">	
 	<div class="lastvisitcontainer">
 		<ul class="inline pull-right lastvisit">
 			<li class="not-on-smartphone"><small><i class="icon-time"></i> <!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></small></li>

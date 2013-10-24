@@ -575,9 +575,17 @@ div.error {
   vertical-align: top;
 }
 
-.table-row .table-lastpost {
-  margin-top: 10px;
+.table-row .table-lastpost {  
   min-height: 50px;     
+}
+
+.table-row .table-lastpost .lastpost-info:first-child {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.table-row .table-lastpost .lastpost-topiclink {
+  margin-top: -5px;
 }
 
 .table-row .table-lastpost .lastpost-smartlink {
@@ -660,6 +668,15 @@ div.error {
     min-height: 20px;
     display: inline-block;
     vertical-align: middle;
+  }
+  
+  .table-row .table-lastpost .lastpost-topiclink,
+  .table-row .table-lastpost .lastpost-topiclink + br {
+    display: none;  
+  }     
+  
+  .table-row .table-lastpost .lastpost-info:first-child {
+    margin-top: 0px;  
   }
   
   .table-row .table-title {

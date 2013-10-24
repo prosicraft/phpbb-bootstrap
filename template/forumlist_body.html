@@ -71,12 +71,12 @@
 		<div class="table-lastpost">			
 			<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG} </a><!-- ENDIF -->				
 			<!-- IF forumrow.LAST_POST_TIME -->
+				<!-- IF forumrow.LAST_POST_LINK --><i class="lastpost-topiclink">{forumrow.LAST_POST_LINK} </i><br /><!-- ENDIF -->
 				<span class="lastpost-info">{L_LAST_POST} {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL} </span>				
 				<!-- IF not S_IS_BOT -->
 					<a class="lastpost-desklink" href="{forumrow.U_LAST_POST}"><i class="icon-caret-right"></i></a>
 				<!-- ENDIF -->
-				{forumrow.LAST_POST}
-				<!-- IF forumrow.LAST_POST_LINK --><i>{forumrow.LAST_POST_LINK} </i><br /><!-- ENDIF -->					
+				{forumrow.LAST_POST}									
 				<br class="lastpost-delimiter" />
 				<span class="lastpost-time"><i class="icon-time"></i> {forumrow.LAST_POST_TIME} </span>
 				<!-- IF not S_IS_BOT -->
