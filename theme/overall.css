@@ -7,6 +7,77 @@
 }
 
 /********************************************************************/
+/* footer related stuff */
+#well-footer.well {
+  background: #f2f2f2; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f2f2f2 0%, #dbdbdb 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f2f2), color-stop(100%,#dbdbdb)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f2f2f2 0%,#dbdbdb 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f2f2f2 0%,#dbdbdb 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f2f2f2 0%,#dbdbdb 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f2f2f2 0%,#dbdbdb 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#dbdbdb',GradientType=0 ); /* IE6-9 */
+  position: relative;
+}
+
+#well-footer.well .well-footer-left {
+  list-style: none;
+  display: inline-block;
+  margin: 0px;
+  vertical-align: middle;  
+}
+
+#well-footer.well .well-footer-right {
+  list-style: none;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+#well-footer.well .well-footer-right li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+@media all and (max-width: 800px)
+{
+  #well-footer.well {
+    height: 90px;  
+  }
+  #well-footer.well .well-footer-left {
+    margin-top: 10px;  
+  }
+  #well-footer.well .well-footer-right {
+    padding-left: 40px;
+    padding-right: 20px;
+    border-left: 1px solid #bbb;
+    top: 10px;  
+  }
+  #well-footer.well .well-footer-right li {
+    display: block;
+    margin-right: 0px;
+    margin-bottom: 5px;    
+  }  
+}
+
+@media all and (max-width: 500px)
+{
+  #well-footer.well .well-footer-right {
+    padding-left: 10px;
+    font-size: 11px;
+    padding-right: 0px;  
+  }
+  #well-footer.well .well-footer-left {
+    padding-left: 0px;  
+    font-size: 11px;
+  }
+  #well-footer.well {
+    height: 78px;  
+  }
+}
+
+/********************************************************************/
 /* MAIN NAVIGATION */
 #wrap div.navigation {  
   display: block;  
