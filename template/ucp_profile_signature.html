@@ -45,12 +45,14 @@
 <fieldset>
 	{S_FORM_TOKEN}
 </fieldset>
-<fieldset class="btn-group pull-right">
-	{S_HIDDEN_FIELDS}
-	<input type="reset" name="reset" value="{L_RESET}" class="btn btn-small" />&nbsp;
-	<input type="submit" name="preview" value="{L_PREVIEW}" class="btn btn-small" />&nbsp;
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
-</fieldset>
+<div class="submitrow">
+	<fieldset class="btn-group">
+		{S_HIDDEN_FIELDS}
+		<input type="reset" name="reset" value="{L_RESET}" class="btn btn-small" />
+		<input type="submit" name="preview" value="{L_PREVIEW}" class="btn btn-small" />
+		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
+	</fieldset>
+</div>
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

@@ -10,22 +10,21 @@
 
 	<fieldset class="fields2">
 	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
-	<dl class="row-fluid">
-		<dt class="span5"><label class="strong" <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FOES}:</label><span class="description">{L_YOUR_FOES_EXPLAIN}</span></dt>
-		<dd class="span7">
+	<dl class="ucp-collist">
+		<dt><label class="strong" <!-- IF S_USERNAME_OPTIONS -->for="usernames"<!-- ENDIF -->>{L_YOUR_FOES}:</label><span class="description">{L_YOUR_FOES_EXPLAIN}</span></dt>
+		<dd>
 			<!-- IF S_USERNAME_OPTIONS -->
 				<select name="usernames[]" id="usernames" multiple="multiple" size="5">{S_USERNAME_OPTIONS}</select>
 			<!-- ELSE -->
 				<strong>{L_NO_FOES}</strong>
 			<!-- ENDIF -->
 		</dd>
-	</dl>
-	<dl class="row-fluid">
-		<dt class="span5"><label class="strong" for="add">{L_ADD_FOES}:</label><span class="description">{L_ADD_FOES_EXPLAIN}</span></dt>
-		<div class="span7">
+			
+		<dt><label class="strong" for="add">{L_ADD_FOES}:</label><span class="description">{L_ADD_FOES_EXPLAIN}</span></dt>
+		<dd>
 			<textarea name="add" id="add" rows="3" cols="30" class="inputbox">{USERNAMES}</textarea><br />
 			<a class="btn btn-small" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
-		</div>
+		</dd>
 	</dl>
 	</fieldset>
 
@@ -35,10 +34,12 @@
 <fieldset>
 	{S_FORM_TOKEN}
 </fieldset>
-<fieldset class="btn-group pull-right">
-	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-small" />
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
-</fieldset>
+<div class="submitrow">
+	<fieldset class="btn-group">
+		{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-small" />
+		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
+	</fieldset>
+</div>
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

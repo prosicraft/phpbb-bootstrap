@@ -6,59 +6,49 @@
 
 <p class="description">{L_PROFILE_INFO_NOTICE}</p>
 
-<div class="panel">
-
 	<fieldset class="ucp-profile-details box small-bottom-margin">
 	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
 	<div class="row-fluid">
-		<div class="span8">
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="icq">{L_UCP_ICQ}:</label></dt>
-				<dd class="span5"><input type="text" name="icq" id="icq" maxlength="15" value="{ICQ}" class="inputbox" /></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="aim">{L_UCP_AIM}:</label></dt>
-				<dd class="span5"><input type="text" name="aim" id="aim" maxlength="255" value="{AIM}" class="inputbox" /></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="msn">{L_UCP_MSNM}:</label></dt>
-				<dd class="span5"><input type="text" name="msn" id="msn" maxlength="255" value="{MSN}" class="inputbox" /></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="yim">{L_UCP_YIM}:</label></dt>
-				<dd class="span5"><input type="text" name="yim" id="yim" maxlength="255" value="{YIM}" class="inputbox" /></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="jabber">{L_UCP_JABBER}:</label></dt>
-				<dd class="span5"><input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="inputbox" /></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="website">{L_WEBSITE}:</label></dt>
-				<dd class="span5"><input type="text" name="website" id="website" maxlength="255" value="{WEBSITE}" class="inputbox" /></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="location">{L_LOCATION}:</label></dt>
-				<dd class="span5"><input type="text" name="location" id="location" maxlength="255" value="{LOCATION}" class="inputbox" /></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="occupation">{L_OCCUPATION}:</label></dt>
-				<dd class="span5"><textarea name="occupation" id="occupation" class="inputbox" rows="3" cols="30">{OCCUPATION}</textarea></dd>
-			</dl>
-			<dl class="row-fluid">
-				<dt class="span5"><label class="strong" for="interests">{L_INTERESTS}:</label></dt>
-				<dd class="span5"><textarea name="interests" id="interests" class="inputbox" rows="3" cols="30">{INTERESTS}</textarea></dd>
+		<div class="span6">
+			<dl class="ucp-collist">
+				<dt><label class="strong" for="icq">{L_UCP_ICQ}:</label></dt>
+				<dd><input type="text" name="icq" id="icq" maxlength="15" value="{ICQ}" class="inputbox" /></dd>
+							
+				<dt><label class="strong" for="aim">{L_UCP_AIM}:</label></dt>
+				<dd><input type="text" name="aim" id="aim" maxlength="255" value="{AIM}" class="inputbox" /></dd>			
+			
+				<dt><label class="strong" for="msn">{L_UCP_MSNM}:</label></dt>
+				<dd><input type="text" name="msn" id="msn" maxlength="255" value="{MSN}" class="inputbox" /></dd>
+			
+				<dt><label class="strong" for="yim">{L_UCP_YIM}:</label></dt>
+				<dd><input type="text" name="yim" id="yim" maxlength="255" value="{YIM}" class="inputbox" /></dd>
+						
+				<dt><label class="strong" for="jabber">{L_UCP_JABBER}:</label></dt>
+				<dd><input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="inputbox" /></dd>
+						
+				<dt><label class="strong" for="website">{L_WEBSITE}:</label></dt>
+				<dd><input type="text" name="website" id="website" maxlength="255" value="{WEBSITE}" class="inputbox" /></dd>
+						
+				<dt><label class="strong" for="location">{L_LOCATION}:</label></dt>
+				<dd><input type="text" name="location" id="location" maxlength="255" value="{LOCATION}" class="inputbox" /></dd>
+						
+				<dt><label class="strong" for="occupation">{L_OCCUPATION}:</label></dt>
+				<dd><textarea name="occupation" id="occupation" class="inputbox" rows="3" cols="30">{OCCUPATION}</textarea></dd>
+						
+				<dt><label class="strong" for="interests">{L_INTERESTS}:</label></dt>
+				<dd><textarea name="interests" id="interests" class="inputbox" rows="3" cols="30">{INTERESTS}</textarea></dd>
 			</dl>
 		</div>
 
-		<div class="span4">
+		<div class="span6">
 		<!-- IF S_BIRTHDAYS_ENABLED -->
-			<dl>
+			<dl class="ucp-collist">
 				<dt><label class="strong" for="bday_day">{L_BIRTHDAY}:</label><span class="description">{L_BIRTHDAY_EXPLAIN}</span></dt>
-				<div class="small-top-margin">
+				<dd>
 					<label class="pull-left" for="bday_day"><select name="bday_day" id="bday_day" style="width: 4em;">{S_BIRTHDAY_DAY_OPTIONS}</select></label>
 					<label class="pull-left" for="bday_month"><select name="bday_month" id="bday_month" style="width: 5em;">{S_BIRTHDAY_MONTH_OPTIONS}</select></label>
 					<label class="pull-left" for="bday_year"><select name="bday_year" id="bday_year" style="width: 6em;">{S_BIRTHDAY_YEAR_OPTIONS}</select></label>
-				</div>
+				</dd>
 			</dl>
 		<!-- ENDIF -->
 		<!-- BEGIN profile_fields -->
@@ -74,16 +64,16 @@
 	</fieldset>
 
 
-</div>
-
 <fieldset>
 	{S_FORM_TOKEN}
 </fieldset>
-<fieldset class="btn-group pull-right">
-	{S_HIDDEN_FIELDS}
-	<input type="reset" value="{L_RESET}" name="reset" class="btn btn-small" />&nbsp;
-	<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
-</fieldset>
+<div class="submitrow">
+	<fieldset class="btn-group">
+		{S_HIDDEN_FIELDS}
+		<input type="reset" value="{L_RESET}" name="reset" class="btn btn-small" />
+		<input type="submit" name="submit" value="{L_SUBMIT}" class="btn btn-small strong" />
+	</fieldset>
+</div>
 </form>
 
 <!-- INCLUDE ucp_footer.html -->

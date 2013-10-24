@@ -1,27 +1,267 @@
 /******************************************************************************/
 /* UCP related stuff */
 
-div.ucp-main {
-  border-left: 2px solid #ddd;
-  padding-left: 20px;
+
+
+/* UCP Main layout */
+.ucp-wrap {
+  width: 100%;
+  position: relative;
 }
 
-dl.details {
-  width:80%;
-  max-width: 700px;
+.ucp-maintools {
+  padding-left: 20%;
 }
 
-dl.details dt {
-  clear:left;
-  float:left;
+.ucp-maintools ul {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 12px;
+  margin: 0px;
+}
+
+.ucp-maintools ul li {
+  display: inline-block;
+  border: 1px solid #aaa;
+  border-bottom: 0px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background-color: #eaeaea;
+  z-Index: 100;
+  position: relative;
+  margin-bottom: -1px;
+  margin-right: 3px;
+}
+
+.ucp-maintools ul li a {
+  display: inline-block;  
+  padding: 15px;
+}
+
+.ucp-maintools ul li a:hover {
+  text-decoration: none;
+}
+
+.ucp-maintools ul li.active {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;  
+}
+
+.ucp-maintools ul li:hover {
+  background-color: #ddd;
+}
+
+.ucp-maincontent {
+  margin-left: 20%; 
+
+  background-color: #fff;
+  font-size: 12px;
+  border: 1px solid #aaa;  
+  padding: 10px;
+  min-height: 400px;
+  z-Index: 0;
+  position: relative;  
+}
+
+.ucp-subtools {
+  position: absolute;
   width: 20%;
+  margin-top: 20px;    
 }
 
-dl.details dd {
-  float:left;
-  text-align:left;
-  margin-bottom:20px;
+.ucp-subtools ul {
+  list-style: none;
+  padding-left: 0px;
+  font-size: 12px;
+  margin-top: 0px;
 }
+
+.ucp-subtools ul li {    
+  background-color: #eaeaea;
+  border: 1px solid #aaa;
+  border-right: 0px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  margin-bottom: 2px;
+  position: relative;  
+  margin-right: -1px;
+}
+
+.ucp-subtools ul li a {
+  padding: 10px 0px 10px 15px;
+  display: block;
+}
+
+.ucp-subtools ul li a:hover {
+  text-decoration: none;
+}
+
+.ucp-subtools ul li.active {
+  background-color: #fff;
+  z-Index: 100;  
+}
+
+.ucp-subtools ul li:hover {
+  background-color: #ddd;
+}
+
+
+@media all and (max-width: 900px)
+{
+  .ucp-subtools {
+    position: relative;
+    width: 100%;
+    margin-top: 0px;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    margin-bottom: 10px;
+  }
+  .ucp-subtools ul {
+    margin-bottom: 0px;  
+  }
+  .ucp-subtools ul li {
+    border-right: 1px solid #aaa;
+    border-radius: 3px;       
+    background-color: #f3f3f3;     
+  }
+  .ucp-subtools ul li.active {
+    background-color: #fff;  
+  }
+  .ucp-maintools {
+    padding-left: 10px;  
+  }
+  .ucp-maincontent {
+    margin-left: 0px;
+    box-shadow: 3px 3px 10px #777;      
+  }
+}
+
+@media all and (max-width: 500px)
+{
+  .ucp-maintools,
+  .ucp-maintools ul,
+  .ucp-maintools ul li {
+    font-size: 11px;  
+  }
+  .ucp-maintools ul li a {
+    padding: 10px;
+  }
+  
+  .ucp-subtools ul {
+    font-size: 11px;  
+  }  
+}
+
+
+/***********************************************/
+
+
+.ucp-collist {
+  display: block;
+  position: relative;
+}
+
+.ucp-collist dt {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 14px;
+  width: 30%;    
+  padding: 10px;
+  vertical-align: top;
+}
+
+#wrap dl.ucp-collist dt label {
+  font-weight: bold;
+  margin-left: 0px;
+}
+
+.ucp-profile-details .ucp-collist dt,
+.ucp-prefs-personal .ucp-collist dt,
+.ucp-prefs-post .ucp-collist dt,
+.ucp-prefs-view .ucp-collist dt {
+  width: 50%;
+}
+
+.ucp-profile-details .ucp-collist dd,
+.ucp-prefs-personal .ucp-collist dd,
+.ucp-prefs-post .ucp-collist dd,
+.ucp-prefs-view .ucp-collist dd {
+  width: 49%;
+}
+
+.ucp-collist dt ~ dt,
+.ucp-collist dd ~ dd {
+  border-top: 1px solid #ddd;
+}
+
+.ucp-collist dd {
+  padding: 10px;
+  display: inline-block;
+  width: 60%;
+}
+
+.ucp-collist dd input,
+.ucp-collist dd textarea {
+  width: 100%;
+}
+
+.ucp-collist dt .description {
+  display: block;
+}
+
+@media all and (max-width:700px)
+{
+  .ucp-collist dd {
+    width: 60%;  
+  }
+  .ucp-collist dt {
+    width: 40%;  
+  }
+}
+
+@media all and (max-width:500px)
+{
+  .ucp-collist dl {
+    display: block;
+    position: relative;
+    width: 100%;  
+  }
+
+  .ucp-collist dd,
+  .ucp-profile-details .ucp-collist dd,
+  .ucp-prefs-personal .ucp-collist dd,
+  .ucp-prefs-post .ucp-collist dd,
+  .ucp-prefs-view .ucp-collist dd {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 0px;      
+  }
+  .ucp-collist dd ~ dd {
+    border: 0px;  
+  }
+  .ucp-collist dt,
+  .ucp-profile-details .ucp-collist dt,
+  .ucp-prefs-personal .ucp-collist dt,
+  .ucp-prefs-post .ucp-collist dt,
+  .ucp-prefs-view .ucp-collist dt {
+    display: block;
+    width: 100%;
+    padding-bottom: 5px;
+    font-size: 15px;
+    padding-left: 0px;
+    padding-right: 0px;  
+  }
+  .ucp-collist dd select {
+    max-width: 100%;
+    min-width: 100%;  
+  }  
+}
+
+/***********************************************/
 
 fieldset.ucp-profile-details {
   padding: 20px;
@@ -41,19 +281,46 @@ fieldset.ucp-profile-details dl {
   color:  #888;
 }
 
-.ucp-prefs-personal dl dd label,
-.ucp-prefs-post dl dd label,
-.ucp-prefs-view dl dd label,
-.ucp-groups-manage dl dd label {
-  float: left;
-  margin-left: 10px;
-  line-height: 20px;
+/**********************************************/
+
+.ucp-pm .ucp-pmbuttons {
+  display: block;  
+  width: 100%;
+  margin-bottom: 10px;  
 }
 
-.ucp-prefs-personal dl dd label input,
-.ucp-prefs-post dl dd label input,
-.ucp-prefs-view dl dd label input,
-.ucp-groups-manage dl dd label input,
-.ucp-groups-membership div.tablerow input {
-  margin-top: 0px;
+.ucp-pm .ucp-pmbuttons .btn {
+  float: none;
+}
+
+.ucp-pmprofile {
+  display: inline-block;
+  width: 200px;  
+}
+
+.ucp-pmprofile .profile-icons {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.ucp-pmprofile .profile-icons li {
+  display: inline-block;
+}
+
+.ucp-pmbody {  
+  display: inline-block;
+  width: auto;
+  vertical-align: top;
+  padding-left: 20px;
+  border-left: 1px solid #aaa;
+}
+
+.ucp-pmdisplayoptions .overboxctrl {
+  margin-top: 20px;    
+}
+.ucp-pmdisplayoptions .overboxleft {
+  margin-left: 20px;
+}
+.ucp-pmdisplayoptions .overboxright {
+  margin-right: 20px;
 }

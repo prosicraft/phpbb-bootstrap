@@ -1,5 +1,5 @@
 
-<div class="panel">
+<div>
 	
 	<!-- IF not S_AVATARS_ENABLED -->
 		<p>{L_AVATAR_FEATURES_DISABLED}</p>
@@ -7,40 +7,33 @@
 
 	<fieldset>
 	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
-	<dl class="row-fluid">
-		<div class="span5"><label class="strong">{L_CURRENT_IMAGE}:</label><span class="description">{L_AVATAR_EXPLAIN}</span></div>
-		<div class="span6">
+	<dl class="ucp-collist">
+	
+		<dt><label class="strong">{L_CURRENT_IMAGE}:</label><span class="description">{L_AVATAR_EXPLAIN} </span></dt>
+		<dd>
 			<!-- IF AVATAR -->{AVATAR}<!-- ELSE --><img src="{T_THEME_PATH}/images/no_avatar.gif" alt="" /><!-- ENDIF -->
-			<label for="delete"><input type="checkbox" name="delete" id="delete" /> {L_DELETE_AVATAR}</label>
-		</div>
-	</dl>
+			<label for="delete"><input type="checkbox" name="delete" id="delete" /> {L_DELETE_AVATAR} </label>
+		</dd>
 
-	<!-- IF S_UPLOAD_AVATAR_FILE -->
-		<dl class="row-fluid">
-			<dt class="span5"><label class="strong" for="uploadfile">{L_UPLOAD_AVATAR_FILE}:</label></dt>
-			<dd class="span6"><input type="hidden" name="MAX_FILE_SIZE" value="{AVATAR_SIZE}" /><input type="file" name="uploadfile" id="uploadfile" class="inputbox autowidth" /></dd>
-		</dl>
+	<!-- IF S_UPLOAD_AVATAR_FILE -->		
+		<dt><label class="strong" for="uploadfile">{L_UPLOAD_AVATAR_FILE}:</label></dt>
+		<dd><input type="hidden" name="MAX_FILE_SIZE" value="{AVATAR_SIZE}" /><input type="file" name="uploadfile" id="uploadfile" class="inputbox autowidth" /></dd>		
 	<!-- ENDIF -->
 
-	<!-- IF S_UPLOAD_AVATAR_URL -->
-		<dl class="row-fluid">
-			<dt class="span5"><label class="strong" for="uploadurl">{L_UPLOAD_AVATAR_URL}:</label><br /><span>{L_UPLOAD_AVATAR_URL_EXPLAIN}</span></dt>
-			<dd class="span6"><input type="text" name="uploadurl" id="uploadurl" value="{AVATAR_URL}" class="inputbox" /></dd>
-		</dl>
+	<!-- IF S_UPLOAD_AVATAR_URL -->		
+		<dt><label class="strong" for="uploadurl">{L_UPLOAD_AVATAR_URL}:</label><br /><span>{L_UPLOAD_AVATAR_URL_EXPLAIN}</span></dt>
+		<dd><input type="text" name="uploadurl" id="uploadurl" value="{AVATAR_URL}" class="inputbox" /></dd>		
 	<!-- ENDIF -->
 
-	<!-- IF S_LINK_AVATAR -->
-		<dl class="row-fluid">
-			<dt class="span5"><label class="strong" for="remotelink">{L_LINK_REMOTE_AVATAR}:</label><br /><span>{L_LINK_REMOTE_AVATAR_EXPLAIN}</span></dt>
-			<dd class="span6"><input type="text" name="remotelink" id="remotelink" value="{AVATAR_REMOTE}" class="inputbox" /></dd>
-		</dl>
-		<dl class="row-fluid">
-			<dt class="span5"><label for="width">{L_LINK_REMOTE_SIZE}:</label><br /><span>{L_LINK_REMOTE_SIZE_EXPLAIN}</span></dt>
-			<dd class="span6">
-				<label for="width"><input type="text" name="width" id="width" size="3" value="{AVATAR_WIDTH}" class="inputbox autowidth" /> {L_PIXEL}</label> &times;&nbsp; 
-				<label for="height"><input type="text" name="height" id="height" size="3" value="{AVATAR_HEIGHT}" class="inputbox autowidth" /> {L_PIXEL}</label>
-			</dd>
-		</dl>
+	<!-- IF S_LINK_AVATAR -->		
+		<dt><label class="strong" for="remotelink">{L_LINK_REMOTE_AVATAR}:</label><br /><span>{L_LINK_REMOTE_AVATAR_EXPLAIN}</span></dt>
+		<dd><input type="text" name="remotelink" id="remotelink" value="{AVATAR_REMOTE}" class="inputbox" /></dd>		
+					
+		<dt><label for="width">{L_LINK_REMOTE_SIZE}:</label><br /><span>{L_LINK_REMOTE_SIZE_EXPLAIN}</span></dt>
+		<dd>
+			<label for="width"><input type="text" name="width" id="width" size="3" value="{AVATAR_WIDTH}" class="inputbox autowidth" /> {L_PIXEL}</label> &times;&nbsp; 
+			<label for="height"><input type="text" name="height" id="height" size="3" value="{AVATAR_HEIGHT}" class="inputbox autowidth" /> {L_PIXEL}</label>
+		</dd>		
 	<!-- ENDIF -->
 	</fieldset>
 

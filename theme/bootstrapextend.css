@@ -56,9 +56,16 @@
   font-size: 28px;
 }
 
+.submitrow {
+  display: block;
+  position: relative;
+  text-align: right;
+}
 
-
-
+.submitrow fieldset {
+  display: inline-block;
+  width: auto;  
+}
 
 label.strong {
   font-weight: bold;
@@ -71,8 +78,42 @@ label.strong {
   color:  #666;
 }
 
+.box > fieldset {
+  min-width: 100%;
+}
+
 .box input.checkbox {
   margin-top: 0px;
+}
+
+#wrap input[type=text] {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 3px;
+  height: 28px;
+}
+
+#wrap textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+}
+
+#wrap select {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  height: 28px;
+  padding: 3px;
+}
+
+#wrap label {
+  font-weight: normal;
+  margin-left: 5px;  
+}
+
+#wrap label input[type="checkbox"] {
+  width: auto;
+  position: relative;
+  top: 3px;
 }
 
 /* btn toolbars */
@@ -159,6 +200,12 @@ label.strong {
 #wrap .btn-small {  
   padding-top: 4px;
   height: 28px;  
+}
+#wrap .btn a {
+  color: #333;
+}
+#wrap .btn a:hover {
+  text-decoration: none;
 }
 
 /* Small-Button-Icons */
@@ -394,11 +441,12 @@ div.error {
   width: 100%;
   height: auto;
   position: relative;
-  display: block;   
+  display: block;
+  border-top: 1px solid #aaa;   
 }
 
-.table-row {
-  border-top: 1px solid #aaa;
+.table-phantomrow:first-child {
+  border-top: 0px;
 }
 
 .table-head * {
