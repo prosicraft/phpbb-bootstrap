@@ -96,12 +96,12 @@
 	<!-- ENDIF -->
 
 	<!-- IF S_POST_ACTION or S_PRIVMSGS or S_EDIT_DRAFT -->
-	<div style="clear: left;" class="form-inline small-bottom-margin">
+	<div class="editor-subject">
 		<div>
 			<label class="strong" for="subject">{L_SUBJECT}: </label>
 		</div>
 		<dd>
-			<input type="text" name="subject" id="subject" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="inputbox subjectinput" />
+			<input type="text" name="subject" id="subject" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" />
 		</dd>
 	</div>
 
@@ -138,31 +138,35 @@
 
 	<!-- INCLUDE posting_buttons.html -->
 
-	<div class="row-fluid">
-	        <div id="message-box" class="span9">
+	<div class="editor-container">
+	        <div id="message-box">
 			<textarea <!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->name="signature" id="signature" style="height: 9em;"<!-- ELSE -->name="message" id="message"<!-- ENDIF --> rows="15" cols="76" tabindex="4" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="inputbox">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
 		</div>
 
-		<div id="smiley-box" class="span3">
-			<!-- IF S_SMILIES_ALLOWED and .smiley -->
-				<strong>{L_SMILIES}</strong><br />
-				<!-- BEGIN smiley -->
-					<a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}" height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a>
-				<!-- END smiley -->
-			<!-- ENDIF -->
-			<!-- IF S_SHOW_SMILEY_LINK and S_SMILIES_ALLOWED-->
-				<br /><a href="{U_MORE_SMILIES}" onclick="popup(this.href, 300, 350, '_phpbbsmilies'); return false;">{L_MORE_SMILIES}</a>
-			<!-- ENDIF -->
+		<div id="smiley-box">			
+			<div class="editor-smileycollection">
+				<!-- IF S_SMILIES_ALLOWED and .smiley -->
+					<strong>{L_SMILIES}</strong><br />
+					<!-- BEGIN smiley -->
+						<a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}" height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a>
+					<!-- END smiley -->
+				<!-- ENDIF -->
+				<!-- IF S_SHOW_SMILEY_LINK and S_SMILIES_ALLOWED-->
+					<br /><a class="editor-moresmileys" href="{U_MORE_SMILIES}" onclick="popup(this.href, 300, 350, '_phpbbsmilies'); return false;">{L_MORE_SMILIES}</a>
+				<!-- ENDIF -->
+			</div>
 
 			<!-- IF BBCODE_STATUS -->
-			<!-- IF .smiley --><hr /><!-- ENDIF -->
-			{BBCODE_STATUS}<br />
-			<!-- IF S_BBCODE_ALLOWED -->
-				{IMG_STATUS}<br />
-				{FLASH_STATUS}<br />
-				{URL_STATUS}<br />
-			<!-- ENDIF -->
-			{SMILIES_STATUS}
+			<div class="editor-bbstatus">
+				<!-- IF .smiley --><hr /><!-- ENDIF -->
+				{BBCODE_STATUS} <br />
+				<!-- IF S_BBCODE_ALLOWED -->
+					{IMG_STATUS} <br />
+					{FLASH_STATUS} <br />
+					{URL_STATUS} <br />
+				<!-- ENDIF -->
+				{SMILIES_STATUS}
+			</div>
 			<!-- ENDIF -->
 			<!-- IF S_EDIT_DRAFT || S_DISPLAY_REVIEW -->
 				<!-- IF S_DISPLAY_REVIEW --><hr /><!-- ENDIF -->
@@ -209,26 +213,27 @@
 	<!-- ENDIF -->
 
 	<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
-		<div class="row-fluid">
-
-			<div class="span9">
-				<fieldset class="submit-buttons pull-right">
+		<div class="editor-submitrow">			
+			<div class="editor-submitrow-inner">
+				<fieldset class="submit-buttons">
 					{S_HIDDEN_ADDRESS_FIELD}
 					{S_HIDDEN_FIELDS}
-					<!-- IF S_HAS_DRAFTS --><input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="btn btn-small" onclick="load_draft = true;" />&nbsp; <!-- ENDIF -->
-					<!-- IF S_SAVE_ALLOWED --><input type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE_DRAFT}" class="btn btn-small" />&nbsp; <!-- ENDIF -->
+					
+					<span class="editor-submitrow-draft">
+						<!-- IF S_HAS_DRAFTS --><input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="btn btn-small" onclick="load_draft = true;" />&nbsp; <!-- ENDIF -->
+						<!-- IF S_SAVE_ALLOWED --><input type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE_DRAFT}" class="btn btn-small" />&nbsp; <!-- ENDIF -->
+					</span>
 					<input type="submit" tabindex="5" name="preview" value="{L_PREVIEW}" class="btn btn-small "<!-- IF not S_PRIVMSGS --> onclick="document.getElementById('postform').action += '#preview';"<!-- ENDIF --> />&nbsp;
 					<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-small strong default-submit-action" />&nbsp;
 
 				</fieldset>
 			</div>
-
 		</div>
 	<!-- ENDIF -->
 
 	<!-- IF not S_PRIVMSGS and not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
 		<div id="tabs">
-			<ul class="nav nav-tabs">
+			<ul class="nav nav-tabs editor-optionsnav">
 				<li id="options-panel-tab" class="active"><a href="#tabs" onclick="subPanels('options-panel'); return false;"><span>{L_OPTIONS}</span></a></li>
 				<!-- IF S_SHOW_ATTACH_BOX --><li id="attach-panel-tab"><a href="#tabs" onclick="subPanels('attach-panel'); return false;"><span>{L_ADD_ATTACHMENT}</span></a></li><!-- ENDIF -->
 				<!-- IF S_SHOW_POLL_BOX || S_POLL_DELETE --><li id="poll-panel-tab"><a href="#tabs" onclick="subPanels('poll-panel'); return false;"><span>{L_ADD_POLL}</span></a></li><!-- ENDIF -->
@@ -243,7 +248,7 @@
 	</ul>
 	<!-- ENDIF -->
 
-	<div id="options-panel">
+	<div id="options-panel" class="panel small-padding editor-options">
 		<fieldset class="fields1">
 			<!-- IF S_BBCODE_ALLOWED -->
 				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>
@@ -282,7 +287,7 @@
 			<dl>
 				<dt><label for="topic_time_limit">{L_STICK_TOPIC_FOR}:</label></dt>
 				<dd><label for="topic_time_limit"><input type="text" name="topic_time_limit" id="topic_time_limit" size="3" maxlength="3" value="{TOPIC_TIME_LIMIT}" class="inputbox autowidth" /> {L_DAYS}</label></dd>
-				<dd>{L_STICK_TOPIC_FOR_EXPLAIN}</dd>
+				<dd class="description">{L_STICK_TOPIC_FOR_EXPLAIN}</dd>
 			</dl>
 			<!-- ENDIF -->
 

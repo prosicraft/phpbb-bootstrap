@@ -8,6 +8,243 @@
   width:100%;
 }
 
-.subjectinput {
-  width:50%;
+#format-buttons div.btn-group {
+  font-size: 12px;
+}
+
+#format-buttons #fmt-fontsize {
+  margin: 0px 5px;
+  height: 28px;
+  position: relative;
+  top: 2px;
+  border-radius: 3px;
+  border: 1px solid #aaa;
+  cursor: pointer;
+}
+
+.editor-subject {
+  margin-bottom: 20px;
+}
+
+.editor-subject input {
+  width: 75%;
+  border: 1px solid #aaa;
+  border-radius: 2px;
+  padding: 3px;  
+}
+
+.editor-container {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.editor-container * {
+  box-sizing: border-box;
+}
+
+.editor-container #message-box {
+  position: relative;
+  vertical-align: top;
+  display: inline-block;
+  width: 75%;  
+}
+
+.editor-container #message-box textarea {
+  border-radius: 3px;
+  border: 1px solid #aaa;
+}
+
+.editor-container #smiley-box {
+  position: relative;
+  display: inline-block;
+  width: 20%;
+  max-width: 150px;
+  margin-left: 10px;    
+}
+
+.editor-container .editor-bbstatus {
+  font-size: 11px;
+}
+
+.editor-submitrow {
+  display: block;
+  width: 75%;
+  height: auto;
+  position: relative;
+  left: 5px;
+  margin-bottom: 30px;
+}
+
+.editor-submitrow-inner {
+  width: 100%;
+  position: relative;
+  display: inline-block;
+}
+
+.editor-submitrow + * {
+  clear: both;
+}
+
+.editor-submitrow-inner > * {
+  float: right;
+}
+
+.editor-options fieldset {
+  padding: 10px;
+}
+
+.editor-options label {
+  font-weight: normal;
+  line-height: 15px;  
+}
+
+.editor-options label input {
+  position: relative;
+  top: 2px;
+}
+
+#wrap #editor-poll-votechange {
+  font-weight: normal;
+}
+
+@media all and (max-width:730px)
+{
+  #format-buttons div.btn-group .btn {
+    font-size: 11px;
+    padding: 0px 6px;
+    width: auto !important;
+    min-width: 25px;
+  }
+  #format-buttons div.btn-group input#fmt-code,
+  #format-buttons div.btn-group input#fmt-listex,
+  #format-buttons div.btn-group input.fmt-customtag {
+    display: none;  
+  }
+  #format-buttons div.btn-group input#fmt-fontcolor {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;  
+  }    
+}
+
+@media all and (max-width:500px)
+{
+  .editor-subject input {
+    width: 100%;  
+  }
+  .editor-container #message-box {
+    display: block;
+    width: 100%;  
+  }
+  .editor-container #smiley-box {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin-top: 10px;
+    margin-left: 0px;  
+  }
+  .editor-container .editor-bbstatus {
+    display: inline-block;
+    padding-left: 10px;
+  }
+  .editor-container .editor-bbstatus > hr {
+    display: none;  
+  }
+  .editor-container .editor-smileycollection {
+    display: inline-block;
+    max-width: 60%;
+    border-right: 1px solid #888;  
+  }
+  
+  .editor-submitrow {
+    width: 100%;
+  }  
+}
+
+@media all and (max-width: 486px)
+{
+  /* fix format-button styling */
+  #format-buttons {
+    position: relative;
+    width: 100%;
+    display: block;
+    height: 40px;  
+  }
+
+  /* prevent format btn-group from transforming into magic one */
+  #format-buttons div.format-btngroup {
+    background: transparent;
+    border: 0px;
+    text-align: left;
+    float: left;
+    width: auto;  
+  }
+  #format-buttons div.format-btngroup .btn {
+    background-color: rgb(221,221,221); 
+    border: 1px solid rgb(187,187,187);
+    float: none;            
+  }
+  #format-buttons div.format-btngroup .btn:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;  
+  }
+  #format-buttons div.format-btngroup .btn:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;  
+  }
+  #format-buttons div.format-btngroup .btn ~ .btn {
+    margin-left: -4px;  
+  }
+  
+  #format-buttons div#format-colorbtngroup.format-btngroup {
+    display: inline-block;
+    width: auto;
+    position: absolute;
+    right: 0px;  
+  }
+  
+  #format-buttons #fmt-fontsize {
+    display: none;  
+  }     
+}
+
+@media all and (max-width: 375px)
+{
+  .editor-container .editor-smileycollection {
+    max-width: 45%;
+    vertical-align: top;
+    padding-right: 5px;
+    margin-left: 5px;      
+  }
+  .editor-container .editor-smileycollection a.editor-moresmileys {
+    font-size: 11px;
+  }
+  .editor-container .editor-bbstatus {
+    width: 45%;
+    min-width: 100px;
+    padding-left: 5px;
+    font-size: 10px;       
+  }
+  
+  #wrap div.editor-submitrow-inner fieldset.submit-buttons input.btn {
+    font-size: 11px;    
+  }
+  .editor-submitrow-inner .editor-submitrow-draft {
+    display: none;  
+  }
+  .editor-optionsnav {
+    border-bottom: 1px solid #ddd;  
+  }
+  .editor-optionsnav li {
+    float: none;
+    font-size: 11px;
+    display: block;            
+  }
+  .editor-optionsnav li ~ li {
+    border-top: 1px solid #ddd;
+  }
+  .editor-options label {
+    font-size: 11px;
+    line-height: 11px;
+  }
 }
