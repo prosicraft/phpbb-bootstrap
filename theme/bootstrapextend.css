@@ -87,7 +87,8 @@ label.strong {
   margin-top: 0px;
 }
 
-#wrap input[type=text] {
+#wrap input[type=text],
+#wrap input[type=password] {
   border: 1px solid #aaa;
   border-radius: 3px;
   padding: 3px;
