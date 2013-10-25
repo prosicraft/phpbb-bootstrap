@@ -1,15 +1,16 @@
 /******************************************************************************/
 
 /* DEBUG */
-/*
+
 #wrap div,
-#wrap span {
+#wrap span,
+#wrap ul {
   border-left: 1px solid #0f0 !important;
   border-right: 1px solid #f0f !important;
   border-top: 1px dotted #00f !important;
   border-bottom: 1px dashed #f00 !important;  
 }
-*/
+
 
 
 /******************************************************************************/
@@ -716,5 +717,22 @@ div.error {
 {
   .table-row .table-lastpost .lastpost-time {
     display: none;  
+  }
+}
+
+/*********************************************************************/
+/* Fix for the crappy bootstrap main navbar */
+
+@media all and (min-width:768px)
+{
+  #wrap .navbar-nav {
+    float: none;  
+  }
+}
+
+@media all and (max-width:768px)
+{
+  #wrap .navbar-header {
+    width: 82%;  
   }
 }

@@ -293,10 +293,6 @@
 	ul.overall-footer-nav-right li a.firstitem {
 	  padding-top: 10px;
 	}
-	
-	#wrap .navigation .navbar-header {
-  	  width: 82%;    
-	}
 }
 
 @media all and (max-width:600px) {

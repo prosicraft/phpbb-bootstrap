@@ -175,7 +175,7 @@
 					<!-- ENDIF -->																		
 
                                 	<!-- IF S_CONTACT_ENABLED -->
-					<li><a href="{U_CONTACT}"><i class="icon-envelope-alt"></i> {L_CONTACT_BOARD_ADMIN_SHORT}</a></li>
+					<li><a href="{U_CONTACT}"><i class="icon-phone"></i> {L_CONTACT_BOARD_ADMIN_SHORT}</a></li>
 					<!-- ENDIF -->
 					
 					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->					
@@ -188,11 +188,11 @@
 						<!-- ENDIF -->
 														
 						<!-- IF S_DISPLAY_PM -->
-						<li><a href="{U_PRIVATEMSGS}" class="responsive-navitem-privmsgs"><i class="icon-envelope-alt pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>
+						<li><a href="{U_PRIVATEMSGS}" class=""><i class="icon-envelope-alt pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>
 						<!-- ENDIF -->
 							
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {CURRENT_USERNAME} <i class="icon-caret-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {S_USERNAME} <i class="icon-caret-down"></i></a>
 							<ul class="dropdown-menu dropdown-account">
 								<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-cog"></i> {L_PROFILE}</a></li>
 								<!-- IF S_DISPLAY_SEARCH -->
