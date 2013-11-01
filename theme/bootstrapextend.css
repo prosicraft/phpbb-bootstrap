@@ -81,6 +81,14 @@ label.strong {
   color:  #666;
 }
 
+#wrap a:link {
+  text-decoration: none;
+}
+
+#wrap a:hover {
+  text-decoration: none;
+}
+
 .box > fieldset {
   min-width: 100%;
 }
@@ -110,14 +118,118 @@ label.strong {
 }
 
 #wrap label {
-  font-weight: normal;
-  margin-left: 5px;  
+  font-weight: normal;    
 }
 
 #wrap label input[type="checkbox"] {
   width: auto;
   position: relative;
   top: 3px;
+}
+
+/* Pagination fix */
+
+#wrap .pagination-total {
+  display: inline-block;
+  margin: 0px 20px;
+  text-transform: uppercase;
+  color: #888;
+  letter-spacing: 1px;
+  vertical-align: middle;  
+}
+
+#wrap .pagination-total + .pagination-bottom,
+#wrap .pagination-total + .pagination-top {
+  display: inline-block;
+}
+
+#wrap .pagination-bottom span.pagination,
+#wrap .pagination-top span.pagination {
+  font-size: 0px;
+  margin: 0px;
+}
+
+#wrap .pagination-bottom span.page-sep,
+#wrap .pagination-top span.page-sep {
+  display: none;
+}
+
+#wrap .pagination-bottom > a,
+#wrap .pagination-top > a {
+  display: none;
+}
+
+#wrap .pagination-bottom span.pagination *:first-child ~ *,
+#wrap .pagination-top span.pagination *:first-child ~ * {
+  margin-left: -1px;
+}
+
+#wrap .pagination-bottom span.pagination a:first-child,
+#wrap .pagination-bottom span.pagination div:first-child,
+#wrap .pagination-top span.pagination a:first-child,
+#wrap .pagination-top span.pagination div:first-child {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+#wrap .pagination-bottom span.pagination a:last-child,
+#wrap .pagination-bottom span.pagination div:last-child,
+#wrap .pagination-top span.pagination a:last-child,
+#wrap .pagination-top span.pagination div:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;  
+}
+
+#wrap .pagination-bottom span.pagination a,
+#wrap .pagination-top span.pagination a,
+#wrap .pagination-bottom span.pagination div,
+#wrap .pagination-top span.pagination div,
+#wrap .pagination-bottom span.pagination strong,
+#wrap .pagination-top span.pagination strong {
+  display: inline-block;  
+  width: 38px;
+  padding: 8px 12px;  
+  border: 1px solid #d0d0d0;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+}
+
+#wrap .pagination-bottom span.pagination a:hover,
+#wrap .pagination-top span.pagination a:hover {
+  color: #2a6496;
+  background-color: #e3e3e3;
+}
+
+#wrap .pagination-bottom span.pagination div.disabled,
+#wrap .pagination-top span.pagination div.disabled {
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+  color: #888;
+}
+
+#wrap .pagination-bottom span.pagination strong,
+#wrap .pagination-top span.pagination strong {
+  background-color: #428bca;
+  border-color: #428bca;
+  color: #fff;
+}
+
+#wrap .pagination-bottom {
+  display: block;
+}
+
+@media all and (max-width: 300px)
+{
+    #wrap .pagination-bottom span.pagination a,
+    #wrap .pagination-top span.pagination a,
+    #wrap .pagination-bottom span.pagination div,
+    #wrap .pagination-top span.pagination div,
+    #wrap .pagination-bottom span.pagination strong,
+    #wrap .pagination-top span.pagination strong {
+      width: 30px;
+      padding: 4px 9px;    
+    }
 }
 
 /* btn toolbars */
@@ -174,6 +286,65 @@ label.strong {
 .row-fluid .span10-keepsize { min-width: 500px; width: 82.97872340425532%; }
 .row-fluid .span11-keepsize { min-width: 550px; width: 91.48936170212765%; }
 .row-fluid .span12-keepsize { width: 100%; }
+
+/* inline row */
+.row-inline {
+  clear: both;
+  display: block;
+  position: relative;
+  height: auto;
+  width: 98%;
+  left: 1%;
+}
+
+.row-inline > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.row-inline#bottom-pagenav a {
+  font-size: 16px;
+}
+
+.row-inline > .right {
+  position: absolute;
+  right: 0px;
+  top: 25%;    
+}
+
+.row-right {
+  text-align: right;
+}
+
+.row-inline > .row-inline,
+.row-inline > .right > .row-inline,
+.row-inline > .left > .row-inline {
+  display: inline-block;
+  width: auto;
+  left: 0px;
+}
+
+.row-inline .row-inline ~ .row-inline {
+  margin-left: 10px;
+}
+
+.row-inline > label {
+  color: #aaa;
+}
+
+.row-inline > label + input,
+.row-inline > label + select {
+  margin-left: 5px;
+}
+
+.row-inline > .formgroup > .btn {
+  position: relative;
+  top: -2px;  
+}
+
+.row-inline > .formgroup > .btn-small {
+  max-height: 28px;
+}
 
 /* buttons don't work with a tag in bootstrap 3 anymore */
 #wrap .btn {
@@ -713,6 +884,10 @@ div.error {
   .table-row .table-title h4 {
     font-size: 17px;
     font-weight: bold;
+  }
+  
+  #wrap .pagination-total {
+    display: none;  
   }
 }
 
