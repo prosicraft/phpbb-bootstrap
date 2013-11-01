@@ -20,7 +20,7 @@
 
 <form method="post" action="{S_UCP_ACTION}" id="register">
 
-<div class="box small-padding small-bottom-margin">
+<div class="box small-bottom-margin">
 
 
 	<h2>{SITENAME} - {L_REGISTRATION}</h2>
@@ -28,7 +28,7 @@
 	<fieldset class="fields2">
 	<!-- IF ERROR --><dl><dd class="error">{ERROR}</dd></dl><!-- ENDIF -->
 	<!-- IF L_REG_COND -->
-		<p class="description big-bottom-margin">{L_REG_COND}</p>
+		<p class="description big-bottom-margin">{L_REG_COND} </p>
 	<!-- ENDIF -->
 	<div class="row-fluid medium-bottom-margin">
 		<dt class="span5"><label class="strong" for="username">{L_USERNAME}:</label><span class="description">{L_USERNAME_EXPLAIN}</span></dt>
@@ -41,7 +41,7 @@
 	<div class="row-fluid">
 		<dt class="span5"><label class="strong" for="email_confirm">{L_CONFIRM_EMAIL}:</label></dt>
 		<dd class="span7"><input type="text" tabindex="3" name="email_confirm" id="email_confirm" size="25" maxlength="100" value="{EMAIL_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_EMAIL}" /></dd>
-	</dl>
+	</div>
 	<div class="row-fluid">
 		<dt class="span5"><label class="strong" for="new_password">{L_PASSWORD}:</label><span class="description">{L_PASSWORD_EXPLAIN}</span></dt>
 		<dd class="span7"><input type="password" tabindex="4" name="new_password" id="new_password" size="25" value="{PASSWORD}" class="inputbox autowidth" title="{L_NEW_PASSWORD}" /></dd>

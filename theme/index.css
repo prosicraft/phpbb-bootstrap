@@ -32,6 +32,16 @@
   margin-left: 10px;
 }
 
+#wrap a#index-registerbtn {
+  background-color: #3a77e8;
+  border-color: #1a57c8;
+  color: #fff;
+}
+
+#wrap a#index-registerbtn:hover {
+  background-color: #2464d4;
+}
+
 /** OVERBOX BUTTONS **/
 #wrap div.overboxctrl .overboxleft .btn-moderation {  
 }

@@ -376,6 +376,10 @@ label.strong {
   padding-top: 4px;
   height: 28px;  
 }
+#wrap .btn-medium {
+  padding-top: 6px;
+  height: 38px;
+}
 #wrap .btn a {
   color: #333;
 }
