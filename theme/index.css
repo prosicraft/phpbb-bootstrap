@@ -112,5 +112,9 @@
     display: block;
     position: relative;
     top: -20px;      
-  }  
+  }
+  
+  #wrap .overbx-index + .box {
+    margin-top: 80px;  
+  } 
 }

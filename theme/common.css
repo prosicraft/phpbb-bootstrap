@@ -215,8 +215,8 @@ table.viewonline tbody tr td {
 
 @media all and (max-width:440px) {
   #pageheader {
-    background-size: auto 100%;      
-  }
+    display: none;      
+  }   
   
   #pageheader #searchbox {
     float: left;
