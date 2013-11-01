@@ -8,10 +8,9 @@
 	<fieldset class="fields2">
 <!-- ENDIF -->
 
-<!-- IF S_RECAPTCHA_AVAILABLE -->
-	<div class="row-fluid">
-	<div class="span4"><label class="strong">{L_CONFIRM_CODE}:</label><p class="description">{L_RECAPTCHA_EXPLAIN}</p></div>
-	<div class="span8">
+<!-- IF S_RECAPTCHA_AVAILABLE -->	
+	<dt><label class="strong">{L_CONFIRM_CODE}:</label><p class="description">{L_RECAPTCHA_EXPLAIN}</p></dt>
+	<dd>
 		<script type="text/javascript">
 		// <![CDATA[
 		var RecaptchaOptions = {
@@ -37,8 +36,7 @@
 		</div>
 		</noscript>
 
-	</div>
-	</div>
+	</dd>	
 <!-- ELSE -->
 {L_RECAPTCHA_NOT_AVAILABLE}
 <!-- ENDIF -->
