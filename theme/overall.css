@@ -6,6 +6,11 @@
   padding-right: 20px;
 }
 
+#pageheader #searchbox a {
+  text-shadow: none;
+  color: #ccc;  
+}
+
 /********************************************************************/
 /* footer related stuff */
 #well-footer.well {
