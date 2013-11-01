@@ -1,21 +1,23 @@
 
 <hr />
 
-<form method="post" action="{U_QR_ACTION}">
-	<div class="box small-padding" id="qr_ns_editor_div">
+<div class="box small-bottom-margin small-padding" id="qr_ns_editor_div">
+	<form method="post" action="{U_QR_ACTION}">	
 
 		<div class="header"><h4>{L_QUICKREPLY} </h4></div>
 		<div class="tablerow">
-			<div class="medium-left-margin">
+			<div style="padding: 15px;">
 				<fieldset class="fields1 quickreply-editor">
-					<div><label class="strong greylabel" style="line-height:30px;" for="subject">{L_SUBJECT}:</label></div>
-					<div><input type="text" name="subject" id="subject-ns" size="45" maxlength="64" tabindex="2" value="{SUBJECT}" class="inputbox autowidth" /></div>
+					<div class="small-bottom-margin">
+						<label class="strong greylabel" style="line-height:30px;" for="subject">{L_SUBJECT}:</label><br />
+						<input type="text" name="subject" id="subject-ns" size="45" maxlength="64" tabindex="2" value="{SUBJECT}" placeholder="{L_SUBJECT}" />
+					</div>
 					<div id="message-box-ns">
-						<textarea style="height: 9em;" name="message" rows="7" cols="76" tabindex="3" class="inputbox"></textarea>
+						<textarea style="height: 9em; width: 100%;" name="message" rows="7" cols="76" tabindex="3" class="inputbox"></textarea>
 					</div>
 				</fieldset>
-				<div class="quickreply-buttons">
-					<fieldset class="pull-right">
+				<div class="submitrow small-top-margin">
+					<fieldset>
 						{S_FORM_TOKEN}
 						{QR_HIDDEN_FIELDS}
 						<input type="submit" accesskey="s" tabindex="6" name="post" value="{L_SUBMIT}" class="btn btn-small strong" />&nbsp;
@@ -24,5 +26,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
-</form>
+	</form>
+</div>

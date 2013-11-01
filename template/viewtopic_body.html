@@ -63,9 +63,22 @@
 </div>
 
 <!-- IF PAGINATION or TOTAL_POSTS -->
-<div class="pagination-viewtopic">		
-	{TOTAL_POSTS}
-		<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->	
+<div class="row-inline small-bottom-margin">			
+	<div class="pagination-total">{TOTAL_POSTS}</div>
+<!-- IF PAGE_NUMBER -->
+	<div class="pagination-top">
+	<!-- IF PAGINATION -->
+		<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+		<span class="pagination">
+		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+			{PAGINATION}
+		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+		</span>
+	<!-- ELSE -->
+		<div class="pagination-total">{PAGE_NUMBER}</div>
+	<!-- ENDIF -->
+	</div>
+<!-- ENDIF -->	
 </div>
 <!-- ENDIF -->
 
@@ -244,53 +257,72 @@
 </div>
 
 <!-- IF S_NUM_POSTS > 1 or PREVIOUS_PAGE -->
-	<form id="viewtopic" method="post" action="{S_TOPIC_ACTION}">
+<form id="viewtopic" method="post" action="{S_TOPIC_ACTION}">
 
-	<fieldset class="display-options form-inline pull-right">
+	<fieldset class="row-inline row-right">		
 		<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}" class="left-box {S_CONTENT_FLOW_BEGIN}">{L_PREVIOUS}</a><!-- ENDIF -->
 		<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}" class="right-box {S_CONTENT_FLOW_END}">{L_NEXT}</a><!-- ENDIF -->
 		<!-- IF not S_IS_BOT -->
-		<label class="viewtopic-sortdays"><span class="description">{L_DISPLAY_POSTS}: </span> {S_SELECT_SORT_DAYS}</label>
-		<label class="viewtopic-sortby">
-			<label class="medium-left-margin"><span class="description">{L_SORT_BY} </span> {S_SELECT_SORT_KEY}</label>
-			<label>{S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-small" /></label>
-		</label>
+		<div class="row-inline">
+			<div class="formgroup not-on-smartphone"><label class="description not-on-tab">{L_DISPLAY_POSTS}: </label> {S_SELECT_SORT_DAYS} </div>
+		</div>
+		<div class="row-inline">
+			<div class="formgroup">
+				<label class="description not-on-tab">{L_SORT_BY} </label>
+				{S_SELECT_SORT_KEY} {S_SELECT_SORT_DIR} <input type="submit" name="sort" value="{L_GO}" class="btn btn-small" />
+			</div>
+		</div>
 		<!-- ENDIF -->
-	</fieldset>
-	<div class="clearfix"></div>
+	</fieldset>	
 
-	</form>
-	<hr />
+</form>
+<hr />
 <!-- ENDIF -->
 
-<div class="topic-actions">
-	<div class="buttons">
+<div class="row-inline">	
 	<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
+	<div class="left">
 		<a href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->">
 			<div class="not-on-smartphone btn btn-small <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->reply-icon<!-- ENDIF -->">
 				<span><i class="icon-comment"></i></span>&nbsp;<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->
 			</div>
 		</a>
-	<!-- ENDIF -->
-	<!-- IF S_TOPIC_MOD -->
-		<form class="form-inline pull-right" method="post" action="{S_MOD_ACTION}">
-			<fieldset class="quickmod">
-				<label class="greylabel" for="quick-mod-select"><span class="not-on-tab">{L_QUICK_MOD}:</span></label> {S_TOPIC_MOD} <input class="form-control btn btn-small" type="submit" value="{L_GO}" class="button2" />
-				{S_FORM_TOKEN}
-			</fieldset>
-		</form>
-	<!-- ENDIF -->
 	</div>
+	<!-- ENDIF -->
+	<!-- IF S_TOPIC_MOD -->	
+	<div class="right">
+		<div class="formgroup">
+			<form method="post" action="{S_MOD_ACTION}">							
+				<label class="greylabel" for="quick-mod-select"><span class="not-on-tab">{L_QUICK_MOD}:</span></label>
+				{S_TOPIC_MOD}			
+				<input class="btn btn-small" type="submit" value="{L_GO}" />
+				{S_FORM_TOKEN}
+			</form>
+		</div>					
+	</div>	
+	<!-- ENDIF -->	
 </div>
 
-<div class="clearfix"></div>
-
-	<!-- IF PAGINATION or TOTAL_POSTS -->
-		<div class="viewtopic-pagination-bottom" style="line-height:25px">
-			{TOTAL_POSTS}
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
+<!-- IF PAGINATION or TOTAL_POSTS -->
+<div class="row-inline medium-top-margin medium-bottom-margin">	
+	<div class="pagination-total">{TOTAL_POSTS}</div>
+<!-- IF PAGE_NUMBER -->
+	<!-- IF PAGINATION -->
+		<div class="pagination-bottom">
+			<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+			<span class="pagination">
+			<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+				{PAGINATION}
+			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+			</span>
 		</div>
+	<!-- ELSE -->
+		<div class="pagination-total">{PAGE_NUMBER}</div>
 	<!-- ENDIF -->
+<!-- ENDIF -->		
+</div>
+<hr />
+<!-- ENDIF -->
 
 <!-- INCLUDE jumpbox.html -->
 

@@ -187,12 +187,22 @@ label.strong {
 #wrap .pagination-bottom span.pagination strong,
 #wrap .pagination-top span.pagination strong {
   display: inline-block;  
-  width: 38px;
-  padding: 8px 12px;  
+  width: auto;
+  padding: 8px 14px;  
   border: 1px solid #d0d0d0;
   font-size: 16px;
   font-weight: normal;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+}
+
+#wrap .pagination-bottom span.pagination a + a:not(:last-child):before,
+#wrap .pagination-top span.pagination a + a:not(:last-child):before {
+  content: '..';  
+}
+
+#wrap .pagination-bottom span.pagination a:first-child + a:before,
+#wrap .pagination-top span.pagination a:first-child + a:before {
+  content: '';
 }
 
 #wrap .pagination-bottom span.pagination a:hover,
@@ -226,8 +236,7 @@ label.strong {
     #wrap .pagination-bottom span.pagination div,
     #wrap .pagination-top span.pagination div,
     #wrap .pagination-bottom span.pagination strong,
-    #wrap .pagination-top span.pagination strong {
-      width: 30px;
+    #wrap .pagination-top span.pagination strong {      
       padding: 4px 9px;    
     }
 }
@@ -320,6 +329,7 @@ label.strong {
 .row-inline > .right > .row-inline,
 .row-inline > .left > .row-inline {
   display: inline-block;
+  vertical-align: top;
   width: auto;
   left: 0px;
 }
@@ -332,12 +342,14 @@ label.strong {
   color: #aaa;
 }
 
-.row-inline > label + input,
-.row-inline > label + select {
+.row-inline > label ~ input,
+.row-inline > label ~ select {
   margin-left: 5px;
 }
 
-.row-inline > .formgroup > .btn {
+.row-inline > .formgroup .btn,
+.row-inline > .right > .formgroup .btn,
+.row-inline > .left > .formgroup .btn {
   position: relative;
   top: -2px;  
 }
