@@ -1,6 +1,6 @@
 /**
  * phpBB Bootstrap Theme
- * @author geekmy, prosicraft
+ * @author geekmy, failz0r
  */
 
 @import url("bootstrapextend.css");
@@ -12,3 +12,4 @@
 @import url("editor.css");
 @import url("memberlist.css");
 @import url("ucp.css");
+@import url("mcp.css");

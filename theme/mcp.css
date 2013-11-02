@@ -1,0 +1,26 @@
+/* MCP SECTION BEGINS */
+
+#wrap #mcp .panel {
+  padding: 10px;
+}
+
+#wrap table.mcp-log {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+#wrap table.mcp-log th,
+#wrap table.mcp-log td {
+  padding: 10px;
+}
+
+#wrap table.mcp-log th {
+  font-size: 16px;
+  background-color: #eee;
+}
+
+#wrap table.mcp-log tbody tr {
+  border-top: 1px solid #aaa;
+}
