@@ -4,7 +4,7 @@
 <h2>{PAGE_TITLE}</h2>
 
 <form method="post" action="{S_PROFILE_ACTION}" id="viewprofile">
-<div class="panel bg1<!-- IF S_ONLINE --> online<!-- ENDIF -->">
+<div class="<!-- IF S_ONLINE --> online<!-- ENDIF -->">
 	<div class="memberlist-view-responsiveavatar">
 		<div class="btn-group pull-right">
 		<!-- IF U_USER_ADMIN --><a class="btn btn-small" href="{U_USER_ADMIN}"><i class="icon-cog"></i>&nbsp;<span class="not-on-tab">{L_USER_ADMIN}</span></a><!-- ENDIF -->
@@ -24,16 +24,20 @@
 				<!-- ENDIF -->
 			<!-- ENDIF -->
 		<!-- ENDIF -->
-		</div>
+		</div>		
 		<div class="memberlist-view-responsiveavatar-image">
+		<!-- IF AVATAR_IMG -->
 			{AVATAR_IMG}
+		<!-- ELSE -->
+			
+		<!-- ENDIF -->
 		</div>
 	</div>
 
 	<!-- IF AVATAR_IMG -->
 		<div class="pull-left memberlist-view-nonresponsiveavatar">
 			{AVATAR_IMG}
-			<!-- IF RANK_TITLE --><div style="text-align: center;">{RANK_TITLE}</div><!-- ENDIF -->
+			<!-- IF RANK_TITLE --><div class="memberlist-view-ranktitle">{RANK_TITLE}</div><!-- ENDIF -->
 			<!-- IF RANK_IMG --><div style="text-align: center;">{RANK_IMG}</div><!-- ENDIF -->
 		</div>
 	<!-- ENDIF -->
@@ -51,7 +55,7 @@
 		<!-- IF AGE !== '' --><div class="detailrow"><div>{L_AGE}:</div> <div>{AGE}</div></div><!-- ENDIF -->
 		<!-- IF OCCUPATION --><div class="detailrow"><div>{L_OCCUPATION}:</div> <div>{OCCUPATION}</div></div><!-- ENDIF -->
 		<!-- IF INTERESTS --><div class="detailrow"><div>{L_INTERESTS}:</div> <div>{INTERESTS}</div></div><!-- ENDIF -->
-		<!-- IF S_GROUP_OPTIONS --><div class="detailrow"><div>{L_USERGROUPS}:</div> <div class="form-inline memberlist-view-changegroup"><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_CHANGE}" class="btn btn-medium" /></div></div><!-- ENDIF -->
+		<!-- IF S_GROUP_OPTIONS --><div class="detailrow"><div>{L_USERGROUPS}:</div> <div class="form-inline memberlist-view-changegroup"><select name="g">{S_GROUP_OPTIONS}</select> <input type="submit" name="submit" value="{L_CHANGE}" class="btn btn-small" /></div></div><!-- ENDIF -->
 		<!-- BEGIN custom_fields --><div class="detailrow"><div>{custom_fields.PROFILE_FIELD_NAME}:</div> <div>{custom_fields.PROFILE_FIELD_VALUE}</div></div><!-- END custom_fields -->
 	</div>
 
