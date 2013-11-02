@@ -1,16 +1,16 @@
 <!-- INCLUDE overall_header.html -->
 
 <form id="confirm" action="{S_CONFIRM_ACTION}" method="post">
-<div class="box medium-padding">
 
+<h2>{MESSAGE_TITLE}</h2>
+<div class="box big-padding big-bottom-margin" style="text-align: center;">
 
-	<h2>{MESSAGE_TITLE}</h2>
-	<p>{MESSAGE_TEXT}</p>
+	<p style="font-size: 16px;">{MESSAGE_TEXT}</p>
 
 	<fieldset class="submit-buttons">
 		{S_HIDDEN_FIELDS}
-		<input type="submit" name="confirm" value="{L_YES}" class="btn btn-small" />&nbsp;
-		<input type="submit" name="cancel" value="{L_NO}" class="btn btn-small" />
+		<input type="submit" name="confirm" value="{L_YES}" class="btn btn-medium strong" />
+		<input type="submit" name="cancel" value="{L_NO}" class="btn btn-medium" />
 	</fieldset>
 
 

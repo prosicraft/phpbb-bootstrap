@@ -106,6 +106,17 @@
 }
 
 
+.ucp-wrap #cp-menu .cp-mini {
+  display: block;
+  position: absolute;
+  top: 430px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  width: 19%;
+  left: 5px;
+}
+
 @media all and (max-width: 900px)
 {
   .ucp-subtools {
