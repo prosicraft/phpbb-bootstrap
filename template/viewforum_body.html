@@ -79,9 +79,8 @@
 				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
 				</span>				
 			</div>
-			<!-- ELSE -->
-			&bull;
-			{PAGE_NUMBER}
+			<!-- ELSE -->			
+				<div class="pagination-total">{PAGE_NUMBER}</div>
 			<!-- ENDIF -->
 		<!-- ENDIF -->
 	</div>
@@ -248,7 +247,7 @@
 							<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
 						</span>
 					<!-- ELSE -->
-						{PAGE_NUMBER}
+						<div class="pagination-total">{PAGE_NUMBER}</div>
 					<!-- ENDIF -->
 					</div>
 				</div>
