@@ -2,16 +2,16 @@
 
 /* DEBUG */
 
-/*
 #wrap div,
 #wrap span,
-#wrap ul {
+#wrap ul,
+#wrap ul li {
   border-left: 1px solid #0f0 !important;
   border-right: 1px solid #f0f !important;
   border-top: 1px dotted #00f !important;
   border-bottom: 1px dashed #f00 !important;  
 }
-*/
+
 
 
 

@@ -118,8 +118,8 @@
   background-color: #222;
 }
 
-#wrap nav.navbar .navbar-collapse > ul.nav li a {
-  padding: 10px;
+#wrap div div nav.collapse.navbar-collapse.navbar-ex1-collapse > ul.nav.navbar-nav li a {
+  max-height: 50px;  
 }
 
 #wrap div.navbar .navbar-header .navbar-brand {
