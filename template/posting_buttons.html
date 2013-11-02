@@ -8,7 +8,7 @@
 
 	// Define the bbCode tags
 	var bbcode = new Array();
-	var bbtags = new Array('[b]','[/b]','[s]','[/s]','[i]','[/i]','[u]','[/u]','[quote]','[/quote]','[code]','[/code]','[list]','[/list]','[list=]','[/list]','[img]','[/img]','[url]','[/url]','[flash=]', '[/flash]','[size=]','[/size]'<!-- BEGIN custom_tags -->, {custom_tags.BBCODE_NAME}<!-- END custom_tags -->);
+	var bbtags = new Array('[b]','[/b]','[i]','[/i]','[u]','[/u]','[s]','[/s]','[quote]','[/quote]','[code]','[/code]','[list]','[/list]','[list=]','[/list]','[img]','[/img]','[url]','[/url]','[flash=]', '[/flash]','[size=]','[/size]'<!-- BEGIN custom_tags -->, {custom_tags.BBCODE_NAME}<!-- END custom_tags -->);
 	var imageTag = false;
 
 	// Helpline messages
@@ -74,22 +74,22 @@
 		<input type="button" class="btn btn-small" accesskey="b" name="addbbcode0" value="B" style="font-weight:bold; width: 30px" onclick="bbstyle(0)" title="{L_BBCODE_B_HELP}" />
 		<input type="button" class="btn btn-small" accesskey="i" name="addbbcode2" value="i" style="font-style:italic; width: 30px" onclick="bbstyle(2)" title="{L_BBCODE_I_HELP}" />
 		<input type="button" class="btn btn-small" accesskey="u" name="addbbcode4" value="u" style="text-decoration: underline; width: 30px" onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" />
-		<input type="button" class="btn btn-small" accesskey="u" name="addbbcode4" value="s" style="text-decoration: line-through; width: 30px" onclick="bbstyle(4)" title="{L_BBCODE_U_HELP}" />
+		<input type="button" class="btn btn-small" accesskey="s" name="addbbcode4" value="s" style="text-decoration: line-through; width: 30px" onclick="bbstyle(6)" title="{L_BBCODE_U_HELP}" />
 		<!-- IF S_BBCODE_QUOTE -->
-			<input type="button" class="btn btn-small" accesskey="q" name="addbbcode6" value="Quote" style="width: 60px" onclick="bbstyle(6)" title="{L_BBCODE_Q_HELP}" />
+			<input type="button" class="btn btn-small" accesskey="q" name="addbbcode6" value="Quote" style="width: 60px" onclick="bbstyle(8)" title="{L_BBCODE_Q_HELP}" />
 		<!-- ENDIF -->
-		<input id="fmt-code" type="button" class="btn btn-small" accesskey="c" name="addbbcode8" value="Code" style="width: 50px" onclick="bbstyle(8)" title="{L_BBCODE_C_HELP}" />
-		<input type="button" class="btn btn-small" accesskey="l" name="addbbcode10" value="List" style="width: 45px" onclick="bbstyle(10)" title="{L_BBCODE_L_HELP}" />
-		<input id="fmt-listex" type="button" class="btn btn-small" accesskey="o" name="addbbcode12" value="List=" style="width: 50px" onclick="bbstyle(12)" title="{L_BBCODE_O_HELP}" />
+		<input id="fmt-code" type="button" class="btn btn-small" accesskey="c" name="addbbcode8" value="Code" style="width: 50px" onclick="bbstyle(10)" title="{L_BBCODE_C_HELP}" />
+		<input type="button" class="btn btn-small" accesskey="l" name="addbbcode10" value="List" style="width: 45px" onclick="bbstyle(12)" title="{L_BBCODE_L_HELP}" />
+		<input id="fmt-listex" type="button" class="btn btn-small" accesskey="o" name="addbbcode12" value="List=" style="width: 50px" onclick="bbstyle(14)" title="{L_BBCODE_O_HELP}" />
 		<input type="button" class="btn btn-small" accesskey="y" name="addlistitem" value="[*]" style="width: 30px" onclick="bbstyle(-1)" title="{L_BBCODE_LISTITEM_HELP}" />
 		<!-- IF S_BBCODE_IMG -->
-			<input type="button" class="btn btn-small" accesskey="p" name="addbbcode14" value="Img" style="width: 40px" onclick="bbstyle(14)" title="{L_BBCODE_P_HELP}" />
+			<input type="button" class="btn btn-small" accesskey="p" name="addbbcode14" value="Img" style="width: 40px" onclick="bbstyle(16)" title="{L_BBCODE_P_HELP}" />
 		<!-- ENDIF -->
 		<!-- IF S_LINKS_ALLOWED -->
-			<input type="button" class="btn btn-small" accesskey="w" name="addbbcode16" value="URL" style="text-decoration: underline; width: 50px" onclick="bbstyle(16)" title="{L_BBCODE_W_HELP}" />
+			<input type="button" class="btn btn-small" accesskey="w" name="addbbcode16" value="URL" style="text-decoration: underline; width: 50px" onclick="bbstyle(18)" title="{L_BBCODE_W_HELP}" />
 		<!-- ENDIF -->
 		<!-- IF S_BBCODE_FLASH -->
-			<input type="button" class="btn btn-small" accesskey="d" name="addbbcode18" value="Flash" onclick="bbstyle(18)" title="{L_BBCODE_D_HELP}" />
+			<input type="button" class="btn btn-small" accesskey="d" name="addbbcode18" value="Flash" onclick="bbstyle(20)" title="{L_BBCODE_D_HELP}" />
 		<!-- ENDIF -->
 	</div>
 
