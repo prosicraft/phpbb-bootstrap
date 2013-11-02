@@ -164,14 +164,16 @@
 	<!-- ENDIF -->
 
 		<div class="table-row<!-- IF topicrow.S_POST_GLOBAL --> global-announce<!-- ENDIF --><!-- IF topicrow.S_POST_ANNOUNCE --> announce<!-- ENDIF --><!-- IF topicrow.S_POST_STICKY --> sticky<!-- ENDIF --><!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
-			<div class="table-title "<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --> style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF --> title="{topicrow.TOPIC_FOLDER_IMG_ALT}">
-				
+			<div class="table-title" title="{topicrow.TOPIC_FOLDER_IMG_ALT}">				
 				<div class="table-titleicon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC});"></div>
 				<div class="table-titletext">
 					<!-- IF topicrow.S_UNREAD_TOPIC -->
 					<a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a>
 					<!-- ENDIF -->					
-					<h4><a href="{topicrow.U_VIEW_TOPIC}" class="forumtitle">{topicrow.TOPIC_TITLE} </a></h4>					
+					<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" /><!-- ENDIF -->
+					<h4>						
+						<a href="{topicrow.U_VIEW_TOPIC}" class="forumtitle">{topicrow.TOPIC_TITLE} </a>
+					</h4>					
 					<div class="table-titledesc">
 						{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
 						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
