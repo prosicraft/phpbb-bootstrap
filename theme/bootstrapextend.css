@@ -606,6 +606,19 @@ div.error {
 
 
 /*********************************************************************/
+/* COLUMN SECTION BEGINS */
+
+/* 2-columns*/
+#wrap .column2,
+#wrap .column2 {
+  width: 48%;
+  min-width: 48%;
+  display: inline-block;
+  vertical-align: top;    
+}
+
+
+/*********************************************************************/
 /* TABLE SECTION BEGINS */
 
 .table-wrap,

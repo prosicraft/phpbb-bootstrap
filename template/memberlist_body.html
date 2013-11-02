@@ -27,13 +27,13 @@
 	<!-- ELSE -->
 		<h2 class="solo">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 
-		<div class="panel small-bottom-margin">
+		<div class="small-bottom-margin">
 			
 
 			<ul class="linklist">
 				<li class="pull-left">
 
-				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><a class="btn btn-small" href="{U_FIND_MEMBER}"><i class="icon-search"></i>&nbsp;{L_FIND_USERNAME} </a> <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><a href="{U_HIDE_FIND_MEMBER}">{L_HIDE_MEMBER_SEARCH}</a> &bull; <!-- ENDIF -->
+				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><a class="btn btn-small" href="{U_FIND_MEMBER}"><i class="icon-search"></i>&nbsp;{L_FIND_USERNAME} </a> <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><a class="btn btn-small" href="{U_HIDE_FIND_MEMBER}">{L_HIDE_MEMBER_SEARCH}</a><!-- ENDIF -->
 				<strong style="font-size: 0.95em;">
 				<!-- BEGIN first_char -->
 					<a href="{first_char.U_SORT}">{first_char.DESC}</a>&nbsp; 
