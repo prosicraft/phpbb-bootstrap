@@ -750,6 +750,7 @@ div.error {
 
 .table-row .table-replies .ministat,
 .table-row .table-views .ministat {
+  display: inline-block;
   text-align: center;
   margin: 5px 0;
   background: #222;

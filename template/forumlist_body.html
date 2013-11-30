@@ -59,14 +59,14 @@
 		</div>
 		<!-- ELSEIF not forumrow.S_IS_LINK -->
 		<div class="table-replies">
-			<div class="ministat">
+			<a class="ministat" href="<!-- IF forumrow.LAST_POST_LINK -->{forumrow.U_LAST_POST}<!-- ELSE -->#<!-- ENDIF -->">
 				<span>{forumrow.TOPICS} <dfn>{L_TOPICS} </dfn></span>
-			</div>
+			</a>
 		</div>
-		<div class="table-views">
-			<div class="ministat">
+		<div class="table-views">			
+			<a class="ministat" href="<!-- IF forumrow.LAST_POST_LINK -->{forumrow.U_LAST_POST}<!-- ELSE -->#<!-- ENDIF -->">
 				<span>{forumrow.POSTS} <dfn>{L_POSTS} </dfn></span>
-			</div>
+			</a>
 		</div>		
 		<div class="table-lastpost">			
 			<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG} </a><!-- ENDIF -->				
