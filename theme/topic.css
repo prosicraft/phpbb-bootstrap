@@ -32,6 +32,38 @@
   overflow: auto;
 }
 
+.topic-container .postbody .content blockquote {
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  padding-left: 5px;
+  padding-top: 5px;
+  margin-bottom: 0px;  
+}
+
+.topic-container .postbody .content blockquote div {
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 2px;    
+}
+
+.topic-container .postbody .content blockquote div cite {  
+  font-family: Arial;
+  font-size: 11px;
+  font-weight: bold;
+  display: block;  
+}
+
+.topic-container .postbody .content blockquote:before {
+  content: "\f10e";
+  font-family: FontAwesome;
+  display: inline-block;
+  font-size: 25px;
+  color: #aaa;
+  margin-left: 5px;  
+  vertical-align: top;  
+}
+
 .topic-container .postbody .postheader {
   margin-top: 8px;
 }
