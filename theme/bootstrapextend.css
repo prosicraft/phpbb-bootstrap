@@ -231,7 +231,7 @@ label.strong {
   display: block;
 }
 
-@media all and (max-width: 300px)
+@media all and (max-width: 468px)
 {
     #wrap .pagination-bottom span.pagination a,
     #wrap .pagination-top span.pagination a,
