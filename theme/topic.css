@@ -155,7 +155,7 @@
     display: block;  
   }
   .topic-container .postprofile .avatar img {
-    max-width: 80px;
+    /*max-width: 80px;*/
     max-height: 110px;
   }
   .topic-container .postbody {
