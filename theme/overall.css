@@ -182,6 +182,13 @@
 }
 #wrap .chk-autologin {
   font-size: 11px;
+  padding: 0px;
+  line-height: 18px;
+}
+#wrap .chk-autologin input[type=checkbox] {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 5px;
 }
 
 /********************************************************************/
