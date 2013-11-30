@@ -96,6 +96,7 @@ label.strong {
 
 .box input.checkbox {
   margin-top: 0px;
+  display: inline-block;
 }
 
 #wrap input[type=text],
