@@ -1,6 +1,20 @@
 /******************************************************************************/
 /* posting editor related stuff */
 
+#to-recipient-list .btn-rec-remove {
+  padding: 2px;
+  padding-left: 3px;
+  padding-top: 0px;
+  font-size: 20px;  
+  line-height: 20px;
+  height: 21px;  
+}
+
+#to-recipient-list > div {
+  height: 28px;
+  padding-top: 3px;
+}
+
 .posting-container {
 }
 

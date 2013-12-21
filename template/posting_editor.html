@@ -15,11 +15,11 @@
 				<label class="strong">{L_TO}: </label>
 			</div>
 			<!-- IF .to_recipient -->
-				<dl class="pull-left small-left-margin small-bottom-margin">
+				<dl class="pull-left small-left-margin small-bottom-margin" id="to-recipient-list">
 					<div class="">
 						<!-- BEGIN to_recipient -->
 							<!-- IF to_recipient.IS_GROUP --><a href="{to_recipient.U_VIEW}"><strong>{to_recipient.NAME}</strong></a>&nbsp;<!-- ELSE -->{to_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
-							<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="x" class="btn btn-small" />&nbsp;<!-- ENDIF -->
+							<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="&times;" class="btn btn-small btn-rec-remove" />&nbsp;<!-- ENDIF -->
 						<!-- END to_recipient -->
 					</div>
 				</dl>
@@ -41,7 +41,7 @@
 				<div class="pull-left"><input type="text" id="username_list" name="username_list" class="inputbox" cols="50" rows="2" tabindex="1" /></div>
 				<div class="btn-group pull-left small-left-margin">
 					<a class="btn btn-small" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
-					<input type="submit" name="add_to" value="{L_ADD}" class="btn btn-small" tabindex="1" />
+					<input type="submit" name="add_to" value="{L_ADD}" class="btn btn-small strong" tabindex="1" />
 					<input type="submit" name="add_bcc" value="{L_ADD_BCC}" class="btn btn-small" tabindex="1" />
 				</div>
 			</dl>
@@ -62,7 +62,7 @@
 				<!-- ENDIF -->
 
 				<!-- IF not S_EDIT_POST -->
-				<dd><input class="inputbox" type="text" name="username_list" id="username_list" size="20" value="" /> <input type="submit" name="add_to" value="{L_ADD}" class="button2" /></dd>
+				<dd><input class="inputbox" type="text" name="username_list" id="username_list" size="20" value="" /> <input type="submit" name="add_to" value="{L_ADD}" class="btn btn-small strong" /></dd>
 				<!-- ENDIF -->
 			</dl>
 		<!-- ENDIF -->
@@ -185,7 +185,7 @@
 	<!-- ENDIF -->
 
 	<!-- IF S_HAS_ATTACHMENTS -->
-		<div class="panel bg2">
+		<div class="box small-padding small-bottom-margin">
 
 			<h3>{L_POSTED_ATTACHMENTS}</h3>
 
@@ -198,8 +198,8 @@
 				<dd><textarea name="comment_list[{attach_row.ASSOC_INDEX}]" id="comment_list_{attach_row.ASSOC_INDEX}" rows="1" cols="35" class="inputbox">{attach_row.FILE_COMMENT}</textarea></dd>
 				<dd><a href="{attach_row.U_VIEW_ATTACHMENT}" class="{S_CONTENT_FLOW_END}">{attach_row.FILENAME}</a></dd>
 				<dd style="margin-top: 5px;">
-					<!-- IF S_INLINE_ATTACHMENT_OPTIONS --><input type="button" value="{L_PLACE_INLINE}" onclick="attach_inline({attach_row.ASSOC_INDEX}, '{attach_row.A_FILENAME}');" class="button2" />&nbsp; <!-- ENDIF -->
-					<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="button2" />
+					<!-- IF S_INLINE_ATTACHMENT_OPTIONS --><input type="button" value="{L_PLACE_INLINE}" onclick="attach_inline({attach_row.ASSOC_INDEX}, '{attach_row.A_FILENAME}');" class="btn btn-small" />&nbsp; <!-- ENDIF -->
+					<input type="submit" name="delete_file[{attach_row.ASSOC_INDEX}]" value="{L_DELETE_FILE}" class="btn btn-small" />
 				</dd>
 			</dl>
 			{attach_row.S_HIDDEN}
