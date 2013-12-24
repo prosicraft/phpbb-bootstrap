@@ -73,6 +73,13 @@
   margin-bottom: 5px;
 }
 
+.topic-container .postbody .viewtopic-rules {
+  background-color: #ffb462;
+  border: 1px solid #efa452;
+  border-radius: 4px;
+  padding: 10px;
+}
+
 .topic-container .postbody p.author {
   margin-bottom: 20px;
 }
