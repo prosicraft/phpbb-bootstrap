@@ -214,7 +214,8 @@
 }
 
 .ucp-collist dd input,
-.ucp-collist dd textarea {
+.ucp-collist dd textarea,
+.ucp-collist dd select {
   width: 100%;
 }
 
