@@ -640,15 +640,15 @@ div.error {
   width: 100%;
   height: auto;  
   position: relative;
-  display: block;
+  display: inline;
 }
 
 .table-row {
   width: 100%;
   height: auto;
-  position: relative;
-  display: block;
-  border-top: 1px solid #aaa;   
+  position: relative;  
+  border-top: 1px solid #aaa;
+  display: inline-block;   
 }
 
 .table-phantomrow:first-child {
