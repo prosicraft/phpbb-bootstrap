@@ -85,6 +85,10 @@
   }
   #wrap .overboxctrl .overboxleft .btn-moderation + .btn-group {
     margin-left: -2px;  
+  }
+  #wrap .btn-index-active {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;  
   }  
 }
 
