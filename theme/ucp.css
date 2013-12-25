@@ -166,8 +166,74 @@
 }
 
 
-/***********************************************/
+/* Mails */
 
+table.ucp-pm {
+  width: 100%;
+  border: 1px solid #999;
+  border-radius: 5px;
+  border-collapse: separate;
+  margin-bottom: 10px;      
+}
+
+table.ucp-pm th,
+table.ucp-pm td {
+  padding: 8px;
+}
+
+table.ucp-pm th {
+  background-color: #ccc;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;        
+}
+
+table.ucp-pm th:first-child {
+  border-top-left-radius: 4px;
+}
+
+table.ucp-pm th:last-child {
+  border-top-right-radius: 4px;
+}
+
+table.ucp-pm td {
+  background-color: #f4f4f4;
+  color: #000;    
+}
+
+table.ucp-pm tr ~ tr td {
+  border-top: 1px solid #bbb;
+}
+
+table.ucp-pm td:first-child {
+  border-bottom-left-radius: 4px;
+}
+
+table.ucp-pm td:last-child {
+  border-bottom-right-radius: 4px;
+}
+
+table.ucp-pm td h4 {
+  margin-bottom: 4px;
+  margin-top: 3px;
+}
+
+@media all and (max-width: 500px)
+{
+  table.ucp-pm th {
+    font-size: 13px;      
+  }
+  table.ucp-pm td h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 0px;  
+  }
+}
+
+
+
+/* collumned list */
 
 .ucp-collist {
   display: block;

@@ -1,4 +1,4 @@
-<h2>{L_TITLE}<!-- IF CUR_FOLDER_NAME -->: {CUR_FOLDER_NAME}<!-- ENDIF --></h2>
+<h3>{L_TITLE}<!-- IF CUR_FOLDER_NAME -->: {CUR_FOLDER_NAME}<!-- ENDIF --></h3>
 
 <form id="viewfolder" method="post" action="{S_PM_ACTION}">
 
@@ -9,7 +9,7 @@
 	<!-- IF U_POST_REPLY_PM or U_POST_NEW_TOPIC or U_FORWARD_PM -->
 		<div class="pull-left small-bottom-margin">
 			<!-- IF U_POST_REPLY_PM --><a class="btn btn-small" title="{L_POST_REPLY_PM}" href="{U_POST_REPLY_PM}"><span></span>{L_POST_REPLY_PM}</a>
-			<!-- ELSEIF U_POST_NEW_TOPIC --><a class="btn btn-small strong" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}"><span></span>{L_UCP_PM_COMPOSE}</a><!-- ENDIF -->
+			<!-- ELSEIF U_POST_NEW_TOPIC --><a class="btn btn-small strong" href="{U_POST_NEW_TOPIC}" accesskey="n" title="{L_UCP_PM_COMPOSE}"><i class="icon-pencil"></i> {L_UCP_PM_COMPOSE}</a><!-- ENDIF -->
 			<!-- IF U_FORWARD_PM --><a class="btn btn-small" title="{L_POST_FORWARD_PM}" href="{U_FORWARD_PM}"><span></span>{L_FORWARD_PM}</a><!-- ENDIF -->
 			<!-- IF U_POST_REPLY_PM and S_PM_RECIPIENTS gt 1 --><a class="btn btn-small" title="{L_REPLY_TO_ALL}" href="{U_POST_REPLY_ALL}">{L_REPLY_TO_ALL}</a><!-- ENDIF -->
 		</div>
