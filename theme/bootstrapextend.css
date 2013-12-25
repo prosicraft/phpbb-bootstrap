@@ -799,6 +799,18 @@ div.error {
   display: none;
 }
 
+.table-row .table-lastpost .lastpost-desklink {  
+  padding-left: 10px; /* larger clicking area */
+  padding-right: 5px;  
+  
+  display: inline-block;  
+}
+
+.table-row .table-lastpost .lastpost-info {
+  display: inline-block;
+  vertical-align: top;
+}
+
 .table-row .table-lastpost .lastpost-time,
 .table-row .table-lastpost .lastpost-info {
   font-size: 12px;
