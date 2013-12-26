@@ -18,10 +18,6 @@
 
 /******************************************************************************/
 
-
-/******************************************************************************/
-/* OUR OWN FRAMEWORK BEGINS */
-
 #wrap h2 {
   border-bottom: 1px solid #bbb;
   padding-left: 15px;
@@ -38,26 +34,6 @@
   display: block;
   max-width: 100%;
   padding: 5px;
-}
-
-.box {
-  padding: 10px;
-  background: rgba(0, 0, 0, 0.09);
-  background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  border-radius: 4px;
-}
-
-.box .header {
-  font-weight: bold;
-  color: #777;
-  font-size: 15px;
-}
-
-.box h2 {
-  font-size: 28px;
 }
 
 .submitrow {
@@ -249,36 +225,6 @@ label.strong {
   border-bottom-left-radius: 3px;
 }
 
-/* left margin */
-.no-left-margin { margin-left: 0px; }
-.small-left-margin { margin-left: 10px; }
-.medium-left-margin { margin-left: 20px; }
-.big-left-margin { margin-left: 40px; }
-
-/* bottom margin */
-.no-bottom-margin { margin-bottom: 0px; }
-.small-bottom-margin { margin-bottom: 10px; }
-.medium-bottom-margin { margin-bottom: 20px; }
-.big-bottom-margin { margin-bottom: 40px; }
-
-/* right margin */
-.no-right-margin { margin-right: 0px; }
-.small-right-margin { margin-right: 10px; }
-.medium-right-margin { margin-right: 20px; }
-.big-right-margin { margin-right: 40px; }
-
-/* top margin */
-.no-top-margin { margin-top: 0px; }
-.small-top-margin { margin-top: 10px; }
-.medium-top-margin { margin-top: 20px; }
-.big-top-margin { margin-top: 40px; }
-
-/* padding */
-.no-padding { padding: 0px; }
-.small-padding { padding: 10px; }
-.medium-padding { padding: 20px; }
-.big-padding { padding: 40px; }
-
 /* select input wrappers */
 .small-select-wrapper select {
   max-width: 160px;
@@ -348,60 +294,12 @@ label.strong {
   margin-left: 5px;
 }
 
-.row-inline > .formgroup .btn,
-.row-inline > .right > .formgroup .btn,
-.row-inline > .left > .formgroup .btn {
-  position: relative;  
+.row-inline > .formgroup > * {
+  vertical-align: middle;
 }
 
 .row-inline > .formgroup > .btn-small {
   max-height: 28px;
-}
-
-/* buttons don't work with a tag in bootstrap 3 anymore */
-#wrap .btn {
-  background-color: rgb(221, 221, 221);
-  border: 1px solid #bbb;
-  font-size: 12px;
-  width: auto;  
-}
-#wrap .btn:hover {
-  background-color: #eee;
-  color: #666;
-}
-#wrap .btn-group .btn:first-child {
-  border-right: 1px solid #bbb;
-}
-#wrap .btn-group .btn:first-child + .btn {
-  border-left: 1px solid #bbb;
-}
-#wrap .btn-group + .btn {
-  margin-left: 10px;
-}
-#wrap .btn + .btn-group {
-  margin-left: 10px;
-}
-#wrap a.btn {
-  color: #333;
-}
-#wrap .btn-small {  
-  padding-top: 4px;
-  height: 28px;  
-}
-#wrap .btn-medium {
-  padding-top: 6px;
-  height: 38px;
-}
-#wrap .btn a {
-  color: #333;
-}
-#wrap .btn a:hover {
-  text-decoration: none;
-}
-
-/* Small-Button-Icons */
-.btn-small i {
-  font-size: 14px;
 }
 
 /* Fix Input fields in bootstrap3 */
@@ -434,11 +332,7 @@ div.error {
   display: inline-block;
 }
 
-/* displaying */
-.only-on-handheld { display: none; }
-.only-on-tab { display: none; }
-.only-on-large-tab { display: none; }
-.only-on-smartphone { display: none; }
+
 
 
 /* large tablet / landscape */
@@ -719,6 +613,8 @@ div.error {
   margin-top: 0px;
   margin-bottom: 5px;
   min-height: 20px;
+  font-size: 18px;
+  font-weight: normal;
 }
 
 .table-title .table-titledesc {

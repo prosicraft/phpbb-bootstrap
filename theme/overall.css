@@ -1,17 +1,246 @@
 /******************************************************************************/
-/* overall related stuff */
+/* overall_body */
+
+body#phpbb {
+  font-size: 13px;  
+  padding: 0px;
+  margin: 0px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 #page-body {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
 }
 
+/******************************************************************************/
+/* overall_navigation */
+
+.nav-bar {
+  background-color: #111;
+  font-size: 0px;
+  border-bottom: 1px solid #000;     
+}
+
+.nav-login {
+  display: inline-block;
+  vertical-align: top;
+  color: #f3f3f3;
+  overflow: hidden;
+  width: 15%;
+  max-width: 150px;  
+  height: 50px;
+  box-sizing: border-box;
+  padding-top: 17px;  
+  font-size: 15px;
+  background-color: #111;
+  position: relative;
+  text-align: right;
+  padding-right: 10px;      
+}
+  
+.nav-container {
+  width: 85%;  
+  background-color: #111;
+  position: relative;
+  display: inline-block;  
+}
+
+ul.nav li,
+.nav-brand,
+.nav-brand:visited {
+  color: #f3f3f3;
+  padding: 15px;
+  font-size: 15px;
+  font-family: Arial;
+  box-sizing: border-box;  
+  min-height: 40px;
+  height: 50px;
+  
+  display: inline-block;
+  vertical-align: top;           
+}
+
+.nav-brand {
+  font-weight: bold;
+}
+
+ul.nav li {  
+  font-size: 14px;
+  padding: 0px;        
+}
+
+ul.nav li:hover {
+  background-color: #888;
+  border-bottom: 1px solid #888;
+}
+
+ul.nav li a,
+ul.nav li a:hover,
+ul.nav li a:visited {
+  color: #f3f3f3;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 16px 8px;    
+}
+
+ul.nav {
+  list-style-type: none;
+  padding-left: 0px;
+  display: inline;
+  font-size: 0px;      
+}
+
+ul.nav-sub {
+  list-style-type: none;
+  background-color: #444;
+  border: 1px solid #444;
+  border-top: 0px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin: 0px;  
+  padding: 0px;
+  display: none;
+  position: relative;
+  z-index: 1000;
+  min-width: 150px;
+  max-width: 100%;   
+}
+
+ul.nav-sub li {
+  display: block;
+  background-color: #333;  
+}
+
+ul.nav-sub li.divider {
+  height: 1px;
+  min-height: 1px;
+  padding: 0px;
+  border-top: 1px solid #555;
+}  
+
+.nav-toggle {  
+  position: absolute;  
+  width: 40px;
+  height: 40px;    
+  right: 5px;
+  top: 8px;    
+  display: none;
+  color: #f3f3f3;
+  font-size: 30px;
+}     
+
+@media all and (max-width: 900px)
+{
+  .nav-login .not-on-tab {
+    display: none;  
+  }
+  .nav-container {
+    width: 92%;  
+  }
+  .nav-login {
+    padding-right: 0px;
+    text-align: center;
+    border-left: 1px dashed #000;
+    width: 8%;  
+  }
+}
+
+@media all and (max-width: 750px)
+{
+  .nav .pmicon {
+    display: inline-block;
+    vertical-align: top;  
+  }
+  .nav .pmdesc {
+    display: inline-block;
+    max-width: 10px;
+    overflow: hidden;
+    white-space: nowrap;  
+  }
+}
+
+@media all and (max-width: 600px)
+{
+  .nav-bar {
+    border: 0px;
+    background-color: transparent;  
+  }
+  .nav-brand, ul.nav li {
+    background-color: #111;  
+  }
+  .nav-brand {
+    width: 100%;
+    border-bottom: 1px solid #000;      
+  }  
+  .nav-login {    
+    border-bottom: 1px solid #000;      
+  }
+  ul.nav li {
+    display: block;      
+  }  
+  ul.nav li:first-child {
+    border-top: 1px solid #444;  
+  }
+  .nav-container {
+    background-color: transparent;  
+  }
+  ul.nav li:last-child {
+    border: 1px solid #111;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;      
+  }
+  ul.nav li:last-child:hover {
+    border-color: #888;  
+  }  
+  ul.nav {    
+    display: none;      
+  }
+  .nav-toggle {
+    display: inline-block;  
+  }
+}
+
+/******************************************************************************/
+/* overall_header */
+
 #pageheader #searchbox a {
   text-shadow: none;
   color: #ccc;  
 }
 
-/********************************************************************/
+/******************************************************************************/
+/* overall_breadcrumb */
+
+ul.breadcrumb {
+  padding: 10px;
+  background-color: #f4f4f4;
+  border: 1px solid #f4f4f4;
+  border-radius: 5px;
+  list-style-type: none;  
+}
+
+ul.breadcrumb li {
+  display: inline-block;
+  padding: 3px;
+  box-sizing: border-box;  
+}
+
+ul.breadcrumb li ~ li:before {
+  color: #aaa;
+  content: '/ ';
+  letter-spacing: 3px;
+}
+
+ul.breadcrumb li a {
+  font-size: 11px;  
+}
+
+/******************************************************************************/
 /* footer related stuff */
 #well-footer.well {
   background: #f2f2f2; /* Old browsers */
@@ -84,70 +313,6 @@
 
 /********************************************************************/
 /* MAIN NAVIGATION */
-#wrap div.navigation {  
-  display: block;  
-  background: transparent;  
-}
-
-#wrap div.navbar-default {
-  margin: 0px;
-  background-color: #111;
-  border-color: #080808;
-  border-right: 0px;
-  border-left: 0px;
-  border-radius: 0px;    
-}
-
-#wrap .navbar button.navbar-toggle {
-  float: none;  
-  right: 5px;
-  position: absolute;
-  border-color: #222;  
-}
-
-#wrap .navbar .navbar-collapse {
-  border-color: #000;  
-}
-
-#wrap .navbar button.navbar-toggle {
-  outline: none;
-}
-
-#wrap .navbar button.navbar-toggle:hover,
-#wrap .navbar button.navbar-toggle:focus {
-  background-color: #222;
-}
-
-#wrap div div nav.collapse.navbar-collapse.navbar-ex1-collapse > ul.nav.navbar-nav li a {
-  max-height: 50px;  
-}
-
-#wrap div.navbar .navbar-header .navbar-brand {
-  color: #ddd;
-}
-#wrap div.navbar .navbar-header .navbar-brand:hover {
-  color: #fff;
-  background-color: #010101;  
-}
-
-#wrap nav.navbar-collapse ul.nav li a {
-  color: #cecece;
-}
-
-#wrap nav.navbar-collapse ul.nav li:hover,
-#wrap nav.navbar-collapse ul.nav li a:focus,
-#wrap nav.navbar-collapse ul.nav li a:visited {
-  background-color: #333;
-}
-
-#wrap nav.navbar-collapse ul.nav li a:hover {
-  color: #ffffff;
-}
-
-#wrap .navigation .navbar-header {
-  position: relative;
-  vertical-align: top;    
-}
 
 #wrap .static-nav {
   position: absolute;
@@ -171,26 +336,6 @@
   background-color: #333;
 }
 
-#wrap .btn-primary {
-  background-color: #66f;
-  width: 100%;
-  border-color: #33e;
-}
-#wrap .btn-primary:hover {
-  background-color: #33e;
-  color: #eee;
-}
-#wrap .chk-autologin {
-  font-size: 11px;
-  padding: 0px;
-  line-height: 18px;
-}
-#wrap .chk-autologin input[type=checkbox] {
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-right: 5px;
-}
-
 /********************************************************************/
 
 .pagefooter div {
@@ -200,49 +345,53 @@
 
 /********************************************************************/
 /* QUICK LOGIN BOX */
-#wrap .quicklogin a.registerlink {
-  margin: 10px;  
+#wrap .quicklogin {
+  width: 287px;
+  margin-right: 10px;
+}
+#wrap .quicklogin div.row label {
+  width: 100px;
+  display: inline-block;  
+  margin-bottom: 20px;
+}
+#wrap .quicklogin div.row input {
+  width: 150px;
+}
+@media only screen and (max-device-width: 1199px)
+{
+  .quicklogin div.row input {
+    font-size: 18px !important;  
+  }
+}
+
+#wrap .quicklogin a.registerlink {      
+  margin-bottom: 10px;
   position: relative;
-  top: 10px;
   float: right;
+  top: 10px;  
   font-size: 15px;  
 }
-
-/********************************************************************/
-/* CONTROLS ABOVE THE BOX */
-#wrap div.overboxctrl {  
+.quicklogin .btn-primary {
+  background-color: #66f;
+  width: 100%;
+  border-color: #33e;
+}
+.quicklogin .btn-primary:hover {
+  background-color: #33e;
+  color: #eee;
+}
+.quicklogin .chk-autologin {
+  font-size: 11px;
+  padding: 0px;
+  line-height: 18px;
   display: block;
-  position: relative;
-  height: auto;
-  margin-bottom: 20px;  
+  margin-bottom: 20px;
 }
-
-#wrap div.overboxctrl .overboxright,
-#wrap div.overboxctrl .overboxleft,
-#wrap div.overboxctrl .overboxcenter {
-  position: relative;
-  display: inline-block;  
-  width: auto;
-  height: auto;
+.quicklogin .chk-autologin input[type=checkbox] {
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-right: 5px;
 }
-
-#wrap div.overboxctrl .overboxright {
-  position: absolute;
-  right: 0px;
-  top: 0px;
-}
-#wrap div.overboxctrl .overboxleft {
-  height: auto;  
-}
-#wrap div.overboxctrl .overboxcenter {    
-  position: absolute;
-  left: 50%;
-  margin-left: -15%;
-  width: 30%;  
-  top: 15%;
-  text-align: center;        
-}
-/**/
 
 
 @media all and (max-width:1000px){

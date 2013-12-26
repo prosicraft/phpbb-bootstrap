@@ -1,258 +1,1 @@
-<!DOCTYPE html>
-<html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}">
-<head>
-<meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" />
-<meta http-equiv="content-style-type" content="text/css" />
-<meta http-equiv="content-language" content="{S_USER_LANG}" />
-<meta http-equiv="imagetoolbar" content="no" />
-<meta name="resource-type" content="document" />
-<meta name="distribution" content="global" />
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-{META}
-<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title>
-
-<!-- IF S_ENABLE_FEEDS -->
-	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->
-	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
-<!-- ENDIF -->
-
-<!--
-	phpBB style name: Euphoria
-	Based on style:   prosilver (this is the default phpBB3 style)
-	Original author:  Tom Beddard ( http://www.subBlue.com/ )
-	Modified by:      failz0r
--->
-
-<script type="text/javascript">
-// <![CDATA[
-	var jump_page = '{LA_JUMP_PAGE}:';
-	var on_page = '{ON_PAGE}';
-	var per_page = '{PER_PAGE}';
-	var base_url = '{A_BASE_URL}';
-	var style_cookie = 'phpBBstyle';
-	var style_cookie_settings = '{A_COOKIE_SETTINGS}';
-	var onload_functions = new Array();
-	var onunload_functions = new Array();
-
-	<!-- IF S_USER_PM_POPUP and S_NEW_PM -->
-		var url = '{UA_POPUP_PM}';
-		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');
-	<!-- ENDIF -->
-
-	/**
-	* Find a member
-	*/
-	function find_username(url)
-	{
-		popup(url, 760, 570, '_usersearch');
-		return false;
-	}
-
-	/**
-	* New function for handling multiple calls to window.onload and window.unload by pentapenguin
-	*/
-	window.onload = function()
-	{
-		for (var i = 0; i < onload_functions.length; i++)
-		{
-			eval(onload_functions[i]);
-		}
-	};
-
-	window.onunload = function()
-	{
-		for (var i = 0; i < onunload_functions.length; i++)
-		{
-			eval(onunload_functions[i]);
-		}
-	};
-
-// ]]>
-</script>
-
-<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
-
-<link href="{T_SUPER_TEMPLATE_PATH}/libs/css/bootstrap.min.css" rel="stylesheet">
-<link href="{T_SUPER_TEMPLATE_PATH}/libs/css/bootstrap-responsive.min.css" rel="stylesheet">
-<link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome.min.css" rel="stylesheet">
-<script src="{T_SUPER_TEMPLATE_PATH}/libs/js/jquery-1.9.1.min.js"></script>
-<script src="{T_SUPER_TEMPLATE_PATH}/libs/js/bootstrap.min.js"></script>
-<script src="{T_SUPER_TEMPLATE_PATH}/libs/js/script.js"></script>
-<!--[if IE 7]>
-  <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome-ie7.min.css" rel="stylesheet">
-<![endif]-->
-
-<!-- uncomment below if you want to use a CDN-hosted script (speed boost) -->
-<!--
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet">
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
--->
-
-<!-- <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" /> -->
-<link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" />
-
-<!-- <link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" /> -->
-<!-- <link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" /> -->
-<!-- <link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" /> -->
-
-<!-- IF S_CONTENT_DIRECTION eq 'rtl' -->
-	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" />
-<!-- ENDIF -->
-
-</head>
-
-<body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" ontouchstart="">
-
-	<!--
-		start main wrapper		
-	-->
-	<div id="wrap">
-		<a id="top" name="top" accesskey="t"></a>
-		<header id="pageheader">
-			<div class="container-fluid">
-				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
-					<div id="searchbox">
-						<p class="pull-right">
-							<small><a href="#start_here">{L_SKIP} &darr;</a></small>
-						</p>
-						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">						
-						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">						
-						<p class="responsive-inline not-on-tab">
-							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
-						</p>
-						{S_SEARCH_HIDDEN_FIELDS}
-						</form>					
-					</div>
-				<!-- ENDIF -->
-
-
-				<a href="{U_INDEX}" title="{SITENAME}" id="logo">{SITE_LOGO_IMG}</a>
-				<p class="logo-description">{SITE_DESCRIPTION}</p>
-			</div>
-		</header>
-
-		<!-- Main Navigation -->
-		<div class="navigation">
-		<div class="navbar navbar-default" role="navigation">
-			<!-- IF not S_USER_LOGGED_IN -->
-			<a id="login-trigger" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
-				<div class="static-nav"><i class="icon-signin"></i> <span class="not-on-smartphone">{L_LOGIN} <i class="icon-caret-down"></i></span></div>
-			</a>
-			<!-- ELSE -->			 
-			<a href="{U_LOGIN_LOGOUT}">
-				<div class="static-nav"><i class="icon-signout"></i> <span class="not-on-smartphone">{L_LOGOUT} </span></div>
-			</a>			
-			<!-- ENDIF -->
-			
-			<div class="navbar-header">				
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">				
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>					
-				</button>
-				<a class="navbar-brand" href="{U_INDEX}" accesskey="h"><i class="icon-home only-on-handheld"></i> {SITENAME}</a>
-			</div>																							
-
-				<nav class="collapse navbar-collapse navbar-ex1-collapse">
-					
-					<ul class="nav navbar-nav">						
-					<!-- IF not S_IS_BOT -->
-						<!-- IF S_DISPLAY_MEMBERLIST -->
-						<li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-group"></i> {L_MEMBERLIST}</a></li>
-						<!-- ENDIF -->
-						
-						<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-info"></i> {L_FAQ}</a></li>
-					<!-- ENDIF -->																		
-
-                                	<!-- IF S_CONTACT_ENABLED -->
-					<li><a href="{U_CONTACT}"><i class="icon-phone"></i> {L_CONTACT_BOARD_ADMIN_SHORT}</a></li>
-					<!-- ENDIF -->
-					
-					<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->					
-					<li></li>
-					<!-- ENDIF -->									
-						
-					<!-- IF S_USER_LOGGED_IN -->
-						<!-- IF U_RESTORE_PERMISSIONS -->
-						<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
-						<!-- ENDIF -->
-														
-						<!-- IF S_DISPLAY_PM -->
-						<li><a href="{U_PRIVATEMSGS}" class=""><i class="icon-envelope-alt pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>
-						<!-- ENDIF -->
-							
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {S_USERNAME} <i class="icon-caret-down"></i></a>
-							<ul class="dropdown-menu dropdown-account">
-								<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-cog"></i> {L_PROFILE}</a></li>
-								<!-- IF S_DISPLAY_SEARCH -->
-								<li><a href="{U_SEARCH_SELF}"><i class="icon-comment"></i> {L_SEARCH_SELF}</a></li>
-								<!-- ENDIF -->
-								<!-- IF U_ACP -->
-								<li class="divider"></li>
-								<li><a href="{U_ACP}"><i class="icon-cogs"></i> {L_ACP}</a></li>
-								<!-- ENDIF -->
-								<li class="divider"></li>
-								<li><a href="{U_LOGIN_LOGOUT}" accesskey="x"><i class="icon-unlock-alt"></i> {L_LOGOUT}</a></li>
-							</ul>
-						</li>
-					<!-- ENDIF -->
-					</ul>									
-				</nav>								
-		</div>
-		</div>
-		<!-- end main nav -->
-
-		<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->
-		<div class="form form-vertical pull-right span3 quicklogin" id="quicklogin-form">
-			<form method="post" action="{S_LOGIN_ACTION}">
-				<label for="username">{L_USERNAME}:</label>
-				<input type="text" name="username" id="username" size="10" class="input-block-level" title="{L_USERNAME}" />
-
-				<label for="password">{L_PASSWORD}:</label>
-				<input type="password" name="password" id="password" size="10" class="input-block-level" title="{L_PASSWORD}" />
-				<!-- IF S_AUTOLOGIN_ENABLED -->
-				<label for="autologin" class="checkbox chk-autologin"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>
-				<!-- ENDIF -->
-				{S_LOGIN_REDIRECT}
-				<button type="submit" name="login" class="btn btn-block btn-primary"><i class="icon-lock"></i> {L_LOGIN}</button>
-				<a class="registerlink" href="{U_REGISTER}"><i class="icon-edit-sign"></i> {L_REGISTER}</a>
-			</form>
-		</div>
-		<!-- ENDIF -->
-
-
-	<div id="page-header" style="display:none;">
-		<div class="navbar">
-			<ul class="linklist navlinks">
-				<!-- IF U_EMAIL_TOPIC --><li class="rightside" style="display:none;"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->
-				<!-- IF U_EMAIL_PM --><li class="rightside" style="display:none;"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->
-				<!-- IF U_PRINT_TOPIC --><li class="rightside" style="display:none;"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->
-				<!-- IF U_PRINT_PM --><li class="rightside" style="display:none;"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->
-			</ul>
-		</div>
-
-	</div>
-
-	<a name="start_here"></a>
-	<div id="page-body">
-		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
-		<div class="alert alert-info"><strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}</div>
-		<!-- ENDIF -->
-
-		<ul class="breadcrumb">
-			<li><a href="{U_INDEX}" accesskey="h"><i class="icon-home"></i> {L_INDEX}</a></li>
-			<!-- BEGIN navlinks -->
-				<li><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
-			<!-- END navlinks -->
-		</ul>
+<!DOCTYPE html><html dir="{S_CONTENT_DIRECTION}" lang="{S_USER_LANG}"><head><meta http-equiv="content-type" content="text/html; charset={S_CONTENT_ENCODING}" /><meta http-equiv="content-style-type" content="text/css" /><meta http-equiv="content-language" content="{S_USER_LANG}" /><meta http-equiv="imagetoolbar" content="no" /><meta name="resource-type" content="document" /><meta name="distribution" content="global" /><meta name="keywords" content="" /><meta name="description" content="" /><meta name="viewport" content="width=device-width, initial-scale=1.0">{META}<title>{SITENAME} &bull; <!-- IF S_IN_MCP -->{L_MCP} &bull; <!-- ELSEIF S_IN_UCP -->{L_UCP} &bull; <!-- ENDIF -->{PAGE_TITLE}</title><!-- IF S_ENABLE_FEEDS -->	<!-- IF S_ENABLE_FEEDS_OVERALL --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {SITENAME}" href="{U_FEED}" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_NEWS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_NEWS}" href="{U_FEED}?mode=news" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_FORUMS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_ALL_FORUMS}" href="{U_FEED}?mode=forums" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_TOPICS --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_NEW}" href="{U_FEED}?mode=topics" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_TOPICS_ACTIVE --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FEED_TOPICS_ACTIVE}" href="{U_FEED}?mode=topics_active" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_FORUM and S_FORUM_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_FORUM} - {FORUM_NAME}" href="{U_FEED}?f={S_FORUM_ID}" /><!-- ENDIF -->	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF --><!-- ENDIF --><!--	phpBB style name: Euphoria	Based on style:   prosilver (this is the default phpBB3 style)	Original author:  Tom Beddard ( http://www.subBlue.com/ )	Modified by:      failz0r--><script type="text/javascript">// <![CDATA[	var jump_page = '{LA_JUMP_PAGE}:';	var on_page = '{ON_PAGE}';	var per_page = '{PER_PAGE}';	var base_url = '{A_BASE_URL}';	var style_cookie = 'phpBBstyle';	var style_cookie_settings = '{A_COOKIE_SETTINGS}';	var onload_functions = new Array();	var onunload_functions = new Array();	<!-- IF S_USER_PM_POPUP and S_NEW_PM -->		var url = '{UA_POPUP_PM}';		window.open(url.replace(/&amp;/g, '&'), '_phpbbprivmsg', 'height=225,resizable=yes,scrollbars=yes, width=400');	<!-- ENDIF -->	/**	* Find a member	*/	function find_username(url)	{		popup(url, 760, 570, '_usersearch');		return false;	}	/**	* New function for handling multiple calls to window.onload and window.unload by pentapenguin	*/	window.onload = function()	{		for (var i = 0; i < onload_functions.length; i++)		{			eval(onload_functions[i]);		}	};	window.onunload = function()	{		for (var i = 0; i < onunload_functions.length; i++)		{			eval(onunload_functions[i]);		}	};// ]]></script><script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script><!-- <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/bootstrap.min.css" rel="stylesheet"> --><!-- <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/bootstrap-responsive.min.css" rel="stylesheet"> --><link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome.min.css" rel="stylesheet"><script src="{T_SUPER_TEMPLATE_PATH}/libs/js/jquery-1.9.1.min.js"></script><!-- <script src="{T_SUPER_TEMPLATE_PATH}/libs/js/bootstrap.min.js"></script> --><script src="{T_SUPER_TEMPLATE_PATH}/libs/js/script.js"></script><!--[if IE 7]>  <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome-ie7.min.css" rel="stylesheet"><![endif]--><!-- uncomment below if you want to use a CDN-hosted script (speed boost) --><!--<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"><link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet"><script src="http://code.jquery.com/jquery-1.9.1.min.js"></script><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>--><!-- <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" /> --><link href="{T_STYLESHEET_LINK}" rel="stylesheet" type="text/css" media="screen, projection" /><!-- <link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" /> --><!-- <link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" /> --><!-- <link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" /> --><!-- IF S_CONTENT_DIRECTION eq 'rtl' -->	<link href="{T_THEME_PATH}/bidi.css" rel="stylesheet" type="text/css" media="screen, projection" /><!-- ENDIF --></head><body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" ontouchstart="">	<!--		start main wrapper			-->	<div id="wrap">		<a id="top" name="top" accesskey="t"></a>		<header id="pageheader">			<div class="container-fluid">				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->					<div id="searchbox">						<p class="pull-right">							<small><a href="#start_here">{L_SKIP} &darr;</a></small>						</p>						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">												<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">												<p class="responsive-inline not-on-tab">							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>						</p>						{S_SEARCH_HIDDEN_FIELDS}						</form>										</div>				<!-- ENDIF -->				<a href="{U_INDEX}" title="{SITENAME}" id="logo">{SITE_LOGO_IMG}</a>				<p class="logo-description">{SITE_DESCRIPTION}</p>			</div>		</header>		<!-- Main Navigation -->		<!--<div class="navigation">-->		<div class="nav-bar">								<div class="nav-container">							<a class="nav-brand" href="{U_INDEX}" accesskey="h"><i class="icon-home only-on-handheld"></i> {SITENAME} </a>				<div class="nav-toggle" id="mainnav"><i class="icon-reorder"></i></div>																																	<ul class="nav nav-dropdown" id="mainnav-dropdown">										<!-- IF not S_IS_BOT -->					<!-- IF S_DISPLAY_MEMBERLIST -->					<li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-group"></i> {L_MEMBERLIST}</a></li>					<!-- ENDIF -->										<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-info"></i> {L_FAQ}</a></li>				<!-- ENDIF -->																		                                				<!-- IF S_CONTACT_ENABLED -->					<li><a href="{U_CONTACT}"><i class="icon-phone"></i> {L_CONTACT_BOARD_ADMIN_SHORT}</a></li>				<!-- ENDIF -->									<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->										<!--<li></li>-->				<!-- ENDIF -->																			<!-- IF S_USER_LOGGED_IN -->					<!-- IF U_RESTORE_PERMISSIONS -->					<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>					<!-- ENDIF -->																		<!-- IF S_DISPLAY_PM -->					<li><a href="{U_PRIVATEMSGS}"><i class="icon-envelope-alt pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>					<!-- ENDIF -->											<li class="dropdown">						<a href="javascript:return false;" class="nav-subtoggle" id="subnav"><i class="icon-user"></i> {S_USERNAME} <i class="icon-caret-down"></i></a>						<ul class="nav-sub" id="subnav-dropdown">							<li><a href="{U_PROFILE}" title="{L_PROFILE}" accesskey="e"><i class="icon-cog"></i> {L_PROFILE}</a></li>						<!-- IF S_DISPLAY_SEARCH -->							<li><a href="{U_SEARCH_SELF}"><i class="icon-comment"></i> {L_SEARCH_SELF}</a></li>						<!-- ENDIF -->						<!-- IF U_ACP -->							<li class="divider"></li>							<li><a href="{U_ACP}"><i class="icon-cogs"></i> {L_ACP}</a></li>						<!-- ENDIF -->							<li class="divider"></li>							<li><a href="{U_LOGIN_LOGOUT}" accesskey="x"><i class="icon-unlock-alt"></i> {L_LOGOUT}</a></li>						</ul>					</li>				<!-- ENDIF -->				</ul>																		</div>		<!-- IF not S_USER_LOGGED_IN -->			<a id="login-trigger" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">				<div class="nav-login"><i class="icon-signin"></i> <span class="not-on-tab">{L_LOGIN} <i class="icon-caret-down"></i></span></div>			</a>		<!-- ELSE -->			 			<a href="{U_LOGIN_LOGOUT}">				<div class="nav-login"><i class="icon-signout"></i> <span class="not-on-tab">{L_LOGOUT} </span></div>			</a>					<!-- ENDIF -->			</div>		<script type="text/javascript">initNavbarDropdowns();</script>		<!-- end main nav -->		<!-- IF not S_USER_LOGGED_IN and not S_IS_BOT -->		<div class="quicklogin" id="quicklogin-form">			<form method="post" action="{S_LOGIN_ACTION}">				<div class="row">					<label for="username">{L_USERNAME}:</label>					<input type="text" name="username" id="username" size="10" class="input-block-level" title="{L_USERNAME}" />				</div>				<div class="row">					<label for="password">{L_PASSWORD}:</label>					<input type="password" name="password" id="password" size="10" class="input-block-level" title="{L_PASSWORD}" />				</div>								<!-- IF S_AUTOLOGIN_ENABLED -->				<label for="autologin" class="checkbox chk-autologin"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>				<!-- ENDIF -->				{S_LOGIN_REDIRECT}				<button type="submit" name="login" class="btn btn-block btn-primary"><i class="icon-lock"></i> {L_LOGIN}</button>				<a class="registerlink" href="{U_REGISTER}"><i class="icon-edit-sign"></i> {L_REGISTER}</a>			</form>		</div>		<!-- ENDIF -->	<div id="page-header" style="display:none;">		<div class="navbar">			<ul class="linklist navlinks">				<!-- IF U_EMAIL_TOPIC --><li class="rightside" style="display:none;"><a href="{U_EMAIL_TOPIC}" title="{L_EMAIL_TOPIC}" class="sendemail">{L_EMAIL_TOPIC}</a></li><!-- ENDIF -->				<!-- IF U_EMAIL_PM --><li class="rightside" style="display:none;"><a href="{U_EMAIL_PM}" title="{L_EMAIL_PM}" class="sendemail">{L_EMAIL_PM}</a></li><!-- ENDIF -->				<!-- IF U_PRINT_TOPIC --><li class="rightside" style="display:none;"><a href="{U_PRINT_TOPIC}" title="{L_PRINT_TOPIC}" accesskey="p" class="print">{L_PRINT_TOPIC}</a></li><!-- ENDIF -->				<!-- IF U_PRINT_PM --><li class="rightside" style="display:none;"><a href="{U_PRINT_PM}" title="{L_PRINT_PM}" accesskey="p" class="print">{L_PRINT_PM}</a></li><!-- ENDIF -->			</ul>		</div>	</div>	<a name="start_here"></a>	<div id="page-body">		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->		<div class="alert alert-info"><strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}</div>		<!-- ENDIF -->		<ul class="breadcrumb">			<li><a href="{U_INDEX}" accesskey="h"><i class="icon-home"></i> {L_INDEX}</a></li>			<!-- BEGIN navlinks -->				<li><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>			<!-- END navlinks -->		</ul>
