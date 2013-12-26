@@ -172,15 +172,15 @@
 					<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" /><!-- ENDIF -->
 					<h4>						
 						<a href="{topicrow.U_VIEW_TOPIC}" class="forumtitle">{topicrow.TOPIC_TITLE} </a>
-					</h4>					
+					</h4>		
+					<!-- IF topicrow.S_TOPIC_REPORTED -->
+						<a href="{topicrow.U_MCP_REPORT}" class="table-titlereported">{REPORTED_IMG} </a>
+					<!-- ENDIF -->			
 					<div class="table-titledesc">
 						{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
 						<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED -->
 							<a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG} </a>
-						<!-- ENDIF -->
-						<!-- IF topicrow.S_TOPIC_REPORTED -->
-							<a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG} </a>
-						<!-- ENDIF -->
+						<!-- ENDIF -->						
 						<!-- IF topicrow.PAGINATION -->
 							<strong class=""><span>{topicrow.PAGINATION} </span></strong>
 						<!-- ENDIF -->
