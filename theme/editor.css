@@ -69,6 +69,14 @@
   border: 1px solid #aaa;
 }
 
+@media only screen and (max-device-width: 1199px)
+{
+  .editor-subject input,
+  .editor-container #message-box textarea {    
+    font-size: 18px !important;  
+  }
+}
+
 .editor-container #smiley-box {
   position: relative;
   display: inline-block;

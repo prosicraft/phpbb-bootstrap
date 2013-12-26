@@ -130,6 +130,14 @@
   max-width: 800px;
 }
 
+@media only screen and (max-device-width: 1199px)
+{
+  .quickreply-editor input,
+  .quickreply-editor textarea {    
+    font-size: 18px !important;  
+  }
+}
+
 .pagination-viewtopic {
   display: block;
   text-align: right;
