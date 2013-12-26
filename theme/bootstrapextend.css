@@ -319,8 +319,7 @@ label.strong {
 
 .row-inline > .right {
   position: absolute;
-  right: 0px;
-  top: 25%;    
+  right: 0px;   
 }
 
 .row-right {
@@ -352,8 +351,7 @@ label.strong {
 .row-inline > .formgroup .btn,
 .row-inline > .right > .formgroup .btn,
 .row-inline > .left > .formgroup .btn {
-  position: relative;
-  top: -2px;  
+  position: relative;  
 }
 
 .row-inline > .formgroup > .btn-small {
