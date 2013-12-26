@@ -1,9 +1,11 @@
-phpbb-bootstrap
+phpbb-Euphoria
 ===============
 
-**Twitter Bootstrap based PHPBB3 Theme**
+**Bright and minimal PhpBB Theme**
 
-started by geekmy
+based on prosilver
+based on phpBBStrap by geekmy
+
 continued by prosicraft d(-_-)b
 
-Warning: this is an indev-version! It may break at any time!!!!!!!!!!!!!1111one
+Warning: this is an indev-version! It may break at any time!
