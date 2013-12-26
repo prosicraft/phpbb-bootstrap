@@ -705,6 +705,18 @@ div.error {
   padding-top: 3px;      
 }
 
+.table-title a.table-titlenewpost img {
+  width: auto;
+  min-height: 5px;
+  padding-top: 7px;
+  box-sizing: content-box;
+}
+
+.table-title a.table-titlereported img {
+  width: auto;
+  min-height: 5px;
+}
+
 .table-title .table-titletext h4 {
   margin-top: 0px;
   margin-bottom: 5px;
