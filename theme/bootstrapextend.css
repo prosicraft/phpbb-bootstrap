@@ -5,13 +5,15 @@
 #wrap div,
 #wrap span,
 #wrap ul,
-#wrap ul li {
+#wrap ul li,
+#wrap dd, #wrap dt, #wrap dl {
   border-left: 1px solid #0f0 !important;
   border-right: 1px solid #f0f !important;
   border-top: 1px dotted #00f !important;
-  border-bottom: 1px dashed #f00 !important;  
+  border-bottom: 1px dashed #f00 !important;
 }
 */
+
 
 
 
@@ -44,7 +46,7 @@
 
 .submitrow fieldset {
   display: inline-block;
-  width: auto;  
+  width: auto;
 }
 
 label.strong {
@@ -95,10 +97,6 @@ label.strong {
   padding: 3px;
 }
 
-#wrap label {
-  font-weight: normal;    
-}
-
 #wrap label input[type="checkbox"] {
   width: auto;
   position: relative;
@@ -113,7 +111,7 @@ label.strong {
   text-transform: uppercase;
   color: #888;
   letter-spacing: 1px;
-  vertical-align: middle;  
+  vertical-align: middle;
 }
 
 #wrap .pagination-total + .pagination-bottom,
@@ -155,7 +153,7 @@ label.strong {
 #wrap .pagination-top span.pagination a:last-child,
 #wrap .pagination-top span.pagination div:last-child {
   border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;  
+  border-bottom-right-radius: 4px;
 }
 
 #wrap .pagination-bottom span.pagination a,
@@ -164,18 +162,18 @@ label.strong {
 #wrap .pagination-top span.pagination div,
 #wrap .pagination-bottom span.pagination strong,
 #wrap .pagination-top span.pagination strong {
-  display: inline-block;  
+  display: inline-block;
   width: auto;
-  padding: 8px 14px;  
+  padding: 8px 14px;
   border: 1px solid #d0d0d0;
   font-size: 16px;
   font-weight: normal;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;    
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 #wrap .pagination-bottom span.pagination a + a:not(:last-child):before,
 #wrap .pagination-top span.pagination a + a:not(:last-child):before {
-  content: '..';  
+  content: '..';
 }
 
 #wrap .pagination-bottom span.pagination a:first-child + a:before,
@@ -214,8 +212,8 @@ label.strong {
     #wrap .pagination-bottom span.pagination div,
     #wrap .pagination-top span.pagination div,
     #wrap .pagination-bottom span.pagination strong,
-    #wrap .pagination-top span.pagination strong {      
-      padding: 4px 9px;    
+    #wrap .pagination-top span.pagination strong {
+      padding: 4px 9px;
     }
 }
 
@@ -265,7 +263,7 @@ label.strong {
 
 .row-inline > .right {
   position: absolute;
-  right: 0px;   
+  right: 0px;
 }
 
 .row-right {
@@ -303,7 +301,7 @@ label.strong {
 }
 
 /* Fix Input fields in bootstrap3 */
-#wrap input.input-small {  
+#wrap input.input-small {
   max-height: 30px;
   height: 28px;
   width: auto;
@@ -343,7 +341,7 @@ div.error {
   }
   .not-on-large-tab {
     display: none;
-  }  
+  }
 }
 
 /* small tablet / portrait  */
@@ -451,7 +449,7 @@ div.error {
     width: 100%;
     min-width: 100px;
   }
-  
+
   #wrap div.btn-group a.firsttbitem {
     border-radius: 0px;
     margin-left: -5px;
@@ -486,8 +484,8 @@ div.error {
     margin-top: 3px;
     margin-bottom: 3px;
     height: 30px;
-    float: center;   
-    display: inline-block;           
+    float: center;
+    display: inline-block;
   }
   #wrap div.btn-group .btn i {
     font-size: 18px;
@@ -507,7 +505,7 @@ div.error {
   width: 48%;
   min-width: 48%;
   display: inline-block;
-  vertical-align: top;    
+  vertical-align: top;
 }
 
 /*********************************************************************/
@@ -516,13 +514,13 @@ div.error {
 @media all and (min-width:768px)
 {
   #wrap .navbar-nav {
-    float: none;  
+    float: none;
   }
 }
 
 @media all and (max-width:768px)
 {
   #wrap .navbar-header {
-    width: 82%;  
+    width: 82%;
   }
 }

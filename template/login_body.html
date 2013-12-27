@@ -18,7 +18,7 @@
 		<!-- ENDIF -->
 
 		<fieldset <!-- IF not S_CONFIRM_CODE -->class="fields1"<!-- ELSE -->class="fields2"<!-- ENDIF -->>
-		<!-- IF LOGIN_ERROR --><div class="error">{LOGIN_ERROR}</div><!-- ENDIF -->
+		<!-- IF LOGIN_ERROR --><p class="error">{LOGIN_ERROR}</p><!-- ENDIF -->
 		<dl>
 			<dt><label for="{USERNAME_CREDENTIAL}">{L_USERNAME}:</label></dt>
 			<dd><input type="text" tabindex="1" name="{USERNAME_CREDENTIAL}" id="{USERNAME_CREDENTIAL}" size="25" value="{USERNAME}" class="inputbox autowidth" /></dd>
@@ -37,6 +37,7 @@
 		<!-- ENDIF -->
 		<!-- IF S_DISPLAY_FULL_LOGIN -->
 		<dl>
+			<dt></dt>
 			<!-- IF S_AUTOLOGIN_ENABLED --><dd class="form-inline"><input class="checkbox" type="checkbox" name="autologin" id="autologin" tabindex="4" /> {L_LOG_ME_IN}</dd><!-- ENDIF -->
 			<dd class="form-inline"><input class="checkbox" type="checkbox" name="viewonline" id="viewonline" tabindex="5" /> {L_HIDE_ME}</dd>
 		</dl>
@@ -53,7 +54,7 @@
 
 
 <!-- IF not S_ADMIN_AUTH and S_REGISTER_ENABLED -->
-	<div class="box">
+	<div class="box medium-bottom-margin">
 
 
 		<div class="content">
