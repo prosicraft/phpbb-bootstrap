@@ -20,8 +20,12 @@
   float: left;
 }
 
-#wrap ul.lastvisit li:first-child + li {
-  margin-left: 10px;
+#wrap ul.lastvisit .lastvisit-welcome {
+  padding-right: 10px;
+}
+
+#wrap ul.lastvisit li:first-child ~ li {
+  padding-left: 10px;
 }
 
 @media all and (max-width: 486px)

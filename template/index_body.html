@@ -3,8 +3,15 @@
 <div class="overboxctrl overbx-index<!-- IF not S_USER_LOGGED_IN --> overbx-notloggedin<!-- ENDIF -->">	
 	<div class="lastvisitcontainer">
 		<ul class="inline pull-right lastvisit">
+			<li class="not-on-smartphone">
+				<!-- IF S_USER_LOGGED_IN -->
+					<span class="lastvisit-welcome">Hi, <strong>{S_USERNAME}</strong>! </span>
+				<!-- ENDIF -->
+			</li>
 			<li class="not-on-tab"><small><i class="icon-time"></i> <!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></small></li>
-			<li class="not-on-smartphone"><small><!-- IF U_MCP --><i class="icon-time"></i> {CURRENT_TIME}<!-- ELSEIF S_USER_LOGGED_IN --><i class="icon-time"></i> {CURRENT_TIME}<!-- ENDIF --></small></li>
+			<li class="not-on-smartphone">
+				<small><i class="icon-time"></i> {CURRENT_TIME} </small>
+			</li>
 		</ul>
 	</div>	
 
