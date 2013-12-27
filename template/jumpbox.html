@@ -1,6 +1,6 @@
 
 <!-- IF S_VIEWTOPIC or S_VIEWFORUM or SEARCH_TOPIC or S_SEARCH_ACTION -->
-	<div class="row-inline jumpbox">		
+	<div class="row-inline box">
 	<!-- IF S_VIEWTOPIC -->
 		<a href="{U_VIEW_FORUM}" class="left-box {S_CONTENT_FLOW_BEGIN}" accesskey="r"><i class="icon-caret-left"></i>&nbsp;{L_RETURN_TO} {FORUM_NAME} </a>
 	<!-- ELSEIF S_VIEWFORUM -->
@@ -19,7 +19,7 @@
 	<!-- IF $CUSTOM_FIELDSET_CLASS -->
 		<fieldset class="{$CUSTOM_FIELDSET_CLASS}">
 	<!-- ELSE -->
-		<fieldset class="jumpbox">
+		<fieldset class="box">
 	<!-- ENDIF -->
 			<label for="f" accesskey="j"><!-- IF S_IN_MCP and S_MERGE_SELECT -->{L_SELECT_TOPICS_FROM}<!-- ELSEIF S_IN_MCP -->{L_MODERATE_FORUM}<!-- ELSE -->{L_JUMP_TO}<!-- ENDIF -->:</label>
 			<select name="f" id="f" onchange="if(this.options[this.selectedIndex].value != -1){ document.forms['jumpbox'].submit() }">
