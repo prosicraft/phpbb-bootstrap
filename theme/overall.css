@@ -73,8 +73,7 @@ ul.nav li {
 }
 
 ul.nav li:hover {
-  background-color: #888;
-  border-bottom: 1px solid #888;
+  background-color: #888;  
 }
 
 ul.nav li a,
@@ -121,6 +120,10 @@ ul.nav-sub li.divider {
   min-height: 1px;
   padding: 0px;
   border-top: 1px solid #555;
+}
+
+ul.nav-sub li.divider:hover {
+  background-color: #333;
 }  
 
 .nav-toggle {  
