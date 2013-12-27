@@ -449,30 +449,30 @@ var oldNavbarWindowWidth = window.innerWidth;
 function toggleNavDropdown( id, visibleValue )
 {
 	if( typeof visibleValue === "undefined" ) visibleValue = "inline";
-	
+
 	var dropDown = document.getElementById( id );
-	if( dropDown === "undefined" ) return false;		
-	
+	if( dropDown === "undefined" ) return false;
+
 	if( dropDown.style.display == "none" || dropDown.style.display == "" )
 		dropDown.style.display = visibleValue;
 	else
-		dropDown.style.display = "none";		
+		dropDown.style.display = "none";
 }
 
 // try to initialize Navbar Dropdowns
 function initNavbarDropdowns ()
-{	
-	var toggles = document.getElementsByClassName( 'nav-toggle' );	
+{
+	var toggles = document.getElementsByClassName( 'nav-toggle' );
 	if( toggles !== "undefined" && toggles.length > 0 )
 	{
 		for( var i = 0; i < toggles.length; i++ )
 		{
 			toggles[i].style.cursor = "pointer";
 			toggles[i].onclick = function () {
-				toggleNavDropdown( this.id + "-dropdown" );			
-			};	
+				toggleNavDropdown( this.id + "-dropdown" );
+			};
 		}
-		
+
 		window.onresize = function () {
 			var targetValue = "";
 			if( oldNavbarWindowWidth < NAVBAR_SWITCH_WIDTH && window.innerWidth > NAVBAR_SWITCH_WIDTH )
@@ -481,9 +481,9 @@ function initNavbarDropdowns ()
 			}
 			else if( oldNavbarWindowWidth > NAVBAR_SWITCH_WIDTH && window.innerWidth < NAVBAR_SWITCH_WIDTH )
 			{
-				targetValue = "none";	
-			}						
-			
+				targetValue = "none";
+			}
+
 			if( targetValue != "" )
 			{
 			        var tgls = document.getElementsByClassName( 'nav-dropdown' );
@@ -491,15 +491,15 @@ function initNavbarDropdowns ()
 				{
 			        	for( var n = 0; n < tgls.length; n++ )
 			        	{
-						tgls[n].style.display = targetValue;				
+						tgls[n].style.display = targetValue;
 					}
 				}
 			}
-			
-			oldNavbarWindowWidth = window.innerWidth;		  		
+
+			oldNavbarWindowWidth = window.innerWidth;
 		}
 	}
-	
+
 	var subtoggles = document.getElementsByClassName( 'nav-subtoggle' );
 	if( subtoggles !== "undefined" && subtoggles.length > 0 )
 	{
@@ -508,9 +508,9 @@ function initNavbarDropdowns ()
 			subtoggles[i].style.cursor = "pointer";
 			subtoggles[i].onclick = function () {
 			        toggleNavDropdown( this.id + "-dropdown", "block" );
-			};		
+			};
 		}
-	}				
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////

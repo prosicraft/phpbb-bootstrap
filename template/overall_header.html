@@ -25,7 +25,7 @@
 
 <!--
 	phpBB style name: Euphoria
-	Based on style:   prosilver		
+	Based on style:   prosilver
 	Author:	      	  failz0r
 -->
 
@@ -112,7 +112,7 @@
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" ontouchstart="">
 
 	<!--
-		start main wrapper		
+		start main wrapper
 	-->
 	<div id="wrap">
 		<a id="top" name="top" accesskey="t"></a>
@@ -123,13 +123,13 @@
 						<p class="pull-right">
 							<small><a href="#start_here">{L_SKIP} &darr;</a></small>
 						</p>
-						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">						
-						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">						
+						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">
+						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">
 						<p class="responsive-inline not-on-tab">
 							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
 						</p>
 						{S_SEARCH_HIDDEN_FIELDS}
-						</form>					
+						</form>
 					</div>
 				<!-- ENDIF -->
 
@@ -141,38 +141,38 @@
 
 		<!-- Main Navigation -->
 		<!--<div class="navigation">-->
-		<div class="nav-bar">					
-			<div class="nav-container">			
+		<div class="nav-bar">
+			<div class="nav-container">
 				<a class="nav-brand" href="{U_INDEX}" accesskey="h"><i class="icon-home only-on-handheld"></i> {SITENAME} </a>
-				<!-- IF S_DISPLAY_PM and S_USER_UNREAD_PRIVMSG --><div class="nav-mail"><a href="{U_PRIVATEMSGS}"><i class="icon-envelope-alt"></i>{S_USER_UNREAD_PRIVMSG}</a></div><!-- ENDIF -->
-				<div class="nav-toggle" id="mainnav"><i class="icon-reorder"></i></div>																									
-				
-				<ul class="nav nav-dropdown" id="mainnav-dropdown">						
+				<!-- IF S_DISPLAY_PM and S_USER_NEW_PRIVMSG --><div class="nav-mail"><a href="{U_PRIVATEMSGS}"><i class="icon-envelope-alt"></i>{S_USER_NEW_PRIVMSG}</a></div><!-- ENDIF -->
+				<div class="nav-toggle" id="mainnav"><i class="icon-reorder"></i></div>
+
+				<ul class="nav nav-dropdown" id="mainnav-dropdown">
 				<!-- IF not S_IS_BOT -->
 					<!-- IF S_DISPLAY_MEMBERLIST -->
 					<li><a href="{U_MEMBERLIST}" title="{L_MEMBERLIST_EXPLAIN}"><i class="icon-group"></i> {L_MEMBERLIST}</a></li>
 					<!-- ENDIF -->
-					
+
 					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="icon-info"></i> {L_FAQ}</a></li>
-				<!-- ENDIF -->																		
-                                
+				<!-- ENDIF -->
+
 				<!-- IF S_CONTACT_ENABLED -->
 					<li><a href="{U_CONTACT}"><i class="icon-phone"></i> {L_CONTACT_BOARD_ADMIN_SHORT}</a></li>
 				<!-- ENDIF -->
-					
-				<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->					
+
+				<!-- IF not S_USER_LOGGED_IN and S_REGISTER_ENABLED and not (S_SHOW_COPPA or S_REGISTRATION) -->
 					<!--<li></li>-->
-				<!-- ENDIF -->									
-						
+				<!-- ENDIF -->
+
 				<!-- IF S_USER_LOGGED_IN -->
 					<!-- IF U_RESTORE_PERMISSIONS -->
 					<li><a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a></li>
 					<!-- ENDIF -->
-													
+
 					<!-- IF S_DISPLAY_PM -->
 					<li><a href="{U_PRIVATEMSGS}"><i class="icon-envelope-alt pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>
 					<!-- ENDIF -->
-						
+
 					<li class="dropdown">
 						<a href="javascript:return false;" class="nav-subtoggle" id="subnav"><i class="icon-user"></i> {S_USERNAME} <i class="icon-caret-down"></i></a>
 						<ul class="nav-sub" id="subnav-dropdown">
@@ -189,17 +189,17 @@
 						</ul>
 					</li>
 				<!-- ENDIF -->
-				</ul>															
+				</ul>
 			</div>
 		<!-- IF not S_USER_LOGGED_IN -->
 			<a id="login-trigger" href="{U_LOGIN_LOGOUT}" title="{L_LOGIN_LOGOUT}" accesskey="x">
 				<div class="nav-login"><i class="icon-signin"></i> <span class="not-on-tab">{L_LOGIN} <i class="icon-caret-down"></i></span></div>
 			</a>
-		<!-- ELSE -->			 
+		<!-- ELSE -->
 			<a href="{U_LOGIN_LOGOUT}">
 				<div class="nav-login"><i class="icon-signout"></i> <span class="not-on-tab">{L_LOGOUT} </span></div>
-			</a>			
-		<!-- ENDIF -->	
+			</a>
+		<!-- ENDIF -->
 		</div>
 		<script type="text/javascript">initNavbarDropdowns();</script>
 		<!-- end main nav -->
@@ -214,7 +214,7 @@
 				<div class="row">
 					<label for="password">{L_PASSWORD}:</label>
 					<input type="password" name="password" id="password" size="10" class="input-block-level" title="{L_PASSWORD}" />
-				</div>				
+				</div>
 				<!-- IF S_AUTOLOGIN_ENABLED -->
 				<label for="autologin" class="checkbox chk-autologin"><input type="checkbox" name="autologin" id="autologin" >{L_LOG_ME_IN}</label>
 				<!-- ENDIF -->
