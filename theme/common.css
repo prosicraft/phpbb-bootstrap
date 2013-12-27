@@ -209,6 +209,367 @@ div.overboxctrl .overboxcenter {
   text-align: center;        
 }
 
+/*********************************************************************/
+/* common_table */
+
+.table-wrap,
+.table-wrap *,
+.table-head,
+.table-head *,
+.table-row,
+.table-row * {
+  box-sizing: border-box;
+}
+
+.table-wrap {
+  position: relative;
+  width: 100%;    
+}
+
+.table-head {
+  width: 100%;
+  height: auto;  
+  position: relative;
+  display: inline;
+  font-size: 0px;
+}
+
+.table-row {
+  display: inline-block;
+  position: relative;  
+  width: 100%;
+  height: auto;  
+  border-top: 1px solid #aaa;
+  font-size: 0px;     
+}
+
+.table-phantomrow:first-child {
+  border-top: 0px;
+}
+
+.table-head * {
+  color: #666;
+  font-size: 15px;
+  font-weight: bold;
+  min-height: 35px;          
+}
+
+.table-head div,
+.table-row div {
+  display: inline-block;
+  position: relative;    
+  overflow: hidden;
+  white-space: nowrap;      
+  vertical-align: middle;  
+  padding: 5px;    
+}
+
+.table-row > * {
+  min-height: 30px;
+}
+
+.table-title-head,
+.table-title {
+  width: 60%;
+}
+
+.table-title .table-titleicon {
+  display: inline-block;  
+  width: 30px;
+  height: 30px;
+  min-height: 30px;
+  padding: 0px;
+  background-repeat: no-repeat;
+  vertical-align: top;  
+}
+
+.table-title .table-titletext {
+  display: inline-block;  
+  width: 90%;
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding-top: 0px;
+  padding-bottom: 0px;        
+}
+
+.table-row .table-title h4,
+.table-row .table-title h4 a {
+  display: inline-block;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.table-title .table-titletext h4 {
+  margin: 0px;
+  min-height: 20px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.table-title a.table-titlenewpost img {
+  width: auto;
+  min-height: 5px;
+  padding-top: 7px;
+  box-sizing: content-box;
+}
+
+.table-title a.table-titlereported img {
+  width: auto;
+  min-height: 5px;
+}
+
+.table-title .table-titledesc {
+  padding: 0px;
+  font-size: 11px;
+  display: block;
+  white-space: normal; 
+}
+
+.table-title .table-titlemeta {
+  display: inline-block;
+  padding: 0px;
+}
+
+.table-title .table-rssicon {  
+  min-height: 15px;
+  height: 15px;
+  line-height: 15px;
+}
+
+.table-title .table-rssicon:hover {
+  text-decoration: none;
+}
+
+.table-head .table-replies-head,
+.table-head .table-views-head {
+  text-align: center;
+}
+
+.table-head .table-replies-head,
+.table-head .table-views-head,
+.table-row .table-replies,
+.table-row .table-views {
+  width: 10%;
+  max-width: 100px;
+  min-width: 90px;
+  vertical-align: top;      
+}
+
+.table-row .table-replies .ministat,
+.table-row .table-views .ministat {
+  display: inline-block;
+  text-align: center;
+  margin: 0px;
+  background: #222;
+  color: #fff;    
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  text-shadow: none;
+  width: 100%;
+  min-height: 20px;
+  height: auto;
+}
+
+.table-row .ministat dfn {
+  display: block;
+  font-size: 11px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin-top: 4px;
+  font-style: normal;
+  min-height: 10px;
+}
+
+.table-head .table-lastpost-head,
+.table-row .table-lastpost {
+  width: 20%;
+  vertical-align: top;
+}
+
+.table-row .table-lastpost {  
+  min-height: 50px;
+  text-overflow: ellipsis;
+  font-size: 14px;     
+}
+
+.table-row .table-lastpost .lastpost-info:first-child {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+.table-row .table-lastpost .lastpost-topiclink {
+  font-style: normal;  
+}
+
+.table-row .table-lastpost .lastpost-smartlink {
+  display: none;
+}
+
+.table-row .table-lastpost .lastpost-desklink {  
+  padding-left: 10px; /* larger clicking area */
+  padding-right: 5px;  
+  
+  display: inline-block;  
+}
+
+.table-row .table-lastpost .lastpost-info {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.table-row .table-lastpost .lastpost-time {
+  position: relative;
+  top: -3px;
+  color: #777;
+}
+
+.table-row .table-lastpost .lastpost-time,
+.table-row .table-lastpost .lastpost-info {
+  font-size: 12px;  
+}
+
+@media all and (max-width: 1000px)
+{
+  .table-head .table-views-head,
+  .table-row .table-views {
+    display: none !important;  
+  }
+  
+  .table-head .table-lastpost-head,
+  .table-row .table-lastpost {
+    width: 28%;        
+    white-space: nowrap;  
+  }
+}
+
+@media all and (max-width: 815px)
+{ 
+  .table-row .table-title h4 {
+    font-size: 15px;  
+  } 
+  .table-head .table-title-head,
+  .table-row .table-title {
+    width: 80%;           
+  }  
+  
+  .table-head .table-replies-head,
+  .table-row .table-replies {        
+    top: 0px;
+    display: block;
+    float: right;
+    position: relative;    
+  }
+  
+  .table-head .table-lastpost-head {
+    display: none !important;  
+  }  
+  
+  .table-row .table-lastpost {
+    display: block;
+    width: 75%;
+    position: relative;        
+    height: auto;
+    min-height: 5px;
+    margin-left: 41px;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    border-top: 1px dashed #ccc;        
+  }
+  
+  .table-row .table-lastpost .lastpost-time {
+    top: 0px;    
+  }
+  
+  .table-row .table-lastpost .lastpost-info,
+  .table-row .table-lastpost .lastpost-time {  
+    display: inline-block;            
+    vertical-align: middle;
+    margin-right: 10px;
+    font-size: 10px;
+    padding-top: 4px;      
+  }  
+  
+  .table-row .table-lastpost .lastpost-delimiter {
+    display: none;
+  }  
+  
+  .table-row .table-lastpost .lastpost-desklink {
+    display: none;
+  }
+  
+  .table-row .table-lastpost .lastpost-smartlink {
+    font-size: 20px;
+    line-height: 20px;
+    min-height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .table-row .table-lastpost .lastpost-topiclink,
+  .table-row .table-lastpost .lastpost-topiclink + br {
+    display: none;  
+  }     
+  
+  .table-row .table-lastpost .lastpost-info:first-child {
+    margin-top: 0px;  
+  }
+  
+  .table-row .table-title {
+    min-height: 15px;    
+    height: auto;
+  }
+  
+  .table-row .table-title .table-titletext {
+    max-width: 90%;
+    width: 90%;      
+  }
+  
+  .table-row * {
+    min-height: 20px;
+  }  
+}
+
+@media all and (max-width:510px)
+{
+  .table-head .table-replies-head,
+  .table-row .table-replies {
+    display: none;  
+  }
+  
+  .table-row .table-lastpost {
+    min-width: 80%;
+    width: 80%;  
+  }
+  
+  .table-head .table-title-head,
+  .table-row .table-title {
+    width: 90%;  
+  }
+  
+  .table-row .table-title h4 {
+    font-size: 17px;
+    font-weight: bold;
+  }
+  
+  #wrap .pagination-total {
+    display: none;  
+  }
+}
+
+@media all and (max-width:360px)
+{
+  .table-row .table-lastpost .lastpost-time {
+    display: none;  
+  }
+}
+
 /******************************************************************************/
 /* common_misc */
 
