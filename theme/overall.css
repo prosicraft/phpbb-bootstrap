@@ -263,10 +263,10 @@ ul.breadcrumb li a {
 
 #well-footer.well .well-footer-right {
   list-style: none;
-  display: inline-block;
+  display: inline-block;  
   position: absolute;
   right: 20px;
-  top: 20px;
+  margin-top: 0px;  
 }
 
 #well-footer.well .well-footer-right li {
