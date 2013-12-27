@@ -330,6 +330,7 @@ div.overboxctrl .overboxcenter {
 
 .table-title .table-titlemeta {
   display: inline-block;
+  min-height: 5px;
   padding: 0px;
 }
 
