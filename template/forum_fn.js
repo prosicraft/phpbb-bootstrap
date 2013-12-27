@@ -442,7 +442,7 @@ function apply_onkeypress_event()
 
 // Euphoria Navbar Related JavaScript
 
-const NAVBAR_SWITCH_WIDTH = 600; // changes this var for your own needs
+const NAVBAR_SWITCH_WIDTH = 640; // changes this var for your own needs
 var oldNavbarWindowWidth = window.innerWidth;
 
 // toggle a dropdown menu
