@@ -1,35 +1,98 @@
 /******************************************************************************/
-/* topic related stuff */
+/* topic_post_main */
 
 .topic-container .topic-post {
   background: rgba(0, 0, 0, 0.08);
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
-  padding: 5px 20px;
+  padding: 10px 20px;
   border-radius: 4px;
   margin-bottom: 15px;
   display:block;
 }
 
+/* topic_post_profile */
+
 .topic-container .postprofile {
-  width: 17%;
+  width: 20%;
+  margin-top: 10px;
   min-width: 180px;
   min-height: 180px;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
   float: left;
   white-space: normal;
   vertical-align: top;
+  font-size: 0px;
 }
 
-.topic-container .postprofile dd {
+.topic-container .postprofile .poster-description {
+  font-size: 13px;
+  max-width: 70%;
+  display: inline-block;
+}
+
+.topic-container .postprofile .poster-description dl {
+  margin-top: 0px;
+}
+
+.topic-container .postprofile .poster-description dd {
+  margin-left: 0px;
   font-size: 11px;
+}
+
+.topic-container .postprofile .poster-description dd.rank-title {
+  color: #666;
+}
+
+.topic-container .postprofile .profile-icons {
+  padding-left: 0px;
+}
+
+.topic-container .postprofile .profile-icons a {
+  display: inline-block;
+  padding: 5px;
+  font-size: 10px;
+  background: #dadada;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.topic-container .postprofile .profile-icons a ~ a {
+  margin-left: 5px;
+}
+.topic-container .postprofile .profile-icons a:hover {
+  text-decoration: none;
+  background: #f3f3f3;
+  transition: background 200ms;
+}
+
+.topic-container .postprofile .avatar {
+  max-width: 95px;
+}
+.topic-container .postprofile .avatar .poster-avatar {
+  display: inline-block;
+  width: 100%;
+}
+.topic-container .postprofile .avatar .poster-avatar img {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  height: auto;
+}
+
+.postuser {
+  margin-top: 5px;
 }
 
 .topic-container .postbody {
   padding-top: 5px;
   padding-left: 10px;
   overflow: auto;
+}
+
+.topic-container .postbody .content {
+  font-size: 14px;
+  line-height: 19px;
+  color: #1d1d1d;
 }
 
 .topic-container .postbody .content blockquote {
@@ -69,8 +132,15 @@
 }
 
 .topic-container .postbody h3 {
+  font-weight: normal;
+  font-size: 18px;
   line-height: 20px;
   margin-bottom: 5px;
+}
+
+.topic-container .postbody p.author {
+  margin-top: 0px;
+  margin-bottom: 20px;
 }
 
 .topic-container .postbody .viewtopic-rules {
@@ -80,13 +150,13 @@
   padding: 10px;
 }
 
-.topic-container .postbody p.author {
-  margin-bottom: 20px;
-}
-
 .topic-container .post-buttons {
   position: relative;
-  right: 0px;
+  float: right;
+}
+
+.topic-container .post-buttons .btn {
+  padding: 6px 10px;
 }
 
 .topic-container .postbody .signature {
@@ -95,47 +165,6 @@
   margin-bottom: 10px;
   color: #777;
   font-size: 12px;
-}
-
-.profile-icons a {
- margin-left: 5px;
- padding: 5px;
- font-size: 10px;
- background: #f2f2f2;
-}
-
-.profile-icons a:hover{
-  text-decoration: none;
-  background: #e7e7e7;
-  transition: background 200ms;
-}
-
-.profile-icons {
-  margin-left: 0px;
-}
-
-.postuser {
-  margin-top: 5px;
-}
-
-.poster-avatar img {
-  border: 1px solid transparent;
-  border-radius: 5px;
-}
-
-.quickreply-editor textarea,
-.quickreply-editor input,
-.quickreply-buttons {
-  width: 90%;
-  max-width: 800px;
-}
-
-@media only screen and (max-device-width: 1199px)
-{
-  .quickreply-editor input,
-  .quickreply-editor textarea {    
-    font-size: 18px !important;  
-  }
 }
 
 .pagination-viewtopic {
@@ -181,29 +210,29 @@
     width: 100%;
     border: 0px;
     margin-top: 15px;
-    min-height: 120px;
+    min-height: 20px;
     border-bottom: 1px dotted #ccc;
   }
-  .topic-container .postprofile .poster-description,
+  .topic-container .postprofile .poster-description {
+
+  }
   .topic-container .postprofile .avatar {
     float: left;
-  }
-  .topic-container .postprofile .poster-avater {
     height: auto;
-    max-height: 100%;  
-    display: block;
+    max-height: 100%;
+    max-width: 95px;
+    width: 30%;
+    display: inline-block;
+    overflow: hidden;
   }
   .topic-container .postprofile .poster-description {
-    margin-left: 20px;
-  }
-  .topic-container .postprofile .avatar {
-    max-height: 100%;
-    overflow: hidden;
-    display: block;  
+    padding-left: 20px;
   }
   .topic-container .postprofile .avatar img {
+    width: 100%;
+    height: auto;
     /*max-width: 80px;*/
-    max-height: 110px;
+    /*max-height: 110px;*/
   }
   .topic-container .postbody {
     float: none;
@@ -232,10 +261,8 @@
   }
   #wrap .topic-container .post-buttons .btn {    
     height: 25px;
-    padding-left: 8px;
-    padding-right: 8px;
-    padding-top: 7px;
-    padding-bottom: 5px;
+    padding-top: 10px;
+
   }
   #wrap .topic-container .post-buttons .btn i {
     position: relative;
@@ -244,6 +271,9 @@
     margin-top: 0px;
     vertical-align: top;
   }
+  #wrap .topic-container .postbody .content {
+    line-height: 23px;
+  }
 }
 
 @media all and (max-width:520px)
@@ -251,16 +281,50 @@
   #wrap .topic-container .postbody .post-buttons {    
     position: relative;
     float: right;
-    padding-left: 18px;
-    width: 100%;                     
+    padding: 0px;
+    right: 0px;
+    top: 0px;
   }
 
-  #wrap .topic-container .postbody .post-buttons .btn {    
-    float: center;
-    width: 10%;                        
+  #wrap .topic-container .postbody .post-buttons .btn {
+    width: 40px;
+    padding-left: 13px;
   }
   
   #wrap .topic-container .postbody .postheader {
     margin-top: 60px;  
+  }
+}
+
+/******************************************************************************/
+/* topic_quickreply */
+
+.quickreply-header h4 {
+  margin-bottom: 0px;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: normal;
+  color: #666;
+}
+
+.quickreply-editor textarea,
+.quickreply-editor input,
+.quickreply-buttons {
+  width: 100%;
+  max-width: 800px;
+}
+
+@media only screen and (max-device-width: 1199px)
+{
+  .quickreply-editor input,
+  .quickreply-editor textarea {
+    font-size: 18px !important;
+  }
+}
+
+@media all and (max-width: 600px)
+{
+  .quickreply-header h4 {
+    margin-top: 0px;
   }
 }

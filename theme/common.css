@@ -70,6 +70,16 @@ input[type=checkbox] {
   clear: both;
 }
 
+fieldset {
+  border: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+
+hr {
+  border: 1px solid #d4d4d4;
+}
+
 /******************************************************************************/
 /* common_headings */
 
@@ -228,6 +238,63 @@ h2 a {
 }
 
 /******************************************************************************/
+/* common_rowinline */
+.row-inline {
+  clear: both;
+  display: block;
+  position: relative;
+  height: auto;
+}
+
+.row-inline > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.row-inline#bottom-pagenav a {
+  font-size: 16px;
+}
+
+.row-inline > .right {
+  position: absolute;
+  right: 0px;
+}
+
+.row-right {
+  text-align: right;
+}
+
+.row-inline > .row-inline,
+.row-inline > .right > .row-inline,
+.row-inline > .left > .row-inline {
+  display: inline-block;
+  vertical-align: top;
+  width: auto;
+  left: 0px;
+}
+
+.row-inline .row-inline ~ .row-inline {
+  margin-left: 10px;
+}
+
+.row-inline > label {
+  color: #aaa;
+}
+
+.row-inline > label ~ input,
+.row-inline > label ~ select {
+  margin-left: 5px;
+}
+
+.row-inline > .formgroup > * {
+  vertical-align: middle;
+}
+
+.row-inline > .formgroup > .btn-small {
+  max-height: 28px;
+}
+
+/******************************************************************************/
 /* common_overboxctrl */
 
 div.overboxctrl {
@@ -261,6 +328,83 @@ div.overboxctrl .overboxcenter {
   width: 30%;
   top: 15%;
   text-align: center;
+}
+
+@media all and (max-width:980px) {
+  /** OVERBOX TOOLBOX **/
+  #wrap div.overboxctrl .overboxleft .btn-moderation .text {
+    display: none;
+  }
+
+  #wrap div.overboxctrl .overboxleft .btn-markforums {
+    display: none;
+  }
+}
+
+@media all and (max-width:840px) {
+  #wrap div.overboxctrl .btn-group .btn {
+    width: 50px;
+    padding-left: 17px;
+  }
+}
+
+@media all and (max-width:640px) {
+  #wrap .overboxctrl .overboxleft .btn-unanswered {
+    display:none;
+  }
+  #wrap .overboxctrl .overboxleft .btn-moderation {
+    margin-right: -2px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  #wrap .overboxctrl .overboxleft .btn-moderation + .btn-group {
+    margin-left: -2px;
+  }
+  #wrap .btn-index-active {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+}
+
+@media all and (max-width:486px) {
+  .main-toolbar {
+    float: none;
+  }
+  #wrap div.overboxctrl .btn-group .btn {
+    padding-left: 5px;
+  }
+  #wrap .main-toolbar .btn-group > .btn {
+    min-width: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    max-height: 30px;
+  }
+  #wrap div.overbx-index .overboxleft .btn-moderation {
+    margin-bottom: 20px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  #wrap div.overbx-index .overboxleft .btn-moderation .text {
+    display: inline-block;
+  }
+  #wrap div.overbx-index {
+    max-height: 200px;
+    height: 50px;
+    display: block;
+    position: relative;
+    top: -20px;
+  }
+
+  #wrap .overbx-index + .box {
+    margin-top: 60px;
+  }
+
+  #wrap a#index-registerbtn {
+    width: 98%;
+    margin-left: 1%;
+    height: 30px;
+    margin-top: 10px;
+  }
 }
 
 /*********************************************************************/
@@ -622,17 +766,6 @@ div.overboxctrl .overboxcenter {
   .table-row .table-lastpost .lastpost-time {
     display: none;
   }
-}
-
-/******************************************************************************/
-/* common_misc */
-
-fieldset {
-  border: 0px;
-}
-
-hr {
-  border: 1px solid #d4d4d4;
 }
 
 /******************************************************************************/
