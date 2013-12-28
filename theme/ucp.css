@@ -288,10 +288,20 @@ table.ucp-pm td h4 {
   width: 60%;
 }
 
+dl.ucp-collist dd ~ dd {
+  display: inline-block;
+  left: 0px;
+  margin: 0px;
+}
+
 .ucp-collist dd input,
 .ucp-collist dd textarea,
 .ucp-collist dd select {
   width: 100%;
+}
+
+.ucp-collist dd input[type=radio] {
+  width: auto;
 }
 
 .ucp-collist dt .description {
@@ -314,6 +324,13 @@ table.ucp-pm td h4 {
     display: block;
     position: relative;
     width: 100%;  
+  }
+
+  dl.ucp-collist dt {
+    text-align: left;
+  }
+  dl.ucp-collist dt label {
+    font-size: 13px;
   }
 
   .ucp-collist dd,
