@@ -30,37 +30,37 @@
 	<!-- IF L_REG_COND -->
 		<p class="description big-bottom-margin">{L_REG_COND} </p>
 	<!-- ENDIF -->
-	<div class="row-fluid medium-bottom-margin">
+	<dl>
 		<dt class="span5"><label class="strong" for="username">{L_USERNAME}:</label><span class="description">{L_USERNAME_EXPLAIN}</span></dt>
 		<dd class="span7"><input type="text" tabindex="1" name="username" id="username" size="25" value="{USERNAME}" class="inputbox autowidth" title="{L_USERNAME}" /></dd>
-	</div>
-	<div class="row-fluid">
-		<dt class="span5"><label class="strong" for="email">{L_EMAIL_ADDRESS}:</label></dt>
-		<dd class="span7"><input type="text" tabindex="2" name="email" id="email" size="25" maxlength="100" value="{EMAIL}" class="inputbox autowidth" title="{L_EMAIL_ADDRESS}" /></dd>
-	</div>
-	<div class="row-fluid">
-		<dt class="span5"><label class="strong" for="email_confirm">{L_CONFIRM_EMAIL}:</label></dt>
-		<dd class="span7"><input type="text" tabindex="3" name="email_confirm" id="email_confirm" size="25" maxlength="100" value="{EMAIL_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_EMAIL}" /></dd>
-	</div>
-	<div class="row-fluid">
-		<dt class="span5"><label class="strong" for="new_password">{L_PASSWORD}:</label><span class="description">{L_PASSWORD_EXPLAIN}</span></dt>
-		<dd class="span7"><input type="password" tabindex="4" name="new_password" id="new_password" size="25" value="{PASSWORD}" class="inputbox autowidth" title="{L_NEW_PASSWORD}" /></dd>
-	</div>
-	<div class="row-fluid">
-		<dt class="span5"><label class="strong" for="password_confirm">{L_CONFIRM_PASSWORD}:</label></dt>
-		<dd class="span7"><input type="password" tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_PASSWORD}" /></dd>
-	</div>
+	</dl>
+	<dl>
+		<dt><label class="strong" for="email">{L_EMAIL_ADDRESS}:</label></dt>
+		<dd><input type="text" tabindex="2" name="email" id="email" size="25" maxlength="100" value="{EMAIL}" class="inputbox autowidth" title="{L_EMAIL_ADDRESS}" /></dd>
+	</dl>
+	<dl>
+		<dt><label class="strong" for="email_confirm">{L_CONFIRM_EMAIL}:</label></dt>
+		<dd><input type="text" tabindex="3" name="email_confirm" id="email_confirm" size="25" maxlength="100" value="{EMAIL_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_EMAIL}" /></dd>
+	</dl>
+ 	<dl>
+		<dt><label class="strong" for="new_password">{L_PASSWORD}:</label><span class="description">{L_PASSWORD_EXPLAIN}</span></dt>
+		<dd><input type="password" tabindex="4" name="new_password" id="new_password" size="25" value="{PASSWORD}" class="inputbox autowidth" title="{L_NEW_PASSWORD}" /></dd>
+	</dl>
+	<dl>
+		<dt><label class="strong" for="password_confirm">{L_CONFIRM_PASSWORD}:</label></dt>
+		<dd><input type="password" tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_PASSWORD}" /></dd>
+	</dl>
 
 	<hr />
 
-	<div class="row-fluid">
-		<dt class="span5"><label class="strong" for="lang">{L_LANGUAGE}:</label></dt>
-		<dd class="span7"><select name="lang" id="lang" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select></dd>
-	</div>
-	<div class="row-fluid">
-		<dt class="span5"><label class="strong" for="tz">{L_TIMEZONE}:</label></dt>
-		<dd class="span7"><select name="tz" id="tz" tabindex="7" class="autowidth">{S_TZ_OPTIONS}</select></dd>
-	</div>
+	<dl class="row-fluid">
+		<dt><label class="strong" for="lang">{L_LANGUAGE}:</label></dt>
+		<dd><select name="lang" id="lang" onchange="change_language(this.value); return false;" tabindex="6" title="{L_LANGUAGE}">{S_LANG_OPTIONS}</select></dd>
+	</dl>
+	<dl>
+		<dt><label class="strong" for="tz">{L_TIMEZONE}:</label></dt>
+		<dd><select name="tz" id="tz" tabindex="7" class="autowidth">{S_TZ_OPTIONS}</select></dd>
+	</dl>
 
 	<!-- IF .profile_fields -->
 		<dl><dd><strong>{L_ITEMS_REQUIRED}</strong></dd></dl>

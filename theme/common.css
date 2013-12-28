@@ -134,10 +134,12 @@ h2 a {
 
 .box dl dt label {
   font-weight: bold;
+  display: block;
 }
 
 .box dl dd {
   display: inline-block;
+  vertical-align: top;
   margin: 0px;
   margin-left: 10px;
   font-size: 13px;
