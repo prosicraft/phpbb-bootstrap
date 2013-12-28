@@ -229,9 +229,12 @@ h2 a {
   display: inline-block;
   vertical-align: top;
 }
-
 #wrap .btn a:hover {
   text-decoration: none;
+}
+.btn-group input {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 /* Small-Button-Icons */
