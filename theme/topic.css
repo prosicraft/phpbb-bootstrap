@@ -39,6 +39,7 @@
 .topic-container .postprofile .poster-description dd {
   margin-left: 0px;
   font-size: 11px;
+  color: #666;
 }
 
 .topic-container .postprofile .poster-description dd.rank-title {
