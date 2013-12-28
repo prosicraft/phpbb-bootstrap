@@ -442,6 +442,22 @@ function apply_onkeypress_event()
 
 // Euphoria Navbar Related JavaScript
 
+// Initialize the selection prevention
+function initSelectionPrevention( className )
+{
+	if( typeof className === "undefined" ) return;
+
+	var objs = document.getElementsByClassName( className );
+	if( objs !== "undefined" && objs.length > 0 )
+	{
+		for( var i = 0; i < objs.length; i++ )
+		{
+			objs[i].onselectstart = function () { return false; };
+		}
+	}
+}
+
+
 const NAVBAR_SWITCH_WIDTH = 640; // changes this var for your own needs
 var oldNavbarWindowWidth = window.innerWidth;
 
