@@ -30,17 +30,20 @@
 		<div class="medium-bottom-margin">
 			
 
-			<ul class="linklist">
-				<li class="pull-left">
-
-				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER --><a class="btn btn-small" href="{U_FIND_MEMBER}"><i class="icon-search"></i>&nbsp;{L_FIND_USERNAME} </a> <!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP --><a class="btn btn-small" href="{U_HIDE_FIND_MEMBER}">{L_HIDE_MEMBER_SEARCH}</a><!-- ENDIF -->
-				<strong style="font-size: 0.95em;">
-				<!-- BEGIN first_char -->
-					<a href="{first_char.U_SORT}">{first_char.DESC}</a>&nbsp; 
-				<!-- END first_char -->
-				</strong>
-				</li>
-				<li class="pull-right">
+   			<div class="row-inline" style="min-height: 60px;">
+				<div class="left">
+				<!-- IF U_FIND_MEMBER and not S_SEARCH_USER -->
+					<a class="btn btn-small" href="{U_FIND_MEMBER}"><i class="icon-search"></i>&nbsp;{L_FIND_USERNAME} </a>
+				<!-- ELSEIF S_SEARCH_USER and U_HIDE_FIND_MEMBER and not S_IN_SEARCH_POPUP -->
+					<a class="btn btn-small" href="{U_HIDE_FIND_MEMBER}">{L_HIDE_MEMBER_SEARCH}</a>
+				<!-- ENDIF -->
+					<strong style="font-size: 0.95em;">
+					<!-- BEGIN first_char -->
+						<a href="{first_char.U_SORT}">{first_char.DESC}</a>&nbsp;
+					<!-- END first_char -->
+					</strong>
+				</div>
+				<div class="right">
 					<div class="pagination-total">{TOTAL_USERS} </div>
 				<!-- IF PAGINATION -->
 					<div class="pagination-top">
@@ -53,8 +56,8 @@
 				<!-- ELSE -->
 					<div class="pagination-total">{PAGE_NUMBER} </div>
 				<!-- ENDIF -->
-				</li>
-			</ul>
+				</div>
+			</div>
 
 			<div style="clear:left;"></div>
 			
