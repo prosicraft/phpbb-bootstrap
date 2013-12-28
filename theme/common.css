@@ -343,8 +343,8 @@ div.overboxctrl .overboxcenter {
 
 @media all and (max-width:840px) {
   #wrap div.overboxctrl .btn-group .btn {
-    width: 50px;
-    padding-left: 17px;
+    min-width: 50px;
+    text-align: center;
   }
 }
 
