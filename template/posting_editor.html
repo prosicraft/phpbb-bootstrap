@@ -4,80 +4,78 @@
 // ]]>
 </script>
 
-<fieldset class="fields1">
+<fieldset class="posting-editor">
 	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
 
-	<!-- IF S_PRIVMSGS and not S_SHOW_DRAFTS -->
+<!-- IF S_PRIVMSGS and not S_SHOW_DRAFTS -->
+	<div>
+	<!-- IF S_ALLOW_MASS_PM -->
+		<div><label class="heading">{L_TO}: </label></div>
 
-		<div class="column1">
-		<!-- IF S_ALLOW_MASS_PM -->
-			<div>
-				<label class="strong">{L_TO}: </label>
-			</div>
-			<!-- IF .to_recipient -->
-				<dl class="pull-left small-left-margin small-bottom-margin" id="to-recipient-list">
-					<div>
-						<!-- BEGIN to_recipient -->
-							<!-- IF to_recipient.IS_GROUP --><a href="{to_recipient.U_VIEW}"><strong>{to_recipient.NAME}</strong></a>&nbsp;<!-- ELSE -->{to_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
-							<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="&times;" class="btn btn-small btn-rec-remove" />&nbsp;<!-- ENDIF -->
-						<!-- END to_recipient -->
-					</div>
-				</dl>
-			<!-- ENDIF -->
-			<!-- IF .bcc_recipient -->
-				<dl class="pull-left small-left-margin small-bottom-margin">
-					<dt><label>{L_BCC}: </label></dt>
-					<dd>
-						<!-- BEGIN bcc_recipient -->
-							<!-- IF not bcc_recipient.S_FIRST_ROW and bcc_recipient.S_ROW_COUNT mod 2 eq 0 --></dd><dd><!-- ENDIF -->
-							<!-- IF bcc_recipient.IS_GROUP --><a href="{bcc_recipient.U_VIEW}"><strong>{bcc_recipient.NAME}</strong></a><!-- ELSE -->{bcc_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
-							<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{bcc_recipient.TYPE}[{bcc_recipient.UG_ID}]" value="x" class="btn btn-small" />&nbsp;<!-- ENDIF -->
-						<!-- END bcc_recipient -->
-					</dd>
-				</dl>
-			<!-- ENDIF -->
-			<!-- IF not S_EDIT_POST -->
-			<dl class="pull-left small-left-margin small-bottom-margin">
-				<div class="pull-left"><input type="text" id="username_list" name="username_list" class="inputbox" cols="50" rows="2" tabindex="1" /></div>
-				<div class="btn-group pull-left small-left-margin">
+		<!-- IF .to_recipient -->
+		<dl class="to-recipient-list" id="to-recipient-list">
+			<dd>
+			<!-- BEGIN to_recipient -->
+				<!-- IF to_recipient.IS_GROUP --><a href="{to_recipient.U_VIEW}"><strong>{to_recipient.NAME}</strong></a>&nbsp;<!-- ELSE -->{to_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
+				<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="&times;" class="btn btn-small btn-rec-remove" />&nbsp;<!-- ENDIF -->
+			<!-- END to_recipient -->
+			</dd>
+		</dl>
+		<!-- ENDIF -->
+
+		<!-- IF .bcc_recipient -->
+		<dl class="bcc-recipient-list">
+			<dt><label>{L_BCC}: </label></dt>
+			<dd>
+			<!-- BEGIN bcc_recipient -->
+				<!-- IF not bcc_recipient.S_FIRST_ROW and bcc_recipient.S_ROW_COUNT mod 2 eq 0 --></dd><dd><!-- ENDIF -->
+				<!-- IF bcc_recipient.IS_GROUP --><a href="{bcc_recipient.U_VIEW}"><strong>{bcc_recipient.NAME}</strong></a><!-- ELSE -->{bcc_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
+				<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{bcc_recipient.TYPE}[{bcc_recipient.UG_ID}]" value="x" class="btn btn-small" />&nbsp;<!-- ENDIF -->
+			<!-- END bcc_recipient -->
+			</dd>
+		</dl>
+		<!-- ENDIF -->
+
+		<!-- IF not S_EDIT_POST -->
+		<dl class="recipient-edit">
+			<dt><input type="text" id="username_list" name="username_list" class="inputbox" cols="50" rows="2" tabindex="1" /></dt>
+			<dd>
+				<div class="btn-group">
 					<a class="btn btn-small" href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false;">{L_FIND_USERNAME}</a>
 					<input type="submit" name="add_to" value="{L_ADD}" class="btn btn-small strong" tabindex="1" />
 					<input type="submit" name="add_bcc" value="{L_ADD_BCC}" class="btn btn-small" tabindex="1" />
 				</div>
-			</dl>
-
-			<div class="clearfix"></div>
-			<!-- ENDIF -->
-		<!-- ELSE -->
-			<dl>
-				<dt><label for="username_list">{L_TO}:</label><!-- IF not S_EDIT_POST --><br /><span><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false">{L_FIND_USERNAME}</a></span><!-- ENDIF --></dt>
-				<!-- IF .to_recipient -->
-					<dd>
-						<!-- BEGIN to_recipient -->
-							<!-- IF not to_recipient.S_FIRST_ROW and to_recipient.S_ROW_COUNT mod 2 eq 0 --></dd><dd><!-- ENDIF -->
-							<!-- IF to_recipient.IS_GROUP --><a href="{to_recipient.U_VIEW}"><strong>{to_recipient.NAME}</strong></a><!-- ELSE -->{to_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
-							<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="x" class="button2" />&nbsp;<!-- ENDIF -->
-						<!-- END to_recipient -->
-					</dd>
-				<!-- ENDIF -->
-
-				<!-- IF not S_EDIT_POST -->
-				<dd><input class="inputbox" type="text" name="username_list" id="username_list" size="20" value="" /> <input type="submit" name="add_to" value="{L_ADD}" class="btn btn-small strong" /></dd>
-				<!-- ENDIF -->
-			</dl>
+			</dd>
+		</dl>
 		<!-- ENDIF -->
 
-		</div>
-
-		<!-- IF S_GROUP_OPTIONS -->
-			<div class="column2 hidden">
-				<dl>
-					<dd><label for="group_list">{L_USERGROUPS}:</label> <select name="group_list[]" id="group_list" multiple="multiple" size="4" class="inputbox">{S_GROUP_OPTIONS}</select></dd>
-				</dl>
-			</div>
+	<!-- ELSE -->
+		<dl>
+			<dt><label for="username_list">{L_TO}:</label><!-- IF not S_EDIT_POST --><br /><span><a href="{U_FIND_USERNAME}" onclick="find_username(this.href); return false">{L_FIND_USERNAME}</a></span><!-- ENDIF --></dt>
+		<!-- IF .to_recipient -->
+			<dd>
+				<!-- BEGIN to_recipient -->
+					<!-- IF not to_recipient.S_FIRST_ROW and to_recipient.S_ROW_COUNT mod 2 eq 0 --></dd><dd><!-- ENDIF -->
+					<!-- IF to_recipient.IS_GROUP --><a href="{to_recipient.U_VIEW}"><strong>{to_recipient.NAME}</strong></a><!-- ELSE -->{to_recipient.NAME_FULL}&nbsp;<!-- ENDIF -->
+					<!-- IF not S_EDIT_POST --><input type="submit" name="remove_{to_recipient.TYPE}[{to_recipient.UG_ID}]" value="x" class="button2" />&nbsp;<!-- ENDIF -->
+				<!-- END to_recipient -->
+			</dd>
 		<!-- ENDIF -->
 
-		<div class="clear"></div>
+		<!-- IF not S_EDIT_POST -->
+			<dd><input class="inputbox" type="text" name="username_list" id="username_list" size="20" value="" /> <input type="submit" name="add_to" value="{L_ADD}" class="btn btn-small strong" /></dd>
+		<!-- ENDIF -->
+		</dl>
+	<!-- ENDIF -->
+	</div>
+
+<!-- IF S_GROUP_OPTIONS -->
+	<div class="hidden">
+		<dl>
+			<dd><label for="group_list">{L_USERGROUPS}:</label> <select name="group_list[]" id="group_list" multiple="multiple" size="4" class="inputbox">{S_GROUP_OPTIONS}</select></dd>
+		</dl>
+	</div>
+<!-- ENDIF -->
 
 	<!-- ENDIF -->
 
@@ -96,18 +94,16 @@
 	<!-- ENDIF -->
 
 	<!-- IF S_POST_ACTION or S_PRIVMSGS or S_EDIT_DRAFT -->
-	<div class="editor-subject">
-		<div>
-			<label class="strong" for="subject">{L_SUBJECT}: </label>
-		</div>
+	<dl class="editor-subject">
+		<dt><label class="heading" for="subject">{L_SUBJECT}: </label></dt>
 		<dd>
 			<input type="text" name="subject" id="subject" maxlength="<!-- IF S_NEW_MESSAGE -->60<!-- ELSE -->64<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" />
 		</dd>
-	</div>
+	</dl>
 
 	<!-- IF S_SHOW_TOPIC_ICONS or S_SHOW_PM_ICONS -->
-	<dl>
-		<dt><label class="strong" for="icon">{L_ICON}:</label></dt>
+	<dl class="editor-icon">
+		<dt><label class="heading" for="icon">{L_ICON}:</label></dt>
 		<dd>
 			<label class="pull-left" for="icon">
 				<input type="radio" name="icon" id="icon" value="0" checked="checked" tabindex="1" />
@@ -146,7 +142,7 @@
 		<div id="smiley-box">			
 			<div class="editor-smileycollection">
 				<!-- IF S_SMILIES_ALLOWED and .smiley -->
-					<strong>{L_SMILIES}</strong><br />
+					<strong>{L_SMILIES}</strong>
 					<!-- BEGIN smiley -->
 						<a href="#" onclick="insert_text('{smiley.A_SMILEY_CODE}', true); return false;"><img src="{smiley.SMILEY_IMG}" width="{smiley.SMILEY_WIDTH}" height="{smiley.SMILEY_HEIGHT}" alt="{smiley.SMILEY_CODE}" title="{smiley.SMILEY_DESC}" /></a>
 					<!-- END smiley -->
@@ -243,12 +239,12 @@
 
 	<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
 	<!-- IF S_PRIVMSGS -->
-	<ul class="nav nav-tabs medium-top-margin" id="options-panel">
-		<li class="active strong">{L_OPTIONS}</li>
+	<ul class="nav editor-optionsnav" id="options-panel">
+		<li class="active"><a href="#"><span>{L_OPTIONS}</span></a></li>
 	</ul>
 	<!-- ENDIF -->
 
-	<div id="options-panel" class="panel small-padding editor-options">
+	<div id="options-panel" class="editor-options">
 		<fieldset class="fields1">
 			<!-- IF S_BBCODE_ALLOWED -->
 				<div><label for="disable_bbcode"><input type="checkbox" name="disable_bbcode" id="disable_bbcode"{S_BBCODE_CHECKED} /> {L_DISABLE_BBCODE}</label></div>

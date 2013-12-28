@@ -62,12 +62,23 @@ a:active {
   text-decoration: none;
 }
 
-input[type=checkbox] {
+input[type=checkbox],
+input[type=text] {
   margin: 0px;
+}
+
+input[type=radio] {
+  margin-left: 0px;
+  margin-top: 1px;
+  vertical-align: top;
 }
 
 .clearfix {
   clear: both;
+}
+
+.hidden {
+  display: none;
 }
 
 fieldset {
