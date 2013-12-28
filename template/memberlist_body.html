@@ -27,7 +27,7 @@
 	<!-- ELSE -->
 		<h2 class="solo">{PAGE_TITLE}<!-- IF SEARCH_WORDS -->: <a href="{U_SEARCH_WORDS}">{SEARCH_WORDS}</a><!-- ENDIF --></h2>
 
-		<div class="small-bottom-margin">
+		<div class="medium-bottom-margin">
 			
 
 			<ul class="linklist">
@@ -40,9 +40,19 @@
 				<!-- END first_char -->
 				</strong>
 				</li>
-				<li class="ml-pagination pull-right">
-					{TOTAL_USERS} &bull; 
-					<!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE -->{PAGE_NUMBER}<!-- ENDIF -->
+				<li class="pull-right">
+					<div class="pagination-total">{TOTAL_USERS} </div>
+				<!-- IF PAGINATION -->
+					<div class="pagination-top">
+						<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+						<span class="pagination">
+						<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+							{PAGINATION}
+						<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+						</span>
+				<!-- ELSE -->
+					<div class="pagination-total">{PAGE_NUMBER} </div>
+				<!-- ENDIF -->
 				</li>
 			</ul>
 
@@ -161,10 +171,22 @@
 
 </form>
 
-<hr />
-
-<ul class="linklist">
-	<li class="rightside pagination">{TOTAL_USERS} &bull; <!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE -->{PAGE_NUMBER}<!-- ENDIF --></li>
+<ul class="linklist big-bottom-margin">
+	<li class="pull-right">
+		<div class="pagination-total">{TOTAL_USERS} </div>
+	<!-- IF PAGINATION -->
+		<div class="pagination-bottom">
+			<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+			<span class="pagination">
+			<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+				{PAGINATION}
+			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+			</span>
+		</div>
+	<!-- ELSE -->
+		<div class="pagination-total">{PAGE_NUMBER} </div>
+	<!-- ENDIF -->
+	</li>
 </ul>
 
 <!-- IF S_IN_SEARCH_POPUP -->
