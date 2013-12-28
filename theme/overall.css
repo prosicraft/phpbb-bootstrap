@@ -264,7 +264,8 @@ ul.breadcrumb li a {
 }
 
 /******************************************************************************/
-/* footer related stuff */
+/* overall_footer & overall_simplefooter */
+
 #well-footer.well {
   background: #f2f2f2; /* Old browsers */
   background: -moz-linear-gradient(top,  #f2f2f2 0%, #dbdbdb 100%); /* FF3.6+ */
@@ -295,6 +296,14 @@ ul.breadcrumb li a {
 #well-footer.well .well-footer-right li {
   display: inline-block;
   margin-right: 20px;
+}
+
+/* simple footer */
+.simple-footer-copyright {
+  display: block;
+  padding: 20px;
+  padding-top: 0px;
+  text-align: center;
 }
 
 @media all and (max-width: 800px)
