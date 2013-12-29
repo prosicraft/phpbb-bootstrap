@@ -14,28 +14,31 @@
 
 	<div class="row-inline small-bottom-margin">
 
-	<!-- IF SEARCH_MATCHES -->
-		<div class="search-box">
+		<div class="left" style="min-height: 50px;">
+		<!-- IF SEARCH_MATCHES -->
+			<div class="search-box">
 			<!-- IF SEARCH_IN_RESULTS -->
 				<label for="add_keywords">{L_SEARCH_IN_RESULTS}: <input type="text" name="add_keywords" id="add_keywords" value="" class="inputbox narrow" /></label>
-				<input class="button2" type="submit" name="submit" value="{L_SEARCH}" />
+				<input class="btn btn-small" type="submit" name="submit" value="{L_SEARCH}" />
 			<!-- ENDIF -->
+			</div>
+		<!-- ENDIF -->
 		</div>
-	<!-- ENDIF -->
-		
-		<div class="pagination-total">{SEARCH_MATCHES}</div>
-	<!-- IF PAGINATION -->
-		<div class="pagination-top">
-			<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>								
-			<span class="pagination">
-			<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
-				{PAGINATION}
-			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
-			</span>				
+		<div class="right">
+			<div class="pagination-total">{SEARCH_MATCHES} </div>
+		<!-- IF PAGINATION -->
+			<div class="pagination-top">
+				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+				<span class="pagination">
+				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+					{PAGINATION}
+				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+				</span>
+			</div>
+		<!-- ELSE -->
+			<div class="pagination-total">{PAGE_NUMBER} </div>
+		<!-- ENDIF -->
 		</div>
-	<!-- ELSE -->
-		<div class="pagination-total">{PAGE_NUMBER}</div>
-	<!-- ENDIF -->
 			
 	</div>
 
@@ -112,8 +115,9 @@
 
 <!-- ELSE -->
 
+	<div class="topic-container">
 	<!-- BEGIN searchresults -->
-		<div class="search post <!-- IF searchresults.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF --><!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
+		<div class="search topic-post <!-- IF searchresults.S_POST_REPORTED --> reported<!-- ENDIF -->">
 
 
 	<!-- IF searchresults.S_IGNORE_POST -->
@@ -121,41 +125,45 @@
 			{searchresults.L_IGNORE_POST}
 		</div>
 	<!-- ELSE -->
+                <div class="postprofile">
+			<div class="poster-description">
+				<div class="author">{L_POST_BY_AUTHOR} {searchresults.POST_AUTHOR_FULL} </div>
+				<dl>
+					<dd>{searchresults.POST_DATE}</dd>
+					<dd>&nbsp;</dd>
+				<!-- IF searchresults.FORUM_TITLE -->
+					<dd>{L_FORUM}: <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></dd>
+					<dd>{L_TOPIC}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
+				<!-- ELSE -->
+					<dd>{L_GLOBAL}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
+				<!-- ENDIF -->
+					<dd>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></dd>
+					<dd>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
+				</dl>
+			</div>
+		</div>
 		<div class="postbody">
-			<h3><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
+			<h3 class="postheader"><a href="{searchresults.U_VIEW_POST}">{searchresults.POST_SUBJECT}</a></h3>
 			<div class="content">{searchresults.MESSAGE}</div>
 		</div>
-
-		<dl class="postprofile">
-			<dt class="author">{L_POST_BY_AUTHOR} {searchresults.POST_AUTHOR_FULL}</dt>
-			<dd>{searchresults.POST_DATE}</dd>
-			<dd>&nbsp;</dd>
-			<!-- IF searchresults.FORUM_TITLE -->
-				<dd>{L_FORUM}: <a href="{searchresults.U_VIEW_FORUM}">{searchresults.FORUM_TITLE}</a></dd>
-				<dd>{L_TOPIC}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
-			<!-- ELSE -->
-				<dd>{L_GLOBAL}: <a href="{searchresults.U_VIEW_TOPIC}">{searchresults.TOPIC_TITLE}</a></dd>
-			<!-- ENDIF -->
-			<dd>{L_REPLIES}: <strong>{searchresults.TOPIC_REPLIES}</strong></dd>
-			<dd>{L_VIEWS}: <strong>{searchresults.TOPIC_VIEWS}</strong></dd>
-		</dl>
 	<!-- ENDIF -->
 
 	<!-- IF not searchresults.S_IGNORE_POST -->
-		<ul class="searchresults">
-			<li ><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
+		<ul class="searchresults hidden">
+			<li><a href="{searchresults.U_VIEW_POST}" class="{S_CONTENT_FLOW_END}">{L_JUMP_TO_POST}</a></li>
 		</ul>
 	<!-- ENDIF -->
 
 
 		</div>
 	<!-- BEGINELSE -->
-		<div class="panel">
+		<div class="box">
 
 			<strong>{L_NO_SEARCH_RESULTS}</strong>
 
 		</div>
 	<!-- END searchresults -->
+	</div>
 <!-- ENDIF -->
 
 <!-- IF PAGINATION or .searchresults or S_SELECT_SORT_KEY or S_SELECT_SORT_DAYS -->
@@ -177,21 +185,22 @@
 
 <!-- IF (PAGINATION or .searchresults or PAGE_NUMBER) and .searchresults -->
 	<div class="row-inline small-bottom-margin">
-	
-		<div class="pagination-total">{SEARCH_MATCHES}</div>
-	<!-- IF PAGINATION -->
-		<div class="pagination-top">
-			<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>								
-			<span class="pagination">
-			<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
-				{PAGINATION}
-			<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
-			</span>				
+	        <div class="left" style="height: 50px;"></div>
+		<div class="right">
+			<div class="pagination-total">{SEARCH_MATCHES} </div>
+		<!-- IF PAGINATION -->
+			<div class="pagination-top">
+				<a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER} </a>
+				<span class="pagination">
+				<!-- IF PREVIOUS_PAGE --><a href="{PREVIOUS_PAGE}">&laquo;</a><!-- ELSE --><div class="disabled">&laquo;</div><!-- ENDIF -->
+					{PAGINATION}
+				<!-- IF NEXT_PAGE --><a href="{NEXT_PAGE}">&raquo;</a><!-- ELSE --><div class="disabled">&raquo;</div><!-- ENDIF -->
+				</span>
+			</div>
+		<!-- ELSE -->
+			<div class="pagination-total">{PAGE_NUMBER} </div>
+		<!-- ENDIF -->
 		</div>
-	<!-- ELSE -->
-		<div class="pagination-total">{PAGE_NUMBER}</div>
-	<!-- ENDIF -->
-			
 	</div>
 <!-- ENDIF -->
 

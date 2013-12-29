@@ -10,19 +10,19 @@
 
 <form method="get" action="{S_SEARCH_ACTION}">
 
-<div class="panel">
+<div class="box small-bottom-margin">
 
 	<h3>{L_SEARCH_QUERY}</h3>
 
-	<fieldset>
+	<fieldset class="search-query">
 	<dl>
-		<dt><label for="keywords">{L_SEARCH_KEYWORDS}:</label><br /><span>{L_SEARCH_KEYWORDS_EXPLAIN}</span></dt>
+		<dt><label for="keywords">{L_SEARCH_KEYWORDS}:</label><span class="description">{L_SEARCH_KEYWORDS_EXPLAIN}</span></dt>
 		<dd><input type="text" class="inputbox" name="keywords" id="keywords" size="40" title="{L_SEARCH_KEYWORDS}" /></dd>
 		<dd><label for="terms1"><input type="radio" name="terms" id="terms1" value="all" checked="checked" /> {L_SEARCH_ALL_TERMS}</label></dd>
 		<dd><label for="terms2"><input type="radio" name="terms" id="terms2" value="any" /> {L_SEARCH_ANY_TERMS}</label></dd>
 	</dl>
 	<dl>
-		<dt><label for="author">{L_SEARCH_AUTHOR}:</label><br /><span>{L_SEARCH_AUTHOR_EXPLAIN}</span></dt>
+		<dt><label for="author">{L_SEARCH_AUTHOR}:</label><br /><span class="description">{L_SEARCH_AUTHOR_EXPLAIN}</span></dt>
 		<dd><input type="text" class="inputbox" name="author" id="author" size="40" title="{L_SEARCH_AUTHOR}" /></dd>
 	</dl>
 	</fieldset>
@@ -30,15 +30,15 @@
 
 </div>
 
-<div class="panel bg2">
+<div class="box small-bottom-margin">
 
 
 	<h3>{L_SEARCH_OPTIONS}</h3>
 
-	<fieldset>
+	<fieldset class="search-options">
 	<dl>
-		<dt><label for="search_forum">{L_SEARCH_FORUMS}:</label><br /><span>{L_SEARCH_FORUMS_EXPLAIN}</span></dt>
-		<dd><select name="fid[]" id="search_forum" multiple="multiple" size="8" title="{L_SEARCH_FORUMS}">{S_FORUM_OPTIONS}</select></dd>
+		<dt><label for="search_forum">{L_SEARCH_FORUMS}:</label><span class="description">{L_SEARCH_FORUMS_EXPLAIN}</span></dt>
+		<dd><select class="search-forums" name="fid[]" id="search_forum" multiple="multiple" size="8" title="{L_SEARCH_FORUMS}">{S_FORUM_OPTIONS}</select></dd>
 	</dl>
 	<dl>
 		<dt><label for="search_child1">{L_SEARCH_SUBFORUMS}:</label></dt>
@@ -84,16 +84,10 @@
 
 </div>
 
-<div class="panel bg3">
-
-
-	<fieldset class="submit-buttons">
-		{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="button2" />&nbsp;
-		<input type="submit" name="submit" value="{L_SEARCH}" class="button1" />
-	</fieldset>
-
-
-</div>
+<fieldset class="submitrow medium-bottom-margin">
+	{S_HIDDEN_FIELDS}<input type="reset" value="{L_RESET}" name="reset" class="btn btn-small" />
+	<input type="submit" name="submit" value="{L_SEARCH}" class="btn btn-small strong" />
+</fieldset>
 
 </form>
 

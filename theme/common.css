@@ -1015,3 +1015,53 @@ table.viewonline tbody tr td {
     width: 90%;
   }
 }
+
+/******************************************************************************/
+/* search_fomular */
+
+#wrap dl dd select.search-forums {
+  height: 100px;
+  width: 300px
+}
+
+.search-options dl dd label input[type=radio] {
+  margin-top: -2px;
+  margin-right: 0px;
+  vertical-align: middle;
+}
+
+.search-options dl dd label ~ label {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.search-options dl dd select ~ * {
+  vertical-align: middle;
+}
+
+@media all and (max-width: 700px) {
+  .search-options dl dt,
+  .search-query dl dt {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 20px;
+  }
+  .search-options dl dd,
+  .search-query dl dd {
+    padding-left: 0px;
+  }
+  .search-options dl dd ~ dd,
+  .search-query dl dd ~ dd {
+    left: 0px;
+  }
+}
+
+/******************************************************************************/
+/* search_results */
+
+.search.topic-post {
+  display: block;
+  min-height: 230px;
+}
