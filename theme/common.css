@@ -317,6 +317,17 @@ h2 a {
   max-height: 28px;
 }
 
+.row-inline .left.only-on-tab {
+  display: none;
+}
+
+@media all and (max-width: 840px)
+{
+  .row-inline .left.only-on-tab {
+    display: inline-block;
+  }
+}
+
 /******************************************************************************/
 /* common_overboxctrl */
 

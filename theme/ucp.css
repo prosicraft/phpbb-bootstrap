@@ -18,6 +18,9 @@
   padding-left: 0px;
   font-size: 12px;
   margin: 0px;
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 .ucp-maintools ul li {
@@ -216,6 +219,16 @@ table.ucp-pm td:last-child {
 table.ucp-pm td h4 {
   margin-bottom: 4px;
   margin-top: 3px;
+}
+
+@media all and (max-width: 600px)
+{
+  fieldset#pm-viewfolder-options .row-inline div.left.only-on-tab#pm-tab-markoptions * {
+    display: none;
+  }
+  fieldset#pm-viewfolder-options .row-inline div.left.only-on-tab#pm-tab-markoptions {
+    height: 30px;
+  }
 }
 
 @media all and (max-width: 500px)
