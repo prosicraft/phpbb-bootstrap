@@ -64,7 +64,8 @@ a:active {
 }
 
 input[type=checkbox],
-input[type=text] {
+input[type=text],
+input[type=password] {
   margin: 0px;
 }
 
@@ -163,7 +164,7 @@ h2 a {
   position: relative;
   left: 25%;
   margin: 8px 0px;
-  margin-left: 10px;
+  /*margin-left: 10px;*/
 }
 
 .box dl dd ~ dd:last-child {
