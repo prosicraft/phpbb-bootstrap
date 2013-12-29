@@ -314,17 +314,22 @@ dl.editor-icon dd {
 
 .posting-container .editor-optionsnav {
   display: block;
+  background-color: #e8e8e8;
   list-style-type: none;
 }
 
-.posting-container .editor-optionsnav li {
+.posting-container ul.editor-optionsnav li {
   display: inline-block;
+  background-color: #e8e8e8;
+  border: 0px;
 }
 .posting-container .editor-optionsnav li a {
   display: block;
   color: #555;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
+  background-color: #e8e8e8;
+  border: 0px;
 }
 .posting-container .editor-optionsnav li:hover {
   background-color: transparent;
