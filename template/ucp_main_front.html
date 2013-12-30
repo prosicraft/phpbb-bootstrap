@@ -10,13 +10,13 @@
 	<!-- BEGIN topicrow -->
 		<div class="box <!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
 			<div class="table-wrap">
-			<div class="table-row table-phantomrow">			
+			<div class="table-row table-phantomrow">
 				<div class="table-title">
 					<div class="table-titleicon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>
 					<div class="table-titletext" <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
 							<!-- IF topicrow.S_UNREAD --><a href="{topicrow.U_NEWEST_POST}">{NEWEST_POST_IMG}</a> <!-- ENDIF --><h4><a href="{topicrow.U_VIEW_TOPIC}">{topicrow.TOPIC_TITLE} </a></h4>
 							<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
-							<span class="table-titledesc"><!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</span>					
+							<span class="table-titledesc"><!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</span>
 					</div>
 				</div>
 				<div class="table-lastpost not-on-handheld"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
@@ -31,7 +31,7 @@
 	<h3>{L_YOUR_DETAILS}</h3>
 
 	<dl class="ucp-collist">
-		
+
 		<dt>{L_JOINED}: </dt> <dd>{JOINED} </dd>
 		<dt>{L_VISITED}: </dt> <dd>{LAST_VISIT_YOU} </dd>
 		<dt>{L_TOTAL_POSTS}: </dt> <dd><!-- IF POSTS_PCT -->{POSTS}<!-- IF S_DISPLAY_SEARCH --> | <strong><a href="{U_SEARCH_USER}">{L_SEARCH_YOUR_POSTS}</a></strong><!-- ENDIF --><br />({POSTS_DAY} / {POSTS_PCT})<!-- ELSE -->{POSTS}<!-- ENDIF --></dd>

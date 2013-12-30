@@ -1,6 +1,6 @@
 <!-- IF S_TYPE == 1 -->
 <div class="panel">
-	
+
 
 	<h3>{L_CONFIRMATION}</h3>
 	<p>{L_CONFIRM_EXPLAIN}</p>
@@ -8,7 +8,7 @@
 	<fieldset class="fields2">
 <!-- ENDIF -->
 
-<!-- IF S_RECAPTCHA_AVAILABLE -->	
+<!-- IF S_RECAPTCHA_AVAILABLE -->
 	<dt><label class="strong">{L_CONFIRM_CODE}:</label><p class="description">{L_RECAPTCHA_EXPLAIN}</p></dt>
 	<dd>
 		<script type="text/javascript">
@@ -36,13 +36,13 @@
 		</div>
 		</noscript>
 
-	</dd>	
+	</dd>
 <!-- ELSE -->
 {L_RECAPTCHA_NOT_AVAILABLE}
 <!-- ENDIF -->
 
 <!-- IF S_TYPE == 1 -->
 	</fieldset>
-	
+
 </div>
 <!-- ENDIF -->

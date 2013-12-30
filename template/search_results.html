@@ -39,7 +39,7 @@
 			<div class="pagination-total">{PAGE_NUMBER} </div>
 		<!-- ENDIF -->
 		</div>
-			
+
 	</div>
 
 	</form>
@@ -59,7 +59,7 @@
 		</div>
 
 		<!-- BEGIN searchresults -->
-			<div class="table-row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">				
+			<div class="table-row<!-- IF searchresults.S_ROW_COUNT is even --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
 				<div class="table-title">
 					<div class="table-titleicon" style="background-image: url({searchresults.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>
 					<div class="table-titletext" <!-- IF searchresults.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{searchresults.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->>
@@ -80,7 +80,7 @@
 				<div class="table-replies">
 					<div class="ministat">
 						<span>{searchresults.TOPIC_REPLIES} <dfn>{L_REPLIES} </dfn></span>
-					</div>					
+					</div>
 				</div>
 				<div class="table-views">
 					<div class="ministat">
@@ -98,7 +98,7 @@
 					<span class="lastpost-time">{searchresults.LAST_POST_TIME} </span>
 					<!-- IF not S_IS_BOT -->
 						<a class="lastpost-smartlink" href="{searchresults.U_LAST_POST}"><i class="icon-caret-right"></i> </a>
-					<!-- ENDIF -->					
+					<!-- ENDIF -->
 				</div>
 			</div>
 		<!-- END searchresults -->

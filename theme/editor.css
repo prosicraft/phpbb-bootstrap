@@ -12,9 +12,9 @@
   padding: 2px;
   padding-left: 3px;
   padding-top: 0px;
-  font-size: 20px;  
+  font-size: 20px;
   line-height: 20px;
-  height: 21px;  
+  height: 21px;
 }
 
 .to-recipient-list > div {
@@ -73,7 +73,7 @@ dl.editor-subject dd {
   width: 75%;
   border: 1px solid #aaa;
   border-radius: 2px;
-  padding: 3px;  
+  padding: 3px;
 }
 
 .editor-icon {
@@ -101,7 +101,7 @@ dl.editor-icon dd {
   position: relative;
   vertical-align: top;
   display: inline-block;
-  width: 75%;  
+  width: 75%;
 }
 
 .editor-container #message-box textarea {
@@ -112,8 +112,8 @@ dl.editor-icon dd {
 @media only screen and (max-device-width: 1199px)
 {
   .editor-subject input,
-  .editor-container #message-box textarea {    
-    font-size: 18px !important;  
+  .editor-container #message-box textarea {
+    font-size: 18px !important;
   }
 }
 
@@ -122,7 +122,7 @@ dl.editor-icon dd {
   display: inline-block;
   width: 20%;
   max-width: 150px;
-  margin-left: 10px;    
+  margin-left: 10px;
 }
 .editor-container #smiley-box .editor-smileycollection > strong {
   margin-bottom: 5px;
@@ -179,46 +179,46 @@ dl.editor-icon dd {
   #format-buttons div.btn-group input#fmt-code,
   #format-buttons div.btn-group input#fmt-listex,
   #format-buttons div.btn-group input.fmt-customtag {
-    display: none;  
+    display: none;
   }
   #format-buttons div.btn-group input#fmt-fontcolor {
     border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;  
-  }    
+    border-bottom-right-radius: 3px;
+  }
 }
 
 @media all and (max-width:500px)
 {
   .editor-subject input {
-    width: 100%;  
+    width: 100%;
   }
   .editor-container #message-box {
     display: block;
-    width: 100%;  
+    width: 100%;
   }
   .editor-container #smiley-box {
     display: block;
     width: 100%;
     max-width: 100%;
     margin-top: 10px;
-    margin-left: 0px;  
+    margin-left: 0px;
   }
   .editor-container .editor-bbstatus {
     display: inline-block;
     padding-left: 10px;
   }
   .editor-container .editor-bbstatus > hr {
-    display: none;  
+    display: none;
   }
   .editor-container .editor-smileycollection {
     display: inline-block;
     max-width: 60%;
-    border-right: 1px solid #888;  
+    border-right: 1px solid #888;
   }
-  
+
   .editor-submitrow {
     width: 100%;
-  }  
+  }
 }
 
 @media all and (max-width: 486px)
@@ -228,7 +228,7 @@ dl.editor-icon dd {
     position: relative;
     width: 100%;
     display: block;
-    height: 40px;  
+    height: 40px;
   }
 
   /* prevent format btn-group from transforming into magic one */
@@ -237,35 +237,35 @@ dl.editor-icon dd {
     border: 0px;
     text-align: left;
     float: left;
-    width: auto;  
+    width: auto;
   }
   #format-buttons div.format-btngroup .btn {
-    background-color: rgb(221,221,221); 
+    background-color: rgb(221,221,221);
     border: 1px solid rgb(187,187,187);
-    float: none;            
+    float: none;
   }
   #format-buttons div.format-btngroup .btn:first-child {
     border-top-left-radius: 3px;
-    border-bottom-left-radius: 3px;  
+    border-bottom-left-radius: 3px;
   }
   #format-buttons div.format-btngroup .btn:last-child {
     border-top-right-radius: 3px;
-    border-bottom-right-radius: 3px;  
+    border-bottom-right-radius: 3px;
   }
   #format-buttons div.format-btngroup .btn ~ .btn {
-    margin-left: -4px;  
+    margin-left: -4px;
   }
-  
+
   #format-buttons div#format-colorbtngroup.format-btngroup {
     display: inline-block;
     width: auto;
     position: absolute;
-    right: 0px;  
+    right: 0px;
   }
-  
+
   #format-buttons #fmt-fontsize {
-    display: none;  
-  }     
+    display: none;
+  }
 }
 
 @media all and (max-width: 375px)
@@ -274,7 +274,7 @@ dl.editor-icon dd {
     max-width: 45%;
     vertical-align: top;
     padding-right: 5px;
-    margin-left: 5px;      
+    margin-left: 5px;
   }
   .editor-container .editor-smileycollection a.editor-moresmileys {
     font-size: 11px;
@@ -283,22 +283,22 @@ dl.editor-icon dd {
     width: 45%;
     min-width: 100px;
     padding-left: 5px;
-    font-size: 10px;       
+    font-size: 10px;
   }
-  
+
   #wrap div.editor-submitrow-inner fieldset.submit-buttons input.btn {
-    font-size: 11px;    
+    font-size: 11px;
   }
   .editor-submitrow-inner .editor-submitrow-draft {
-    display: none;  
+    display: none;
   }
   .editor-optionsnav {
-    border-bottom: 1px solid #ddd;  
+    border-bottom: 1px solid #ddd;
   }
   .editor-optionsnav li {
     float: none;
     font-size: 11px;
-    display: block;            
+    display: block;
   }
   .editor-optionsnav li ~ li {
     border-top: 1px solid #ddd;

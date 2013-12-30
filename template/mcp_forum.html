@@ -6,7 +6,7 @@
 <h2><a href="{U_VIEW_FORUM}">{L_FORUM}: {FORUM_NAME}</a></h2>
 
 <form method="post" id="mcp" action="{S_MCP_ACTION}">
-	
+
 
 	<!-- IF PAGINATION or TOTAL_TOPICS -->
 		<ul class="linklist">
@@ -16,34 +16,34 @@
 			</li>
 		</ul>
 	<!-- ENDIF -->
-	
+
 <div class="box">
 
 	<!-- IF .topicrow -->
 		<div class="table-wrap"><!-- Note: misuse of class names in this table! -->
-			<div class="table-head">				
+			<div class="table-head">
 				<div class="table-title-head">{L_TOPICS} </div>
 				<!-- IF not S_MERGE_SELECT --><div class="table-replies-head">{L_MARK} </div><!-- ENDIF -->
-				<div class="table-views-head">{L_REPLIES} </div>				
-				<div class="table-lastpost-head">{L_LAST_POST} </div>								
-			</div>				
+				<div class="table-views-head">{L_REPLIES} </div>
+				<div class="table-lastpost-head">{L_LAST_POST} </div>
+			</div>
 
 		<!-- BEGIN topicrow -->
 			<div class="table-row<!-- IF topicrow.S_TOPIC_REPORTED --> reported<!-- ENDIF -->">
 				<div class="table-title">
 					<div class="table-titleicon" style="background-image: url({topicrow.TOPIC_FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>
-					<div class="table-titletext">											
+					<div class="table-titletext">
 						<div <!-- IF topicrow.TOPIC_ICON_IMG -->style="background-image: url({T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}); background-repeat: no-repeat;"<!-- ENDIF -->></div>
-						
+
 						<h4>
 							<!-- IF topicrow.S_SELECT_TOPIC --><a href="{topicrow.U_SELECT_TOPIC}" class="topictitle">[ {L_SELECT_MERGE} ]</a>&nbsp;&nbsp; <!-- ENDIF -->
 							<a href="{topicrow.U_VIEW_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
 						</h4>
-						
+
 						<div class="table-titledesc">
 							<!-- IF topicrow.S_TOPIC_UNAPPROVED or topicrow.S_POSTS_UNAPPROVED --><a href="{topicrow.U_MCP_QUEUE}">{topicrow.UNAPPROVED_IMG}</a> <!-- ENDIF -->
 							<!-- IF topicrow.S_TOPIC_REPORTED --><a href="{topicrow.U_MCP_REPORT}">{REPORTED_IMG}</a><!-- ENDIF -->
-							<!-- IF topicrow.S_MOVED_TOPIC and S_CAN_DELETE -->&nbsp;<a href="{topicrow.U_DELETE_TOPIC}" class="topictitle">[ {L_DELETE_SHADOW_TOPIC} ]</a><!-- ENDIF -->							             
+							<!-- IF topicrow.S_MOVED_TOPIC and S_CAN_DELETE -->&nbsp;<a href="{topicrow.U_DELETE_TOPIC}" class="topictitle">[ {L_DELETE_SHADOW_TOPIC} ]</a><!-- ENDIF -->
 							<!-- IF topicrow.PAGINATION --><strong class="pagination"><span>{topicrow.PAGINATION}</span></strong><!-- ENDIF -->
 							<!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}
 						</div>
@@ -56,13 +56,13 @@
 					</div>
 				<!-- ENDIF -->
 				</div>
-				<div class="table-views"><div class="ministat"><span>{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></span></div></div>				
+				<div class="table-views"><div class="ministat"><span>{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></span></div></div>
 				<div class="table-lastpost">
 					<span class="lastpost-info"><dfn>{L_LAST_POST} </dfn>{L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} </span>
 					<br class="lastpost-delimiter" />
 					<span class="lastpost-time"><i class="icon-time"></i>{topicrow.LAST_POST_TIME} </span>
-				</div>				
-			</div>		
+				</div>
+			</div>
 		<!-- END topicrow -->
 		</div>
 	<!-- ELSE -->
@@ -88,7 +88,7 @@
 				<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
 			</li>
 		</ul>
-	<!-- ENDIF -->	
+	<!-- ENDIF -->
 
 <fieldset class="display-actions">
 	<!-- IF not S_MERGE_SELECT -->

@@ -139,7 +139,7 @@
 			<textarea <!-- IF S_UCP_ACTION and not S_PRIVMSGS and not S_EDIT_DRAFT -->name="signature" id="signature" style="height: 9em;"<!-- ELSE -->name="message" id="message"<!-- ENDIF --> rows="15" cols="76" tabindex="4" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);" onfocus="initInsertions();" class="inputbox">{MESSAGE}{DRAFT_MESSAGE}{SIGNATURE}</textarea>
 		</div>
 
-		<div id="smiley-box">			
+		<div id="smiley-box">
 			<div class="editor-smileycollection">
 				<!-- IF S_SMILIES_ALLOWED and .smiley -->
 					<strong>{L_SMILIES}</strong>
@@ -209,12 +209,12 @@
 	<!-- ENDIF -->
 
 	<!-- IF not S_SHOW_DRAFTS and not $SIG_EDIT eq 1 -->
-		<div class="editor-submitrow">			
+		<div class="editor-submitrow">
 			<div class="editor-submitrow-inner">
 				<fieldset class="submit-buttons">
 					{S_HIDDEN_ADDRESS_FIELD}
 					{S_HIDDEN_FIELDS}
-					
+
 					<span class="editor-submitrow-draft">
 						<!-- IF S_HAS_DRAFTS --><input type="submit" accesskey="d" tabindex="8" name="load" value="{L_LOAD_DRAFT}" class="btn btn-small" onclick="load_draft = true;" />&nbsp; <!-- ENDIF -->
 						<!-- IF S_SAVE_ALLOWED --><input type="submit" accesskey="k" tabindex="7" name="save" value="{L_SAVE_DRAFT}" class="btn btn-small" />&nbsp; <!-- ENDIF -->

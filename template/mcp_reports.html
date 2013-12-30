@@ -13,44 +13,44 @@
 <h2>{L_TITLE}</h2>
 
 <p>{L_EXPLAIN}</p>
-	
+
 <div class="box">
 
 <!-- IF .postrow -->
 	<table class="mcp-log">
 	<thead>
-		<tr>			
+		<tr>
 			<th>{L_VIEW_DETAILS} </th>
 			<th>{L_REPORTER} <!-- IF not S_PM --> &amp; {L_FORUM} <!-- ENDIF --></th>
 			<th>{L_MARK} </th>
-		</tr>			
-	</thead>	
-	<tbody> 
+		</tr>
+	</thead>
+	<tbody>
 	<!-- BEGIN postrow -->
-		<tr>			
+		<tr>
 		<!-- IF S_PM -->
-			<td>				
+			<td>
 				<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.PM_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}
 				<br />
 				<span>{L_MESSAGE_BY_AUTHOR} {postrow.PM_AUTHOR_FULL} &raquo; {postrow.PM_TIME}</span><br />
-				<span>{L_MESSAGE_TO} {postrow.RECIPIENTS}</span>								
+				<span>{L_MESSAGE_TO} {postrow.RECIPIENTS}</span>
 			</td>
-			<td>				
-				<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</span>				
+			<td>
+				<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}</span>
 			</td>
 		<!-- ELSE -->
-			<td>				
+			<td>
 				<a href="{postrow.U_VIEW_DETAILS}" class="topictitle">{postrow.POST_SUBJECT}</a> {postrow.ATTACH_ICON_IMG}<br />
-				<span>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</span>				
+				<span>{L_POSTED} {L_POST_BY_AUTHOR} {postrow.POST_AUTHOR_FULL} &raquo; {postrow.POST_TIME}</span>
 			</td>
-			<td>				
+			<td>
 				<span>{postrow.REPORTER_FULL} &laquo; {postrow.REPORT_TIME}<br />
 				<!-- IF postrow.U_VIEWFORUM -->{L_FORUM}: <a href="{postrow.U_VIEWFORUM}">{postrow.FORUM_NAME}</a><!-- ELSE -->{postrow.FORUM_NAME}<!-- ENDIF --></span>
 			</td>
 		<!-- ENDIF -->
-			<td class="mark"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></td>						
-		</tr>		
-	<!-- END postrow -->		
+			<td class="mark"><input type="checkbox" name="report_id_list[]" value="{postrow.REPORT_ID}" /></td>
+		</tr>
+	<!-- END postrow -->
 	</tbody>
 	</table>
 </div>
@@ -64,9 +64,9 @@
 		<!-- IF TOPIC_ID --><label><input type="checkbox" class="radio" name="t" value="{TOPIC_ID}" checked="checked" />&nbsp; <strong>{L_ONLY_TOPIC}</strong></label><!-- ENDIF -->
 		<input type="submit" name="sort" value="{L_GO}" class="btn btn-small" />
 	</fieldset>
-	
+
 	<hr />
-	
+
 	<ul class="linklist">
 		<li class="rightside pagination">
 			<!-- IF TOTAL -->{TOTAL_REPORTS}<!-- ENDIF -->

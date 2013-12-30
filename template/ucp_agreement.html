@@ -25,11 +25,11 @@
 	<div class="clearfix"></div>
 
 <!-- ENDIF -->
-	
+
 	<form method="post" action="{S_UCP_ACTION}" id="agreement">
         <fieldset>
-        	
-        	<div class="box big-padding small-top-margin medium-bottom-margin">			
+
+        	<div class="box big-padding small-top-margin medium-bottom-margin">
 			<h2>{SITENAME} - {L_REGISTRATION}</h2>
 			<p><!-- IF S_SHOW_COPPA -->{L_COPPA_BIRTHDAY}<!-- ELSE -->{L_TERMS_OF_USE}<!-- ENDIF --></p>
 		<!-- IF S_SHOW_COPPA -->
@@ -37,20 +37,20 @@
 		<!-- ELSE -->
 			<!-- INCLUDE prime_birthdate.html -->
 		<!-- ENDIF -->
-		</div>				
-			
+		</div>
+
 	<!-- IF not S_SHOW_COPPA -->
 		<div class="big-bottom-margin" style="text-align: center;">
 			<input type="submit" name="agreed" id="agreed" value="{L_AGREE}" class="btn btn-medium small-bottom-margin strong" />&nbsp;
 			<input type="submit" name="not_agreed" value="{L_NOT_AGREE}" class="btn btn-medium  small-bottom-margin" />
 		</div>
 	<!-- ENDIF -->
-		
+
 		{S_HIDDEN_FIELDS}
 		{S_FORM_TOKEN}
-	
+
 	</fieldset>
-	</form>	
+	</form>
 
 <!-- ELSEIF S_AGREEMENT -->
 

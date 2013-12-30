@@ -52,10 +52,10 @@
 				<th width="20%">{L_MARK} </th>
 			</tr>
 		</thead>
-	
+
 		<tbody>
 		<!-- BEGIN messagerow -->
-			<tr class="<!-- IF messagerow.PM_CLASS --> {messagerow.PM_CLASS}<!-- ENDIF -->">				
+			<tr class="<!-- IF messagerow.PM_CLASS --> {messagerow.PM_CLASS}<!-- ENDIF -->">
 				<td <!-- IF messagerow.PM_ICON_URL and S_PM_ICONS --> style="background-image: url({messagerow.PM_ICON_URL}); background-repeat: no-repeat;"<!-- ENDIF -->>
 					<div class="ucp-pm-icon" style="background-image: url({messagerow.FOLDER_IMG_SRC}); background-repeat: no-repeat;"></div>
 					<div class="ucp-pm-title">
@@ -74,14 +74,14 @@
 					</div>
 					<!-- IF S_SHOW_RECIPIENTS --><span>{L_SENT_AT}: {messagerow.SENT_TIME}</span></div><!-- ENDIF -->
 					<!-- IF S_UNREAD --><!-- IF messagerow.FOLDER --><a href="{messagerow.U_FOLDER}">{messagerow.FOLDER}</a><!-- ELSE -->{L_UNKNOWN_FOLDER}<!-- ENDIF --></div><!-- ENDIF -->
-				</td>				
+				</td>
 				<td><input type="checkbox" name="marked_msg_id[]" value="{messagerow.MESSAGE_ID}" /></td>
-			</tr>		
+			</tr>
 		<!-- END messagerow -->
 		</tbody>
-		</table>	
+		</table>
 	<!-- ELSE -->
-		<div class="well strong">		
+		<div class="well strong">
 			<!-- IF S_COMPOSE_PM_VIEW and S_NO_AUTH_SEND_MESSAGE -->
 				<!-- IF S_USER_NEW -->{L_USER_NEW_PERMISSION_DISALLOWED}<!-- ELSE -->{L_NO_AUTH_SEND_MESSAGE}<!-- ENDIF -->
 			<!-- ELSE -->

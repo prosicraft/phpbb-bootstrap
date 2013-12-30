@@ -109,14 +109,14 @@
 .topic-container .postbody .content blockquote div {
   display: inline-block;
   margin-left: 10px;
-  margin-top: 2px;    
+  margin-top: 2px;
 }
 
-.topic-container .postbody .content blockquote div cite {  
+.topic-container .postbody .content blockquote div cite {
   font-family: Arial;
   font-size: 11px;
   font-weight: bold;
-  display: block;  
+  display: block;
 }
 
 .topic-container .postbody .content blockquote:before {
@@ -125,8 +125,8 @@
   display: inline-block;
   font-size: 25px;
   color: #aaa;
-  margin-left: 5px;  
-  vertical-align: top;  
+  margin-left: 5px;
+  vertical-align: top;
 }
 
 .topic-container .postbody .postheader {
@@ -174,7 +174,7 @@
   display: block;
   text-align: right;
   margin-top: 30px;
-  margin-bottom: 15px;    
+  margin-bottom: 15px;
 }
 
 .viewtopic-pagination-bottom {
@@ -195,10 +195,10 @@
   .display-options label span.description {
     display:none;
   }
-  
+
   #wrap .overboxctrl div.searchbox-viewtopic {
-    display: none;  
-  }  
+    display: none;
+  }
 }
 
 @media all and (max-width:1000px) {
@@ -245,12 +245,12 @@
     margin-top: 10px;
   }
   .topic-container .topic-post {
-    position: relative;  
+    position: relative;
   }
   .topic-container .postbody .post-buttons {
     position: absolute;
     top: 18px;
-    right: 18px;  
+    right: 18px;
   }
   .topic-container .post-quote {
     display: none;
@@ -260,9 +260,9 @@
 @media all and (max-width:650px)
 {
   #wrap .topic-container .post-buttons {
-    height: 25px;    
+    height: 25px;
   }
-  #wrap .topic-container .post-buttons .btn {    
+  #wrap .topic-container .post-buttons .btn {
     height: 25px;
     padding-top: 10px;
 
@@ -281,7 +281,7 @@
 
 @media all and (max-width:520px)
 {
-  #wrap .topic-container .postbody .post-buttons {    
+  #wrap .topic-container .postbody .post-buttons {
     position: relative;
     float: right;
     padding: 0px;
@@ -293,9 +293,9 @@
     width: 40px;
     padding-left: 13px;
   }
-  
+
   #wrap .topic-container .postbody .postheader {
-    margin-top: 60px;  
+    margin-top: 60px;
   }
 }
 

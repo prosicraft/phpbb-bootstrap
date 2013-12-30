@@ -51,23 +51,23 @@ function fontsizedown(event)
 
 	switch (active)
 	{
-		case 'A++' : 
+		case 'A++' :
 			setActiveStyleSheet('A+');
 		break;
 
-		case 'A+' : 
+		case 'A+' :
 			setActiveStyleSheet('A');
 		break;
 
-		case 'A' : 
+		case 'A' :
 			setActiveStyleSheet('A-');
 		break;
 
-		case 'A-' : 
+		case 'A-' :
 			setActiveStyleSheet('A--');
 		break;
 
-		case 'A--' : 
+		case 'A--' :
 		break;
 
 		default :

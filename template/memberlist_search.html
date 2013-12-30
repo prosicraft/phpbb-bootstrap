@@ -44,27 +44,27 @@ function insert_single(user)
 
 <form method="post" action="{S_MODE_ACTION}" id="search_memberlist">
 <div class="box">
-	
+
 
 	<p class="description">{L_FIND_USERNAME_EXPLAIN}</p>
 
 	<fieldset class="column2">
 	<dl class="ucp-collist">
 		<dt><label for="username">{L_USERNAME}:</label></dt>
-		<dd><input type="text" name="username" id="username" value="{USERNAME}" class="inputbox" /></dd>	
-<!-- IF S_EMAIL_SEARCH_ALLOWED -->	
+		<dd><input type="text" name="username" id="username" value="{USERNAME}" class="inputbox" /></dd>
+<!-- IF S_EMAIL_SEARCH_ALLOWED -->
 		<dt><label for="email">{L_EMAIL}:</label></dt>
-		<dd><input type="text" name="email" id="email" value="{EMAIL}" class="inputbox" /></dd>	
-<!-- ENDIF -->	
+		<dd><input type="text" name="email" id="email" value="{EMAIL}" class="inputbox" /></dd>
+<!-- ENDIF -->
 		<dt><label for="icq">{L_ICQ}:</label></dt>
-		<dd><input type="text" name="icq" id="icq" value="{ICQ}" class="inputbox" /></dd>	
+		<dd><input type="text" name="icq" id="icq" value="{ICQ}" class="inputbox" /></dd>
 
 		<dt><label for="aim">{L_AIM}:</label></dt>
 		<dd><input type="text" name="aim" id="aim" value="{AIM}" class="inputbox" /></dd>
-			
+
 		<dt><label for="yahoo">{L_YIM}:</label></dt>
 		<dd><input type="text" name="yahoo" id="yahoo" value="{YAHOO}" class="inputbox" /></dd>
-	
+
 		<dt><label for="msn">{L_MSNM}:</label></dt>
 		<dd><input type="text" name="msn" id="msn" value="{MSNM}" class="inputbox" /></dd>
 	</dl>
@@ -73,25 +73,25 @@ function insert_single(user)
 	<fieldset class="column2">
 	<dl class="ucp-collist">
 		<dt><label for="joined">{L_JOINED}:</label></dt>
-		<dd><select name="joined_select">{S_JOINED_TIME_OPTIONS}</select> <input class="inputbox medium" type="text" name="joined" id="joined" value="{JOINED}" /></dd>	
+		<dd><select name="joined_select">{S_JOINED_TIME_OPTIONS}</select> <input class="inputbox medium" type="text" name="joined" id="joined" value="{JOINED}" /></dd>
 <!-- IF S_VIEWONLINE -->
 		<dt><label for="active">{L_LAST_ACTIVE}:</label></dt>
-		<dd><select name="active_select">{S_ACTIVE_TIME_OPTIONS}</select> <input class="inputbox medium" type="text" name="active" id="active" value="{ACTIVE}" /></dd>	
-<!-- ENDIF -->	
+		<dd><select name="active_select">{S_ACTIVE_TIME_OPTIONS}</select> <input class="inputbox medium" type="text" name="active" id="active" value="{ACTIVE}" /></dd>
+<!-- ENDIF -->
 		<dt><label for="count">{L_POSTS}:</label></dt>
-		<dd><select name="count_select">{S_COUNT_OPTIONS}</select> <input class="inputbox medium" type="text" name="count" id="count" value="{COUNT}" /></dd>	
-<!-- IF S_IP_SEARCH_ALLOWED -->	
+		<dd><select name="count_select">{S_COUNT_OPTIONS}</select> <input class="inputbox medium" type="text" name="count" id="count" value="{COUNT}" /></dd>
+<!-- IF S_IP_SEARCH_ALLOWED -->
 		<dt><label for="ip">{L_POST_IP}:</label></dt>
-		<dd><input class="inputbox medium" type="text" name="ip" id="ip" value="{IP}" /></dd>	
-<!-- ENDIF -->	
+		<dd><input class="inputbox medium" type="text" name="ip" id="ip" value="{IP}" /></dd>
+<!-- ENDIF -->
 		<dt><label for="search_group_id">{L_GROUP}:</label></dt>
-		<dd><select name="search_group_id" id="search_group_id">{S_GROUP_SELECT}</select></dd>	
-			
+		<dd><select name="search_group_id" id="search_group_id">{S_GROUP_SELECT}</select></dd>
+
 		<dt><label for="sk" class="label3">{L_SORT_BY}:</label></dt>
 		<dd><select name="sk" id="sk">{S_SORT_OPTIONS}</select> <select name="sd">{S_ORDER_SELECT}</select></dd>
 	</dl>
 	</fieldset>
-	
+
 </div>
 
 <fieldset class="submitrow small-top-margin medium-bottom-margin">

@@ -2,7 +2,7 @@
 /* overall_body */
 
 body#phpbb {
-  font-size: 13px;  
+  font-size: 13px;
   padding: 0px;
   margin: 0px;
   overflow-x: hidden;
@@ -21,7 +21,7 @@ body#phpbb {
 .nav-bar {
   background-color: #111;
   font-size: 0px;
-  border-bottom: 1px solid #000;     
+  border-bottom: 1px solid #000;
 }
 
 .nav-login {
@@ -30,22 +30,22 @@ body#phpbb {
   color: #f3f3f3;
   overflow: hidden;
   width: 15%;
-  max-width: 150px;  
+  max-width: 150px;
   height: 50px;
   box-sizing: border-box;
-  padding-top: 17px;  
+  padding-top: 17px;
   font-size: 15px;
   background-color: #111;
   position: relative;
   text-align: right;
-  padding-right: 10px;      
+  padding-right: 10px;
 }
-  
+
 .nav-container {
-  width: 85%;  
+  width: 85%;
   background-color: #111;
   position: relative;
-  display: inline-block;  
+  display: inline-block;
 }
 
 ul.nav li,
@@ -55,12 +55,12 @@ ul.nav li,
   padding: 15px;
   font-size: 15px;
   font-family: Arial;
-  box-sizing: border-box;  
+  box-sizing: border-box;
   min-height: 40px;
   height: 50px;
-  
+
   display: inline-block;
-  vertical-align: top;           
+  vertical-align: top;
 }
 
 .nav-brand {
@@ -68,16 +68,16 @@ ul.nav li,
 }
 
 .nav-mail {
-  display: none;  
+  display: none;
 }
 
-ul.nav li {  
+ul.nav li {
   font-size: 14px;
-  padding: 0px 5px;          
+  padding: 0px 5px;
 }
 
 ul.nav li:hover {
-  background-color: #888;  
+  background-color: #888;
 }
 
 ul.nav li a,
@@ -88,14 +88,14 @@ ul.nav li a:visited {
   display: block;
   width: 100%;
   height: 100%;
-  padding: 16px 8px;    
+  padding: 16px 8px;
 }
 
 ul.nav {
   list-style-type: none;
   padding-left: 0px;
   display: inline;
-  font-size: 0px;      
+  font-size: 0px;
 }
 
 ul.nav-sub {
@@ -105,18 +105,18 @@ ul.nav-sub {
   border-top: 0px;
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
-  margin: 0px;  
+  margin: 0px;
   padding: 0px;
   display: none;
   position: relative;
   z-index: 1000;
   min-width: 150px;
-  max-width: 100%;   
+  max-width: 100%;
 }
 
 ul.nav-sub li {
   display: block;
-  background-color: #333;  
+  background-color: #333;
 }
 
 ul.nav-sub li.divider {
@@ -128,10 +128,10 @@ ul.nav-sub li.divider {
 
 ul.nav-sub li.divider:hover {
   background-color: #333;
-}  
+}
 
-.nav-toggle {  
-  position: absolute;  
+.nav-toggle {
+  position: absolute;
   width: 50px;
   height: 50px;
   right: 5px;
@@ -140,21 +140,21 @@ ul.nav-sub li.divider:hover {
   padding-left: 13px;
   padding-top: 7px;
   font-size: 30px;
-}     
+}
 
 @media all and (max-width: 900px)
 {
   .nav-login .not-on-tab {
-    display: none;  
+    display: none;
   }
   .nav-container {
-    width: 92%;  
+    width: 92%;
   }
   .nav-login {
     padding-right: 0px;
     text-align: center;
     border-left: 1px dashed #000;
-    width: 8%;  
+    width: 8%;
   }
 }
 
@@ -162,13 +162,13 @@ ul.nav-sub li.divider:hover {
 {
   .nav .pmicon {
     display: inline-block;
-    vertical-align: top;  
+    vertical-align: top;
   }
   .nav .pmdesc {
     display: inline-block;
     max-width: 10px;
     overflow: hidden;
-    white-space: nowrap;  
+    white-space: nowrap;
   }
 }
 
@@ -176,22 +176,22 @@ ul.nav-sub li.divider:hover {
 {
   .nav-bar {
     border: 0px;
-    background-color: transparent;  
+    background-color: transparent;
   }
   .nav-brand, ul.nav li {
-    background-color: #111;  
+    background-color: #111;
   }
   .nav-brand {
     width: 100%;
-    border-bottom: 1px solid #000;      
+    border-bottom: 1px solid #000;
   }
   .nav-mail {
     display: block;
-    position: absolute;        
+    position: absolute;
     width: 53px;
-    height: 40px;    
+    height: 40px;
     left: 180px;
-    top: 5px;                  
+    top: 5px;
   }
   .nav-mail a {
     font-size: 18px;
@@ -199,33 +199,33 @@ ul.nav-sub li.divider:hover {
     display: block;
     padding-top: 8px;
     padding-left: 15px;
-    height: 100%;          
+    height: 100%;
   }
-  .nav-login {    
-    border-bottom: 1px solid #000;      
+  .nav-login {
+    border-bottom: 1px solid #000;
   }
   ul.nav li {
-    display: block;      
-  }  
+    display: block;
+  }
   ul.nav li:first-child {
-    border-top: 1px solid #444;  
+    border-top: 1px solid #444;
   }
   .nav-container {
-    background-color: transparent;  
+    background-color: transparent;
   }
   ul.nav li:last-child {
     border: 1px solid #111;
     border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;      
+    border-bottom-right-radius: 4px;
   }
   ul.nav li:last-child:hover {
-    border-color: #888;  
-  }  
-  ul.nav {    
-    display: none;      
+    border-color: #888;
+  }
+  ul.nav {
+    display: none;
   }
   .nav-toggle {
-    display: inline-block;  
+    display: inline-block;
   }
 }
 
@@ -234,7 +234,7 @@ ul.nav-sub li.divider:hover {
 
 #pageheader #searchbox a {
   text-shadow: none;
-  color: #ccc;  
+  color: #ccc;
 }
 
 /******************************************************************************/
@@ -245,13 +245,13 @@ ul.breadcrumb {
   background-color: #f4f4f4;
   border: 1px solid #f4f4f4;
   border-radius: 5px;
-  list-style-type: none;  
+  list-style-type: none;
 }
 
 ul.breadcrumb li {
   display: inline-block;
   padding: 3px;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 ul.breadcrumb li ~ li:before {
@@ -261,7 +261,7 @@ ul.breadcrumb li ~ li:before {
 }
 
 ul.breadcrumb li a {
-  font-size: 11px;  
+  font-size: 11px;
 }
 
 /******************************************************************************/
@@ -283,15 +283,15 @@ ul.breadcrumb li a {
   list-style: none;
   display: inline-block;
   margin: 0px;
-  vertical-align: middle;  
+  vertical-align: middle;
 }
 
 #well-footer.well .well-footer-right {
   list-style: none;
-  display: inline-block;  
+  display: inline-block;
   position: absolute;
   right: 20px;
-  margin-top: 0px;  
+  margin-top: 0px;
 }
 
 #well-footer.well .well-footer-right li {
@@ -310,22 +310,22 @@ ul.breadcrumb li a {
 @media all and (max-width: 800px)
 {
   #well-footer.well {
-    height: 90px;  
+    height: 90px;
   }
   #well-footer.well .well-footer-left {
-    margin-top: 10px;  
+    margin-top: 10px;
   }
   #well-footer.well .well-footer-right {
     padding-left: 40px;
     padding-right: 20px;
     border-left: 1px solid #bbb;
-    top: 10px;  
+    top: 10px;
   }
   #well-footer.well .well-footer-right li {
     display: block;
     margin-right: 0px;
-    margin-bottom: 5px;    
-  }  
+    margin-bottom: 5px;
+  }
 }
 
 @media all and (max-width: 500px)
@@ -333,14 +333,14 @@ ul.breadcrumb li a {
   #well-footer.well .well-footer-right {
     padding-left: 10px;
     font-size: 11px;
-    padding-right: 0px;  
+    padding-right: 0px;
   }
   #well-footer.well .well-footer-left {
-    padding-left: 0px;  
+    padding-left: 0px;
     font-size: 11px;
   }
   #well-footer.well {
-    height: 78px;  
+    height: 78px;
   }
 }
 
@@ -356,7 +356,7 @@ ul.breadcrumb li a {
   display: block;
   border-left: 1px dashed #000;
   text-align: center;
-  padding-top: 15px;  
+  padding-top: 15px;
   color: #ddd;
   text-decoration: none;
 }
@@ -384,7 +384,7 @@ ul.breadcrumb li a {
 }
 #wrap .quicklogin div.row label {
   width: 100px;
-  display: inline-block;  
+  display: inline-block;
   margin-bottom: 20px;
 }
 #wrap .quicklogin div.row input {
@@ -393,16 +393,16 @@ ul.breadcrumb li a {
 @media only screen and (max-device-width: 1199px)
 {
   .quicklogin div.row input {
-    font-size: 18px !important;  
+    font-size: 18px !important;
   }
 }
 
-#wrap .quicklogin a.registerlink {      
+#wrap .quicklogin a.registerlink {
   margin-bottom: 10px;
   position: relative;
   float: right;
-  top: 10px;  
-  font-size: 15px;  
+  top: 10px;
+  font-size: 15px;
 }
 .quicklogin .btn-primary {
   background-color: #66f;
@@ -446,10 +446,10 @@ ul.breadcrumb li a {
 	  margin-top: 3px;
 	}
 	#wrap div.navigation ul.navbar-nav .pmdesc {
-	  width: 11px;	  
+	  width: 11px;
 	  overflow: hidden;
 	  white-space: nowrap;
-	  display: inline-block;	    	
+	  display: inline-block;
 	}
 }
 
@@ -458,10 +458,10 @@ ul.breadcrumb li a {
           display: none;
 	}
 	#wrap div.overboxctrl .overboxcenter {
-	  left:auto;	  
+	  left:auto;
 	  right: 0px;
-	}	
-	
+	}
+
 	ul.overall-footer-nav-right li {
 	  clear:left;
 	}
@@ -492,7 +492,7 @@ ul.breadcrumb li a {
 @media all and (max-width:600px) {
   /* pull pagination below main toolbar */
   #wrap div.overboxctrl .pagination {
-    top: 50px;    
+    top: 50px;
   }
 
   .responsive-navitem-privmsgs {
@@ -506,14 +506,14 @@ ul.breadcrumb li a {
 
    #wrap #page-body {
      padding-left: 0px;
-     padding-right: 0px;   
+     padding-right: 0px;
    }
-   
+
    #wrap div.navbar .navbar-header .navbar-brand {
      font-size: 15px;
-     font-weight: bold;           
+     font-weight: bold;
    }
-  
+
   /* switch to drop-down navmenu */
   .responsive-nav {
     width: 50%;
@@ -556,7 +556,7 @@ ul.breadcrumb li a {
     cursor: pointer;
     -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   }
-  
+
   .responsive-nav-trigger:hover > i {
     color: #e3e3e3;
   }
@@ -567,7 +567,7 @@ ul.breadcrumb li a {
     height: 125px;
   }
   #wrap .overboxctrl div.overboxleft {
-    width: 100%;  
+    width: 100%;
     display: block;
     position: relative;
   }
@@ -577,13 +577,13 @@ ul.breadcrumb li a {
     display: block;
     text-align: right;
     margin-top: 20px;
-    margin-left: 0px;      
+    margin-left: 0px;
   }
-  
+
   #wrap .static-nav .icon-signin,
   #wrap .static-nav .icon-signout {
-    font-size: 18px;  
-  }  
+    font-size: 18px;
+  }
 }
 
 /*.small-select-wrapper, .small-select-wrapper select {

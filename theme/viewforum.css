@@ -188,7 +188,7 @@ div.table-title .table-titletext img {
 @media all and (max-width: 1130px)
 {
   #viewforum-selectsortdays {
-    display: none;  
+    display: none;
   }
 }
 
@@ -196,7 +196,7 @@ div.table-title .table-titletext img {
 {
   #page-body .responsive-mark-forums-read {
     float: right;
-  }   
+  }
   #page-body .viewforum-pagination-top {
     position: relative;
     margin-right: 10px;

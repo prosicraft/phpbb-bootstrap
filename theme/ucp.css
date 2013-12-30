@@ -37,7 +37,7 @@
 }
 
 .ucp-maintools ul li a {
-  display: inline-block;  
+  display: inline-block;
   padding: 15px;
 }
 
@@ -47,7 +47,7 @@
 
 .ucp-maintools ul li.active {
   background-color: #fff;
-  border-bottom: 1px solid #fff;  
+  border-bottom: 1px solid #fff;
 }
 
 .ucp-maintools ul li:hover {
@@ -55,21 +55,21 @@
 }
 
 .ucp-maincontent {
-  margin-left: 20%; 
+  margin-left: 20%;
 
   background-color: #fff;
   font-size: 12px;
-  border: 1px solid #aaa;  
+  border: 1px solid #aaa;
   padding: 10px;
   min-height: 400px;
   z-Index: 0;
-  position: relative;  
+  position: relative;
 }
 
 .ucp-subtools {
   position: absolute;
   width: 20%;
-  margin-top: 20px;    
+  margin-top: 20px;
 }
 
 .ucp-subtools ul {
@@ -79,14 +79,14 @@
   margin-top: 0px;
 }
 
-.ucp-subtools ul li {    
+.ucp-subtools ul li {
   background-color: #eaeaea;
   border: 1px solid #aaa;
   border-right: 0px;
   border-top-left-radius: 3px;
   border-bottom-left-radius: 3px;
   margin-bottom: 2px;
-  position: relative;  
+  position: relative;
   margin-right: -1px;
 }
 
@@ -101,7 +101,7 @@
 
 .ucp-subtools ul li.active {
   background-color: #fff;
-  z-Index: 100;  
+  z-Index: 100;
 }
 
 .ucp-subtools ul li:hover {
@@ -133,22 +133,22 @@
     margin-bottom: 10px;
   }
   .ucp-subtools ul {
-    margin-bottom: 0px;  
+    margin-bottom: 0px;
   }
   .ucp-subtools ul li {
     border-right: 1px solid #aaa;
-    border-radius: 3px;       
-    background-color: #f3f3f3;     
+    border-radius: 3px;
+    background-color: #f3f3f3;
   }
   .ucp-subtools ul li.active {
-    background-color: #fff;  
+    background-color: #fff;
   }
   .ucp-maintools {
-    padding-left: 10px;  
+    padding-left: 10px;
   }
   .ucp-maincontent {
     margin-left: 0px;
-    box-shadow: 3px 3px 10px #777;      
+    box-shadow: 3px 3px 10px #777;
   }
 }
 
@@ -157,15 +157,15 @@
   .ucp-maintools,
   .ucp-maintools ul,
   .ucp-maintools ul li {
-    font-size: 11px;  
+    font-size: 11px;
   }
   .ucp-maintools ul li a {
     padding: 10px;
   }
-  
+
   .ucp-subtools ul {
-    font-size: 11px;  
-  }  
+    font-size: 11px;
+  }
 }
 
 
@@ -176,7 +176,7 @@ table.ucp-pm {
   border: 1px solid #999;
   border-radius: 5px;
   border-collapse: separate;
-  margin-bottom: 10px;      
+  margin-bottom: 10px;
 }
 
 table.ucp-pm th,
@@ -188,7 +188,7 @@ table.ucp-pm th {
   background-color: #ccc;
   color: #666;
   font-weight: bold;
-  font-size: 15px;        
+  font-size: 15px;
 }
 
 table.ucp-pm th:first-child {
@@ -201,7 +201,7 @@ table.ucp-pm th:last-child {
 
 table.ucp-pm td {
   background-color: #f4f4f4;
-  color: #000;    
+  color: #000;
 }
 
 table.ucp-pm tr ~ tr td {
@@ -234,13 +234,13 @@ table.ucp-pm td h4 {
 @media all and (max-width: 500px)
 {
   table.ucp-pm th {
-    font-size: 13px;      
+    font-size: 13px;
   }
   table.ucp-pm td h4 {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 0px;
-    margin-top: 0px;  
+    margin-top: 0px;
   }
 }
 
@@ -266,7 +266,7 @@ table.ucp-pm td h4 {
   display: inline-block;
   font-weight: bold;
   font-size: 14px;
-  width: 30%;    
+  width: 30%;
   padding: 10px;
   vertical-align: top;
 }
@@ -324,10 +324,10 @@ dl.ucp-collist dd ~ dd {
 @media all and (max-width:700px)
 {
   .ucp-collist dd {
-    width: 60%;  
+    width: 60%;
   }
   .ucp-collist dt {
-    width: 40%;  
+    width: 40%;
   }
 }
 
@@ -336,7 +336,7 @@ dl.ucp-collist dd ~ dd {
   .ucp-collist dl {
     display: block;
     position: relative;
-    width: 100%;  
+    width: 100%;
   }
 
   dl.ucp-collist dt {
@@ -355,10 +355,10 @@ dl.ucp-collist dd ~ dd {
     position: relative;
     width: 100%;
     padding-left: 0px;
-    padding-right: 0px;      
+    padding-right: 0px;
   }
   .ucp-collist dd ~ dd {
-    border: 0px;  
+    border: 0px;
   }
   .ucp-collist dt,
   .ucp-profile-details .ucp-collist dt,
@@ -370,12 +370,12 @@ dl.ucp-collist dd ~ dd {
     padding-bottom: 5px;
     font-size: 15px;
     padding-left: 0px;
-    padding-right: 0px;  
+    padding-right: 0px;
   }
   .ucp-collist dd select {
     max-width: 100%;
-    min-width: 100%;  
-  }  
+    min-width: 100%;
+  }
 }
 
 /***********************************************/
@@ -406,9 +406,9 @@ fieldset.ucp-profile-details dl {
 }
 
 .ucp-pm .ucp-pmbuttons {
-  display: block;  
+  display: block;
   width: 100%;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
 }
 
 .ucp-pm .ucp-pmbuttons .btn {
@@ -449,7 +449,7 @@ fieldset.ucp-profile-details dl {
   text-align: right;
 }
 
-.ucp-pmbody {  
+.ucp-pmbody {
   display: inline-block;
   width: 80%;
   vertical-align: top;
@@ -468,7 +468,7 @@ fieldset.ucp-profile-details dl {
 }
 
 .ucp-pmdisplayoptions .overboxctrl {
-  margin-top: 20px;    
+  margin-top: 20px;
 }
 .ucp-pmdisplayoptions .overboxleft {
   margin-left: 20px;
