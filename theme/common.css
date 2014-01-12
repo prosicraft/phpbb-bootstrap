@@ -529,7 +529,7 @@ div.overboxctrl .overboxcenter {
 .table-row .table-title h4,
 .table-row .table-title h4 a {
   display: inline-block;
-  width: 100%;
+  width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
 }
