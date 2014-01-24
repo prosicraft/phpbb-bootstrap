@@ -51,6 +51,7 @@ html, html * {
 html *, * {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 a,
@@ -226,9 +227,6 @@ h2 a {
   border-radius: 0px;
   vertical-align: top;
 }
-.btn-group > .btn ~ .btn {
-  margin-left: -1px;
-}
 .btn-group > .btn:first-child {
   border-right: 1px solid #bbb;
   border-top-left-radius: 4px;
@@ -240,6 +238,9 @@ h2 a {
 }
 .btn-group > .btn:first-child + .btn {
   border-left: 1px solid #bbb;
+}
+.btn-group > .btn ~ .btn {
+  margin-left: -1px;
 }
 .btn-group + .btn,
 .btn + .btn-group {

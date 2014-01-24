@@ -29,16 +29,24 @@ body#phpbb {
   vertical-align: top;
   color: #f3f3f3;
   overflow: hidden;
-  width: 15%;
-  max-width: 150px;
+  width: 100%;
   height: 50px;
   box-sizing: border-box;
-  padding-top: 17px;
+  -webkit-box-sizing: border-box;
   font-size: 15px;
   background-color: #111;
   position: relative;
   text-align: right;
+  padding-top: 17px;
   padding-right: 10px;
+}
+a.nav-login-link {
+  display: inline-block;
+  margin: 0px;
+  vertical-align: top;
+  height: auto;
+  width: 15%;
+  max-width: 150px;
 }
 
 .nav-container {
@@ -56,6 +64,7 @@ ul.nav li,
   font-size: 15px;
   font-family: Arial;
   box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   min-height: 40px;
   height: 50px;
 
@@ -150,11 +159,15 @@ ul.nav-sub li.divider:hover {
   .nav-container {
     width: 92%;
   }
+  a.nav-login-link {
+    padding-right: 0px;
+    width: 8%;
+    border-left: 0px;
+  }
   .nav-login {
     padding-right: 0px;
     text-align: center;
     border-left: 1px dashed #000;
-    width: 8%;
   }
 }
 
@@ -226,6 +239,8 @@ ul.nav-sub li.divider:hover {
   }
   .nav-toggle {
     display: inline-block;
+    vertical-align: top;
+    top: 0px;
   }
 }
 
@@ -289,13 +304,17 @@ ul.breadcrumb li a {
 #well-footer.well .well-footer-right {
   list-style: none;
   display: inline-block;
+  vertical-align: top;
   position: absolute;
+  top: 10px;
   right: 20px;
   margin-top: 0px;
 }
 
 #well-footer.well .well-footer-right li {
+  list-style-type: none;
   display: inline-block;
+  vertical-align: top;
   margin-right: 20px;
 }
 
