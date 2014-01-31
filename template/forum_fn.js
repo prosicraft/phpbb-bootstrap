@@ -524,6 +524,7 @@ function initNavbarDropdowns ()
 			subtoggles[i].style.cursor = "pointer";
 			subtoggles[i].onclick = function () {
 			        toggleNavDropdown( this.id + "-dropdown", "block" );
+				return false;
 			};
 		}
 	}
