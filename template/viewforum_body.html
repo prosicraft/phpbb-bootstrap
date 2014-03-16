@@ -136,12 +136,10 @@
 
 	<!-- IF not topicrow.S_TOPIC_TYPE_SWITCH and not topicrow.S_FIRST_ROW -->
 	</div>
-	</div>
 	<!-- ENDIF -->
 
 	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
-	<div class="box small-bottom-margin <!-- IF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) --> announcement<!-- ENDIF -->">
-	<div class="table-wrap">
+	<div class="table-wrap box small-bottom-margin <!-- IF topicrow.S_TOPIC_TYPE_SWITCH and (topicrow.S_POST_ANNOUNCE or topicrow.S_POST_GLOBAL) --> announcement<!-- ENDIF -->">
 
 		<div class="table-head">
 				<div class="table-title-head">
@@ -156,9 +154,8 @@
 					</strong>
 				</div>
 
-				<div class="table-replies-head">{L_REPLIES} </div>
-				<div class="table-views-head">{L_VIEWS} </div>
-				<div class="table-lastpost-head">{L_LAST_POST} </div>
+                                <div class="table-lastpost-head">{L_LAST_POST} </div>
+				<div class="table-status-head">Status </div>
 		</div>
 	<!-- ENDIF -->
 
@@ -191,17 +188,7 @@
 				</div>
 
 			</div>
-			<div class="table-replies">
-				<a class="ministat" href="{topicrow.U_LAST_POST}">
-					<span>{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></span>
-				</a>
-			</div>
-			<div class="table-views">
-				<a class="ministat" href="{topicrow.U_LAST_POST}">
-					<span>{topicrow.VIEWS} <dfn>{L_VIEWS}</dfn></span>
-				</a>
-			</div>
-			<div class="table-lastpost">
+                        <div class="table-lastpost">
 				<!-- IF topicrow.LAST_POST_SUBJECT --><i class="lastpost-topiclink"><a href="{topicrow.U_LAST_POST}">{topicrow.LAST_POST_SUBJECT} </a></i><br /><!-- ENDIF -->
 				<span class="lastpost-info">{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} </span>
 				<!-- IF not S_IS_BOT -->
@@ -216,6 +203,10 @@
 					<a class="lastpost-smartlink" href="{topicrow.U_LAST_POST}"><i class="icon-caret-right link"></i></a>
 				<!-- ENDIF -->
 			</div>
+			<div class="table-status">
+				<span>{topicrow.REPLIES} <dfn>{L_REPLIES}</dfn></span>
+                                <span>{topicrow.VIEWS} <dfn>{L_VIEWS}</dfn></span>
+			</div>
 
 		</div>
 
@@ -228,7 +219,6 @@
 	</div>
 	<!-- ENDIF -->
 <!-- END topicrow -->
-</div>
 </div>
 
 <!-- IF S_SELECT_SORT_DAYS and not S_DISPLAY_ACTIVE -->

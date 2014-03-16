@@ -3,14 +3,11 @@
 
 <!-- IF (forumrow.S_IS_CAT or forumrow.S_NO_CAT) and not forumrow.S_FIRST_ROW -->
 </div>
-</div>
-<div class="box small-bottom-margin">
-<div class="table-wrap">
+<div class="table-wrap box small-bottom-margin">
 <!-- ENDIF -->
 
 <!-- IF forumrow.S_FIRST_ROW or forumrow.S_FIRST_ROW -->
-<div class="box small-bottom-margin">
-<div class="table-wrap">
+<div class="box table-wrap small-bottom-margin">
 <!-- ENDIF -->
 
 	<!-- IF forumrow.S_IS_CAT or forumrow.S_FIRST_ROW or forumrow.S_NO_CAT -->
@@ -19,9 +16,8 @@
 			<!-- IF forumrow.S_IS_CAT --><a href="{forumrow.U_VIEWFORUM}">{forumrow.FORUM_NAME}</a><!-- ELSE -->{L_FORUM}<!-- ENDIF -->
 		</div>
 
-		<div class="table-replies-head">{L_TOPICS} </div>
-		<div class="table-views-head">{L_POSTS} </div>
-		<div class="table-lastpost-head">{L_LAST_POST} </div>
+                <div class="table-lastpost-head">{L_LAST_POST} </div>
+		<div class="table-status-head">Status </div>
 	</div>
 	<!-- ELSE -->
 	<div class="table-row">
@@ -60,17 +56,7 @@
 			</div>
 		</div>
 		<!-- ELSEIF not forumrow.S_IS_LINK -->
-		<div class="table-replies">
-			<a class="ministat" href="<!-- IF forumrow.LAST_POST_LINK -->{forumrow.U_LAST_POST}<!-- ELSE -->#<!-- ENDIF -->">
-				<span>{forumrow.TOPICS} <dfn>{L_TOPICS} </dfn></span>
-			</a>
-		</div>
-		<div class="table-views">
-			<a class="ministat" href="<!-- IF forumrow.LAST_POST_LINK -->{forumrow.U_LAST_POST}<!-- ELSE -->#<!-- ENDIF -->">
-				<span>{forumrow.POSTS} <dfn>{L_POSTS} </dfn></span>
-			</a>
-		</div>
-		<div class="table-lastpost">
+                <div class="table-lastpost">
 			<!-- IF forumrow.U_UNAPPROVED_TOPICS --><a href="{forumrow.U_UNAPPROVED_TOPICS}">{UNAPPROVED_IMG} </a><!-- ENDIF -->
 			<!-- IF forumrow.LAST_POST_TIME -->
 				<!-- IF forumrow.LAST_POST_LINK --><i class="lastpost-topiclink">{forumrow.LAST_POST_LINK} </i><br /><!-- ENDIF -->
@@ -88,6 +74,10 @@
 				<span class="lastpost-info">{L_NO_POSTS} </span>
 			<!-- ENDIF -->
 		</div>
+		<div class="table-status">
+				<span class="topics">{forumrow.TOPICS} <dfn>{L_TOPICS} </dfn></span>
+                                <span class="posts">{forumrow.POSTS} <dfn>{L_POSTS} </dfn></span>
+		</div>
 		<!-- ENDIF -->
 	</div>
 	<!-- ENDIF -->
@@ -99,5 +89,4 @@
 
 	</div>
 <!-- END forumrow -->
-</div>
 </div>
