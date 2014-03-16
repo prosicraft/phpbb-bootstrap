@@ -290,21 +290,6 @@ div.error {
   .box .tablerow .force-left-on-tab {
     float: left;
   }
-  .row-fluid .span1-keepsize,
-  .row-fluid .span2-keepsize,
-  .row-fluid .span3-keepsize,
-  .row-fluid .span4-keepsize,
-  .row-fluid .span5-keepsize,
-  .row-fluid .span6-keepsize,
-  .row-fluid .span7-keepsize,
-  .row-fluid .span8-keepsize,
-  .row-fluid .span9-keepsize,
-  .row-fluid .span10-keepsize,
-  .row-fluid .span11-keepsize,
-  .row-fluid .span12-keepsize {
-    margin-left: 1.5%;
-    margin-right: 1.5%;
-  }
   #page-body .btn-toolbar > .btn + .btn,
   #page-body .btn-toolbar > .btn-group + .btn,
   #page-body .btn-toolbar > .btn + .btn-group {
@@ -313,19 +298,6 @@ div.error {
   }
   .box h2 {
     font-size: 25px;
-  }
-  .box .tablerow .responsive-lastpost {
-    margin-left: 50px;
-  }
-  .box .tablerow .responsive-lastpost-time {
-    width: auto;
-    display: inline-block;
-  }
-  .box .tablerow .responsive-title {
-    width: 74.46808510638297%;
-  }
-  .box .tablerow .row-fluid .span-lastpost {
-    width: 100%;
   }
 }
 
@@ -339,15 +311,8 @@ div.error {
     padding: 5px;
     float: left;
   }
-  .box .tablerow .row-fluid .responsive-ministat {
-    margin-left: 0px;
-    margin-right: 3px;
-  }
   .box .tablerow .ministat dfn {
     font-size: 8px;
-  }
-  .box .tablerow .responsive-title {
-    min-width: 300px;
   }
   #wrap h2 {
     font-size: 22px;
@@ -373,11 +338,6 @@ div.error {
     font-size: 20px;
   }
 
-  /* pull tablerow title to full length, as ministats are not shown */
-  .box .tablerow .responsive-title {
-    width: 100%;
-    min-width: 100px;
-  }
 
   #wrap div.btn-group a.firsttbitem {
     border-radius: 0px;

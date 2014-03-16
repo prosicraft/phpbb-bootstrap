@@ -12,7 +12,7 @@
 
 	<fieldset>
 	<!-- IF ERROR --><p class="error">{ERROR}</p><!-- ENDIF -->
-	<dl class="ucp-collist">
+	<dl class="collist">
 		<dt><label <!-- IF S_CHANGE_USERNAME -->for="username"<!-- ENDIF -->>{L_USERNAME}:</label><span class="description">{L_USERNAME_EXPLAIN}</span></dt>
 		<dd><!-- IF S_CHANGE_USERNAME --><input type="text" name="username" id="username" value="{USERNAME}" class="inputbox" title="{L_USERNAME}" /><!-- ELSE --><strong>{USERNAME}</strong><!-- ENDIF --></dd>
 
@@ -27,7 +27,7 @@
 </div>
 <div class="box small-padding ucp-profile-reg-details small-bottom-margin">
 
-	<dl class="ucp-collist">
+	<dl class="collist">
 		<fieldset>
 		<!-- IF S_CHANGE_PASSWORD -->
 			<dt><label for="new_password">{L_NEW_PASSWORD}:</label><span class="description">{L_CHANGE_PASSWORD_EXPLAIN}</span></dt>

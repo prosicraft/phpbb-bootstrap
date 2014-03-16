@@ -1,13 +1,9 @@
 /******************************************************************************/
 /* VIEWFORUM RELATED STUFF */
 
-.greylabel {
+/*.greylabel {
   color: #777;
-}
-
-.strong {
-  font-weight: bold;
-}
+}*/
 
 .linklist li {
   list-style-type: none;
@@ -25,153 +21,6 @@ div.table-title .table-titletext img {
   margin-right: 5px;
 }
 
-/*
-
-.responsive-linegroup {
-  display: inline-block;
-}
-
-*/
-
-/****************************************************************/
-/** 		TABLE / LIST 			**/
-/****************************************************************/
-
-
-/*    title-head       xyz-head
-    -------------------------------------
-       title              xyz          } tablerow
-*/
-
-
-/*---------------------------------------------------------*/
-/* Title */
-/*
-#page-body .table-title-head,
-#page-body .table-title {
-  width: 60%;
-  float: left;
-}
-#page-body .table-title {
-  height: 62px;
-}
-
-/*---------------------------------------------------------*/
-/* Last Post */
-/*
-#page-body .table-lastpost {
-  position: relative;
-  float: left;
-  margin-left: 25px;
-}
-#page-body .table-lastpost .link {
-  position: relative;
-  top: 2px;
-  padding-left: 10px;
-  font-size: 18px;
-}
-#page-body .table-lastpost .delimiter {
-  display: none;
-}
-#page-body .table-lastpost-head {
-  margin-left: 25px;
-}
-
-/*---------------------------------------------------------*/
-/* Replies */
-/*
-#page-body .table-replies,
-#page-body .table-replies-head {
-  min-height: 30px;
-  max-width: 100px;
-  width: 10%;
-  float: left;
-  position: relative;
-}
-#page-body .table-replies {
-  padding-top: 3px;
-  height: 59px;
-}
-
-/*---------------------------------------------------------*/
-/* Views */
-/*
-#page-body .table-views,
-#page-body .table-views-head {
-  max-width: 100px;
-  width: 10%;
-  float: left;
-  position: relative;
-  margin-left: 10px;
-}
-#page-body .table-views {
-  padding-top: 3px;
-  height: 59px;
-}
-
-
-#page-body .table-row {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
-  display: block;
-  min-height: 50px;
-}
-
-#page-body .table-row .table-icon,
-#page-body .table-hiddenrow .table-icon {
-  width: 40px;
-  height: 40px;
-  float: left;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  background-clip: padding-box;
-  position: relative;
-  top: 10px;
-  left: 0;
-}
-
-#page-body .table-hiddenrow .table-icon {
-  top: 3px;
-}
-
-#page-body .table-row .title,
-#page-body .table-hiddenrow .title {
-  padding-top: 2px;
-  margin-left: 50px;
-}
-
-#page-body .table-row .table-title h4,
-#page-body .table-hiddenrow .table-title h4 {
-  margin-bottom: 0px;
-  padding-bottom: 0px;
-}
-
-#page-body .table-hiddenrow .table-title h4 {
-  margin-top: 2px;
-  font-weight: bold;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*---------------------------------------------------------*/
 /* Media Queries */
 
@@ -188,22 +37,6 @@ div.table-title .table-titletext img {
 @media all and (max-width: 1130px)
 {
   #viewforum-selectsortdays {
-    display: none;
-  }
-}
-
-@media all and (max-width:840px)
-{
-  #page-body .responsive-mark-forums-read {
-    float: right;
-  }
-  #page-body .viewforum-pagination-top {
-    position: relative;
-    margin-right: 10px;
-    float: right;
-    text-align: right;
-  }
-  #page-body .viewforum-searchbox {
     display: none;
   }
 }

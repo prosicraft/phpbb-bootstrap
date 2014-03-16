@@ -1,8 +1,6 @@
 /******************************************************************************/
 /* UCP related stuff */
 
-
-
 /* UCP Main layout */
 .ucp-wrap {
   width: 100%;
@@ -252,130 +250,6 @@ table.ucp-pm td h4 {
   margin-top: 50px;
   padding-top: 10px;
   border-top: 1px solid #ddd;
-}
-
-
-/* collumned list */
-
-.ucp-collist {
-  display: block;
-  position: relative;
-}
-
-.ucp-collist dt {
-  display: inline-block;
-  font-weight: bold;
-  font-size: 14px;
-  width: 30%;
-  padding: 10px;
-  vertical-align: top;
-}
-
-#wrap dl.ucp-collist dt label {
-  font-weight: bold;
-  margin-left: 0px;
-}
-
-.ucp-profile-details .ucp-collist dt,
-.ucp-prefs-personal .ucp-collist dt,
-.ucp-prefs-post .ucp-collist dt,
-.ucp-prefs-view .ucp-collist dt {
-  width: 50%;
-}
-
-.ucp-profile-details .ucp-collist dd,
-.ucp-prefs-personal .ucp-collist dd,
-.ucp-prefs-post .ucp-collist dd,
-.ucp-prefs-view .ucp-collist dd {
-  width: 49%;
-}
-
-.ucp-collist dt ~ dt,
-.ucp-collist dd ~ dd {
-  border-top: 1px solid #ddd;
-}
-
-.ucp-collist dd {
-  padding: 10px;
-  display: inline-block;
-  width: 60%;
-}
-
-dl.ucp-collist dd ~ dd {
-  display: inline-block;
-  left: 0px;
-  margin: 0px;
-}
-
-.ucp-collist dd input,
-.ucp-collist dd textarea,
-.ucp-collist dd select {
-  width: 100%;
-}
-
-.ucp-collist dd input[type=radio] {
-  width: auto;
-}
-
-.ucp-collist dt .description {
-  display: block;
-}
-
-@media all and (max-width:700px)
-{
-  .ucp-collist dd {
-    width: 60%;
-  }
-  .ucp-collist dt {
-    width: 40%;
-  }
-}
-
-@media all and (max-width:500px)
-{
-  .ucp-collist dl {
-    display: block;
-    position: relative;
-    width: 100%;
-  }
-
-  dl.ucp-collist dt {
-    text-align: left;
-  }
-  dl.ucp-collist dt label {
-    font-size: 13px;
-  }
-
-  .ucp-collist dd,
-  .ucp-profile-details .ucp-collist dd,
-  .ucp-prefs-personal .ucp-collist dd,
-  .ucp-prefs-post .ucp-collist dd,
-  .ucp-prefs-view .ucp-collist dd {
-    display: block;
-    position: relative;
-    width: 100%;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .ucp-collist dd ~ dd {
-    border: 0px;
-  }
-  .ucp-collist dt,
-  .ucp-profile-details .ucp-collist dt,
-  .ucp-prefs-personal .ucp-collist dt,
-  .ucp-prefs-post .ucp-collist dt,
-  .ucp-prefs-view .ucp-collist dt {
-    display: block;
-    width: 100%;
-    padding-bottom: 5px;
-    font-size: 15px;
-    padding-left: 0px;
-    padding-right: 0px;
-  }
-  .ucp-collist dd select {
-    max-width: 100%;
-    min-width: 100%;
-  }
 }
 
 /***********************************************/

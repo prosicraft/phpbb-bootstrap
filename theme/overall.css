@@ -31,8 +31,8 @@ body#phpbb {
   overflow: hidden;
   width: 100%;
   height: 50px;
-  box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   font-size: 15px;
   background-color: #111;
   position: relative;
@@ -63,8 +63,8 @@ ul.nav li,
   padding: 15px;
   font-size: 15px;
   font-family: Arial;
-  box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   min-height: 40px;
   height: 50px;
 
@@ -487,44 +487,12 @@ ul.breadcrumb li a {
 	  left:auto;
 	  right: 0px;
 	}
-
-	ul.overall-footer-nav-right li {
-	  clear:left;
-	}
-
-	ul.overall-footer-nav li {
-	  clear:left;
-	}
-
-	ul.overall-footer-nav li .responsivenavitem,
-	ul.overall-footer-nav-right li .responsivenavitem {
-	  padding: 2px;
-	  line-height: 20px;
-	}
-
-	ul.overall-footer-nav-right li div.responsivenavitem {
-	  padding: 2px;
-	  margin-top: 2px;
-	  line-height: 20px;
-	  color: #777;
-	}
-
-	ul.overall-footer-nav li a.firstitem,
-	ul.overall-footer-nav-right li a.firstitem {
-	  padding-top: 10px;
-	}
 }
 
 @media all and (max-width:600px) {
   /* pull pagination below main toolbar */
   #wrap div.overboxctrl .pagination {
     top: 50px;
-  }
-
-  .responsive-navitem-privmsgs {
-    width: 12px;
-    overflow-x: hidden;
-    white-space: nowrap;
   }
 }
 
@@ -538,60 +506,8 @@ ul.breadcrumb li a {
    #wrap div.navbar .navbar-header .navbar-brand {
      font-size: 15px;
      font-weight: bold;
-   }
-
-  /* switch to drop-down navmenu */
-  .responsive-nav {
-    width: 50%;
-    height: 45px;
-    overflow-y: hidden;
-    overflow-x: hidden;
-    transition: height 50ms;
-    transition-delay: 100ms;
   }
 
-  #wrap .responsive-nav > li {
-    clear: left;
-    display: block;
-    float: none;
-  }
-
-  #wrap .responsive-nav > li a {
-    float: left;
-    width: 90%;
-    border: 1px solid transparent;
-    margin-right: 0px;
-    margin-left: 5px;
-    padding-right: 0px;
-  }
-
-  #wrap .responsive-nav > li a:hover {
-    background: rgba(0,0,0, 0.3);
-    border-radius: 4px;
-  }
-
-  .responsive-nav-trigger i {
-    color: #999;
-    font-size: 21px;
-  }
-  .responsive-nav-trigger {
-    display: block;
-    float: left;
-    position: relative;
-    padding: 10px 5px 10px 5px;
-    cursor: pointer;
-    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-  }
-
-  .responsive-nav-trigger:hover > i {
-    color: #e3e3e3;
-  }
-  .responsive-nav-trigger:focus {
-    outline: 0px;
-  }
-  .responsive-nav-trigger:focus + .responsive-nav {
-    height: 125px;
-  }
   #wrap .overboxctrl div.overboxleft {
     width: 100%;
     display: block;

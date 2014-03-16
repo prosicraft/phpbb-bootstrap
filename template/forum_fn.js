@@ -1,7 +1,57 @@
 /**
 * phpBB3 forum functions
 * also contains Scripts for Euphoria Theme
+*
+* (c) 2014 - failz0r
 */
+
+function InitQuickLogin() {
+
+	// check if quick login panel is used at all
+	if( $("#login-trigger") == null ) return false;
+
+	$("#login-trigger").obj.onclick = function (e) {
+		e.preventDefault();
+
+		var $qform = $("#quicklogin-form") || false;
+		var $link  = $(this).parent();
+
+		if ($qform) {
+			if ($qform.is(":visible")) {
+				$qform.hide();
+				$link.removeClass("active");
+			} else {
+				$qform.obj.style.display = "block";
+				$link.addClass("active");
+			}
+		}
+
+		e.stopPropagation();
+		return false;
+	}
+
+	$("body").on("click", function(e) {
+		$("#login-trigger").parent().removeClass("active");
+		$("#quicklogin-form").hide();
+	});
+
+	$("#quicklogin-form").on("click", function (e) {
+		e.stopPropagation();
+	});
+
+        initSelectionPrevention( "mcp-nav-main" );
+	initSelectionPrevention( "mcp-nav-sub" );
+	initSelectionPrevention( "mcp-box" );
+
+}
+
+var loadedEventHandler = setInterval( function () {
+	if( document.readyState == "complete" )
+	{
+		InitQuickLogin();
+		clearInterval( loadedEventHandler );
+	}
+}, 20 );
 
 /**
 * Window popup
@@ -475,18 +525,108 @@ function toggleNavDropdown( id, visibleValue )
 		dropDown.style.display = "none";
 }
 
+// instantiate clickbuster
+// this is a technique by Ryan Fioravanti (Google Dev)
+window.clickbuster = { coordinates: [] };
+
 // try to initialize Navbar Dropdowns
 function initNavbarDropdowns ()
 {
+	// check if we are on a handheld
+	window.ishandheld = false;
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+		&& document.addEventListener
+		&& !(/Firefox/i.test(navigator.userAgent)) )    // do not enable clickbuster for firefox as this is crap!
+	{
+		window.ishandheld = true;
+
+                window.clickbuster.preventGhostClick = function (x, y)
+		{
+			window.clickbuster.coordinates.push(x, y);
+			window.setTimeout(window.clickbuster.pop, 2500);
+		}
+
+		window.clickbuster.pop = function()
+		{
+			window.clickbuster.coordinates.splice(0, 2);
+		};
+
+		window.clickbuster.onClick = function (event) {
+			for (var i = 0; i < window.clickbuster.coordinates.length; i += 2) {
+				var x = window.clickbuster.coordinates[i];
+				var y = window.clickbuster.coordinates[i + 1];
+				if (Math.abs(event.clientX - x) < 25 && Math.abs(event.clientY - y) < 25) {
+					event.stopPropagation();
+					event.preventDefault();
+				}
+			}
+		}
+
+                document.addEventListener('click', window.clickbuster.onClick, true);
+	}
+
+	// initialize the toggles
 	var toggles = document.getElementsByClassName( 'nav-toggle' );
 	if( toggles !== "undefined" && toggles.length > 0 )
 	{
 		for( var i = 0; i < toggles.length; i++ )
 		{
 			toggles[i].style.cursor = "pointer";
-			toggles[i].onclick = function () {
-				toggleNavDropdown( this.id + "-dropdown" );
-			};
+
+			if( !window.ishandheld )
+			{
+				toggles[i].onclick = function () {
+					toggleNavDropdown( this.id + "-dropdown" );
+				};
+			}
+			else
+			{
+				// add fastclick here
+				toggles[i].handleEvent = function (event) {
+					switch( event.type ) {
+      						case 'touchstart': this.onTouchStart(event); break;
+    						case 'touchmove': this.onTouchMove(event); break;
+    						case 'touchend': this.onClick(event); break;
+    						case 'click': this.onClick(event); break;
+					}
+				}
+
+				toggles[i].reset = function ()
+				{
+                                        this.removeEventListener('touchend', this, false);
+					document.body.removeEventListener('touchmove', this, false);
+				}
+
+				toggles[i].onTouchStart = function (e) {
+					e.stopPropagation();
+
+					this.addEventListener('touchend', this, false);
+					document.body.addEventListener('touchmove', this, false);
+
+					this.startX = e.touches[0].clientX;
+					this.startY = e.touches[0].clientY;
+				}
+
+				toggles[i].onTouchMove = function (event) {
+                                        if (Math.abs(event.touches[0].clientX - this.startX) > 10 ||
+						Math.abs(event.touches[0].clientY - this.startY) > 10)
+					{
+						this.reset();
+  					}
+				}
+
+				toggles[i].onClick = function (event) {
+					event.stopPropagation();
+					this.reset();
+                                        toggleNavDropdown( this.id + "-dropdown" ); // actual click handler
+
+					if (event.type == 'touchend') {
+						window.clickbuster.preventGhostClick(this.startX, this.startY);
+					}
+				}
+
+				toggles[i].addEventListener( 'touchstart', toggles[i], false );
+			}
 		}
 
 		window.onresize = function () {
@@ -531,9 +671,3 @@ function initNavbarDropdowns ()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-
-
-/**
-* Detect JQuery existance. We currently do not deliver it, but some styles do, so why not benefit from it. ;)
-*/
-var jquery_present = typeof jQuery == 'function';

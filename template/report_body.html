@@ -10,7 +10,7 @@
 		<p><!-- IF S_REPORT_POST -->{L_REPORT_POST_EXPLAIN}<!-- ELSE -->{L_REPORT_MESSAGE_EXPLAIN}<!-- ENDIF --></p>
 
 		<fieldset>
-		<dl class="ucp-collist">
+		<dl class="collist">
 			<dt><label for="reason_id">{L_REASON}:</label></dt>
 			<dd><select name="reason_id" id="reason_id" class="full"><!-- BEGIN reason --><option value="{reason.ID}"<!-- IF reason.S_SELECTED --> selected="selected"<!-- ENDIF -->>{reason.DESCRIPTION}</option><!-- END reason --></select></dd>
 		<!-- IF S_CAN_NOTIFY -->
