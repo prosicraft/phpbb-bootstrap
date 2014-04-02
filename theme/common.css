@@ -647,6 +647,7 @@ div.overboxctrl .overboxcenter {
 .table-title-head,
 .table-title {
   width: 60%;
+  margin-left: 10px;
 }
 
 .table-title .table-titleicon {
@@ -666,6 +667,7 @@ div.overboxctrl .overboxcenter {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  margin-left: 10px;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -908,19 +910,33 @@ div.overboxctrl .overboxcenter {
   }
 }
 
-@media all and (max-width:510px)
+@media all and (max-width:580px)
 {
-  .table-head .table-status-head,
-  .table-row .table-status {
+   .table-head .table-status-head,
+  .table-row .table-status span dfn {
     display: none;
   }
-
-  .table-row .table-lastpost {
+  
+  .table-row .table-status {
+    right: 10px;
+    top: 3px;
+    text-align: right;      
   }
+  
+  .table-row .table-status span {
+    color: #888;  
+  }
+}
+
+@media all and (max-width:510px)
+{  
+  .table-row .table-lastpost {
+  }  
 
   .table-head .table-title-head,
   .table-row .table-title {
     width: 90%;
+    margin-left: 0px;    
   }
 
   .table-row .table-title h4 {
@@ -936,6 +952,22 @@ div.overboxctrl .overboxcenter {
 {
   .table-row .table-lastpost .lastpost-time {
     display: none;
+  }
+  
+  .table-row .table-lastpost {
+    padding-left: 10px;
+  }
+  
+  .table-row {
+    padding: 2px;  
+  }
+  
+  .table-row .table-title .table-titleicon {
+    display: none;  
+  }
+  
+  .table-row .table-status span {
+    font-size: 11px;  
   }
 }
 
