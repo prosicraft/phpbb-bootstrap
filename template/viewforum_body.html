@@ -35,16 +35,16 @@
 <!-- ENDIF -->
 
 <div class="row-fluid small-bottom-margin">
-	<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small not-on-smartphone"><i class="icon-cogs"></i> {L_MCP} </a><!-- ENDIF -->
+	<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small not-on-smartphone"><i class="fa fa-cogs"></i> {L_MCP} </a><!-- ENDIF -->
 </div>
 
 <!-- IF S_DISPLAY_POST_INFO or PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 	<div class="overboxctrl" <!-- IF S_HAS_SUBFORUM -->style="margin-top: 2em;"<!-- ENDIF -->>
 
 		<div class="btn-group main-toolbar overboxleft">
-		<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small only-on-smartphone"><i class="icon-cogs"></i>&nbsp;</a><!-- ENDIF -->
+		<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small only-on-smartphone"><i class="fa fa-cogs"></i>&nbsp;</a><!-- ENDIF -->
 		<!-- IF not S_IS_BOT and S_DISPLAY_POST_INFO -->
-			<a class="firsttbitem <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->btn btn-small<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->" href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED --><i class="icon-lock"></i>&nbsp;{L_FORUM_LOCKED}<!-- ELSE --><i class="icon-plus-sign"></i>&nbsp;<strong>{L_POST_TOPIC} </strong><!-- ENDIF --></a>
+			<a class="firsttbitem <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->btn btn-small<!-- ENDIF -->" title="<!-- IF S_IS_LOCKED -->{L_FORUM_LOCKED}<!-- ELSE -->{L_POST_TOPIC}<!-- ENDIF -->" href="{U_POST_NEW_TOPIC}"><span></span><!-- IF S_IS_LOCKED --><i class="fa fa-lock"></i>&nbsp;{L_FORUM_LOCKED}<!-- ELSE --><i class="fa fa-plus-square"></i>&nbsp;<strong>{L_POST_TOPIC} </strong><!-- ENDIF --></a>
 		<!-- ENDIF -->
 		<!-- IF PAGINATION or TOTAL_POSTS or TOTAL_TOPICS -->
 			<!-- IF not S_IS_BOT and U_MARK_TOPICS --><a class="btn btn-small not-on-smartphone" href="{U_MARK_TOPICS}" accesskey="m">{L_MARK_TOPICS_READ} </a><!-- ENDIF -->
@@ -192,20 +192,20 @@
 				<!-- IF topicrow.LAST_POST_SUBJECT --><i class="lastpost-topiclink"><a href="{topicrow.U_LAST_POST}">{topicrow.LAST_POST_SUBJECT} </a></i><br /><!-- ENDIF -->
 				<span class="lastpost-info">{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL} </span>
 				<!-- IF not S_IS_BOT -->
-					<a class="lastpost-desklink" href="{topicrow.U_LAST_POST}"><i class="icon-caret-right link"></i></a>
+					<a class="lastpost-desklink" href="{topicrow.U_LAST_POST}"><i class="fa fa-caret-right link"></i></a>
 				<!-- ENDIF -->
 				<br class="lastpost-delimiter" />
 				<span class="lastpost-time">
-					<i class="icon-time"></i>
+					<i class="fa fa-clock-o"></i>
 					{topicrow.LAST_POST_TIME}
 				</span>
 				<!-- IF not S_IS_BOT -->
-					<a class="lastpost-smartlink" href="{topicrow.U_LAST_POST}"><i class="icon-caret-right link"></i></a>
+					<a class="lastpost-smartlink" href="{topicrow.U_LAST_POST}"><i class="fa fa-caret-right link"></i></a>
 				<!-- ENDIF -->
 			</div>
 			<div class="table-status">
-				<span>{topicrow.REPLIES} <i class="icon-file-text-alt"></i> <dfn>{L_REPLIES}</dfn></span>
-                                <span>{topicrow.VIEWS} <i class="icon-comment-alt"></i> <dfn>{L_VIEWS}</dfn></span>
+				<span>{topicrow.REPLIES} <i class="fa fa-file-text-o"></i> <dfn>{L_REPLIES}</dfn></span>
+                                <span>{topicrow.VIEWS} <i class="fa fa-comment-o"></i> <dfn>{L_VIEWS}</dfn></span>
 			</div>
 
 		</div>

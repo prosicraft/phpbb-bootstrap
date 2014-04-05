@@ -8,15 +8,15 @@
 					<span class="lastvisit-welcome">Hi, <strong>{S_USERNAME}</strong>! </span>
 				<!-- ENDIF -->
 			</li>
-			<li class="not-on-tab"><small><i class="icon-time"></i> <!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></small></li>
+			<li class="not-on-tab"><small><i class="fa fa-clock-o"></i> <!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></small></li>
 			<li class="not-on-smartphone">
-				<small><i class="icon-time"></i> {CURRENT_TIME} </small>
+				<small><i class="fa fa-clock-o"></i> {CURRENT_TIME} </small>
 			</li>
 		</ul>
 	</div>
 
 	<div class="overboxleft">
-		<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small btn-moderation"><i class="icon-cogs"></i> <span class="text"> {L_MCP}</span></a><!-- ENDIF -->
+		<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small btn-moderation"><i class="fa fa-cogs"></i> <span class="text"> {L_MCP}</span></a><!-- ENDIF -->
 
 		<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 		<div class="btn-group">
@@ -24,21 +24,21 @@
 				<a class="btn btn-small btn-unanswered" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
 			<!-- ENDIF -->
 			<!-- IF S_DISPLAY_SEARCH -->
-				<!-- IF S_LOAD_UNREADS --><a class="btn btn-small" href="{U_SEARCH_UNREAD}"><i class="icon-bell-alt"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_UNREAD}</span></a><!-- ENDIF -->
+				<!-- IF S_LOAD_UNREADS --><a class="btn btn-small" href="{U_SEARCH_UNREAD}"><i class="fa fa-bell-o"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_UNREAD}</span></a><!-- ENDIF -->
 				<a class="btn btn-small btn-last <!-- IF not S_USER_LOGGED_IN -->btn-index-active<!-- ENDIF -->" href="{U_SEARCH_ACTIVE_TOPICS}">
-					<i class="icon-fire"></i>&nbsp;<span<!-- IF S_USER_LOGGED_IN --> class="not-on-smartphone"<!-- ENDIF -->>{L_SEARCH_ACTIVE_TOPICS} </span>
+					<i class="fa fa-fire"></i>&nbsp;<span<!-- IF S_USER_LOGGED_IN --> class="not-on-smartphone"<!-- ENDIF -->>{L_SEARCH_ACTIVE_TOPICS} </span>
 				</a>
-				<!-- IF S_USER_LOGGED_IN --><a class="btn btn-small" href="{U_SEARCH_NEW}"><i class="icon-certificate"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_NEW}</span></a><!-- ENDIF -->
+				<!-- IF S_USER_LOGGED_IN --><a class="btn btn-small" href="{U_SEARCH_NEW}"><i class="fa fa-certificate"></i>&nbsp;<span class="not-on-smartphone">{L_SEARCH_NEW}</span></a><!-- ENDIF -->
 			<!-- ENDIF -->
 		</div>
 		<!-- ENDIF -->
 
 		<!-- IF not S_USER_LOGGED_IN -->
-			<a class="btn btn-small" id="index-registerbtn" href="{U_REGISTER}"><i class="icon-edit-sign"></i> {L_REGISTER} </a>
+			<a class="btn btn-small" id="index-registerbtn" href="{U_REGISTER}"><i class="fa fa-edit"></i> {L_REGISTER} </a>
 		<!-- ENDIF -->
 
 		<!-- IF not S_IS_BOT and U_MARK_FORUMS -->
-			<a class="btn btn-small btn-markforums not-on-smartphone" href="{U_MARK_FORUMS}" accesskey="m"><i class="icon-ok"></i>{L_MARK_FORUMS_READ}</a>
+			<a class="btn btn-small btn-markforums not-on-smartphone" href="{U_MARK_FORUMS}" accesskey="m"><i class="fa fa-check"></i>{L_MARK_FORUMS_READ}</a>
 		<!-- ENDIF -->
 	</div>
 </div>

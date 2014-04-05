@@ -26,7 +26,7 @@
 			<div class="table-titletext">
 				<!-- IF S_ENABLE_FEEDS and forumrow.S_FEED_ENABLED -->
 				<a class="table-rssicon pull-right not-on-smartphone" title="{L_FEED} - {forumrow.FORUM_NAME}" href="{U_FEED}?f={forumrow.FORUM_ID}">
-					<i class="icon-rss-sign"></i>
+					<i class="fa fa-rss"></i>
 				</a>
 				<!-- ENDIF -->
 
@@ -62,21 +62,21 @@
 				<!-- IF forumrow.LAST_POST_LINK --><i class="lastpost-topiclink">{forumrow.LAST_POST_LINK} </i><br /><!-- ENDIF -->
 				<span class="lastpost-info">{L_LAST_POST} {L_POST_BY_AUTHOR} {forumrow.LAST_POSTER_FULL} </span>
 				<!-- IF not S_IS_BOT -->
-					<a class="lastpost-desklink" href="{forumrow.U_LAST_POST}"><i class="icon-caret-right"></i></a>
+					<a class="lastpost-desklink" href="{forumrow.U_LAST_POST}"><i class="fa fa-caret-right"></i></a>
 				<!-- ENDIF -->
 				{forumrow.LAST_POST}
 				<br class="lastpost-delimiter" />
-				<span class="lastpost-time"><i class="icon-time"></i> {forumrow.LAST_POST_TIME} </span>
+				<span class="lastpost-time"><i class="fa fa-clock-o"></i> {forumrow.LAST_POST_TIME} </span>
 				<!-- IF not S_IS_BOT -->
-					<a class="lastpost-smartlink" href="{forumrow.U_LAST_POST}"><i class="icon-caret-right"></i></a>
+					<a class="lastpost-smartlink" href="{forumrow.U_LAST_POST}"><i class="fa fa-caret-right"></i></a>
 				<!-- ENDIF -->
 			<!-- ELSE -->
 				<span class="lastpost-info">{L_NO_POSTS} </span>
 			<!-- ENDIF -->
 		</div>
 		<div class="table-status">
-				<span class="topics">{forumrow.TOPICS} <i class="icon-file-text-alt"></i> <dfn>{L_TOPICS} </dfn></span>
-                                <span class="posts">{forumrow.POSTS} <i class="icon-comment-alt"></i> <dfn>{L_POSTS} </dfn></span>
+				<span class="topics">{forumrow.TOPICS} <i class="fa fa-file-text-o"></i> <dfn>{L_TOPICS} </dfn></span>
+                                <span class="posts">{forumrow.POSTS} <i class="fa fa-comment-o"></i> <dfn>{L_POSTS} </dfn></span>
 		</div>
 		<!-- ENDIF -->
 	</div>

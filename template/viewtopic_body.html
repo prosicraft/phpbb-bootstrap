@@ -29,18 +29,18 @@
 	<div class="overboxleft">
 		<div class="btn-group">
 			<!-- IF U_MCP -->
-			<a href="{U_MCP}" class="btn btn-small"><i class="icon-cogs"></i><span class="not-on-tab"> {L_MCP} </span></a>
+			<a href="{U_MCP}" class="btn btn-small"><i class="fa fa-cogs"></i><span class="not-on-tab"> {L_MCP} </span></a>
 			<!-- ENDIF -->
 
 			<!-- IF not S_IS_BOT and S_DISPLAY_REPLY_INFO -->
 			<a href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->" class="btn btn-small <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->reply-icon<!-- ENDIF -->">
-				<i class="icon-comment"></i>&nbsp;<span class="not-on-tab"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF --></span>
+				<i class="fa fa-comment"></i>&nbsp;<span class="not-on-tab"><!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF --></span>
 			</a>
 			<!-- ENDIF -->
 
-			<a class="btn btn-small" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i <!-- IF S_WATCHING_TOPIC -->class="icon-eye-close"<!-- ELSE -->class="icon-eye-open"<!-- ENDIF -->></i><span class="not-on-tab"> {L_WATCH_TOPIC}</a>
-			<a class="btn btn-small" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="icon-bookmark"></i><span class="not-on-tab"> {L_BOOKMARK_TOPIC}</span></a>
-			<a class="btn btn-small" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="icon-upload-alt"></i><span class="not-on-tab"> {L_BUMP_TOPIC}</span></a>
+			<a class="btn btn-small" href="{U_WATCH_TOPIC}" title="{L_WATCH_TOPIC}"><i <!-- IF S_WATCHING_TOPIC -->class="fa fa-eye-slash"<!-- ELSE -->class="fa fa-eye-open"<!-- ENDIF -->></i><span class="not-on-tab"> {L_WATCH_TOPIC}</a>
+			<a class="btn btn-small" href="{U_BOOKMARK_TOPIC}" title="{L_BOOKMARK_TOPIC}"><i class="fa fa-bookmark"></i><span class="not-on-tab"> {L_BOOKMARK_TOPIC}</span></a>
+			<a class="btn btn-small" href="{U_BUMP_TOPIC}" title="{L_BUMP_TOPIC}"><i class="fa fa-upload"></i><span class="not-on-tab"> {L_BUMP_TOPIC}</span></a>
 		</div>
 	</div>
 
@@ -178,9 +178,9 @@
 					<ul class="profile-icons"<!-- IF not S_USER_LOGGED_IN --> style="min-height: 10px;"<!-- ENDIF -->>
                         <!-- IF not S_IS_BOT -->
 				<!-- IF postrow.U_PM or postrow.U_EMAIL or postrow.U_WWW or postrow.U_MSN or postrow.U_ICQ or postrow.U_YIM or postrow.U_AIM or postrow.U_JABBER -->
-						<!-- IF postrow.U_PM --><a href="{postrow.U_PM}" title="{L_PRIVATE_MESSAGE}"><i class="icon-comment"></i> PN</a><!-- ENDIF -->
-						<!-- IF postrow.U_EMAIL --><a href="{postrow.U_EMAIL}" title="{L_SEND_EMAIL_USER} {postrow.POST_AUTHOR}"><i class="icon-envelope"></i></a><!-- ENDIF -->
-						<!-- IF postrow.U_WWW --><a href="{postrow.U_WWW}" title="{L_VISIT_WEBSITE}: {postrow.U_WWW}"><span><i class="icon-globe"></i> Web</span></a><!-- ENDIF -->
+						<!-- IF postrow.U_PM --><a href="{postrow.U_PM}" title="{L_PRIVATE_MESSAGE}"><i class="fa fa-comment"></i> PN</a><!-- ENDIF -->
+						<!-- IF postrow.U_EMAIL --><a href="{postrow.U_EMAIL}" title="{L_SEND_EMAIL_USER} {postrow.POST_AUTHOR}"><i class="fa fa-envelope"></i></a><!-- ENDIF -->
+						<!-- IF postrow.U_WWW --><a href="{postrow.U_WWW}" title="{L_VISIT_WEBSITE}: {postrow.U_WWW}"><span><i class="fa fa-globe"></i> Web</span></a><!-- ENDIF -->
 						<!-- IF postrow.U_MSN --><a href="{postrow.U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><span>{L_MSNM}</span></a><!-- ENDIF -->
 						<!-- IF postrow.U_ICQ --><a href="{postrow.U_ICQ}" onclick="popup(this.href, 550, 320); return false;" title="{L_ICQ}"><span>{L_ICQ}</span></a><!-- ENDIF -->
 						<!-- IF postrow.U_YIM --><a href="{postrow.U_YIM}" onclick="popup(this.href, 780, 550); return false;" title="{L_YIM}"><span>{L_YIM}</span></a><!-- ENDIF -->
@@ -203,12 +203,12 @@
 		<!-- IF not S_IS_BOT -->
 			<!-- IF postrow.U_EDIT or postrow.U_DELETE or postrow.U_REPORT or postrow.U_WARN or postrow.U_INFO or postrow.U_QUOTE -->
 				<ul class="post-buttons btn-group">
-					<!-- IF postrow.U_EDIT --><a class="btn btn-small" href="{postrow.U_EDIT}" title="{L_EDIT_POST}"><i class="icon-edit"></i></a><!-- ENDIF -->
-					<!-- IF postrow.U_DELETE --><a class="btn btn-small" href="{postrow.U_DELETE}" title="{L_DELETE_POST}"><i class="icon-trash"></i></a><!-- ENDIF -->
-					<!-- IF postrow.U_REPORT --><a class="btn btn-small" href="{postrow.U_REPORT}" title="{L_REPORT_POST}"><i class="icon-warning-sign"></i></a><!-- ENDIF -->
-					<!-- IF postrow.U_WARN --><a class="btn btn-small" href="{postrow.U_WARN}" title="{L_WARN_USER}"><i class="icon-ban-circle"></i></a><!-- ENDIF -->
-					<!-- IF postrow.U_INFO --><a class="btn btn-small" href="{postrow.U_INFO}" title="{L_INFORMATION}"><i class="icon-info-sign"></i></a><!-- ENDIF -->
-					<!-- IF postrow.U_QUOTE --><a class="btn btn-small" href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}"><i class="icon-quote-right"></i></a><!-- ENDIF -->
+					<!-- IF postrow.U_EDIT --><a class="btn btn-small" href="{postrow.U_EDIT}" title="{L_EDIT_POST}"><i class="fa fa-edit"></i></a><!-- ENDIF -->
+					<!-- IF postrow.U_DELETE --><a class="btn btn-small" href="{postrow.U_DELETE}" title="{L_DELETE_POST}"><i class="fa fa-trash-o"></i></a><!-- ENDIF -->
+					<!-- IF postrow.U_REPORT --><a class="btn btn-small" href="{postrow.U_REPORT}" title="{L_REPORT_POST}"><i class="fa fa-warning"></i></a><!-- ENDIF -->
+					<!-- IF postrow.U_WARN --><a class="btn btn-small" href="{postrow.U_WARN}" title="{L_WARN_USER}"><i class="fa fa-ban"></i></a><!-- ENDIF -->
+					<!-- IF postrow.U_INFO --><a class="btn btn-small" href="{postrow.U_INFO}" title="{L_INFORMATION}"><i class="fa fa-info-circle"></i></a><!-- ENDIF -->
+					<!-- IF postrow.U_QUOTE --><a class="btn btn-small" href="{postrow.U_QUOTE}" title="{L_REPLY_WITH_QUOTE}"><i class="fa fa-quote-right"></i></a><!-- ENDIF -->
 				</ul>
 			<!-- ENDIF -->
 		<!-- ENDIF -->
@@ -244,7 +244,7 @@
 			<!-- IF postrow.BUMPED_MESSAGE --><div class="notice"><br /><br />{postrow.BUMPED_MESSAGE}</div><!-- ENDIF -->
 			<!-- IF postrow.SIGNATURE --><div id="sig{postrow.POST_ID}" class="signature">{postrow.SIGNATURE}</div><!-- ENDIF -->
 
-			<div class="pull-right"><a href="#wrap" title="{L_BACK_TO_TOP}"><i class="icon-chevron-up"></i></a></div>
+			<div class="pull-right"><a href="#wrap" title="{L_BACK_TO_TOP}"><i class="fa fa-chevron-up"></i></a></div>
 
 		</div>
 		<div style="clear:left"></div>
@@ -287,7 +287,7 @@
 	<div class="left">
 		<a href="{U_POST_REPLY_TOPIC}" title="<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->">
 			<div class="not-on-smartphone btn btn-small <!-- IF S_IS_LOCKED -->locked-icon<!-- ELSE -->reply-icon<!-- ENDIF -->">
-				<span><i class="icon-comment"></i></span>&nbsp;<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->
+				<span><i class="fa fa-comment"></i></span>&nbsp;<!-- IF S_IS_LOCKED -->{L_TOPIC_LOCKED_SHORT}<!-- ELSE -->{L_POST_REPLY}<!-- ENDIF -->
 			</div>
 		</a>
 	</div>
@@ -369,12 +369,12 @@
 			<div class="table-lastpost">
 				<span class="lastpost-info">{L_LAST_POST} {L_POST_BY_AUTHOR} {related.LAST_POST_AUTHOR} </span>
 				<!-- IF not S_IS_BOT -->
-					<a class="lastpost-desklink" href="{related.U_LAST_POST}"><i class="icon-caret-right link"></i></a>
+					<a class="lastpost-desklink" href="{related.U_LAST_POST}"><i class="fa fa-caret-right link"></i></a>
 				<!-- ENDIF -->
 				<br class="lastpost-delimiter" />
-				<span class="lastpost-time"><i class="icon-time"></i> {related.LAST_POST_TIME} </span>
+				<span class="lastpost-time"><i class="fa fa-clock-o"></i> {related.LAST_POST_TIME} </span>
 				<!-- IF not S_IS_BOT -->
-					<a class="lastpost-smartlink" href="{related.U_LAST_POST}"><i class="icon-caret-right link"></i></a>
+					<a class="lastpost-smartlink" href="{related.U_LAST_POST}"><i class="fa fa-caret-right link"></i></a>
 				<!-- ENDIF -->
 				<!-- IF related.U_FORUM and not related.S_POST_GLOBAL --><br class="not-on-tab" /><a class="not-on-tab topictitle" href="{related.U_FORUM}" title="{related.FORUM}">{related.FORUM}</a><!-- ENDIF -->
 			</div>
