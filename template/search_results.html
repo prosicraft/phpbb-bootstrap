@@ -48,14 +48,12 @@
 <!-- IF S_SHOW_TOPICS -->
 
 	<!-- IF .searchresults -->
-	<div class="box small-padding medium-bottom-margin">
-	<div class="table-wrap">
+	<div class="box small-padding medium-bottom-margin table-wrap">
 
 		<div class="table-head">
 			<div class="table-title-head">{L_TOPICS} </div>
-			<div class="table-replies-head">{L_REPLIES} </div>
-			<div class="table-views-head">{L_VIEWS} </div>
 			<div class="table-lastpost-head"><span>{L_LAST_POST} </span></div>
+			<div class="table-status-head">Status </div>
 		</div>
 
 		<!-- BEGIN searchresults -->
@@ -77,16 +75,6 @@
 						</div>
 					</div>
 				</div>
-				<div class="table-replies">
-					<div class="ministat">
-						<span>{searchresults.TOPIC_REPLIES} <dfn>{L_REPLIES} </dfn></span>
-					</div>
-				</div>
-				<div class="table-views">
-					<div class="ministat">
-						<span>{searchresults.TOPIC_VIEWS} <dfn>{L_VIEWS} </dfn></span>
-					</div>
-				</div>
 				<div class="table-lastpost">
 					<span class="lastpost-info">
 						{L_LAST_POST} {L_POST_BY_AUTHOR} {searchresults.LAST_POST_AUTHOR_FULL}
@@ -95,15 +83,18 @@
 						<a class="lastpost-desklink" href="{searchresults.U_LAST_POST}"><i class="fa fa-caret-right"></i> </a>
 					<!-- ENDIF -->
 					<br class="lastpost-delimiter" />
-					<span class="lastpost-time">{searchresults.LAST_POST_TIME} </span>
+					<span class="lastpost-time"><i class="fa fa-clock-o"></i> {searchresults.LAST_POST_TIME} </span>
 					<!-- IF not S_IS_BOT -->
 						<a class="lastpost-smartlink" href="{searchresults.U_LAST_POST}"><i class="fa fa-caret-right"></i> </a>
 					<!-- ENDIF -->
 				</div>
+                                <div class="table-status">
+					<span>{searchresults.TOPIC_REPLIES} <i class="fa fa-file-text-o"></i> <dfn>{L_REPLIES} </dfn></span>
+					<span>{searchresults.TOPIC_VIEWS} <i class="fa fa-comment-o"></i> <dfn>{L_VIEWS} </dfn></span>
+				</div>
 			</div>
 		<!-- END searchresults -->
 
-	</div>
 	</div>
 	<!-- ELSE -->
 		<div class="box medium-bottom-margin">
