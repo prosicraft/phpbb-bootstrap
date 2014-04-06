@@ -1,0 +1,24 @@
+/**
+ * phpBB Bootstrap Theme
+ * @author geekmy, failz0r
+ */
+
+@import url("bootstrapextend.css");
+@import url("common.css");
+@import url("overall.css");
+
+table.viewonline {
+  border-spacing: 0px;
+}
+
+table.viewonline th {
+  border-bottom: 1px solid #999;
+  font-size: 16px;  
+}
+
+@media all and (max-width: 1000px)
+{
+  table.viewonline th {
+    font-size: 14px;      
+  }
+}
