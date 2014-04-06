@@ -731,7 +731,7 @@ div.overboxctrl .overboxcenter {
   max-width: 200px;
   min-width: 100px;
   vertical-align: middle;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .table-row .table-status span {
   font-size: 13px;
