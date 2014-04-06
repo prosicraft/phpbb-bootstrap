@@ -815,12 +815,22 @@ div.overboxctrl .overboxcenter {
 
 @media all and (max-width: 815px)
 {
+  .box.table-wrap {
+    font-size: 0px; /* fixes unnecessary padding betw. display-inlines */         
+  }
+
   .table-row .table-title h4 {
     font-size: 17px;
   }
   .table-head .table-title-head,
   .table-row .table-title {
+    margin-left: 0px;
     width: 80%;
+  }
+
+  .table-row .table-title {
+    min-height: 15px;
+    height: auto;
   }
 
   .table-head .table-status-head {
@@ -853,8 +863,10 @@ div.overboxctrl .overboxcenter {
     min-height: 5px;
     margin-top: 0px;
     padding-top: 0px;
-    padding-left: 31px;
+    padding-left: 41px;
+    padding-bottom: 0px;
     border-top: 1px dashed #ccc;
+    min-height: 29px;
   }
 
   .table-row .table-lastpost .lastpost-time {
@@ -864,10 +876,10 @@ div.overboxctrl .overboxcenter {
   .table-row .table-lastpost .lastpost-info,
   .table-row .table-lastpost .lastpost-time {
     display: inline-block;
-    vertical-align: middle;
+    vertical-align: top;
     margin-right: 10px;
     font-size: 10px;
-    padding-top: 4px;
+    padding-top: 6px;
   }
 
   .table-row .table-lastpost .lastpost-delimiter {
@@ -895,14 +907,18 @@ div.overboxctrl .overboxcenter {
     margin-top: 0px;
   }
 
-  .table-row .table-title {
-    min-height: 15px;
-    height: auto;
-  }
-
   .table-row .table-title .table-titletext {
     max-width: 90%;
-    width: 90%;
+    width: 90%;    
+  }
+  
+  .table-row .table-title .table-titletext .table-titledesc {
+    min-height: 16px;    
+  }
+  
+  .table-row .table-title .table-titlemeta {
+    min-height: 0px;
+    height: 0px;  
   }
 
   .table-row * {
