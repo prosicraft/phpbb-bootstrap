@@ -691,6 +691,7 @@ div.overboxctrl .overboxcenter {
   width: auto;
   min-height: 5px;
   padding-top: 7px;
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
 
