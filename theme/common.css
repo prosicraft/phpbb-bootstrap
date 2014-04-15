@@ -412,6 +412,12 @@ dl.collist dd ~ dd {
   height: auto;
 }
 
+.row-inline select,
+.row-inline input[type=input],
+.row-inline form {
+  color: #777;
+}
+
 .row-inline > * {
   display: inline-block;
   vertical-align: middle;
@@ -479,6 +485,12 @@ div.overboxctrl {
   position: relative;
   height: auto;
   margin-bottom: 20px;
+}
+
+div.overboxctrl form,
+div.overboxctrl select,
+div.overboxctrl input[type=text] {
+  color: #777;
 }
 
 div.overboxctrl .overboxright,
