@@ -333,13 +333,11 @@
 <!-- INCLUDE jumpbox.html -->
 
 <!-- IF S_RELATED_RESULTS -->
-<div class="well">
-	<div class="table-wrap">
+	<div class="box table-wrap medium-bottom-margin">
 		<div class="table-head">
 			<div class="table-title-head">{L_RELATED_TOPICS} </div>
-			<div class="table-replies-head">{L_REPLIES} </div>
-			<div class="table-views-head">{L_VIEWS} </div>
 			<div class="table-lastpost-head">{L_LAST_POST} </div>
+			<div class="table-status-head">Status </div>
 		</div>
 
 		<!-- BEGIN related -->
@@ -356,16 +354,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="table-replies">
-				<div class="ministat">
-					<span>{related.REPLIES} <dfn>{L_REPLIES} </dfn></span>
-				</div>
-			</div>
-			<div class="table-views">
-				<div class="ministat">
-					<span>{related.VIEWS} <dfn>{L_VIEWS} </dfn></span>
-				</div>
-			</div>
 			<div class="table-lastpost">
 				<span class="lastpost-info">{L_LAST_POST} {L_POST_BY_AUTHOR} {related.LAST_POST_AUTHOR} </span>
 				<!-- IF not S_IS_BOT -->
@@ -378,10 +366,13 @@
 				<!-- ENDIF -->
 				<!-- IF related.U_FORUM and not related.S_POST_GLOBAL --><br class="not-on-tab" /><a class="not-on-tab topictitle" href="{related.U_FORUM}" title="{related.FORUM}">{related.FORUM}</a><!-- ENDIF -->
 			</div>
+                        <div class="table-status">
+				<span>{related.REPLIES} <i class="fa fa-file-text-o"></i> <dfn>{L_REPLIES} </dfn></span>
+				<span>{related.VIEWS} <i class="fa fa-eye"></i> <dfn>{L_VIEWS} </dfn></span>
+			</div>
 		</div>
 		<!-- END related -->
 	</div>
-</div>
 <!-- ENDIF -->
 
 <!-- IF S_DISPLAY_ONLINE_LIST -->
