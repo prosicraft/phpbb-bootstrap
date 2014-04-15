@@ -1120,6 +1120,12 @@ div.overboxctrl .overboxcenter {
   min-height: 35px;
 }
 
+.table-head a:hover,
+.table-head a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
 .table-head div,
 .table-row div {
   display: inline-block;
