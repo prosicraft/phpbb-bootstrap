@@ -106,6 +106,14 @@ label.strong {
 
 /* Pagination fix */
 
+#wrap .pagination-total,
+#wrap .pagination-bottom,
+#wrap .pagination-top {
+  height: 37px;
+  min-height: 37px;
+  max-height: 37px;
+}
+
 #wrap .pagination-total {
   display: inline-block;
   margin: 0px 20px;
@@ -113,6 +121,7 @@ label.strong {
   color: #888;
   letter-spacing: 1px;
   vertical-align: middle;
+  padding-top: 10px;
 }
 
 #wrap .pagination-total + .pagination-bottom,
