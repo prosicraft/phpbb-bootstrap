@@ -19,6 +19,8 @@
 div.table-title .table-titletext img {
   float: left;
   margin-right: 5px;
+  margin-top: 4px;
+  min-height: 9px;
 }
 
 /*---------------------------------------------------------*/
