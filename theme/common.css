@@ -201,6 +201,9 @@ h2 a {
   font-size: 12px;
   color: #333;
 }
+input.btn {
+  vertical-align: top;
+}
 .btn [class^="icon-"], [class*=" icon-"] {
   vertical-align: top; /* mozilla icon alignment fix */
   line-height: 14px;
