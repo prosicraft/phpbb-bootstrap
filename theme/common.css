@@ -611,6 +611,7 @@ div.overboxctrl .overboxcenter {
 .table-wrap {
   position: relative;
   width: 100%;
+  font-size: 0px;
 }
 
 .box.table-wrap {
@@ -634,6 +635,8 @@ div.overboxctrl .overboxcenter {
   border-top: 1px solid #888;
   font-size: 0px;
   padding: 0px 20px;
+  max-height: 64px;
+  overflow-y: hidden;
 }
 .table-row ~ .table-row {
   border-top: 1px solid #aaa;
@@ -711,9 +714,10 @@ div.overboxctrl .overboxcenter {
 
 .table-title .table-titletext h4 {
   margin: 0px;
-  min-height: 20px;
+  min-height: 18px;
   font-size: 18px;
   font-weight: normal;
+  line-height: 18px;
 }
 
 .table-title a.table-titlenewpost img {
@@ -852,7 +856,7 @@ div.overboxctrl .overboxcenter {
 @media all and (max-width: 815px)
 {
   .box.table-wrap {
-    font-size: 0px; /* fixes unnecessary padding betw. display-inlines */         
+    font-size: 0px; /* fixes unnecessary padding betw. display-inlines */
   }
 
   .table-row .table-title h4 {
@@ -946,16 +950,16 @@ div.overboxctrl .overboxcenter {
 
   .table-row .table-title .table-titletext {
     max-width: 90%;
-    width: 90%;    
+    width: 90%;
   }
-  
+
   .table-row .table-title .table-titletext .table-titledesc {
-    min-height: 16px;    
+    min-height: 16px;
   }
-  
+
   .table-row .table-title .table-titlemeta {
     min-height: 0px;
-    height: 0px;  
+    height: 0px;
   }
 
   .table-row * {
@@ -969,27 +973,27 @@ div.overboxctrl .overboxcenter {
   .table-row .table-status span dfn {
     display: none;
   }
-  
+
   .table-row .table-status {
     right: 10px;
     top: 3px;
-    text-align: right;      
+    text-align: right;
   }
-  
+
   .table-row .table-status span {
-    color: #888;  
+    color: #888;
   }
 }
 
 @media all and (max-width:510px)
-{  
+{
   .table-row .table-lastpost {
-  }  
+  }
 
   .table-head .table-title-head,
   .table-row .table-title {
     width: 90%;
-    margin-left: 0px;    
+    margin-left: 0px;
   }
 
   .table-row .table-title h4 {
@@ -1006,21 +1010,21 @@ div.overboxctrl .overboxcenter {
   .table-row .table-lastpost .lastpost-time {
     display: none;
   }
-  
+
   .table-row .table-lastpost {
     padding-left: 10px;
   }
-  
+
   .table-row {
-    padding: 2px;  
+    padding: 2px;
   }
-  
+
   .table-row .table-title .table-titleicon {
-    display: none;  
+    display: none;
   }
-  
+
   .table-row .table-status span {
-    font-size: 11px;  
+    font-size: 11px;
   }
 }
 

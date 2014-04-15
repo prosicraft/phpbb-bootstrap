@@ -1068,6 +1068,7 @@ div.overboxctrl .overboxcenter {
 .table-wrap {
   position: relative;
   width: 100%;
+  font-size: 0px;
 }
 
 .box.table-wrap {
@@ -1091,6 +1092,8 @@ div.overboxctrl .overboxcenter {
   border-top: 1px solid #888;
   font-size: 0px;
   padding: 0px 20px;
+  max-height: 64px;
+  overflow-y: hidden;
 }
 .table-row ~ .table-row {
   border-top: 1px solid #aaa;
@@ -1168,9 +1171,10 @@ div.overboxctrl .overboxcenter {
 
 .table-title .table-titletext h4 {
   margin: 0px;
-  min-height: 20px;
+  min-height: 18px;
   font-size: 18px;
   font-weight: normal;
+  line-height: 18px;
 }
 
 .table-title a.table-titlenewpost img {
