@@ -402,6 +402,10 @@ ul.breadcrumb li a {
   padding-left: 20px;
 }
 
+.pagefooter .version {
+  display: none;
+}
+
 /********************************************************************/
 /* QUICK LOGIN BOX */
 #wrap .quicklogin {

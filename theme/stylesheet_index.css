@@ -1514,6 +1514,10 @@ div.overboxctrl .overboxcenter {
   overflow: hidden;
 }
 
+.pagefooter .version {
+  color: #999;
+}
+
 .lastvisit {
   margin: 0;
   color: #888;
