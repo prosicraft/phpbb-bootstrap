@@ -1045,13 +1045,20 @@ div.overboxctrl .overboxcenter {
 
 #pageheader {
   padding: 20px;
-  background: #555555 url('./img/head.jpg') repeat 0 0;
-  background-size: 100%;
-  background-position: center;
+  background: none; /* For background on non-smartphone screen see media query below*/
   color: #fff;
   text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4);
   min-height: 200px;
 }
+@media all and (min-width: 441px)
+{
+  #pageheader {
+    background: #555555 url('./img/head.jpg') repeat 0 0;
+    background-size: 100%;
+    background-position: center;
+  }
+}
+
 #pageheader .headcontainer {
   clear:both;
 }
