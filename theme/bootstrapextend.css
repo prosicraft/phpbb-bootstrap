@@ -123,6 +123,9 @@ label.strong {
   vertical-align: middle;
   padding-top: 10px;
 }
+#wrap .pagination-top > .pagination-total {
+  margin-right: 0px;
+}
 
 #wrap .pagination-total + .pagination-bottom,
 #wrap .pagination-total + .pagination-top {
