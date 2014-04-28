@@ -8,7 +8,7 @@
 	<h3>{L_IMPORTANT_NEWS} </h3>
 
 	<!-- BEGIN topicrow -->
-		<div class="box <!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
+  <div class="box <!-- IF topicrow.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
 			<div class="table-wrap">
 			<div class="table-row table-phantomrow">
 				<div class="table-title">
@@ -19,12 +19,12 @@
 							<span class="table-titledesc"><!-- IF topicrow.ATTACH_ICON_IMG -->{topicrow.ATTACH_ICON_IMG} <!-- ENDIF -->{L_POST_BY_AUTHOR} {topicrow.TOPIC_AUTHOR_FULL} &raquo; {topicrow.FIRST_POST_TIME}</span>
 					</div>
 				</div>
-				<div class="table-lastpost not-on-handheld"><span>{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
+				<div class="table-lastpost not-on-handheld no-minheight"><span class="lastpost-info notitle">{L_LAST_POST} {L_POST_BY_AUTHOR} {topicrow.LAST_POST_AUTHOR_FULL}
 					<a href="{topicrow.U_LAST_POST}">{LAST_POST_IMG}</a> <br />{topicrow.LAST_POST_TIME}</span>
 				</div>
 			</div>
 			</div>
-		</div>
+  </div>
 	<!-- END topicrow -->
 <!-- ENDIF -->
 

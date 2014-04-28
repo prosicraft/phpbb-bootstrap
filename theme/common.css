@@ -644,6 +644,9 @@ div.overboxctrl .overboxcenter {
 .table-row:nth-child(2n) {
   background-color: #e3e3e3;
 }
+.table-wrap > .table-row:first-child {
+  border-top: 0;
+}
 
 /*
 .table-phantomrow:first-child {
@@ -801,10 +804,16 @@ div.overboxctrl .overboxcenter {
   text-overflow: ellipsis;
   font-size: 14px;
 }
+.table-row .table-lastpost.no-minheight {
+  min-height: 0;
+}
 
 .table-row .table-lastpost .lastpost-info:first-child {
   margin-top: 10px;
   display: inline-block;
+}
+.table-row .table-lastpost .lastpost-info.notitle {
+  margin-top: 0px;
 }
 
 .table-row .table-lastpost .lastpost-topiclink {
