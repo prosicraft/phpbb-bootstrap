@@ -178,9 +178,9 @@ h2 a {
   display: block;
   box-sizing: border-box;
   position: relative;
-  left: 25%;
+  /*left: 25%;*/
   margin: 8px 0px;
-  /*margin-left: 10px;*/
+  margin-left: 25%;
 }
 
 .box dl dd ~ dd:last-child {
