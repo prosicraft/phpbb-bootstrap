@@ -44,6 +44,12 @@
   position: relative;
   text-align: right;
 }
+@media all and (min-width: 690px)
+{
+  .submitrow {
+    text-align: left;
+  }
+}
 
 .submitrow fieldset {
   display: inline-block;

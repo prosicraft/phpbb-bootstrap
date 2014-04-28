@@ -435,13 +435,15 @@ ul.breadcrumb li a {
   font-size: 15px;
 }
 .quicklogin .btn-primary {
-  background-color: #66f;
+  background-color: #22e;
   width: 100%;
   border-color: #33e;
+  color: #ddd;
 }
 .quicklogin .btn-primary:hover {
-  background-color: #33e;
-  color: #eee;
+  background-color: #88f;
+  color: #222;
+  cursor: pointer;
 }
 .quicklogin .chk-autologin {
   font-size: 11px;
@@ -451,11 +453,11 @@ ul.breadcrumb li a {
   margin-bottom: 20px;
 }
 .quicklogin .chk-autologin input[type=checkbox] {
+  float: left; /* make sure checkbox text is independent of margin-top (firefox-fix) */
   margin-left: 0px;
-  margin-top: 0px;
+  margin-top: 3px;
   margin-right: 5px;
 }
-
 
 @media all and (max-width:1000px){
 	/** PAGE FOOTER **/
