@@ -974,10 +974,27 @@ div.overboxctrl .overboxcenter {
   text-align: center;
 }
 
+div.overboxctrl .overboxleft > .btn-group {
+  margin-left: 0px;
+}
+
+#wrap .btn-moderation.only-on-smartphone {
+  display: none;
+}
+#wrap .btn-moderation.only-on-smartphone + .btn {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
 @media all and (max-width:980px) {
   /** OVERBOX TOOLBOX **/
-  #wrap div.overboxctrl .overboxleft .btn-moderation .text {
+  #wrap div.overboxctrl .btn-moderation .text {
     display: none;
+  }
+  #wrap div.overboxctrl .btn-moderation {
+    /* make it thumb-friendly */
+    min-width: 50px;
+    text-align: center;
   }
 
   #wrap div.overboxctrl .overboxleft .btn-markforums {
@@ -993,16 +1010,20 @@ div.overboxctrl .overboxcenter {
 }
 
 @media all and (max-width:640px) {
+  #wrap .overboxctrl.overbx-index .overboxleft {
+    font-size: 0px;
+  }
   #wrap .overboxctrl .overboxleft .btn-unanswered {
     display:none;
   }
+  #wrap .overboxctrl .overboxleft .btn-group > .btn-unanswered:first-child + .btn {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
   #wrap .overboxctrl .overboxleft .btn-moderation {
-    margin-right: -2px;
+    /*margin-right: -3px;*/
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-  }
-  #wrap .overboxctrl .overboxleft .btn-moderation + .btn-group {
-    margin-left: -2px;
   }
   #wrap .btn-index-active {
     border-top-left-radius: 4px;
@@ -1026,7 +1047,6 @@ div.overboxctrl .overboxcenter {
     max-height: 30px;
   }
   #wrap div.overbx-index .overboxleft .btn-moderation {
-    margin-bottom: 20px;
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
   }

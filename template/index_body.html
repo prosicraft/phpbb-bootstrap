@@ -16,10 +16,11 @@
 	</div>
 
 	<div class="overboxleft">
-		<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small btn-moderation"><i class="fa fa-cogs"></i> <span class="text"> {L_MCP}</span></a><!-- ENDIF -->
+		<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small btn-moderation not-on-smartphone"><i class="fa fa-cogs"></i> <span class="text"> {L_MCP}</span></a><!-- ENDIF -->
 
 		<!-- IF S_DISPLAY_SEARCH or (S_USER_LOGGED_IN and not S_IS_BOT) -->
 		<div class="btn-group">
+                	<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small btn-moderation only-on-smartphone"><i class="fa fa-cogs"></i></a><!-- ENDIF -->
 			<!-- IF S_DISPLAY_SEARCH -->
 				<a class="btn btn-small btn-unanswered" href="{U_SEARCH_UNANSWERED}">{L_SEARCH_UNANSWERED}</a>
 			<!-- ENDIF -->
