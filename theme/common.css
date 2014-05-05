@@ -729,6 +729,10 @@ div.overboxctrl .overboxcenter {
   line-height: 18px;
 }
 
+.table-title .table-titletext h4 .lockicon {
+  display: none;
+}
+
 .table-title a.table-titlenewpost img {
   width: auto;
   min-height: 5px;
@@ -1046,6 +1050,13 @@ div.overboxctrl .overboxcenter {
 
   .table-row .table-status span {
     font-size: 11px;
+  }
+  .table-row .table-title .table-titletext h4 .lockicon {
+    display: inline-block;
+    font-size: 12px;
+    vertical-align: top;
+    padding-top: 5px;
+    color: #5e5e5e;
   }
 }
 
