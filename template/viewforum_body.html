@@ -164,7 +164,7 @@
 					<!-- ENDIF -->
 					<!-- IF topicrow.TOPIC_ICON_IMG and S_TOPIC_ICONS --><img src="{T_ICONS_PATH}{topicrow.TOPIC_ICON_IMG}" /><!-- ENDIF -->
 					<h4>
-						<i class="fa fa-lock lockicon"></i> <a href="{topicrow.U_VIEW_TOPIC}" class="forumtitle">{topicrow.TOPIC_TITLE} </a>
+						<!-- IF topicrow.S_TOPIC_LOCKED --><i class="fa fa-lock lockicon"></i> <!-- ENDIF --><a href="{topicrow.U_VIEW_TOPIC}" class="forumtitle">{topicrow.TOPIC_TITLE} </a>
 					</h4>
 					<!-- IF topicrow.S_TOPIC_REPORTED -->
 						<a href="{topicrow.U_MCP_REPORT}" class="table-titlereported">{REPORTED_IMG} </a>
