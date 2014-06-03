@@ -716,8 +716,11 @@ div.overboxctrl .overboxcenter {
 .table-row .table-title h4,
 .table-row .table-title h4 a {
   width: auto;
-  overflow: hidden;
   text-overflow: ellipsis;
+
+  /* do not use overflow-hidden here. This will also cut some lower pixels of
+    letters like "g" or "y"! */
+  line-height: 20px;
 
   /* do not use inline-block here. Firefox will hide the whole title if the
     stats overlap with the title. however this fix does not affect the
@@ -730,7 +733,7 @@ div.overboxctrl .overboxcenter {
   min-height: 18px;
   font-size: 18px;
   font-weight: normal;
-  line-height: 18px;
+  line-height: 20px;
 }
 
 .table-title .table-titletext h4 .lockicon {
