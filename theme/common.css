@@ -715,10 +715,14 @@ div.overboxctrl .overboxcenter {
 
 .table-row .table-title h4,
 .table-row .table-title h4 a {
-  display: inline-block;
   width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  /* do not use inline-block here. Firefox will hide the whole title if the
+    stats overlap with the title. however this fix does not affect the
+    beheaviour in other browsers. */
+  display: block;
 }
 
 .table-title .table-titletext h4 {
@@ -1051,6 +1055,7 @@ div.overboxctrl .overboxcenter {
   .table-row .table-status span {
     font-size: 11px;
   }
+
   .table-row .table-title .table-titletext h4 .lockicon {
     display: inline-block;
     font-size: 12px;

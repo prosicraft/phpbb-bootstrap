@@ -1189,10 +1189,14 @@ div.overboxctrl .overboxleft > .btn-group {
 
 .table-row .table-title h4,
 .table-row .table-title h4 a {
-  display: inline-block;
   width: auto;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  /* do not use inline-block here. Firefox will hide the whole title if the
+    stats overlap with the title. however this fix does not affect the
+    beheaviour in other browsers. */
+  display: block;
 }
 
 .table-title .table-titletext h4 {
