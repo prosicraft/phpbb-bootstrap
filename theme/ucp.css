@@ -219,13 +219,29 @@ table.ucp-pm td h4 {
   margin-top: 3px;
 }
 
-@media all and (max-width: 600px)
+#pm-viewfolder-options .row-inline {
+  min-height: 70px;
+}
+#pm-viewfolder-options .row-inline div#mark-actions.right {
+  display: block;
+  margin-top: 10px;
+}
+
+@media all and (max-width: 840px)
 {
-  fieldset#pm-viewfolder-options .row-inline div.left.only-on-tab#pm-tab-markoptions * {
-    display: none;
+  #pm-viewfolder-options .row-inline div#mark-actions.right {
+    display: inline-block;
+    margin-top: 0px;
   }
-  fieldset#pm-viewfolder-options .row-inline div.left.only-on-tab#pm-tab-markoptions {
-    height: 30px;
+  #pm-viewfolder-options div.row-inline > div#mark-functions {
+    right: auto;
+    left: 0px;
+  }
+}
+@media all and (max-width: 650px)
+{
+  #pm-viewfolder-options div.row-inline > div#mark-functions select {
+    max-width: 100px;
   }
 }
 
@@ -239,6 +255,10 @@ table.ucp-pm td h4 {
     font-weight: bold;
     margin-bottom: 0px;
     margin-top: 0px;
+  }
+
+  #pm-viewfolder-options div.row-inline > div#mark-functions {
+    display: none;
   }
 }
 

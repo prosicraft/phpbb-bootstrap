@@ -92,9 +92,9 @@
 
 	<!-- IF FOLDER_CUR_MESSAGES neq 0 -->
 	<fieldset id="pm-viewfolder-options">
-		<div class="row-inline small-bottom-margin not-on-tab">
+		<div class="row-inline small-bottom-margin">
 			<div class="left">
-				<label class="greylabel pull-left" for="export_option">{L_EXPORT_FOLDER}:
+				<label class="greylabel pull-left not-on-tab" for="export_option">{L_EXPORT_FOLDER}:
 					<select name="export_option" id="export_option">
 						<option value="CSV">{L_EXPORT_AS_CSV}</option>
 						<option value="CSV_EXCEL">{L_EXPORT_AS_CSV_EXCEL}</option>
@@ -103,24 +103,16 @@
 					<input class="btn btn-small" type="submit" name="submit_export" value="{L_GO}" /><br />
 				</label>
 			</div>
-			<div class="right">
-				<select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select>
+			<div class="right" id="mark-functions">
+				<select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS} </select>
 				<input class="btn btn-small" type="submit" name="submit_mark" value="{L_GO}" />
 			</div>
-		</div>
-		<div class="row-inline">
-			<div class="left not-on-tab" style="height: 30px;"></div>
-                        <div class="left only-on-tab" id="pm-tab-markoptions">
-				<select name="mark_option">{S_MARK_OPTIONS}{S_MOVE_MARKED_OPTIONS}</select>
-				<input class="btn btn-small" type="submit" name="submit_mark" value="{L_GO}" />
-			</div>
-			<div class="right btn-group">
+			<div class="right btn-group only-on-tab" id="mark-actions">
 				<a class="btn btn-small" href="#" onclick="marklist('viewfolder', 'marked_msg', true); return false;">{L_MARK_ALL}</a>
 				<a class="btn btn-small" href="#" onclick="marklist('viewfolder', 'marked_msg', false); return false;">{L_UNMARK_ALL}</a>
 			</div>
 		</div>
 	</fieldset>
-
 	<hr />
 
 	<ul class="linklist">
