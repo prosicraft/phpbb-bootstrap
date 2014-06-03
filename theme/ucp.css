@@ -322,11 +322,17 @@ fieldset.ucp-profile-details dl {
 .ucp-pm .ucp-pmprofile dt a {
   display: inline-block;
 }
+.ucp-pm .ucp-pmprofile dt a img {
+  width: 100%;
+  height: auto;
+  max-width: 130px;
+}
 .ucp-pm .ucp-pmprofile dt a:first-child {
   font-size: 0px;
 }
 .ucp-pm .ucp-pmprofile dd {
   margin: 0px;
+  padding: 0px;
 }
 .ucp-pm .ucp-pmprofile dd ~ dd {
   left: 0px;
@@ -360,6 +366,48 @@ fieldset.ucp-profile-details dl {
   border-top: 2px solid #ccc;
   color: #888;
 }
+
+@media all and (max-width: 600px)       /* tablet fixes */
+{
+  .ucp-pm .ucp-pmprofile {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .ucp-pm .ucp-pmprofile dt {
+    width: 20%;
+    float: left;
+  }
+  .ucp-pm .ucp-pmprofile dd {
+    float: left;
+    width: 70%;
+  }
+  .ucp-pm .ucp-pmprofile:after {
+    clear: left;
+  }
+
+  /* by default, .box dl dd ~ dd:last-child gets a bottom margin. So fix this. */
+  .ucp-pm .ucp-pmprofile dd:last-child { margin-bottom: 0px; }
+
+
+  .ucp-pmbody {
+    border-top: 1px solid #aaa;
+    border-left: 0px;
+    padding-left: 0px;
+    width: 100%;
+  }
+}
+
+@media all and (max-width: 400px) 	/* smartphone fixes */
+{
+  /* by now we simply disable the whole profile. Maybe someday we find a better
+    solution for smartphones. However, the sender and the recipient are already
+    shown inside the message body by phpbb - so we don't actually need the
+    profile here. */
+  .ucp-pm .ucp-pmprofile { display: none; }
+}
+
+
 
 .ucp-pmdisplayoptions .overboxctrl {
   margin-top: 20px;
