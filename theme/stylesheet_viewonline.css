@@ -6,6 +6,7 @@
 @import url("bootstrapextend.css");
 @import url("common.css");
 @import url("overall.css");
+@import url("imageset.css");
 
 table.viewonline {
   border-spacing: 0px;

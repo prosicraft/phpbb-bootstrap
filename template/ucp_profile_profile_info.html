@@ -11,18 +11,6 @@
 	<div class="row-fluid">
 		<div class="span6">
 			<dl class="collist">
-				<dt><label class="strong" for="icq">{L_UCP_ICQ}:</label></dt>
-				<dd><input type="text" name="icq" id="icq" maxlength="15" value="{ICQ}" class="inputbox" /></dd>
-
-				<dt><label class="strong" for="aim">{L_UCP_AIM}:</label></dt>
-				<dd><input type="text" name="aim" id="aim" maxlength="255" value="{AIM}" class="inputbox" /></dd>
-
-				<dt><label class="strong" for="msn">{L_UCP_MSNM}:</label></dt>
-				<dd><input type="text" name="msn" id="msn" maxlength="255" value="{MSN}" class="inputbox" /></dd>
-
-				<dt><label class="strong" for="yim">{L_UCP_YIM}:</label></dt>
-				<dd><input type="text" name="yim" id="yim" maxlength="255" value="{YIM}" class="inputbox" /></dd>
-
 				<dt><label class="strong" for="jabber">{L_UCP_JABBER}:</label></dt>
 				<dd><input type="text" name="jabber" id="jabber" maxlength="255" value="{JABBER}" class="inputbox" /></dd>
 
@@ -51,14 +39,14 @@
 				</dd>
 			</dl>
 		<!-- ENDIF -->
-		<!-- BEGIN profile_fields -->
-			<dl>
+            <dl class="collist">
+		<!-- BEGIN profile_fields -->			
 				<dt><label<!-- IF profile_fields.FIELD_ID --> for="{profile_fields.FIELD_ID}"<!-- ENDIF -->>{profile_fields.LANG_NAME}:<!-- IF profile_fields.S_REQUIRED --> *<!-- ENDIF --></label>
 				<!-- IF profile_fields.LANG_EXPLAIN --><br /><span>{profile_fields.LANG_EXPLAIN}</span><!-- ENDIF --></dt>
 				<!-- IF profile_fields.ERROR --><dd class="error">{profile_fields.ERROR}</dd><!-- ENDIF -->
-				<dd>{profile_fields.FIELD}</dd>
-			</dl>
+				<dd>{profile_fields.FIELD}</dd>			
 		<!-- END profile_fields -->
+            </dl>
 		</div>
 	</div>
 	</fieldset>

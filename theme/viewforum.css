@@ -23,6 +23,11 @@ div.table-title .table-titletext img {
   min-height: 9px;
 }
 
+
+#jumpbox {
+    margin: 20px 0px;
+}
+
 /*---------------------------------------------------------*/
 /* Media Queries */
 

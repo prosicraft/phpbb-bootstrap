@@ -2,13 +2,13 @@
 <!-- IF S_VIEWTOPIC or S_VIEWFORUM or SEARCH_TOPIC or S_SEARCH_ACTION -->
 	<div class="row-inline box">
 	<!-- IF S_VIEWTOPIC -->
-		<a href="{U_VIEW_FORUM}" class="left-box {S_CONTENT_FLOW_BEGIN}" accesskey="r"><i class="fa fa-caret-left"></i>&nbsp;{L_RETURN_TO} {FORUM_NAME} </a>
+		<a href="{U_VIEW_FORUM}" class="left-box {S_CONTENT_FLOW_BEGIN}" accesskey="r"><i class="fa fa-caret-left"></i>&nbsp;{L_RETURN_TO_FORUM} </a>
 	<!-- ELSEIF S_VIEWFORUM -->
-		<a href="{U_INDEX}" class="left-box {S_CONTENT_FLOW_BEGIN}" accesskey="r"><i class="fa fa-caret-left"></i>&nbsp;{L_RETURN_TO} {L_INDEX} </a>
+		<a href="{U_INDEX}" class="left-box {S_CONTENT_FLOW_BEGIN}" accesskey="r"><i class="fa fa-caret-left"></i>&nbsp;{L_RETURN_TO_INDEX} </a>
 	<!-- ELSEIF SEARCH_TOPIC -->
-		<a class="left-box {S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO}: {SEARCH_TOPIC} </a>
+		<a class="left-box {S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH_TOPIC}" accesskey="r">{L_RETURN_TO_TOPIC} </a>
 	<!-- ELSEIF S_SEARCH_ACTION -->
-		<a class="left-box {S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r"><i class="fa fa-caret-left"></i>  {L_RETURN_TO_SEARCH_ADV} </a>
+		<a class="left-box {S_CONTENT_FLOW_BEGIN}" href="{U_SEARCH}" title="{L_SEARCH_ADV}" accesskey="r"><i class="fa fa-caret-left"></i>{L_GO_TO_SEARCH_ADV} </a>
 	<!-- ENDIF -->
 	</div>
 <!-- ENDIF -->

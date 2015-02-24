@@ -113,13 +113,12 @@
 			<div class="container-fluid">
 				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
 					<div id="searchbox">
-						<p class="pull-right">
-							<small><a href="#start_here">{L_SKIP} &darr;</a></small>
-						</p>
+						<!--<p class="pull-right"><small><a href="#start_here">{L_SKIP} &darr;</a></small></p>-->
 						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">
 						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">
 						<p class="responsive-inline not-on-tab">
-							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
+							<input type="submit" value="{L_SEARCH}">
+                            <small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
 						</p>
 						{S_SEARCH_HIDDEN_FIELDS}
 						</form>
@@ -128,7 +127,7 @@
 
 
 				<a href="{U_INDEX}" title="{SITENAME}" id="logo">{SITE_LOGO_IMG}</a>
-				<p class="logo-description">{SITE_DESCRIPTION}</p>
+				<!--<p class="logo-description">{SITE_DESCRIPTION}</p>-->
 			</div>
 		</header>
 
@@ -163,7 +162,7 @@
 					<!-- ENDIF -->
 
 					<!-- IF S_DISPLAY_PM -->
-					<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope-o pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>
+					<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope-o pmicon"></i> <span class="pmdesc"><strong>{PRIVATE_MESSAGE_COUNT}</strong> {L_PRIVATE_MESSAGES}</span></a></li>
 					<!-- ENDIF -->
 
 					<li class="dropdown">

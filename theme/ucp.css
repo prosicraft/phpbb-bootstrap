@@ -64,6 +64,17 @@
   position: relative;
 }
 
+.ucp-maincontent h2 ~ * {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ucp-maincontent h3 {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: normal;
+}
+
 .ucp-subtools {
   position: absolute;
   width: 20%;
