@@ -179,6 +179,8 @@ h2 a {
 .box dl dt label {
   font-weight: bold;
   display: block;
+  height: 28px;
+  line-height: 28px;
 }
 
 .box dl dd {
@@ -187,6 +189,20 @@ h2 a {
   margin: 0px;
   padding-left: 20px;
   font-size: 13px;
+}
+
+.box dl dt .description {
+  max-width: 300px;
+  position: relative;
+  display: block;
+  margin-left: auto; /* aligns block to right */
+}
+
+.box dl dd.radiogroup {
+  padding-top: 6px;
+}
+.box dl dd.radiogroup label {
+  margin-right: 20px;
 }
 
 .box dl dd ~ dd {
@@ -292,6 +308,10 @@ input.btn {
 /* Small-Button-Icons */
 .btn-small i {
   font-size: 14px;
+}
+
+.btn-min-width {
+  min-width: 50px;
 }
 
 /******************************************************************************/

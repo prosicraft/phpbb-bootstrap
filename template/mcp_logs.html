@@ -7,15 +7,36 @@
 <div class="panel">
 
 
-	<ul class="linklist">
-		<li class="leftside">
-			{L_SEARCH_KEYWORDS}: <input type="text" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="button2" name="filter" value="{L_SEARCH}" />
-		</li>
-		<li class="rightside pagination">
-			<!-- IF TOTAL -->{TOTAL} <!-- ENDIF -->
-			<!-- IF PAGE_NUMBER --><!-- IF PAGINATION --> &bull; <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE --> &bull; {PAGE_NUMBER}<!-- ENDIF --><!-- ENDIF -->
-		</li>
-	</ul>
+	<div class="overboxctrl mcp-overbox">
+		<div class="overboxleft">
+			{L_SEARCH_KEYWORDS}: <input type="text" class="inputbox autowidth" name="keywords" value="{S_KEYWORDS}" />&nbsp;<input type="submit" class="btn btn-small" name="filter" value="{L_SEARCH}" />
+		</div>
+		<div class="overboxright">
+			<!-- IF TOTAL --><div class="pagination-total">{TOTAL}</div><!-- ENDIF -->
+			<!-- IF PAGE_NUMBER -->
+                <div class="pagination-top">
+                <!-- IF PAGINATION -->
+                    <a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a>
+                    <span class="pagination">
+                        {PAGINATION}                                
+                    </span>
+                <!-- ELSE -->
+                    <div class="pagination-total">{PAGE_NUMBER}</div>
+                <!-- ENDIF -->
+                </div>
+            <!-- ENDIF -->
+        </div>                                    
+            
+            
+            
+
+            
+            
+            
+            
+            
+            
+	</div>	
 
 	<table cellspacing="1" class="mcp-log">
 	<thead>

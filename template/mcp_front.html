@@ -1,107 +1,98 @@
 <!-- INCLUDE mcp_header.html -->
 
-<h2>{PAGE_TITLE}</h2>
-
 <!-- IF S_SHOW_UNAPPROVED -->
-
-	<form id="mcp_queue" method="post" action="{S_MCP_QUEUE_ACTION}">
-
-	<div class="panel small-padding">
-
-
-		<h3>{L_LATEST_UNAPPROVED}</h3>
-		<!-- IF S_HAS_UNAPPROVED_POSTS --><p>{L_UNAPPROVED_TOTAL}</p><!-- ENDIF -->
-
-		<!-- IF .unapproved -->
-			<table class="mcp-log">
-			<thead>
-				<tr>
-					<th width="50%">{L_VIEW_DETAILS} </th>
-					<th width="50%">{L_TOPIC} &amp; {L_FORUM} </th>
-				</tr>
-			</thead>
-
-			<tbody>
-			<!-- BEGIN unapproved -->
-			<tr>
-				<td>
-					<a href="{unapproved.U_POST_DETAILS}" class="topictitle">{unapproved.SUBJECT}</a> {unapproved.ATTACH_ICON_IMG}<br />
-					{L_POSTED} {L_POST_BY_AUTHOR} {unapproved.AUTHOR_FULL} &raquo; {unapproved.POST_TIME}
-				</td>
-				<td class="moderation">
-					<span>
-						{L_TOPIC}: <a href="{unapproved.U_TOPIC}">{unapproved.TOPIC_TITLE}</a> [<a href="{unapproved.U_MCP_TOPIC}">{L_MODERATE}</a>]<br />
-						{L_FORUM}: <!-- IF unapproved.U_FORUM --><a href="{unapproved.U_FORUM}">{unapproved.FORUM_NAME}</a><!-- ELSE -->{unapproved.FORUM_NAME}<!-- ENDIF --><!-- IF unapproved.U_MCP_FORUM --> [<a href="{unapproved.U_MCP_FORUM}">{L_MODERATE}</a>]<!-- ENDIF -->
-					</span>
-				</td>
-
-			 	<td class="mark"><input type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}" /></td>
-			</tr>
-			<!-- END unapproved -->
-			</tbody>
-			</table>
-		<!-- ELSE -->
-			<p>{L_PM_REPORTS_TOTAL}</p>
-		<!-- ENDIF -->
-
-
-	{S_FORM_TOKEN}
-	</div>
-
-	<!-- IF .unapproved -->
-	<fieldset class="display-actions">
-		{S_HIDDEN_FIELDS}
-		<input class="btn btn-small" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
-		<input class="btn btn-small" type="submit" name="action[approve]" value="{L_APPROVE}" />
-		<div><a href="#" onclick="marklist('mcp_queue', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp_queue', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
-	</fieldset>
-	<!-- ENDIF -->
-		</form>
+    <h2>{L_LATEST_UNAPPROVED}</h2>
+    <div class="mcp-content">
+        <form id="mcp_queue" method="post" action="{S_MCP_QUEUE_ACTION}">
+    		
+    		<!-- IF S_HAS_UNAPPROVED_POSTS --><p>{L_UNAPPROVED_TOTAL}</p><!-- ENDIF -->
+    
+    		<!-- IF .unapproved -->
+    			<table class="mcp-log">
+    			<thead>
+    				<tr>
+    					<th width="50%">{L_VIEW_DETAILS} </th>
+    					<th width="50%">{L_TOPIC} &amp; {L_FORUM} </th>
+    				</tr>
+    			</thead>
+    
+    			<tbody>
+    			<!-- BEGIN unapproved -->
+    			<tr>
+    				<td>
+    					<a href="{unapproved.U_POST_DETAILS}" class="topictitle">{unapproved.SUBJECT}</a> {unapproved.ATTACH_ICON_IMG}<br />
+    					{L_POSTED} {L_POST_BY_AUTHOR} {unapproved.AUTHOR_FULL} &raquo; {unapproved.POST_TIME}
+    				</td>
+    				<td class="moderation">
+    					<span>
+    						{L_TOPIC}: <a href="{unapproved.U_TOPIC}">{unapproved.TOPIC_TITLE}</a> [<a href="{unapproved.U_MCP_TOPIC}">{L_MODERATE}</a>]<br />
+    						{L_FORUM}: <!-- IF unapproved.U_FORUM --><a href="{unapproved.U_FORUM}">{unapproved.FORUM_NAME}</a><!-- ELSE -->{unapproved.FORUM_NAME}<!-- ENDIF --><!-- IF unapproved.U_MCP_FORUM --> [<a href="{unapproved.U_MCP_FORUM}">{L_MODERATE}</a>]<!-- ENDIF -->
+    					</span>
+    				</td>
+    
+    			 	<td class="mark"><input type="checkbox" name="post_id_list[]" value="{unapproved.POST_ID}" /></td>
+    			</tr>
+    			<!-- END unapproved -->
+    			</tbody>
+    			</table>
+    		<!-- ELSE -->
+    			<p>{L_PM_REPORTS_TOTAL}</p>
+    		<!-- ENDIF -->
+    
+            <!-- IF .unapproved -->
+            <fieldset class="display-actions">
+                {S_HIDDEN_FIELDS}
+                <input class="btn btn-small" type="submit" name="action[disapprove]" value="{L_DISAPPROVE}" />&nbsp;
+                <input class="btn btn-small" type="submit" name="action[approve]" value="{L_APPROVE}" />
+                <div><a href="#" onclick="marklist('mcp_queue', 'post_id_list', true); return false;">{L_MARK_ALL}</a> :: <a href="#" onclick="marklist('mcp_queue', 'post_id_list', false); return false;">{L_UNMARK_ALL}</a></div>
+            </fieldset>
+            <!-- ENDIF -->
+    
+    
+    	{S_FORM_TOKEN}
+        </form>
+    </div>	
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_REPORTS -->
-	<div class="panel small-padding">
-
-
-		<h3>{L_LATEST_REPORTED}</h3>
-		<!-- IF S_HAS_REPORTS --><p>{L_REPORTS_TOTAL}</p><!-- ENDIF -->
-
-		<!-- IF .report -->
-			<table class="mcp-log">
-			<thead>
-				<tr>
-					<th width="50%">{L_VIEW_DETAILS} </th>
-					<th width="50%">{L_REPORTER} &amp; {L_FORUM} </th>
-				</tr>
-			</thead>
-			<tbody>
-			<!-- BEGIN report -->
-				<tr>
-					<td>
-						<a href="{report.U_POST_DETAILS}#reports" class="topictitle">{report.SUBJECT}</a> {report.ATTACH_ICON_IMG}<br />
-						<span>{L_POSTED} {L_POST_BY_AUTHOR} {report.AUTHOR_FULL} &raquo; {report.POST_TIME}</span>
-					</td>
-					<td class="moderation">
-						<span>{L_REPORTED} {L_POST_BY_AUTHOR} {report.REPORTER_FULL} {L_REPORTED_ON_DATE} {report.REPORT_TIME}<br />
-						{L_FORUM}: <a href="{report.U_FORUM}">{report.FORUM_NAME}</a></span>
-					</td>
-				</tr>
-			<!-- END report -->
-			</tbody>
-			</table>
-		<!-- ELSE -->
-			<p>{L_REPORTS_TOTAL}</p>
-		<!-- ENDIF -->
-
-
-	</div>
+    <h2>{L_LATEST_REPORTED}</h2>
+    <div class="mcp-content">
+    
+        <!-- IF S_HAS_REPORTS --><p>{L_REPORTS_TOTAL}</p><!-- ENDIF -->
+    
+        <!-- IF .report -->
+    		<table class="mcp-log">
+    		<thead>
+    			<tr>
+    				<th width="50%">{L_VIEW_DETAILS} </th>
+    				<th width="50%">{L_REPORTER} &amp; {L_FORUM} </th>
+    			</tr>
+    		</thead>
+    		<tbody>
+    		<!-- BEGIN report -->
+    			<tr>
+    				<td>
+    					<a href="{report.U_POST_DETAILS}#reports" class="topictitle">{report.SUBJECT}</a> {report.ATTACH_ICON_IMG}<br />
+    					<span>{L_POSTED} {L_POST_BY_AUTHOR} {report.AUTHOR_FULL} &raquo; {report.POST_TIME}</span>
+    				</td>
+    				<td class="moderation">
+    					<span>{L_REPORTED} {L_POST_BY_AUTHOR} {report.REPORTER_FULL} {L_REPORTED_ON_DATE} {report.REPORT_TIME}<br />
+    					{L_FORUM}: <a href="{report.U_FORUM}">{report.FORUM_NAME}</a></span>
+    				</td>
+    			</tr>
+    		<!-- END report -->
+    		</tbody>
+    		</table>
+    	<!-- ELSE -->
+    		<p>{L_REPORTS_TOTAL}</p>
+    	<!-- ENDIF -->
+    
+    </div>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_PM_REPORTS -->
-	<div class="panel small-padding">
-
-
-		<h3>{L_LATEST_REPORTED_PMS}</h3>
+    <h2>{L_LATEST_REPORTED_PMS}</h2>
+	<div class="mcp-content">		
 		<!-- IF S_HAS_PM_REPORTS --><p>{L_PM_REPORTS_TOTAL}</p><!-- ENDIF -->
 
 		<!-- IF .pm_report -->
@@ -131,17 +122,12 @@
 		<!-- ELSE -->
 			<p>{L_PM_REPORTS_TOTAL}</p>
 		<!-- ENDIF -->
-
-
 	</div>
 <!-- ENDIF -->
 
 <!-- IF S_SHOW_LOGS -->
-	<div class="panel small-padding">
-
-
-		<h3>{L_LATEST_LOGS}</h3>
-
+    <h2>{L_LATEST_LOGS}</h2>
+	<div class="mcp-content small-top-margin">
 		<table class="mcp-log" cellspacing="0">
 		<thead>
 		<tr>
@@ -170,8 +156,6 @@
 	<!-- END log -->
 		</tbody>
 		</table>
-
-
 	</div>
 <!-- ENDIF -->
 

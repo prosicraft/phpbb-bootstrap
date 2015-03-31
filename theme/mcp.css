@@ -170,3 +170,19 @@ ul.mcp-nav-sub li.active:hover a {
 #wrap #mcp .panel {
   padding: 10px;
 }
+
+.overboxctrl.mcp-overbox {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.mcp-box h2 ~ p,
+.mcp-box .mcp-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mcp-box h2 ~ h2 {
+  margin-top: 30px;
+}
