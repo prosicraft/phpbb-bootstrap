@@ -52,7 +52,7 @@
 			<form method="get" class="form-inline" action="{S_SEARCHBOX_ACTION}">
 			<fieldset>
 				<input class="form-control input-small" type="text" name="keywords" id="search_keywords" value="{L_SEARCH_FORUM}" onclick="if (this.value == '{LA_SEARCH_FORUM}') this.value = '';" onblur="if (this.value == '') this.value = '{LA_SEARCH_FORUM}';" />
-				<input class="form-control btn btn-small" type="submit" value="{L_SEARCH}" />
+				<button type="submit" class="btn btn-small form-control"><i class="fa fa-search"></i> {L_SEARCH}</button>                
 				{S_SEARCH_LOCAL_HIDDEN_FIELDS}
 			</fieldset>
 			</form>
