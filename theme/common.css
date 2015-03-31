@@ -98,6 +98,28 @@ hr {
   font-weight: bold;
 }
 
+.error {
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffdf9a;
+  border: 1px solid #ff733c;
+  border-radius: 10px;  
+  text-align: center;
+}
+
+.success {
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #dbff84;
+  border: 1px solid #a6ff3c;
+  border-radius: 10px;  
+  text-align: center;  
+}
+
 /******************************************************************************/
 /* common_headings */
 
@@ -133,6 +155,11 @@ h2 a {
   font-weight: bold;
   color: #777;
   font-size: 15px;
+}
+
+.box .box-content {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .well {
