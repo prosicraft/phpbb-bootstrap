@@ -47,13 +47,7 @@
 		<dd>
 			<label for="notifypm1"><input type="radio" name="notifypm" id="notifypm1" value="1"<!-- IF S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
 			<label for="notifypm0"><input type="radio" name="notifypm" id="notifypm0" value="0"<!-- IF not S_NOTIFY_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-		</dd>
-
-		<dt><label class="strong" for="popuppm0">{L_POPUP_ON_PM}:</label></dt>
-		<dd>
-			<label for="popuppm1"><input type="radio" name="popuppm" id="popuppm1" value="1"<!-- IF S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
-			<label for="popuppm0"><input type="radio" name="popuppm" id="popuppm0" value="0"<!-- IF not S_POPUP_PM --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-		</dd>
+		</dd>		
 
 		<dt><label class="strong" for="lang">{L_BOARD_LANGUAGE}:</label></dt>
 		<dd><select name="lang" id="lang">{S_LANG_OPTIONS}</select></dd>
@@ -65,12 +59,6 @@
 
 		<dt><label class="strong" for="timezone">{L_BOARD_TIMEZONE}:</label></dt>
 		<dd><select name="tz" id="timezone" class="autowidth">{S_TZ_OPTIONS}</select></dd>
-
-		<dt><label class="strong" for="dst1">{L_BOARD_DST}:</label></dt>
-		<dd>
-			<label for="dst1"><input type="radio" name="dst" id="dst1" value="1"<!-- IF S_DST --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
-			<label for="dst0"><input type="radio" name="dst" id="dst0" value="0"<!-- IF not S_DST --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
-		</dd>
 
 		<dt><label class="strong" for="dateformat">{L_BOARD_DATE_FORMAT}:</label><span class="description">{L_BOARD_DATE_FORMAT_EXPLAIN}</span></dt>
 		<dd>

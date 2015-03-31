@@ -65,8 +65,12 @@
 }
 
 .ucp-maincontent h2 ~ * {
-  margin-left: 20px;
-  margin-right: 20px;
+  /*margin-left: 20px;
+  margin-right: 20px;*/
+}
+.ucp-content {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .ucp-maincontent h3 {
@@ -303,6 +307,20 @@ fieldset.ucp-profile-details dl {
   color:  #888;
 }
 
+
+
+
+.ucp-signaturepreview h3 {
+  margin-top: 0px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  line-height: 25px;
+  border-bottom: 1px solid #aaa;  
+}
+.ucp-signaturepreview {
+  margin-bottom: 20px;
+}
+
 /**********************************************/
 /* ucp_viewmail */
 
@@ -358,6 +376,13 @@ fieldset.ucp-profile-details dl {
 
 .ucp-pm .back2top {
   text-align: right;
+}
+
+.ucp-pm .groupheader,
+.ucp-pm .groupheader td {
+  font-weight: bold;
+  height: 35px;
+  background-color: #ddd;  
 }
 
 .ucp-pmbody {
@@ -428,4 +453,12 @@ fieldset.ucp-profile-details dl {
 }
 .ucp-pmdisplayoptions .overboxright {
   margin-right: 20px;
+}
+
+
+
+
+
+.ucp-groups-membership {
+  width: 100%;
 }

@@ -362,7 +362,9 @@ input.btn {
 
 #wrap dl.collist dt label {
   font-weight: bold;
-  margin-left: 0px
+  margin-left: 0px;
+  line-height: normal;
+  height: auto;
 }
 
 .ucp-profile-details .collist dt,
@@ -371,7 +373,7 @@ input.btn {
 .ucp-prefs-post .collist dt,
 .ucp-prefs-view .collist dt {
   width: 25%;
-  line-height: 28px;  
+  /*line-height: 28px;*/  
 }
 
 .ucp-profile-details .collist dd,
@@ -414,6 +416,12 @@ dl.collist dd ~ dd {
 .collist dt .description {
   display: block;
   line-height: 14px;
+}
+.collist dt label ~ .description {  
+}
+
+.collist dd.text-only {
+  line-height: 26px;
 }
 
 @media all and (max-width:700px)

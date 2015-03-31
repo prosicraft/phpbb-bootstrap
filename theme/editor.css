@@ -58,12 +58,15 @@
   cursor: pointer;
 }
 
-.editor-subject {
-  margin: 20px 0px;
+.editor-subject {    
 }
 dl.editor-subject dt {
   display: block;
   text-align: left;
+}
+dl.editor-subject dt label,
+dl.editor-subject dt label.heading {
+  margin-bottom: 0px;
 }
 dl.editor-subject dd {
   padding-left: 0px;
@@ -77,14 +80,22 @@ dl.editor-subject dd {
 }
 
 .editor-icon {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 dl.editor-icon dt {
-  display: block;
+  display: inline-block;
   text-align: left;
+  width: auto;
+  line-height: 28px;
+  margin-right: 20px;
+}
+dl.editor-icon dt label,
+dl.editor-icon dt label.heading {
+  margin-bottom: 0px;
 }
 dl.editor-icon dd {
   padding-left: 0px;
+  padding-top: 6px;
 }
 
 .editor-container {
@@ -319,31 +330,36 @@ dl.editor-icon dd {
 }
 
 .posting-container ul.editor-optionsnav li {
-  display: inline-block;
-  background-color: #e8e8e8;
-  border: 0px;
-}
-.posting-container .editor-optionsnav li a {
-  display: block;
+  display: inline-block;  
+  border: 0px;  
   color: #555;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   background-color: #e8e8e8;
-  border: 0px;
+  margin: 0px 5px;
+  padding: 0px 8px;
+  line-height: 40px;
+  font-weight: normal;
+  position: relative;    
 }
 .posting-container .editor-optionsnav li:hover {
   background-color: transparent;
 }
-.posting-container .editor-optionsnav li a:hover {
-  background-color: #c0c0c0;
-}
-.posting-container .editor-optionsnav li.active a {
+.posting-container .editor-optionsnav li.active {
   color: #fff;
   background-color: #d3d3d3;
   border: 1px solid #aaa;
-  border-bottom: 0px;
-  position: relative;
+  border-bottom: 0px;    
   z-Index: 1000;
+}
+
+.posting-container .editor-optionsnav li a,
+.posting-container .editor-optionsnav li a:hover {
+  padding: 0px;
+  color: rgb(85, 85, 85);
+}
+.posting-container .editor-optionsnav li.active a {
+  color: #fff;  
 }
 
 .editor-options {

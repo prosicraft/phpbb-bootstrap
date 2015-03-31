@@ -2,6 +2,7 @@
 
 <h2>{L_TITLE} </h2>
 
+<div class="ucp-content">
 	<p>{L_UCP_WELCOME} </p>
 
 <!-- IF .topicrow -->
@@ -39,5 +40,6 @@
 		<!-- IF ACTIVE_TOPIC != '' --><dt>{L_ACTIVE_IN_TOPIC}: </dt> <dd><strong><a href="{U_ACTIVE_TOPIC}">{ACTIVE_TOPIC}</a></strong><br />({ACTIVE_TOPIC_POSTS} / {ACTIVE_TOPIC_PCT}) </dd><!-- ENDIF -->
 		<!-- IF WARNINGS --><dt>{L_YOUR_WARNINGS}: </dt> <dd class="error">{WARNING_IMG} [{WARNINGS}] </dd><!-- ENDIF -->
 	</dl>
+</div>
 
 <!-- INCLUDE ucp_footer.html -->

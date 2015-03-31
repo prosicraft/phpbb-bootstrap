@@ -4,62 +4,63 @@
 
 <form id="ucp" method="post" action="{S_UCP_ACTION}"{S_FORM_ENCTYPE}>
 
-<p class="description">{L_GROUPS_EXPLAIN} </p>
+    <p class="description">{L_GROUPS_EXPLAIN} </p>
 
-<div class="box small-padding small-bottom-margin ucp-groups-membership">
 	<!-- DEFINE $SHOW_BUTTONS = 0 -->
 	<!-- IF .leader -->
-		<div class="header">
-			<div class="row-fluid">
-				<div class="span8">{L_GROUP_LEADER} </div>
-				<div class="span4">{L_SELECT} </div>
-			</div>
-		</div>
+    <table class="box small-padding small-bottom-margin ucp-groups-membership">
+		<thead class="header">
+            <tr>			
+                <th>{L_GROUP_LEADER} </th>
+                <th>{L_SELECT} </th>
+            </tr>			
+		</thead>
 
+        <tbody>
 		<!-- BEGIN leader -->
 		<!-- IF not leader.GROUP_SPECIAL -->
 			<!-- DEFINE $SHOW_BUTTONS = 1 -->
-		<!-- ENDIF -->
-		<div class="tablerow <!-- IF leader.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<div class="row-fluid">
-				<div class="span8"><!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF leader.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{leader.GROUP_ID}" /> <!-- ENDIF -->
-					<a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->><strong>{leader.GROUP_NAME}</strong></a>
-					<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
-					<!-- IF not leader.GROUP_SPECIAL --><br /><i>{leader.GROUP_STATUS}</i><!-- ENDIF -->
-				</div>
-				<div class="span4"><input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></div>
-			</div>
-		</div>
+		<!-- ENDIF -->        		
+        <tr class="tablerow <!-- IF leader.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">			
+			<td>
+                <!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF leader.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{leader.GROUP_ID}" /> <!-- ENDIF -->
+				<a href="{leader.U_VIEW_GROUP}" class="forumtitle"<!-- IF leader.GROUP_COLOUR --> style="color:#{leader.GROUP_COLOUR}"<!-- ENDIF -->><strong>{leader.GROUP_NAME}</strong></a>
+				<!-- IF leader.GROUP_DESC --><br />{leader.GROUP_DESC}<!-- ENDIF -->
+				<!-- IF not leader.GROUP_SPECIAL --><br /><i>{leader.GROUP_STATUS}</i><!-- ENDIF -->
+			</td>
+			<td><input type="radio" name="selected" value="{leader.GROUP_ID}" <!-- IF leader.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>			
+		</tr>        
 		<!-- END leader -->
+        </tbody>
+    </table>
 	<!-- ENDIF -->
-</div>
-<div class="box small-padding small-bottom-margin ucp-groups-membership">
-	<!-- IF .member -->
-		<div class="header">
-			<div class="row-fluid">
-				<div class="span8">{L_GROUP_MEMBER} </div>
-				<div class="span4">{L_SELECT} </div>
-			</div>
-		</div>
 
+	<!-- IF .member -->
+    <table class="box small-padding small-bottom-margin ucp-groups-membership">
+		<thead class="header">			
+		<tr>
+            <th class="span8">{L_GROUP_MEMBER} </th>
+			<th class="span4">{L_SELECT} </th>
+        </tr>            			
+		</thead>
+
+        <tbody>
 		<!-- BEGIN member -->
 		<!-- IF not member.GROUP_SPECIAL -->
 			<!-- DEFINE $SHOW_BUTTONS = 1 -->
 		<!-- ENDIF -->
-		<div class="tablerow <!-- IF member.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">
-			<div class="row-fluid">
-				<div class="span8"><!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF member.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{member.GROUP_ID}" /> <!-- ENDIF -->
-					<a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->><strong>{member.GROUP_NAME}</strong></a>
-					<!-- IF member.GROUP_DESC --><br />{member.GROUP_DESC}<!-- ENDIF -->
-					<!-- IF not member.GROUP_SPECIAL --><br /><i>{member.GROUP_STATUS}</i><!-- ENDIF -->
-				</div>
-				<div class="span4"><input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></div>
-			</div>
-		</div>
+		<tr class="tablerow <!-- IF member.S_ROW_COUNT is odd --> bg1<!-- ELSE --> bg2<!-- ENDIF -->">			
+		    <td class="span8"><!-- IF S_CHANGE_DEFAULT --><input title="{L_CHANGE_DEFAULT_GROUP}" type="radio" name="default"<!-- IF member.S_GROUP_DEFAULT --> checked="checked"<!-- ENDIF --> value="{member.GROUP_ID}" /> <!-- ENDIF -->
+				<a href="{member.U_VIEW_GROUP}" class="forumtitle"<!-- IF member.GROUP_COLOUR --> style="color:#{member.GROUP_COLOUR}"<!-- ENDIF -->><strong>{member.GROUP_NAME}</strong></a>
+				<!-- IF member.GROUP_DESC --><br />{member.GROUP_DESC}<!-- ENDIF -->
+				<!-- IF not member.GROUP_SPECIAL --><br /><i>{member.GROUP_STATUS}</i><!-- ENDIF -->
+			</td>
+			<td class="span4"><input type="radio" name="selected" value="{member.GROUP_ID}" <!-- IF member.GROUP_SPECIAL -->disabled="disabled"<!-- ENDIF --> /></td>			
+		</tr>
 		<!-- END member -->
+        </tbody>
+    </table>
 	<!-- ENDIF -->
-
-</div>
 
 <!-- IF .pending -->
 <div class="box small-padding small-bottom-margin">
