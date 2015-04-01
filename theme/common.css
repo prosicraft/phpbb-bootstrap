@@ -496,6 +496,10 @@ dl.collist dd ~ dd {
   height: auto;
 }
 
+.row-inline > .left {
+  min-height: 40px;
+}
+
 .row-inline select,
 .row-inline input[type=input],
 .row-inline form {
@@ -558,6 +562,14 @@ dl.collist dd ~ dd {
 {
   .row-inline .left.only-on-tab {
     display: inline-block;
+  }
+}
+
+@media all and (max-width: 746px)
+{
+  .row-inline > .right {
+    display: block;
+    position: relative;      
   }
 }
 

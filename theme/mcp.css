@@ -302,3 +302,21 @@ h2 .right-box a ~ a {
   border-left: 1px solid #aaa;
   padding-left: 10px;
 }
+
+.table-row .table-titletext h4 .selectlink {
+  display: inline-block;
+  font-size: 15px;  
+  width: auto;
+  background-color: #ffdf9a;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 2px 5px;
+  margin-bottom: 3px;
+}
+.table-row .table-titletext h4 .selectlink ~ a {  
+  display: inline-block;  
+  height: 28px;
+  line-height: 28px;
+}
+.table-row .table-titletext h4 .selectlink ~ a:last-child {  
+}
