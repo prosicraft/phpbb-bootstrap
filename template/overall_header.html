@@ -98,9 +98,16 @@
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/libs/js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 
+<!-- EVENT overall_header_head_append -->
+{$STYLESHEETS}
+<!-- kommentar -->
+<!-- EVENT overall_header_stylesheets_after -->
+
 </head>
 
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" ontouchstart="">
+
+<!-- EVENT overall_header_body_before -->
 
 	<!--
 		start main wrapper
@@ -144,6 +151,8 @@
 					<!-- ENDIF -->
 
 					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info"></i> {L_FAQ}</a></li>
+
+                    <!-- EVENT overall_header_navigation_prepend -->
 				<!-- ENDIF -->
 
 				<!-- IF S_CONTACT_ENABLED -->
@@ -228,6 +237,8 @@
 
 	</div>
 
+    <!-- EVENT overall_header_page_body_before -->
+
 	<a name="start_here"></a>
 	<div id="page-body">
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
@@ -240,3 +251,5 @@
 				<li><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
 			<!-- END navlinks -->
 		</ul>
+
+        <!-- EVENT overall_header_content_before -->
