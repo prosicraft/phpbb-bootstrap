@@ -3,7 +3,7 @@
 based on prosilver, forked from phpbbstrap, heavily redone.  
 
 ### 1. Getting it into your repository
-```git
+```bash
 $ git remote add -f phpbbeuphoria https://github.com/prosicraft/phpbb-euphoria.git
 $ git checkout integrationBranch
 $ git merge -s ours --no-commit phpbbeuphoria/master
@@ -14,7 +14,7 @@ If you want to get a specific release, e.g. if you want version dev3.5, just use
 
 ### 2. Updating it
 This rebases all commits from the last update to the current state of phpbbeuphoria/master (run on your integration branch):
-```git
+```bash
 $ git checkout integrationBranch
 $ git fetch phpbbeuphoria
 $ git merge -Xsubtree=styles/euphoria phpbbeuphoria/master
@@ -23,3 +23,10 @@ You can thereby make your own changes on the integration branch, revert commits 
 
 ### 3. The branches
 Development is done on the dev branches. When merging into master, the css files are rolled out and minified to provide resources that are as small as possible. If you have merged in from a dev branch, you might want to pack the css files on your own using the packtheme.sh script.
+
+### 4. The gallery style
+To install the styles for phpbb gallery (https://github.com/satanasov/phpbbgallery) do this:
+```bash
+$ cd phpbb3/ext/phpbbgallery/core/styles/
+$ git clone https://github.com/prosicraft/phpbb-euphoria-gallery.git euphoria/
+```
