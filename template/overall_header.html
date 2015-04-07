@@ -89,19 +89,25 @@
 <!-- ENDIF -->
 
 <!-- <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" /> -->
+
+<!-- IF SCRIPT_NAME neq 'contact' and SCRIPT_NAME neq 'faq' and SCRIPT_NAME neq 'index' and SCRIPT_NAME neq 'mcp' and SCRIPT_NAME neq 'memberlist' and SCRIPT_NAME neq 'posting' and SCRIPT_NAME neq 'report' and SCRIPT_NAME neq 'search' and SCRIPT_NAME neq 'ucp' and SCRIPT_NAME neq 'viewforum' and SCRIPT_NAME neq 'viewonline' and SCRIPT_NAME neq 'viewtopic' -->
+<link href="{T_THEME_PATH}/stylesheet_app.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ELSE -->
 <link href="{T_THEME_PATH}/stylesheet_{SCRIPT_NAME}.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+
 <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome.min.css" rel="stylesheet">
 <!--[if IE 7]>
   <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome-ie7.min.css" rel="stylesheet">
 <![endif]-->
 
-<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/libs/js/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
-
 <!-- EVENT overall_header_head_append -->
 {$STYLESHEETS}
-<!-- kommentar -->
 <!-- EVENT overall_header_stylesheets_after -->
+
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/libs/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
 
 </head>
 
