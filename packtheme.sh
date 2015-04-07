@@ -44,7 +44,7 @@ for cssfile in $(ls theme/ | grep 'stylesheet_.*\.css' | grep -v '.min.css'); do
 
     echo "Minifying theme/min/$cssfilemin..."
     minified=$(mincss.sh theme/min/$cssfilemin)
-    #echo "$minified" > theme/min/$cssfilemin
+    echo "$minified" > theme/min/$cssfilemin
 done
 
 echo "Copying theme/img/ to theme/min/img/ ..."
