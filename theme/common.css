@@ -357,13 +357,14 @@ input.btn {
 }
 
 .collist dt,
-.collist dl dt {
+dl.collist dt {
   display: inline-block;
   font-weight: bold;
   font-size: 14px;
   width: 30%;
   padding: 10px;
   vertical-align: top;
+  margin-top: 0px;
 }
 
 #wrap dl.collist dt label {
@@ -396,7 +397,8 @@ input.btn {
 }
 
 .collist dd,
-.collist dl dd {
+dl.collist dd {
+  padding-top: 6px;
   padding: 10px;
   display: inline-block;
   width: 60%;
@@ -406,10 +408,15 @@ input.btn {
 dl.collist dd ~ dd {
   display: inline-block;
   left: 0px;
-  margin: 0px;
+  margin-top: 10px;
 }
 
-.collist dd input,
+dl.collist dt ~ dt {
+  margin-top: 10px;
+}
+
+.collist dd input[type=text],
+.collist dd input[type=password],
 .collist dd textarea,
 .collist dd select {
   width: 100%;
@@ -424,6 +431,10 @@ dl.collist dd ~ dd {
   line-height: 14px;
 }
 .collist dt label ~ .description {  
+}
+
+.collist dd label {
+
 }
 
 .collist dd.text-only {
