@@ -2,17 +2,15 @@
 
 <form id="mcp" method="post" action="{S_MCP_ACTION}">
 
-<fieldset class="forum-selection">
+<fieldset class="mcp-content">
 	<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
-	<input type="submit" name="sort" value="{L_GO}" class="button2" />
+	<input type="submit" name="sort" value="{L_GO}" class="btn btn-small btn-min-width" />
 	{S_FORM_TOKEN}
 </fieldset>
 
 <h2>{L_TITLE}</h2>
 
-<div class="panel">
-
-
+<div class="mcp-content">
 	<p>{L_EXPLAIN}</p>
 
 	<!-- IF .postrow -->
@@ -78,10 +76,8 @@
 			</li>
 		</ul>
 	<!-- ELSE -->
-		<p class="notopics"><strong><!-- IF S_TOPICS -->{L_NO_TOPICS_QUEUE}<!-- ELSE -->{L_UNAPPROVED_POSTS_ZERO_TOTAL}<!-- ENDIF --></strong></p>
+		<p class="notopics"><strong><!-- IF S_TOPICS -->{L_NO_TOPICS_QUEUE}<!-- ELSE -->{L_NO_POSTS_QUEUE}<!-- ENDIF --></strong></p>
 	<!-- ENDIF -->
-
-
 </div>
 
 <!-- IF .postrow -->

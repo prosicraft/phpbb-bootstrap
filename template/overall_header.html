@@ -80,8 +80,6 @@
 	<!-- IF S_ENABLE_FEEDS_TOPIC and S_TOPIC_ID --><link rel="alternate" type="application/atom+xml" title="{L_FEED} - {L_TOPIC} - {TOPIC_TITLE}" href="{U_FEED}?f={S_FORUM_ID}&amp;t={S_TOPIC_ID}" /><!-- ENDIF -->
 <!-- ENDIF -->
 
-<!-- TEST COMMENT FOR TEST COMMIT - THIS COMMENTT MAY BE REMOVED -->
-
 <!-- <link href="{T_THEME_PATH}/normal.css" rel="stylesheet" type="text/css" title="A" /> -->
 <!-- <link href="{T_THEME_PATH}/medium.css" rel="alternate stylesheet" type="text/css" title="A+" /> -->
 <!-- <link href="{T_THEME_PATH}/large.css" rel="alternate stylesheet" type="text/css" title="A++" /> -->
@@ -91,11 +89,22 @@
 <!-- ENDIF -->
 
 <!-- <link href="{T_THEME_PATH}/print.css" rel="stylesheet" type="text/css" media="print" title="printonly" /> -->
+
+<!-- IF SCRIPT_NAME neq 'contact' and SCRIPT_NAME neq 'faq' and SCRIPT_NAME neq 'index' and SCRIPT_NAME neq 'mcp' and SCRIPT_NAME neq 'memberlist' and SCRIPT_NAME neq 'posting' and SCRIPT_NAME neq 'report' and SCRIPT_NAME neq 'search' and SCRIPT_NAME neq 'ucp' and SCRIPT_NAME neq 'viewforum' and SCRIPT_NAME neq 'viewonline' and SCRIPT_NAME neq 'viewtopic' -->
+<link href="{T_THEME_PATH}/min/stylesheet_app.min.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ELSE -->
 <link href="{T_THEME_PATH}/min/stylesheet_{SCRIPT_NAME}.min.css" rel="stylesheet" type="text/css" media="screen, projection" />
+<!-- ENDIF -->
+
+
 <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome.min.css" rel="stylesheet">
 <!--[if IE 7]>
   <link href="{T_SUPER_TEMPLATE_PATH}/libs/css/font-awesome-ie7.min.css" rel="stylesheet">
 <![endif]-->
+
+<!-- EVENT overall_header_head_append -->
+{$STYLESHEETS}
+<!-- EVENT overall_header_stylesheets_after -->
 
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/libs/js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="{T_SUPER_TEMPLATE_PATH}/forum_fn.js"></script>
@@ -103,6 +112,8 @@
 </head>
 
 <body id="phpbb" class="section-{SCRIPT_NAME} {S_CONTENT_DIRECTION}" ontouchstart="">
+
+<!-- EVENT overall_header_body_before -->
 
 	<!--
 		start main wrapper
@@ -113,13 +124,12 @@
 			<div class="container-fluid">
 				<!-- IF S_DISPLAY_SEARCH and not S_IN_SEARCH -->
 					<div id="searchbox">
-						<p class="pull-right">
-							<small><a href="#start_here">{L_SKIP} &darr;</a></small>
-						</p>
+						<!--<p class="pull-right"><small><a href="#start_here">{L_SKIP} &darr;</a></small></p>-->
 						<form action="{U_SEARCH}" method="get" id="search" class="form form-search">
 						<input name="keywords" id="keywords" type="text" maxlength="128" title="{L_SEARCH_KEYWORDS}" class="input-medium search-query" value="<!-- IF SEARCH_WORDS-->{SEARCH_WORDS}<!-- ENDIF -->" placeholder="{LA_SEARCH_MINI}">
 						<p class="responsive-inline not-on-tab">
-							<small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
+							<input type="submit" value="{L_SEARCH}">
+                            <small><a href="{U_SEARCH}" title="{L_SEARCH_ADV_EXPLAIN}">{L_SEARCH_ADV}</a></small>
 						</p>
 						{S_SEARCH_HIDDEN_FIELDS}
 						</form>
@@ -128,7 +138,7 @@
 
 
 				<a href="{U_INDEX}" title="{SITENAME}" id="logo">{SITE_LOGO_IMG}</a>
-				<p class="logo-description">{SITE_DESCRIPTION}</p>
+				<!--<p class="logo-description">{SITE_DESCRIPTION}</p>-->
 			</div>
 		</header>
 
@@ -147,6 +157,8 @@
 					<!-- ENDIF -->
 
 					<li><a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}"><i class="fa fa-info"></i> {L_FAQ}</a></li>
+
+                    <!-- EVENT overall_header_navigation_prepend -->
 				<!-- ENDIF -->
 
 				<!-- IF S_CONTACT_ENABLED -->
@@ -163,7 +175,7 @@
 					<!-- ENDIF -->
 
 					<!-- IF S_DISPLAY_PM -->
-					<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope-o pmicon"></i> <span class="pmdesc">{PRIVATE_MESSAGE_INFO}</span></a></li>
+					<li><a href="{U_PRIVATEMSGS}"><i class="fa fa-envelope-o pmicon"></i> <span class="pmdesc"><strong>{PRIVATE_MESSAGE_COUNT}</strong> {L_PRIVATE_MESSAGES}</span></a></li>
 					<!-- ENDIF -->
 
 					<li class="dropdown">
@@ -231,6 +243,8 @@
 
 	</div>
 
+    <!-- EVENT overall_header_page_body_before -->
+
 	<a name="start_here"></a>
 	<div id="page-body">
 		<!-- IF S_BOARD_DISABLED and S_USER_LOGGED_IN and (U_MCP or U_ACP) -->
@@ -243,3 +257,5 @@
 				<li><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
 			<!-- END navlinks -->
 		</ul>
+
+        <!-- EVENT overall_header_content_before -->

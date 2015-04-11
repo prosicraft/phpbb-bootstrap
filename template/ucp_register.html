@@ -7,6 +7,7 @@
 	*/
 	function change_language(lang_iso)
 	{
+        document.cookie = '{COOKIE_NAME}_lang=' + lang_iso + '; path={COOKIE_PATH}';
 		document.forms['register'].change_lang.value = lang_iso;
 		document.forms['register'].submit.click();
 	}
@@ -37,10 +38,6 @@
 	<dl>
 		<dt><label class="strong" for="email">{L_EMAIL_ADDRESS}:</label></dt>
 		<dd><input type="text" tabindex="2" name="email" id="email" size="25" maxlength="100" value="{EMAIL}" class="inputbox autowidth" title="{L_EMAIL_ADDRESS}" /></dd>
-	</dl>
-	<dl>
-		<dt><label class="strong" for="email_confirm">{L_CONFIRM_EMAIL}:</label></dt>
-		<dd><input type="text" tabindex="3" name="email_confirm" id="email_confirm" size="25" maxlength="100" value="{EMAIL_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_EMAIL}" /></dd>
 	</dl>
  	<dl>
 		<dt><label class="strong" for="new_password">{L_PASSWORD}:</label><span class="description">{L_PASSWORD_EXPLAIN}</span></dt>
@@ -79,12 +76,12 @@
 
 </div>
 
-<div class="box small-padding small-bottom-margin">
 <!-- IF CAPTCHA_TEMPLATE -->
+    <div class="box small-padding small-bottom-margin">
 	<!-- DEFINE $CAPTCHA_TAB_INDEX = 8 -->
 	<!-- INCLUDE {CAPTCHA_TEMPLATE} -->
+    </div>
 <!-- ENDIF -->
-</div>
 
 <!-- IF S_COPPA -->
 

@@ -231,9 +231,10 @@
     width: 30%;
     display: inline-block;
     overflow: hidden;
+    margin-right: 20px;
   }
   .topic-container .postprofile .poster-description {
-    padding-left: 20px;
+    padding-left: 0px;
   }
   .topic-container .postprofile .avatar img {
     width: 100%;

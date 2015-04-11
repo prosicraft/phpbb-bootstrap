@@ -98,6 +98,28 @@ hr {
   font-weight: bold;
 }
 
+.error {
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #ffdf9a;
+  border: 1px solid #ff733c;
+  border-radius: 10px;  
+  text-align: center;
+}
+
+.success {
+  font-weight: bold;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #dbff84;
+  border: 1px solid #a6ff3c;
+  border-radius: 10px;  
+  text-align: center;  
+}
+
 /******************************************************************************/
 /* common_headings */
 
@@ -121,11 +143,23 @@ h2 a {
   overflow: hidden;
   border-radius: 4px;
 }
+@media all and (max-width: 486px) {
+  .box {
+    border-radius: 0px;
+    border-left: 0px;
+    border-right: 0px;
+  }
+}
 
 .box .header {
   font-weight: bold;
   color: #777;
   font-size: 15px;
+}
+
+.box .box-content {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .well {
@@ -134,6 +168,14 @@ h2 a {
   padding: 10px;
   background-color: #e5e5e5;
   margin-bottom: 10px;
+}
+
+@media all and (max-width: 486px) {
+  .well {
+    border-radius: 0px;  
+    border-left: 0px;
+    border-right: 0px;
+  }
 }
 
 .well.who-is-online {
@@ -155,26 +197,48 @@ h2 a {
 }
 
 .box dl dt {
-  display: inline-block;
+  display: inline-block;  
+  vertical-align: top;
+  margin-top: 10px;
   width: 25%;
   text-align: right;
   font-size: 13px;
+  padding-top: 6px;
 }
 
 .box dl dt label {
   font-weight: bold;
-  display: block;
+  display: block;  
+  line-height: normal;  
 }
 
 .box dl dd {
   display: inline-block;
+  position: relative;  
+  width: 75%;
+  height: auto;  
   vertical-align: top;
   margin: 0px;
+  margin-top: 10px;
   padding-left: 20px;
   font-size: 13px;
 }
 
-.box dl dd ~ dd {
+.box dl dt .description {
+  max-width: 300px;
+  position: relative;
+  display: block;
+  margin-left: auto; /* aligns block to right */
+}
+
+.box dl dd.radiogroup {
+  padding-top: 6px;
+}
+.box dl dd.radiogroup label {
+  margin-right: 20px;
+}
+
+.box dl dd + dd {
   display: block;
   box-sizing: border-box;
   position: relative;
@@ -183,7 +247,7 @@ h2 a {
   margin-left: 25%;
 }
 
-.box dl dd ~ dd:last-child {
+.box dl dd + dd:last-child {
   margin-bottom: 20px;
 }
 
@@ -211,6 +275,7 @@ h2 a {
 
   font-size: 12px;
   color: #333;
+  cursor: pointer;
 }
 input.btn {
   vertical-align: top;
@@ -279,6 +344,10 @@ input.btn {
   font-size: 14px;
 }
 
+.btn-min-width {
+  min-width: 50px;
+}
+
 /******************************************************************************/
 /* common_collist */
 
@@ -287,32 +356,39 @@ input.btn {
   position: relative;
 }
 
-.collist dt {
+.collist dt,
+dl.collist dt {
   display: inline-block;
   font-weight: bold;
   font-size: 14px;
   width: 30%;
   padding: 10px;
   vertical-align: top;
+  margin-top: 0px;
 }
 
 #wrap dl.collist dt label {
   font-weight: bold;
   margin-left: 0px;
+  line-height: normal;
+  height: auto;
 }
 
 .ucp-profile-details .collist dt,
+.ucp-profile-details .collist dl dt,
 .ucp-prefs-personal .collist dt,
 .ucp-prefs-post .collist dt,
 .ucp-prefs-view .collist dt {
-  width: 50%;
+  width: 25%;
+  /*line-height: 28px;*/  
 }
 
 .ucp-profile-details .collist dd,
+.ucp-profile-details .collist dl dd,
 .ucp-prefs-personal .collist dd,
 .ucp-prefs-post .collist dd,
 .ucp-prefs-view .collist dd {
-  width: 49%;
+  width: 75%;
 }
 
 .collist dt ~ dt,
@@ -320,19 +396,27 @@ input.btn {
   border-top: 1px solid #ddd;
 }
 
-.collist dd {
+.collist dd,
+dl.collist dd {
+  padding-top: 6px;
   padding: 10px;
   display: inline-block;
   width: 60%;
+  margin: 0px;
 }
 
 dl.collist dd ~ dd {
   display: inline-block;
   left: 0px;
-  margin: 0px;
+  margin-top: 10px;
 }
 
-.collist dd input,
+dl.collist dt ~ dt {
+  margin-top: 10px;
+}
+
+.collist dd input[type=text],
+.collist dd input[type=password],
 .collist dd textarea,
 .collist dd select {
   width: 100%;
@@ -344,6 +428,17 @@ dl.collist dd ~ dd {
 
 .collist dt .description {
   display: block;
+  line-height: 14px;
+}
+.collist dt label ~ .description {  
+}
+
+.collist dd label {
+
+}
+
+.collist dd.text-only {
+  line-height: 26px;
 }
 
 @media all and (max-width:700px)
@@ -412,6 +507,10 @@ dl.collist dd ~ dd {
   height: auto;
 }
 
+.row-inline > .left {
+  min-height: 40px;
+}
+
 .row-inline select,
 .row-inline input[type=input],
 .row-inline form {
@@ -474,6 +573,14 @@ dl.collist dd ~ dd {
 {
   .row-inline .left.only-on-tab {
     display: inline-block;
+  }
+}
+
+@media all and (max-width: 746px)
+{
+  .row-inline > .right {
+    display: block;
+    position: relative;      
   }
 }
 
@@ -1070,32 +1177,7 @@ div.overboxctrl .overboxcenter {
 
 /******************************************************************************/
 /* overall_pageheader */
-
-#pageheader {
-  padding: 20px;
-  background: none; /* For background on non-smartphone screen see media query below*/
-  color: #fff;
-  text-shadow: 0px -1px 1px rgba(0, 0, 0, 0.4);
-  min-height: 200px;
-}
-@media all and (min-width: 441px)
-{
-  #pageheader {
-    background: #555555 url('./img/head.jpg') repeat 0 0;
-    background-size: 100%;
-    background-position: center;
-  }
-}
-
-#pageheader .headcontainer {
-  clear:both;
-}
-#pageheader #searchbox {
-  float: right;
-}
-#pageheader #searchbox p {
-  float: right;
-}
+/*
 #pageheader #searchbox #search  {
   clear: both;
   margin-top: 120px;
@@ -1119,6 +1201,7 @@ div.overboxctrl .overboxcenter {
 #pageheader p.logo-description {
   font-size: 12px;
 }
+*/
 #wrap .pagenavbar {
   width: 100%;
   margin-left: 0px;

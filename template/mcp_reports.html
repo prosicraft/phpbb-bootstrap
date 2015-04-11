@@ -3,18 +3,18 @@
 <form id="mcp" method="post" action="{S_MCP_ACTION}">
 
 <!-- IF not S_PM -->
-<fieldset class="forum-selection">
-	<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
-	<input type="submit" name="sort" value="{L_GO}" class="button2" />
-	{S_FORM_TOKEN}
-</fieldset>
+    <fieldset class="mcp-content">
+    	<label for="fo">{L_FORUM}: <select name="f" id="fo">{S_FORUM_OPTIONS}</select></label>
+    	<input type="submit" name="sort" value="{L_GO}" class="btn btn-small btn-min-width" />
+    	{S_FORM_TOKEN}
+    </fieldset>
 <!-- ENDIF -->
 
-<h2>{L_TITLE}</h2>
+    <h2>{L_TITLE}</h2>
 
-<p>{L_EXPLAIN}</p>
+<div class="mcp-content">
 
-<div class="box">
+    <p>{L_EXPLAIN}</p>
 
 <!-- IF .postrow -->
 	<table class="mcp-log">
@@ -77,8 +77,9 @@
 
 <!-- ELSE -->
 	<p><strong>{L_NO_REPORTS}</strong></p>
-</div>
 <!-- ENDIF -->
+
+</div>
 
 <!-- IF .postrow -->
 	<fieldset class="display-actions">

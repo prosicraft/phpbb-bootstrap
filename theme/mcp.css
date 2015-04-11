@@ -111,7 +111,7 @@ ul.mcp-nav-sub li.active:hover a {
 }
 
 #wrap .box.mcp-box h2 {
-  font-size: 20px;
+  font-size: 28px;
   line-height: 30px;
   margin-bottom: 0px;
 }
@@ -164,9 +164,159 @@ ul.mcp-nav-sub li.active:hover a {
   }
 }
 
+
+
+/******************************************************************************/
+/* mcp-subtabs */
+
+ul.mcp-subtabs {
+  display: block;
+  list-style-type: none;
+  font-size: 0px;
+  margin-top: 20px;
+  position: relative;
+  z-Index: 100;
+}
+ul.mcp-subtabs li {  
+  display: inline-block;
+  vertical-align: bottom;  
+  position: relative;
+  top: 1px;  
+  margin-left: 5px;
+  font-size: 15px;
+  height: 40px;
+  line-height: 30px;    
+  padding: 5px 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;        
+}
+ul.mcp-subtabs li.activetab,
+ul.mcp-subtabs li.active {
+  background-color: #d3d3d3;
+  border: 1px solid #aaa;
+  border-bottom: 0px;
+}
+ul.mcp-subtabs li a {
+  color: #777;
+}
+ul.mcp-subtabs li.activetab a,
+ul.mcp-subtabs li.active a {
+  color: #fff;
+}
+.mcp-subtabs-box {  
+  display: block;
+  position: relative;
+  z-Index: 0;  
+  background-color: #d3d3d3;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+
+
+/******************************************************************************/
+/* mcp #topicreview */
+
+#topicreview {
+  overflow: auto;
+  width: 100%;
+}
+
+#topicreview .post {
+  display: block;
+  position: relative;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  margin-top: 10px;
+  padding: 20px;
+  background-color: #f3f3f3;
+}
+#topicreview .post ul.profile-icons {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+#topicreview .post ul.profile-icons li {
+  display: inline-block;
+  padding-right: 5px;    
+}
+#topicreview .post ul.profile-icons li ~ li {
+  padding-left: 5px;
+  border-left: 1px solid #aaa;  
+}
+
+#topicreview .post h3 {
+  margin: 0px;    
+}
+
+#topicreview .post .author {
+  margin-top: 3px;
+  margin-bottom: 5px;
+}
+
+#topicreview .post .content {
+  border-top: 1px solid #aaa;
+  padding-top: 10px;
+  margin-top: 10px;
+}
+
 /******************************************************************************/
 /* mcp_misc */
 
 #wrap #mcp .panel {
   padding: 10px;
+}
+
+.overboxctrl.mcp-overbox {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.mcp-box h2 ~ p,
+.mcp-box .mcp-content {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.mcp-box h2 ~ h2 {
+  margin-top: 30px;
+}
+
+h2 .right-box {
+  float: right;
+  font-size: 0px;    
+}
+h2 .right-box a {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 14px;
+  line-height: 14px;
+  padding-right: 10px;  
+}
+h2 .right-box a ~ a {
+  border-left: 1px solid #aaa;
+  padding-left: 10px;
+}
+
+.table-row .table-titletext h4 .selectlink {
+  display: inline-block;
+  font-size: 15px;  
+  width: auto;
+  background-color: #ffdf9a;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  padding: 2px 5px;
+  margin-bottom: 3px;
+}
+.table-row .table-titletext h4 .selectlink ~ a {  
+  display: inline-block;  
+  height: 28px;
+  line-height: 28px;
+}
+.table-row .table-titletext h4 .selectlink ~ a:last-child {  
 }
