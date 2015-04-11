@@ -30,7 +30,8 @@ $ git commit -m "Merge phpbbeuphoria/master ($(git rev-parse --short phpbbeuphor
 ```
 
 ### 4. The branches
-Development is done on the dev branches. When merging into master, the css files are rolled out and minified to provide resources that are as small as possible. If you have merged in from a dev branch, you might want to pack the css files on your own using the packtheme.sh script.
+Development is done on the dev branches. Dev is then merged into integration. Hotfixes are made on integration branch. Integration is merged into master. Master is never merged back to integration. Thereby css filed are only rolled out on master branch. Thus the integration branch is the dev branch with hotfixes, but without outrolling.
+If you have merged phpbb-euphoria into your repo from a dev or the integration branch, you might want to pack the css files on your own using the packtheme.sh script.
 
 ### 5. The gallery style
 To install the styles for phpbb gallery (https://github.com/satanasov/phpbbgallery) do this:
