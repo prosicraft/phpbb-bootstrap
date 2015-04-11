@@ -43,6 +43,7 @@
 
 .posting-container #message-box .inputbox {
   width:100%;
+  text-align: left;
 }
 
 #format-buttons div.btn-group .btn {
