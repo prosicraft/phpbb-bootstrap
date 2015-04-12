@@ -2446,3 +2446,91 @@ ul.breadcrumb li a {
 #wrap a#index-registerbtn:hover {
   background-color: #2464d4;
 }
+
+/******************************************************************************/
+/* overall_notifications */
+
+#notifications {
+  display: block;
+  margin-top: 10px;
+}
+
+#notifications .notification {
+  background-color: #fdd;
+  border: 1px solid #faa;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 1px 1px 10px #ddd;
+}
+
+#notifications .notification ~ notification {
+  margin-top: 5px;
+}
+
+.notification .notification-time {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  text-align: left;
+  color: #f88;
+}
+
+.notification .notification-detail {
+  margin: 0px;
+}
+
+.notification .responsive-mark-read {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 20px;
+  color: #888;
+  border: 1px solid #888;
+  border-radius: 5px;
+  background-color: #fee;
+  padding: 2px 5px;
+}
+
+@media all and (max-width: 840px)
+{
+  #notifications .notification {
+	text-align: left;
+	padding: 5px 10px;
+  }
+
+  .notification .mark_read {
+	display: none;
+  }
+
+  .notification .responsive-mark-read {
+	display: inline-block;
+  }
+
+  .notification .notification-detail {
+	margin-top: 2px;
+  }
+
+  .notification .notification-time {
+	position: relative;
+	left: auto;
+	width: 100%;
+	display: block;
+	right: auto;
+	top: auto;
+	font-size: 11px;
+	margin-bottom: 2px;
+  }
+}
+
+@media all and (max-width: 486px)
+{
+  #notifications .notification {
+	border-radius: 0px;
+	border-left: 0px;
+	border-right: 0px;
+  }
+}

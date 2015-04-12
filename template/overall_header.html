@@ -258,4 +258,20 @@
 			<!-- END navlinks -->
 		</ul>
 
+		<!-- IF S_NOTIFICATIONS_DISPLAY and .notifications -->
+		<div id="notifications">
+			<!-- BEGIN notifications -->
+			<div class="notification">
+				<div class="notification-time"><i class="fa fa-clock-o"></i> {notifications.TIME}</div>
+				<!-- IF notifications.URL --><a href="{notifications.URL}"><!-- ENDIF -->{notifications.FORMATTED_TITLE}<!-- IF notifications.URL --></a><!-- ENDIF -->
+                <!-- IF notifications.UNREAD --><span class="mark_read">(<a href="{notifications.U_MARK_READ}" title="{L_MARK_READ}"><i class="fa fa-check"></i> {L_MARK_READ}</a>)</span><!-- ENDIF -->
+				<!-- IF notifications.REFERENCE --><p class="notification-detail">{notifications.REFERENCE}</p><!-- ENDIF -->
+				<!-- IF notifications.REASON --><p class="notification-detail">{notifications.REASON}</p><!-- ENDIF -->
+
+                <!-- IF notifications.UNREAD --><a href="{notifications.U_MARK_READ}" class="responsive-mark-read" title="{L_MARK_READ}"><i class="fa fa-check"></i></a><!-- ENDIF -->
+			</div>
+			<!-- END notifications -->
+		</div>
+		<!-- ENDIF -->
+
         <!-- EVENT overall_header_content_before -->
