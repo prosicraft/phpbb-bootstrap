@@ -353,6 +353,11 @@ ul.nav-sub li.divider {
 /******************************************************************************/
 /* overall_breadcrumb */
 
+#breadcrumb-container {
+  position: relative;
+  margin-bottom: 10px;
+}
+
 ul.breadcrumb {
   padding: 10px;
   background-color: #f4f4f4;
