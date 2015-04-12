@@ -251,11 +251,29 @@
 		<div class="alert alert-info"><strong>{L_INFORMATION}:</strong> {L_BOARD_DISABLED}</div>
 		<!-- ENDIF -->
 
-		<ul class="breadcrumb">
-			<li><a href="{U_INDEX}" accesskey="h"><i class="fa fa-home"></i> {L_INDEX}</a></li>
-			<!-- BEGIN navlinks -->
-				<li><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
-			<!-- END navlinks -->
-		</ul>
+		<div id="breadcrumb-container">
+            <!-- IF SCRIPT_NAME eq "index" -->
+            <div class="lastvisitcontainer">
+			<ul class="inline pull-right lastvisit">
+				<li class="not-on-smartphone">
+					<!-- IF S_USER_LOGGED_IN -->
+						<span class="lastvisit-welcome">Hi, <strong>{S_USERNAME}</strong>! </span>
+					<!-- ENDIF -->
+				</li>
+				<li class="not-on-tab"><small><!-- IF S_USER_LOGGED_IN --><i class="fa fa-clock-o"></i> {LAST_VISIT_DATE}<!-- ENDIF --></small></li>
+				<li class="not-on-smartphone">
+					<small><i class="fa fa-clock-o"></i> {CURRENT_TIME} </small>
+				</li>
+			</ul>
+			</div>
+			<!-- ENDIF -->
+
+			<ul class="breadcrumb">
+				<li><a href="{U_INDEX}" accesskey="h"><i class="fa fa-home"></i> {L_INDEX}</a></li>
+				<!-- BEGIN navlinks -->
+					<li><a href="{navlinks.U_VIEW_FORUM}">{navlinks.FORUM_NAME}</a></li>
+				<!-- END navlinks -->
+			</ul>
+		</div>
 
         <!-- EVENT overall_header_content_before -->

@@ -1,20 +1,6 @@
 <!-- INCLUDE overall_header.html -->
 
 <div class="overboxctrl overbx-index<!-- IF not S_USER_LOGGED_IN --> overbx-notloggedin<!-- ENDIF -->">
-	<div class="lastvisitcontainer">
-		<ul class="inline pull-right lastvisit">
-			<li class="not-on-smartphone">
-				<!-- IF S_USER_LOGGED_IN -->
-					<span class="lastvisit-welcome">Hi, <strong>{S_USERNAME}</strong>! </span>
-				<!-- ENDIF -->
-			</li>
-			<li class="not-on-tab"><small><!-- IF S_USER_LOGGED_IN --><i class="fa fa-clock-o"></i> {LAST_VISIT_DATE}<!-- ENDIF --></small></li>
-			<li class="not-on-smartphone">
-				<small><i class="fa fa-clock-o"></i> {CURRENT_TIME} </small>
-			</li>
-		</ul>
-	</div>
-
 	<div class="overboxleft">
 		<!-- IF U_MCP --><a href="{U_MCP}" class="btn btn-small btn-moderation not-on-smartphone"><i class="fa fa-cogs"></i> <span class="text"> {L_MCP}</span></a><!-- ENDIF -->
 
