@@ -671,3 +671,26 @@ function initNavbarDropdowns ()
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+// Euphoria avatar related functions
+
+function avatar_toggle()
+{
+	// Get selected value
+	var driverSelect = document.getElementById('avatar_driver');
+	var selectedDriver = driverSelect.options[driverSelect.selectedIndex].value;
+	var checkId = "avatar_option_" + selectedDriver.toString();
+
+	// Hide all avatar options, show selected
+	var avatarOptions = document.getElementsByClassName('avatar_option');
+	for (var i = 0; i < avatarOptions.length; ++i)
+	{
+		if (avatarOptions[i].id == checkId)
+			avatarOptions[i].style.display = "block";
+		else
+			avatarOptions[i].style.display = "none";
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
