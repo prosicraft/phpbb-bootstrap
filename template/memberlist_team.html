@@ -1,0 +1,46 @@
+<!-- INCLUDE overall_header.html -->
+
+<h2 class="solo">{PAGE_TITLE}</h2>
+
+<form method="post" action="{S_MODE_ACTION}">
+
+<!-- BEGIN group -->
+<h3>{group.GROUP_NAME}</h3>
+
+<div class="memberlist medium-bottom-margin">
+
+	<table>
+	<thead class="header">
+	<tr>
+		<th width="20%" align="left"><span class="rank-img">{L_RANK}&nbsp;</span></th>
+		<th align="left">{L_USERNAME}</th>
+		<th align="left">{L_PRIMARY_GROUP}</th>
+		<th align="left">{L_FORUMS}</th>
+	</tr>
+	</thead>
+	<tbody>
+<!-- BEGIN user -->
+	<tr class="leaderrow">
+		<td><!-- IF group.user.RANK_IMG --><span class="rank-img">{group.user.RANK_IMG}</span><!-- ELSE --><span class="rank-img">{group.user.RANK_TITLE}</span><!-- ENDIF --></td>
+		<td><strong>{group.user.USERNAME_FULL}</strong></td>
+		<td class="info"><!-- IF group.user.U_GROUP -->
+			<a<!-- IF group.user.GROUP_COLOR --> style="font-weight: bold; color:#{group.user.GROUP_COLOR}"<!-- ENDIF --> href="{group.user.U_GROUP}">{group.user.GROUP_NAME}</a>
+			<!-- ELSE -->
+				{group.user.GROUP_NAME}
+			<!-- ENDIF --></td>
+		<td class="info">-</td>
+	</tr>
+<!-- BEGINELSE -->
+	<tr class="bg1">
+		<td colspan="3"><strong>{L_NO_MEMBERS}</strong></td>
+	</tr>
+<!-- END user -->
+	</tbody>
+	</table>
+
+</div>
+<!-- END group -->
+
+</form>
+
+<!-- INCLUDE overall_footer.html -->
