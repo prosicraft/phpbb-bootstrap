@@ -15,9 +15,15 @@
 			</ul>
 
 			<ul class="well-footer-right">
+				<!-- EVENT overall_footer_teamlink_before -->
 				<!-- IF U_TEAM --><li><a class="responsivenavitem firstitem" href="{U_TEAM}"><i class="fa fa-group"></i> {L_THE_TEAM}</a></li><!-- ENDIF -->
+				<!-- EVENT overall_footer_teamlink_after -->
+
 				<!-- IF not S_IS_BOT --><li><a class="responsivenavitem" href="{U_DELETE_COOKIES}"><i class="fa fa-trash-o"></i> {L_DELETE_COOKIES}</a></li><!-- ENDIF -->
+
+				<!-- EVENT overall_footer_timezone_before -->
 				<li><div class="responsivenavitem"><i class="fa fa-globe"></i> {S_TIMEZONE} </div></li>
+				<!-- EVENT overall_footer_timezone_after -->
 			</div>
 	</div>
 
@@ -37,6 +43,7 @@
 	</div>
 </div>
 
+<!-- EVENT overall_footer_after -->
 
 {$SCRIPTS}
 
