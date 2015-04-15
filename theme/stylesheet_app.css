@@ -9,3 +9,22 @@
 @import url("imageset.css");
 @import url("editor.css");
 @import url("topic.css");
+
+/* override default styles to avoid style creation for each extension */
+
+.panel {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.09);
+  background-clip: padding-box;
+  border: 1px solid #999;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  border-radius: 4px;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.panel .content {
+  padding: 0px 15px;
+}
